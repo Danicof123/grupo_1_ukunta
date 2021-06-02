@@ -68,11 +68,11 @@ Similar a la última referencia, con detalles a tener en cuanta en la tienda ver
 ## Acerca de nuestro grupo
 Somos el grupo N°1 de la Comisión 6, nos hemos llamado **BERENG-1** en honor a la Poderosa *Berenjena*.   
 Estamos conformado por cuatro integrantes
-1. Bernardo Dinarte:
+1. **Bernardo Dinarte**:
     Curioso, emprendedor y resiliente, amante de la música en todas sus expresiones. Bernardo de 36 años de edad, inicia su camino en el aprendizaje de la programación Web.
-2. Daniel Fernández:
-    Tiene 28 años y es un apasionado del arte digital y ahora de la mano del curso brindado por **Formar/Digital House**, comienza a crear otra nueva pasión, la programación.
-3. Emanuel Romero:  
+2. **Daniel Fernández**:
+    Tiene 28 años y es un apasionado del arte digital y ahora de la mano del curso brindado por *Formar/Digital House*, comienza a crear otra nueva pasión, la programación.
+3. **Emanuel Romero**:
     Actualmente tiene 32 años, vive en Lanús, Buenos Aires. Es estudiante de programación web fullstack y además le encanta aprender, desarrollar y amplicar sus conocimientos.
-4. Facundo Uehara:
+4. **Facundo Uehara**:
     31 años de edad, un amante de los videojuegos y actualmente se encuentra estudiando con un gran esmero programación web fullstack.
