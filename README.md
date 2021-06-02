@@ -9,7 +9,7 @@ Aspiramos a convertirnos en un fuerte referente a la hora de elegir entre las po
 ## Publico Objetivo
 Nuestro público objetivo son todas aquellas personas mayores de edad (+18) que estan apasionada por la civilización vikinga y que además sean amante de la calidad y el buen sabor de la cerveza/hidromiel.   
 ## Manual corporativo
-Si quieres conocernos más en profundidad vea nuestro [Manual corporativo](./doc/identidadCorporativa.pdf "Identidad Corporativa de Ukunta")
+Si quieres conocernos más en profundidad vea nuestro [Manual corporativo](./doc/identidadCorporativa_UKUNTA.pdf "Identidad Corporativa de Ukunta")
 
 ## Productos que vamos a comercializar
 ![Bebidas](./doc/images/bebidas.jpg "Cervezas e Hidromieles")
