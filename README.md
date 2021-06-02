@@ -20,8 +20,8 @@ Usted puede ver nuestro **catálogo** completo en [Bebidas](./doc/catalogoBebida
 
 ## Nuestra web
 ![Responsive](./doc/images/responsive.jpg "Ukunta's web")
-Nuestro sitio web se encuentra diseñado bajo la modalidad *Mobile First*  para que usted nos pueda visitar sin importar el dispositivo, nuestro sitio se adaptará a tí.  
-*Para saber más acerca de nuestro sitio descarga nuestra* [documentación web](./doc/WebDesing_UKUNTA.pdf "Diseño web Ukunta"), en el documento encontrarás nuestras información detallada acerca de nuestro **diseño**, los **wireframes del sitio**, **tipografía** y **colores**. 
+Nuestro sitio web se encuentra diseñado bajo la modalidad *Mobile First*  para que usted nos pueda visitar sin importar el dispositivo, nuestro sitio se *adaptará* a tí.  
+*Para saber más acerca de la web de Ukunta descarga nuestra* [documentación web](./doc/WebDesing_UKUNTA.pdf "Diseño web Ukunta"), en en donde encontrarás información detallada acerca de **diseño**, los **wireframes del sitio**, **tipografía** y **colores**. 
 
 ### Visita nuestros prototipos
 [Mobile](https://www.figma.com/proto/202XsgvzJVP3LQusoLvBLl/grupo_1_UKUNTA?node-id=126%3A1&scaling=min-zoom "Prototype Mobile Figma"),
