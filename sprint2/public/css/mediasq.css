@@ -1,0 +1,26 @@
+/* Cuando la pantalla sea  mas grande que*/
+@media screen and (min-width: 768px) {
+    .home .header{
+        padding-top: 50px;
+    }
+    .navbar{
+        height: 50px;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .home .header{
+        padding-top: 60px;
+    }
+    .navbar{
+        height: 60px;
+    }
+}
+
+
+
+/* Cuando la pantalla sea mas chica que... */
+@media screen and (max-width: 1024px) {
+    .only-desktop{
+        display: none;
+    }
+}
