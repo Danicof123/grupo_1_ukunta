@@ -5,15 +5,144 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/76d25d6fff.js" crossorigin="anonymous"></script>
+    <!-- MAIN STYLES -->
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <header class="header">
-        <nav class="navbar-top">
-            <div class="navbar-top__logo">
-                <img src="images/logo/logotipo.svg" alt="logotipo">
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="navbar__logo">
+                <img src="images/logo/ukunta.svg" alt="logotipo">
+            </div>
+            <!-- Search -->
+            <div class="navbar__search">
+                <input type="search" name="search" id="input-search">
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+            <!-- Navegacion -->
+            <div class="navbar__menu">
+                <ul class="only-desktop">
+                    <li><a href="#">INICIO</i></a></li>
+                    <li><a href="#">NOSOTROS</i></a></li>
+                    <li><a href="#">TIENDA</i></a></li>
+                    <li><a href="#">CONTACTO</i></a></li>
+                    <li><a href="#">CARRITO</a></li>
+                </ul>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
+
+                <button class="navbar__back"><i class="fas fa-arrow-down"></i></button>
+
             </div>
         </nav>
+        <div class="header__carrousel">
+            <img src="/images/headerMain-1.jpg" alt="header-1">
+        </div>
     </header>
+    <nav class="navbar-bottom">
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i></a></li>
+            <li><a href="#"><i class="fas fa-search"></i></a></li>
+            <li><a href="#"><i class="fas fa-store"></i></a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+    </nav>
+
+    <aside class="categories">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="button"><img src="/images/icons/hidro.svg" alt="hidromiel"></a>
+                </li>
+                <li>
+                    <a href="#" class="button"><img src="/images/icons/beer.svg" alt="cerveza"></a>
+                </li>
+                <li>
+                    <a href="#" class="button"><img src="/images/icons/merch.svg" alt="merchandasing"></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section class="combos" id="combos">
+        <article>
+            <h2>COMBOS</h2>
+            <div class="combos__carrousel">
+                <img src="/images/carrouselCombo-1.jpg" alt="black-off">
+            </div>
+
+            <a href="#" class="button-ghost">TIENDA</a>
+        </article>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <article>
+            <h3>CONTÁCTENOS</h3>
+
+            <div class="contacto__form">
+                <form name="f-contact">
+                    <input type="text" name="f-name" placeholder="Escriba su nombre">
+                    <input type="email" name="f-mail" placeholder="Escriba su correo electrónico">
+                    <textarea name="f-comment" cols="30" rows="10" placeholder="Escriba un comentario"></textarea>
+                    <input type="submit" value="ENVIAR" class="button">
+                </form>
+            </div>
+
+            <div class="contacto__map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17198.63439706699!2d10.755380614092434!3d59.91427007484662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e61f267f039%3A0x7e92605fd3231e9a!2sOslo%2C%20Noruega!5e0!3m2!1ses-419!2sar!4v1624465883454!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </article>
+    </section>
+    <footer class="footer">
+        <div class="footer__redes">
+            <ul>
+                <li><a href="#" class="button"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" class="button"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" class="button"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+
+        <article class="footer__datos">
+            <h4>Datos de contacto</h4>
+            <ul class="">
+                <li><a href="#" class="button"><i class="fas fa-map-marker-alt"></i>
+                    dirección: asdasdas
+                </a></li>
+                <li><a href="#" class="button"><i class="fab fa-whatsapp"></i>
+                    whatsapp: 12312312312312
+                </a></li>
+                <li><a href="#" class="button"><i class="fas fa-envelope"></i>
+                    email: sdfasdas@asdas.com
+                </a></li>
+            </ul>
+        </article>
+
+        <article class="footer__sitemap">
+            <h4>Mapa del sitio</h4>
+            <ul class="">
+                <li><a href="#" class="button">Nosotros</a></li>
+                <li><a href="#" class="button">Tienda</a></li>
+                <li><a href="#" class="button">Contacto</a></li>
+            </ul>
+        </article>
+
+        <article class="footer__medios">
+            <h4>Medios de pago</h4>
+            <ul class="">
+                <li><img src="/images/mediosPago/01.jpg" alt="01"></li>
+                <li><img src="/images/mediosPago/01.jpg" alt="02"></li>
+                <li><img src="/images/mediosPago/01.jpg" alt="03"></li>
+                <li><img src="/images/mediosPago/01.jpg" alt="04"></li>                
+            </ul>
+        </article>
+
+        <div class="footer_copyright">
+            <span>Copyright &copy;2021 All rights reserverd | Sitio desarrollado por el grupo Berenge-1</span>
+        </div>
+    </footer>
 </body>
 </html>
