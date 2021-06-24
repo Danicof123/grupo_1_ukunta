@@ -1,0 +1,22 @@
+.categories__items{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.categories__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    width: 5rem;
+    cursor: pointer;
+
+}
+
+.categories__legend{
+    font-size: .7rem;
+    margin-top: 1em;
+}

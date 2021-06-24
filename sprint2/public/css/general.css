@@ -58,6 +58,15 @@ h4{
 }
 
 
+.sep-inf::after{
+    content: "";
+    display: block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 1px;
+    background-color: var(--color-gris-claro);
+}
+
 /* selector{
     posiciones
     modelo de caja
