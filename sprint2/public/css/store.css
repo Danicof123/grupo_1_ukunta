@@ -1,0 +1,29 @@
+/* header */
+
+@import url(components/header.css);
+@import url(components/navbar.css);
+
+/* main */
+
+article{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin: 10px;
+}
+
+.product img{
+    width: 70%;
+    height: 70%;
+}
+
+.product{
+    display: flex;
+    background-color: white;
+}
+
+.description{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* footer */
