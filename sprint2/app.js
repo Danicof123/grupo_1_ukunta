@@ -4,7 +4,7 @@ const port = 3000;
 
 const app = express();
 
-app.listen(port, () => console.log(`Servidor iniciado en puerto ${port}`));
+app.listen(port, () => console.log(`Servidor iniciado en puerto http://127.0.0.1:${port}`));
 
 app.use(express.static('public'));
 
