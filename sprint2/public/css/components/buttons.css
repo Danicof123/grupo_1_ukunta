@@ -18,11 +18,19 @@
     height: 3rem;
     width: 3rem;
 }
-
-.button>img{
-    width: 2rem;
+.button.button-redes{
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
 }
 
+.button.button-cat>img{
+    width: 2rem;
+} 
+.button.button-redes>img{
+    width: 1.5rem;
+} 
 .button:hover{
     color: #fff;
     background-color: var(--color-primario);
@@ -33,3 +41,56 @@
     -webkit-filter: brightness(10);
 }
 
+
+/* button ghost */
+
+.button-ghost{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    min-width: 200px;
+    height: 48px;
+    border: 2px solid currentColor;
+    margin: 1rem auto;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-secundario);
+}
+
+
+@media screen and (min-width: 768px) {
+    .button.button-redes{
+        height: 3rem;
+        width: 3rem;
+        margin-left: 1.2rem;
+        margin-right: 1.2rem;
+    }
+    .button.button-redes>img{
+        width: 1.8rem;
+    } 
+}
+
+@media screen and (min-width: 1025px) {
+    .button.button-redes{
+        height: 5rem;
+        width: 5rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    .button.button-cat>img{
+        width: 3rem;
+    } 
+    .button.button-redes>img{
+        width: 2.5rem;
+    }
+    .button-ghost{
+        height: 75px;
+        border: 3px solid currentColor;
+        font-size: 36px;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    } 
+}
