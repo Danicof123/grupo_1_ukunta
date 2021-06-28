@@ -1,29 +1,217 @@
 /* header */
 
 @import url(components/header.css);
+
+/* navbar */
+
 @import url(components/navbar.css);
 
 /* main */
 
-article{
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin: 10px;
+.filter {
+  display: inline-block;
+  margin-left: 1rem;
+  width: 29px;
+  height: 16px;
+  background-color: var(--color-primario);
+  color: #fff;
 }
 
-.product img{
-    width: 70%;
-    height: 70%;
+.filter li {
+  font-size: 8px;
+  font-weight: lighter;
+  list-style: none;
+  text-align: center;
 }
 
-.product{
-    display: flex;
-    background-color: white;
+.cervezas {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-.description{
-    margin-left: 1rem;
-    display: flex;
-    flex-direction: column;
+.productPrueba {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 134px;
+}
+
+.imgproductPrueba {
+  display: flex;
+  height: inherit;
+  width: auto;
+}
+
+.detalle_titlePrueba {
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.descriptionPrueba {
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: lighter;
+  margin-top: 0;
+}
+
+.button_precioPrueba {
+  border-radius: 50%;
+  width: 80px;
+  height: 23px;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: var(--color-primario);
+  color: #fff;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+/* iconos productos */
+
+.fa-external-link-alt {
+  display: flex;
+  position: absolute;
+  font-weight: 14px;
+  width: 23px;
+  height: 23px;
+  padding: 3px;
+  display: block;
+  color: var(--color-primario);
+  text-align: center;
+  border-radius: 40px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+.fa-check {
+  display: flex;
+  position: absolute;
+  font-weight: 14px;
+  width: 23px;
+  height: 23px;
+  padding: 3px;
+  margin: 5px;
+  display: block;
+  color: var(--color-verde);
+  text-align: center;
+  border-radius: 40px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+.fa-times {
+  display: flex;
+  position: absolute;
+  font-weight: 14px;
+  width: 23px;
+  height: 23px;
+  padding: 3px;
+  margin: 5px;
+  display: block;
+  color: var(--color-rojo);
+  text-align: center;
+  border-radius: 40px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+.fa-plus {
+  position: absolute;
+  font-weight: 14px;
+  width: 23px;
+  height: 23px;
+  padding: 3px;
+  margin-left: 160px;
+  display: block;
+  background-color: #fff;
+  color: var(--color-primario);
+  text-align: center;
+  border-radius: 40px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+.more_productPrueba .times {
+  position: absolute;
+  font-weight: 14px;
+  width: 23px;
+  height: 23px;
+  padding: 3px;
+  margin-left: 160px;
+  display: block;
+  background-color: #fff;
+  color: var(--color-gris-claro);
+  text-align: center;
+  border-radius: 40px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+.imgproduct {
+  width: 50%;
+}
+
+.imgproduct img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.detalle {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  margin-left: 1rem;
+}
+
+.detalle_title {
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.descriptionPrueba {
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: lighter;
+  margin-top: 0;
+}
+
+.more_product {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.button_precio {
+  border-radius: 40%;
+  width: 80px;
+  height: 23px;
+  background-color: var(--color-primario);
+  color: #fff;
+  text-align: center;
 }
 
 /* footer */
+
+/* @import url(mediasq.css);  YA ESTA IMPORTADO*/
+
+/* Cuando la pantalla sea  mas grande que*/
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1025px) {
+}
+
+/* Cuando la pantalla sea mas chica que... */
+@media screen and (max-width: 1024px) {
+}

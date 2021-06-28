@@ -1,280 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Store</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/9a95f588d1.js" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/9a95f588d1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <nav class="navbar">
-
-            <!-- Logo -->
-            <div class="navbar__logo">
-                <a href="/"><img src="images/logo/ukunta.svg" alt="logotipo"></a>
-            </div>
-
-            <!-- Search -->
-            <div class="navbar__search only-desktop">
-                <input type="search" name="search" class="input-search" placeholder="Buscar productos">
-                <button><i class="fas fa-arrow-right"></i></button>
-            </div>
-
-            <!-- Navegacion -->
-            <div class="navbar__menu">
-                <ul class="navbar_ul only-desktop">
-                    <li class="navbar__item active"><a href="#">INICIO</a></li>
-                    <li class="navbar__item"><a href="#">NOSOTROS</a></li>
-                    <li class="navbar__item"><a href="#">TIENDA</a></li>
-                    <li class="navbar__item"><a href="#">CONTACTO</a></li>
-                    <!-- boton del menu desplegable para cerrar -->
-                    <button class="navbar__back no-desktop">
-                        <i class="fas fa-arrow-down"></i>
-                    </button>
-                </ul>
-
-                <div class="navbar__shop only-desktop">
-                    <a href="#" class="navbar__item">
-                        <i class="fas fa-shopping-cart only-desktop"></i>
-                    </a>
-                    <div class="navbar__badge">3</div>
-                </div>
-
-                <a href="#" class="navbar__item"><i class="fas fa-user"></i></a>
-            </div>
-        </nav>
-
-        <div class="header__carrousel">
-            <img src="/images/headerMain-1.jpg" alt="header-1">
+      <nav class="navbar">
+        <!-- Logo -->
+        <div class="navbar__logo">
+          <a href="/"><img src="images/logo/ukunta.svg" alt="logotipo" /></a>
         </div>
+
+        <!-- Search -->
+        <div class="navbar__search only-desktop">
+          <input
+            type="search"
+            name="search"
+            class="input-search"
+            placeholder="Buscar productos"
+          />
+          <button><i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Navegacion -->
+        <div class="navbar__menu">
+          <ul class="navbar_ul only-desktop">
+            <li class="navbar__item active"><a href="#">INICIO</a></li>
+            <li class="navbar__item"><a href="#">NOSOTROS</a></li>
+            <li class="navbar__item"><a href="#">TIENDA</a></li>
+            <li class="navbar__item"><a href="#">CONTACTO</a></li>
+            <!-- boton del menu desplegable para cerrar -->
+            <button class="navbar__back no-desktop">
+              <i class="fas fa-arrow-down"></i>
+            </button>
+          </ul>
+
+          <div class="navbar__shop only-desktop">
+            <a href="#" class="navbar__item">
+              <i class="fas fa-shopping-cart only-desktop"></i>
+            </a>
+            <div class="navbar__badge">3</div>
+          </div>
+
+          <a href="#" class="navbar__item"><i class="fas fa-user"></i></a>
+        </div>
+      </nav>
+
+      <div class="header__carrousel">
+        <img src="/images/headerMain-1.jpg" alt="header-1" />
+      </div>
     </header>
 
+    <!-- Barra de navegación inferior -->
+    <nav class="navbar-bottom no-desktop">
+      <ul class="navbar-bottom__ul">
+        <li class="navbar__item">
+          <a href="#"><i class="fas fa-home"></i></a>
+        </li>
+        <li class="navbar__item">
+          <a href="#"><i class="fas fa-search"></i></a>
+        </li>
+        <li class="navbar__item">
+          <a href="#"><i class="fas fa-store"></i></a>
+        </li>
+        <li class="navbar__shop">
+          <a href="#" class="navbar__item">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          <div class="navbar__badge">3</div>
+        </li>
+        <li class="navbar__item">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Botones de categorias -->
+    <aside class="categories sep-inf">
+      <div class="categories__items">
+        <div class="categories__item">
+          <a href="#" class="button button-cat">
+            <img src="/images/icon-hidro.svg" alt="hidromiel" />
+          </a>
+          <span class="categories__legend">HIDROMIEL</span>
+        </div>
+
+        <div class="categories__item">
+          <a href="#" class="button button-cat">
+            <img src="/images/icon-beer.svg" alt="cerveza" />
+          </a>
+          <span class="categories__legend">CERVEZA</span>
+        </div>
+
+        <div class="categories__item">
+          <a href="#" class="button button-cat">
+            <img src="/images/icon-merch.svg" alt="merchandasing" />
+          </a>
+          <span class="categories__legend">MERCHANDASING</span>
+        </div>
+      </div>
+    </aside>
+
     <main>
-        <section class="cervezas">
-            <h2>Cervezas</h2>
-            <article class="product">
-                <img src="/images/products/Bebidas/Cervezas/Ale-Porter-Negra.png" alt="">
-                <div class="description">
-                    <h4>Ale Porter Negra</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Cervezas/Ale-Stout-Negra.png" alt="">
-                <div class="description">
-                    <h4>Ale Stout Negra</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Cervezas/IPA-Brown.png" alt="">
-                <div class="description">
-                    <h4>IPA Brown</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Cervezas/IPA-Negra.png" alt="">
-                <div class="description">
-                    <h4>IPA Negra</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Cervezas/IPA-Roja.png" alt="">
-                <div class="description">
-                    <h4>IPA Roja</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Cervezas/IPA-Rubia.png" alt="">
-                <div class="description">
-                    <h4>IPA Rubia</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Cervezas/Lager-Pilsen-Rubia.png" alt="">
-                <div class="description">
-                    <h4>Lager Pilsen Rubia</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Cervezas/Lager-Rubia.png" alt="">
-                <div class="description">
-                    <h4>Lager Rubia</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-        </section>
+      <div class="filter">
+        <li>Filtro</li>
+      </div>
 
-        <section class="hidromiel">
-            <h2>Hidromiel</h2>
-            <article class="product">
-                <img src="/images/products/Bebidas/Hidromiel/bochet-tostada.png" alt="">
-                <div class="description">
-                    <h4>Bochet Tostada</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Hidromiel/capsicumel-extrapicante.png" alt="">
-                <div class="description">
-                    <h4>Capsicumel Extrapicante</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Hidromiel/Konopya-canabica.png" alt="">
-                <div class="description">
-                    <h4>Konopya Canabica</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Hidromiel/Metheglin-de-Fresa.png" alt="">
-                <div class="description">
-                    <h4>Metheglin De Fresa</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Hidromiel/rhodomel-petalo-de-rosa.png" alt="">
-                <div class="description">
-                    <h4>Rhodomel Petalo De Rosa</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Bebidas/Hidromiel/Tradicional.png" alt="">
-                <div class="description">
-                    <h4>Tradicional</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-        </section>
+      <section class="cervezas">
+        
+        <article class="productPrueba">
+          <i class="fas fa-check"></i>
+          <div class="imgproductPrueba">
+            <img src="/images/products/Bebidas/Cervezas/Ale-Porter-Negra.png"
+            alt="Ale-Porter-Negra">
+          </div>
+          <div class="detallePrueba">
+            <h4 class="detalle_titlePrueba">Ale Porter Negra</h4>
+            <p class="descriptionPrueba">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            </p>
+            <div class="more_productPrueba">
+              <i class="fas fa-external-link-alt"></i>
+              <i class="fas fa-plus"></i>
+              <div class="button_precioPrueba">
+                $9.999
+              </div>
+            </div>
+          </div>
+        </article>
 
-        <section class="merchandising">
-            <h2>Merchandising</h2>
-            <article class="product">
-                <img src="/images/products/Merchandising/cenicero/1.png" alt="">
-                <div class="description">
-                    <h4>Cenicero</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Merchandising/Cuerno-soporte/1.png" alt="">
-                <div class="description">
-                    <h4>Soporte Cuerno</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Merchandising/Cuerno/1.png" alt="">
-                <div class="description">
-                    <h4>Cuerno</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Merchandising/destapadorThor/1.png" alt="">
-                <div class="description">
-                    <h4>Destapador Thor</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Merchandising/Jarra/1.png" alt="">
-                <div class="description">
-                    <h4>Jarra</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Merchandising/posaVasos/1.png" alt="">
-                <div class="description">
-                    <h4>Posa vasos</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Merchandising/Rem-Fem/1.png" alt="">
-                <div class="description">
-                    <h4>Remera Dama</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Merchandising/Rem-masc/1.png" alt="">
-                <div class="description">
-                    <h4>Remera Hombre</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/images/products/Merchandising/Tapaboca/1.png" alt="">
-                <div class="description">
-                    <h4>Tapaboca</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <p>$9.999</p>
-                    <span>Descuento/Cantidad</span>
-                </div>
-            </article>
-        </section>
+        <article class="productPrueba">
+          <i class="fas fa-times"></i>
+          <div class="imgproductPrueba">
+            <img src="/images/products/Bebidas/Cervezas/Ale-Stout-Negra.png"
+            alt="Ale Stout Negra">
+          </div>
+          <div class="detallePrueba">
+            <h4 class="detalle_titlePrueba">Ale Stout Negra</h4>
+            <p class="descriptionPrueba">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            </p>
+            <div class="more_productPrueba">
+              <i class="fas fa-external-link-alt"></i>
+              <i class="fas fa-plus times"></i>
+              <div class="button_precioPrueba">
+                $9.999
+              </div>
+            </div>
+          </div>
+        </article>
 
+        <article class="product">
+          <img
+            src="/images/products/Bebidas/Cervezas/Ale-Stout-Negra.png"
+            alt=""
+          />
+          <div class="description">
+            <h4>Ale Stout Negra</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Bebidas/Cervezas/IPA-Brown.png" alt="" />
+          <div class="description">
+            <h4>IPA Brown</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Bebidas/Cervezas/IPA-Negra.png" alt="" />
+          <div class="description">
+            <h4>IPA Negra</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Bebidas/Cervezas/IPA-Roja.png" alt="" />
+          <div class="description">
+            <h4>IPA Roja</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Bebidas/Cervezas/IPA-Rubia.png" alt="" />
+          <div class="description">
+            <h4>IPA Rubia</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img
+            src="/images/products/Bebidas/Cervezas/Lager-Pilsen-Rubia.png"
+            alt=""
+          />
+          <div class="description">
+            <h4>Lager Pilsen Rubia</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Bebidas/Cervezas/Lager-Rubia.png" alt="" />
+          <div class="description">
+            <h4>Lager Rubia</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="hidromiel">
+        <h2>Hidromiel</h2>
+        <article class="product">
+          <img
+            src="/images/products/Bebidas/Hidromiel/bochet-tostada.png"
+            alt=""
+          />
+          <div class="description">
+            <h4>Bochet Tostada</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img
+            src="/images/products/Bebidas/Hidromiel/capsicumel-extrapicante.png"
+            alt=""
+          />
+          <div class="description">
+            <h4>Capsicumel Extrapicante</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img
+            src="/images/products/Bebidas/Hidromiel/Konopya-canabica.png"
+            alt=""
+          />
+          <div class="description">
+            <h4>Konopya Canabica</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img
+            src="/images/products/Bebidas/Hidromiel/Metheglin-de-Fresa.png"
+            alt=""
+          />
+          <div class="description">
+            <h4>Metheglin De Fresa</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img
+            src="/images/products/Bebidas/Hidromiel/rhodomel-petalo-de-rosa.png"
+            alt=""
+          />
+          <div class="description">
+            <h4>Rhodomel Petalo De Rosa</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img
+            src="/images/products/Bebidas/Hidromiel/Tradicional.png"
+            alt=""
+          />
+          <div class="description">
+            <h4>Tradicional</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="merchandising">
+        <h2>Merchandising</h2>
+        <article class="product">
+          <img src="/images/products/Merchandising/cenicero/1.png" alt="" />
+          <div class="description">
+            <h4>Cenicero</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img
+            src="/images/products/Merchandising/Cuerno-soporte/1.png"
+            alt=""
+          />
+          <div class="description">
+            <h4>Soporte Cuerno</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Merchandising/Cuerno/1.png" alt="" />
+          <div class="description">
+            <h4>Cuerno</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img
+            src="/images/products/Merchandising/destapadorThor/1.png"
+            alt=""
+          />
+          <div class="description">
+            <h4>Destapador Thor</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Merchandising/Jarra/1.png" alt="" />
+          <div class="description">
+            <h4>Jarra</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Merchandising/posaVasos/1.png" alt="" />
+          <div class="description">
+            <h4>Posa vasos</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Merchandising/Rem-Fem/1.png" alt="" />
+          <div class="description">
+            <h4>Remera Dama</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Merchandising/Rem-masc/1.png" alt="" />
+          <div class="description">
+            <h4>Remera Hombre</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+        <article class="product">
+          <img src="/images/products/Merchandising/Tapaboca/1.png" alt="" />
+          <div class="description">
+            <h4>Tapaboca</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p>$9.999</p>
+            <span>Descuento/Cantidad</span>
+          </div>
+        </article>
+      </section>
     </main>
-</body>
-
+  </body>
 </html>
