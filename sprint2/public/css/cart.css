@@ -1,10 +1,10 @@
 /* header */
 
-body {
+.cart {
   margin: 1em;
 }
 
-.navbarCart {
+.cart .navbarCart {
   padding-bottom: 16px;
   background-color: #fff;
   border-bottom: 1px solid var(--color-gris-claro);
@@ -12,49 +12,48 @@ body {
 
 /* titulo */
 
-.totalBuy {
+.cart .totalBuy {
   font-family: "Raleway";
   font-weight: bold;
   display: flex;
   justify-content: space-between;
 }
 
-.totalBuy h1 p {
+.cart .totalBuy h1 p {
   flex-direction: row;
   font-size: 16px;
 }
 
-.cantidad {
+.cart .cantidad {
   color: var(--color-primario);
 }
 
 /* compras */
 
-.productBuy {
+.cart .productBuy {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
   height: 134px;
 }
 
-.imgproductBuy {
+.cart .imgproductBuy {
   display: flex;
-  height: inherit;
-  width: auto;
+  height: 134px;
+  width: 112px;
 }
 
-.detailBuy {
+.cart .detailBuy {
+  min-width: 176px;
   font-family: "Roboto";
   font-size: 12px;
   font-weight: lighter;
   margin-top: 0;
 }
 
-.detail_titleBuy {
+.cart .detail_titleBuy {
   justify-content: center;
   font-size: 1rem;
   font-weight: bold;
@@ -62,53 +61,65 @@ body {
   margin-bottom: 0;
 }
 
-.button_precioPrueba {
-  border-radius: 50%;
-  width: 80px;
-  height: 23px;
-  padding: 5px;
-  margin-right: 10px;
-  background-color: var(--color-primario);
-  color: #fff;
-  text-align: center;
-  font-size: 10px;
-  margin-top: 40px;
-  margin-left: 100px;
-}
-
-.descriptionBuy {
+.cart .descriptionBuy {
+  color: rgba(0, 0, 0, .6);
   font-family: "Roboto";
   font-size: 12px;
   font-weight: lighter;
-  margin-top: 0;
+  margin-top: 5px;
 }
 
-/* iconos productos */
+.cart .quantifyBuy {
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: lighter;
+  text-align: right;
+  margin-top: 35px;
+  margin-right: 35px;
+}
 
-.more_productPrueba .fa-minus {
-    display: flex;
-    position: absolute;
+/* iconos + y - */
+
+.cart .addBuy{
+  display: flex;
+}
+
+.cart .addBuy .fa-minus {
     font-weight: 14px;
     width: 23px;
     height: 23px;
     padding: 3px;
-    display: block;
     color: var(--color-rojo);
-    text-align: center;
     border-radius: 40px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-}
-
-.more_productPrueba .fa-plus {
-    display: flex;
-    position: absolute;
+  }
+  
+  .cart .addBuy .fa-plus {
     font-weight: 14px;
     width: 23px;
     height: 23px;
-    padding: 3px;
-    display: block;
     color: var(--color-verde);
-    text-align: center;
     border-radius: 40px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-}
+    margin-left: 26px;
+  }
+
+  /* boton precio */
+  
+  .cart .button_precioBuy {
+    border-radius: 50%;
+    width: 80px;
+    height: 23px;
+    padding: 5px;
+    background-color: var(--color-primario);
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+    margin-left: 40px;
+    margin-right: 35px;
+  }
+
+  .cart .button_precioBuy p {
+   font-size: 10px;
+   margin: 0;
+  }

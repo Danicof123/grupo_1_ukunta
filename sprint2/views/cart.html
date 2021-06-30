@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cart</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <script
-      src="https://kit.fontawesome.com/9a95f588d1.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header class="headerCart">
 
-      <nav class="navbarCart">
-        <!-- Logo -->
-        <div class="navbar__logo">
-          <a href="/"><img src="images/logo/ukunta.svg" alt="logotipo" /></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script src="https://kit.fontawesome.com/9a95f588d1.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="cart">
+
+  <header class="headerCart">
+
+    <nav class="navbarCart">
+      <!-- Logo -->
+      <div class="navbar__logo">
+        <a href="/"><img src="images/logo/ukunta.svg" alt="logotipo" /></a>
+      </div>
+
+  </header>
+
+  <div class="totalBuy">
+    <p>
+      Total de Elementos
+    </p>
+    <p class="cantidad">
+      3
+    </p>
+  </div>
+
+  <section class="buys">
+
+    <article class="productBuy">
+      <div class="imgproductBuy">
+        <img src="/images/products/Bebidas/Cervezas/Ale-Porter-Negra.png" alt="Ale-Porter-Negra">
+      </div>
+      <div class="detailBuy">
+        <h4 class="detail_titleBuy">Ale Porter Negra</h4>
+        <p class="descriptionBuy">
+          Capacidad: 330ml
+        </p>
+        <p class="quantifyBuy">
+          Cantidad: 2
+        </p>
+        <div class="addBuy">
+          <i class="fas fa-minus"></i>
+          <i class="fas fa-plus"></i>
+          <div class="button_precioBuy">
+            <p>$9.999</p>
+          </div>
         </div>
+      </div>
+    </article>
 
-    </header>
+  </section>
+</body>
 
-    <div class="totalBuy">
-        <p>
-            Total de Elementos
-        </p>
-        <p class="cantidad">
-            3
-        </p>
-    </div>
-
-    <section class="buys">
-
-        <article class="productBuy">
-            <div class="imgproductBuy">
-              <img src="/images/products/Bebidas/Cervezas/Ale-Porter-Negra.png"
-              alt="Ale-Porter-Negra">
-            </div>
-            <div class="detailBuy">
-              <h4 class="detail_titleBuy">Ale Porter Negra</h4>
-              <p class="descriptionBuy">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              </p>
-              <div class="more_productPrueba">
-                <i class="fas fa-minus"></i>
-                <i class="fas fa-plus"></i>
-                <div class="button_precioPrueba">
-                  $9.999
-                </div>
-              </div>
-            </div>
-          </article>
-
-    </section>
-  </body>
 </html>
