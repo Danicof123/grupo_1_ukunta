@@ -1,13 +1,203 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/76d25d6fff.js" crossorigin="anonymous"></script>
+    <!-- MAIN STYLES -->
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-    <h1>Ukunta</h1>
+
+<body class="home">
+    <header class="header">
+        <nav class="navbar">
+
+            <!-- Logo -->
+            <div class="navbar__logo">
+                <a href="/"><img src="images/logo/ukunta.svg" alt="logotipo"></a>
+            </div>
+
+            <!-- Search -->
+            <div class="navbar__search only-desktop">
+                <input type="search" name="search" class="input-search" placeholder="Buscar productos">
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <!-- Navegacion -->
+            <div class="navbar__menu">
+                <ul class="navbar_ul only-desktop">
+                    <li class="navbar__item active"><a href="#">INICIO</a></li>
+                    <li class="navbar__item"><a href="#">NOSOTROS</a></li>
+                    <li class="navbar__item"><a href="#">TIENDA</a></li>
+                    <li class="navbar__item"><a href="#contacto">CONTACTO</a></li>
+                    <!-- boton del menu desplegable para cerrar -->
+                    <button class="navbar__back no-desktop">
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                </ul>
+
+                <div class="navbar__shop only-desktop">
+                    <a href="#" class="navbar__item">
+                        <i class="fas fa-shopping-cart only-desktop"></i>
+                    </a>
+                    <div class="navbar__badge">3</div>
+                </div>
+
+                <a href="#" class="navbar__item"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+
+        <div class="header__carrousel">
+            <img src="/images/headerMain-1.jpg" alt="header-1">
+        </div>
+    </header>
+    <!-- Barra de navegación inferior -->
+    <nav class="navbar-bottom no-desktop">
+        <ul class="navbar-bottom__ul">
+            <li class="navbar__item"><a href="#"><i class="fas fa-home"></i></a></li>
+            <li class="navbar__item"><a href="#"><i class="fas fa-search"></i></a></li>
+            <li class="navbar__item"><a href="#"><i class="fas fa-store"></i></a></li>
+            <li class="navbar__shop">
+                <a href="#" class="navbar__item">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <div class="navbar__badge">3</div>
+            </li>
+            <li class="navbar__item"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+    </nav>
+
+    <aside class="categories sep-inf ">
+        <div class="categories__items">
+            <div class="categories__item">
+                <a href="#" class="button button-cat">
+                    <img src="/images/icon-hidro.svg" alt="hidromiel">
+                </a>
+                <span class="categories__legend">HIDROMIEL</span>
+            </div>
+
+            <div class="categories__item">
+                <a href="#" class="button button-cat">
+                    <img src="/images/icon-beer.svg" alt="cerveza">
+                </a>
+                <span class="categories__legend">CERVEZA</span>
+            </div>
+
+            <div class="categories__item">
+                <a href="#" class="button button-cat">
+                    <img src="/images/icon-merch.svg" alt="merchandasing">
+                </a>
+                <span class="categories__legend">MERCHANDASING</span>
+            </div>
+        </div>
+
+    </aside>
+
+    <section class="combos sep-inf" id="combos">
+        <article>
+            <h3 class="mx-4 my-2 seccion__title">COMBOS</h3>
+            <div class="combos__carrousel">
+                <img src="/images/carrouselCombo-1.png" alt="black-off">
+            </div>
+            <a href="#" class="button-ghost">TIENDA</a>
+        </article>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <article class="container f-wrap">
+            <h3 class="mb-12 seccion__title">CONTÁCTENOS</h3>
+
+            <div class="mb-12 tb-6 contacto__form">
+                <form name="f-contact" class="f-contact">
+                    <input type="text" name="f-name" placeholder="Escriba su nombre" class="contacto__input">
+                    <input type="email" name="f-mail" placeholder="Escriba su correo electrónico"
+                        class="contacto__input">
+                    <textarea name="f-comment" cols="30" rows="10" placeholder="Escriba un comentario"
+                        class="contacto__textarea"></textarea>
+                    <input type="submit" value="ENVIAR" class="contacto__button">
+                </form>
+            </div>
+            <div class="contacto__map no-mb tb-6">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17198.63439706699!2d10.755380614092434!3d59.91427007484662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e61f267f039%3A0x7e92605fd3231e9a!2sOslo%2C%20Noruega!5e0!3m2!1ses-419!2sar!4v1624465883454!5m2!1ses-419!2sar"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </article>
+
+        <div class="contacto__map mbt-4 only-mb">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17198.63439706699!2d10.755380614092434!3d59.91427007484662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e61f267f039%3A0x7e92605fd3231e9a!2sOslo%2C%20Noruega!5e0!3m2!1ses-419!2sar!4v1624465883454!5m2!1ses-419!2sar"
+                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+    </section>
+    <footer class="mt-5 footer">
+        <div class="container">
+            <div class="mb-12 f-center footer__redes">
+                <a href="#" class="button button-redes">
+                    <img src="/images/icon-fb.svg" alt="facebook">
+                </a>
+                <a href="#" class="button button-redes">
+                    <img src="/images/icon-ig.svg" alt="instagram">
+                </a>
+                <a href="#" class="button button-redes">
+                    <img src="/images/icon-yt.svg" alt="youtube">
+                </a>
+            </div>
+
+            <article class="mb-12 tb-4 f-main-y">
+                <h4 class="footer__title">Datos de contacto</h4>
+                <div class="footer__item">
+                    <a href="#"><i class="fas fa-map-marker-alt"> </i>
+                        dirección: av siempre viva 453
+                    </a>
+                </div>
+                <div class="footer__item">
+                    <a href="#"><i class="fab fa-whatsapp"> </i>
+                        whatsapp: +54 9 123 4567890
+                    </a>
+                </div>
+                <div class="footer__item">
+                    <a href="#"><i class="fas fa-envelope"> </i>
+                        email: ventas@ukunta.com.ar
+                    </a>
+                </div>
+            </article>
+
+            <article class="mb-12 tb-4 f-main-y">
+                <h4 class="footer__title">Mapa del sitio</h4>
+                <div class="footer__item">
+                    <a href="#">Nosotros</a>
+                </div>
+                <div class="footer__item">
+                    <a href="#">Tienda</a>
+                </div>
+                <div class="footer__item">
+                    <a href="#">Contacto</a>
+                </div>
+            </article>
+
+            <article class="mb-12 tb-4 f-main-y">
+                <h4 class="footer__title">Medios de pago</h4>
+                <div class="footer__item footer__medios">
+                    <img src="/images/medio-1.jpg" alt="Rapipago">
+                    <img src="/images/medio-2.jpg" alt="Pago Facil">
+                    <img src="/images/medio-3.jpg" alt="Masterd Card">
+                    <img src="/images/medio-4.jpg" alt="Visa dto">
+                </div>
+            </article>
+        </div>
+
+
+        <div class="footer_copyright">
+            <span>Copyright &copy;2021 All rights reserverd | Sitio desarrollado por el grupo Berenge-1</span>
+        </div>
+
+    </footer>
 </body>
+
 </html>
