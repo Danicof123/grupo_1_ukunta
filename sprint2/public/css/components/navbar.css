@@ -2,6 +2,7 @@
 .navbar{
     position: fixed;
     top: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,6 +81,7 @@
 .navbar-bottom{
     position: fixed;
     bottom: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

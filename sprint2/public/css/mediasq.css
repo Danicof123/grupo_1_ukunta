@@ -29,6 +29,13 @@
         font-size: .8rem;
     }
 
+    /* Seccion */
+    .seccion__title{
+        font-size: 36px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
 }
 @media screen and (min-width: 1025px) {
     .home .header{
@@ -41,6 +48,29 @@
     .no-desktop{
         display: none;
     }
+    /* aside */
+    .button.button-cat{
+        height: 90px;
+        width: 90px;
+    }
+    
+    .button>img{
+        width: 3.5rem;
+    }
+    .categories__items{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .categories__item{
+        width: 8rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .categories__legend{
+        font-size: 1rem;
+    }
+
+
 }
 
 
