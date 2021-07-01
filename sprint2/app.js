@@ -19,4 +19,4 @@ app.get('/login', (req,res) => res.sendFile(path.join(__dirname, 'views', 'login
 app.get('/products', (req,res) => res.sendFile(path.join(__dirname, 'views', 'products.html')));
 app.get('/register', (req,res) => res.sendFile(path.join(__dirname, 'views', 'register.html')));
 app.get('/store', (req,res) => res.sendFile(path.join(__dirname, 'views', 'store.html')));
-app.get('/welcome', (req,res) => res.sendFile(path.join(__dirname, 'views', 'welcome.html')));
+app.get('/bienvenido', (req,res) => res.sendFile(path.join(__dirname, 'views', 'welcome.html')));
