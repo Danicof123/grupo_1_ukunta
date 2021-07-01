@@ -23,15 +23,15 @@
     justify-content: flex-end;
 }
 /* // Cross Axis ---------------------------------- */
-.f-croos-center{
+.f-cross-center{
     align-items: center;
     align-content: center;
 }
-.f-croos-start{
+.f-cross-start{
     align-items: flex-start;
     align-content: flex-start;
 }
-.f-croos-end{
+.f-cross-end{
     align-items: flex-end;
     align-content: flex-end;
 }

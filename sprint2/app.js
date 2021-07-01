@@ -8,7 +8,9 @@ app.listen(port, () => console.log(`Servidor iniciado en puerto http://127.0.0.1
 
 app.use(express.static('public'));
 
-app.get('/', (req,res) => res.sendFile(path.join(__dirname, 'views', 'home.html')));
+app.get('/', (req,res) => res.redirect('/home'));
+app.get('/home', (req,res) => res.sendFile(path.join(__dirname, 'views', 'home.html')));
+
 app.get('/404', (req,res) => res.sendFile(path.join(__dirname, 'views', '404.html')));
 app.get('/grid', (req,res) => res.sendFile(path.join(__dirname, 'views', 'test', 'grid-test.html'))); //Eliminar esta linea - solo para testeo
 app.get('/nosotros', (req,res) => res.sendFile(path.join(__dirname, 'views', 'about.html')));
