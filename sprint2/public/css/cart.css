@@ -1,125 +1,167 @@
+.cart .container {
+   padding-left: 0;
+   padding-right: 0;
+}
+
 /* header */
 
 .cart {
-  margin: 1em;
+   margin: 1em;
 }
 
 .cart .navbarCart {
-  padding-bottom: 16px;
-  background-color: #fff;
-  border-bottom: 1px solid var(--color-gris-claro);
+   padding-bottom: 16px;
+   background-color: #fff;
+   border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.cart .navbarCart img {
+   margin: 0 auto;
+   filter: invert(0);
 }
 
 /* titulo */
 
-.cart .totalBuy {
-  font-family: "Raleway";
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
+.totalBuy {
+   font-family: 'Raleway';
+   font-weight: bold;
+   text-transform: uppercase;
+   justify-content: space-between;
+   font-size: 16px;
 }
 
-.cart .totalBuy h1 p {
-  flex-direction: row;
-  font-size: 16px;
+.total_elementos,
+.total_pagar {
+   font-size: 18px;
+   text-align: left;
+   padding: 0;
 }
 
-.cart .cantidad {
-  color: var(--color-primario);
+.cart .cantidad,
+.precio {
+   font-size: 18px;
+   color: var(--color-primario);
+   text-align: right;
 }
 
 /* compras */
 
-.cart .productBuy {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-  margin: 10px;
-  height: 134px;
+.producto {
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+   margin-bottom: 1rem;
+   padding-left: 0;
 }
 
-.cart .imgproductBuy {
-  display: flex;
-  height: 134px;
-  width: 112px;
+.producto__imagen {
+   padding-left: 0;
 }
 
-.cart .detailBuy {
-  min-width: 176px;
-  font-family: "Roboto";
-  font-size: 12px;
-  font-weight: lighter;
-  margin-top: 0;
+.producto__detalle {
+   flex-direction: column;
+   justify-content: flex-end;
+   padding: 0.5rem;
+   padding-bottom: 0.8rem;
 }
 
-.cart .detail_titleBuy {
-  justify-content: center;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
+.titulo-desc {
+   position: absolute;
+   top: 0;
 }
 
-.cart .descriptionBuy {
-  color: rgba(0, 0, 0, .6);
-  font-family: "Roboto";
-  font-size: 12px;
-  font-weight: lighter;
-  margin-top: 5px;
+.detail_titleBuy {
+   justify-content: center;
+   font-size: 1rem;
+   font-weight: bold;
+   margin-top: 0.5rem;
+   margin-bottom: 0;
+   text-transform: uppercase;
 }
 
-.cart .quantifyBuy {
-  font-family: "Roboto";
-  font-size: 12px;
-  font-weight: lighter;
-  text-align: right;
-  margin-top: 35px;
-  margin-right: 35px;
+.descriptionBuy {
+   color: rgba(0, 0, 0, 0.6);
+   font-family: 'Roboto';
+   font-size: 12px;
+   font-weight: lighter;
+   margin-top: 5px;
 }
 
-/* iconos + y - */
-
-.cart .addBuy{
-  display: flex;
+.producto__cantidad {
+   font-family: 'Roboto';
+   font-size: 12px;
+   font-weight: lighter;
+   align-self: flex-end;
 }
 
-.cart .addBuy .fa-minus {
-    font-weight: 14px;
-    width: 23px;
-    height: 23px;
-    padding: 3px;
-    color: var(--color-rojo);
-    border-radius: 40px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-  }
-  
-  .cart .addBuy .fa-plus {
-    font-weight: 14px;
-    width: 23px;
-    height: 23px;
-    color: var(--color-verde);
-    border-radius: 40px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-    margin-left: 26px;
-  }
+.mas_menos_precio {
+   margin: 10px 0px 5px;
+}
 
-  /* boton precio */
-  
-  .cart .button_precioBuy {
-    border-radius: 50%;
-    width: 80px;
-    height: 23px;
-    padding: 5px;
-    background-color: var(--color-primario);
-    color: #fff;
-    text-align: center;
-    font-size: 10px;
-    margin-left: 40px;
-    margin-right: 35px;
-  }
+/* botones + y - */
 
-  .cart .button_precioBuy p {
+.cart .buton_redondo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 23px;
+   width: 23px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+   border-radius: 50%;
+}
+
+.buton_redondo.rojo {
+   color: var(--color-rojo);
+}
+
+.buton_redondo.verde {
+   color: var(--color-verde);
+}
+
+/* boton precio */
+
+.cart .button_precio {
+   border: none;
+   min-width: 80px;
+   font-size: 10px;
+   font-weight: lighter;
+   height: 23px;
+   color: #fff;
+   border-radius: 100px;
+   text-decoration: none;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   background: var(--color-primario);
+   transition: 0.3s ease all;
+}
+
+.cart .button_precioBuy p {
    font-size: 10px;
    margin: 0;
-  }
+}
+
+/* iconos flecha y tarjeta de credito */
+
+.iconos_cart {
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.icono_flecha,
+.icono_card { 
+   display: block;
+   font-size: 18px;
+   width: 50px;
+   height: 50px;
+   padding: 14px;
+   color: var(--color-primario);
+   border-radius: 40px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+.icono_flecha {
+   text-align: center;
+}
+
+.icono_card {
+   text-align: center;
+}

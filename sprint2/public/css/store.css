@@ -1,205 +1,212 @@
-/* header */
+@import url('components/header.css');
+@import url('components/navbar.css');
+@import url('components/categories.css');
+@import url('components/buttons.css');
+@import url('components/footer.css');
 
-@import url(components/header.css);
-
-/* navbar */
-
-@import url(components/navbar.css);
+.store .header {
+   padding-top: 40px;
+}
 
 /* main */
 
+/* Filtro */
+
 .filter {
-  display: inline-block;
-  margin-left: 1rem;
-  width: 29px;
-  height: 16px;
-  background-color: var(--color-primario);
-  color: #fff;
+   display: inline-block;
+   margin-left: 1rem;
+   margin-bottom: 1rem;
+   width: 29px;
+   height: 16px;
+   background-color: var(--color-primario);
+   color: #fff;
 }
 
 .filter li {
-  font-size: 8px;
-  font-weight: lighter;
-  list-style: none;
-  text-align: center;
+   font-size: 8px;
+   font-weight: lighter;
+   list-style: none;
+   text-align: center;
+   padding-top: 3px;
 }
+
+/* Filtro y Busqueda */
+
+.store .filtro_busqueda {
+   display: none;
+   flex-direction: row;
+   margin-top: .5rem;
+   margin-bottom: 1rem;
+}
+
+@font-face {
+   font-family: "FontAwesome";
+   src: url("fontawesome-webfont.woff");
+ }
+
+.store .filter__input{
+   border-color: var(--color-gris-claro);
+   width: 66%;
+   font-family: "FontAwesome", "Roboto";
+}
+
+.filter__form {
+   width: 300px;
+   height: 40px;
+}
+
+.filter__orden {
+   justify-content: flex-end;
+}
+
+/* Productos */
+
+.productos_tienda {
+   margin-top: 1rem;
+}
+
+.producto {
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+   margin-bottom: 1rem;
+   padding-left: 0;
+}
+
+.producto__imagen {
+   padding-left: 0;
+}
+
+.producto__detalle {
+   flex-direction: column;
+   justify-content: flex-end;
+   padding: 0.5rem;
+   padding-bottom: 0.8rem;
+}
+
+.titulo-desc {
+   position: absolute;
+   top: 0;
+}
+
+.detail_titleBuy {
+   justify-content: center;
+   font-size: 1rem;
+   font-weight: bold;
+   margin-top: 0.5rem;
+   margin-bottom: 0;
+   text-transform: uppercase;
+}
+
+.descriptionBuy {
+   color: rgba(0, 0, 0, 0.6);
+   font-family: 'Roboto';
+   font-size: 12px;
+   font-weight: lighter;
+   margin-top: 5px;
+}
+
+
 
 .cervezas {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 1rem;
-  padding-right: 1rem;
+   padding: 0;
 }
 
-.productPrueba {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-  margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 134px;
+.producto__detalle {
+   flex-direction: column;
+   justify-content: flex-end;
+   padding: 0.5rem;
 }
 
-.imgproductPrueba {
-  display: flex;
-  height: inherit;
-  width: auto;
+.precio_store {
+   border: none;
+   min-width: 80px;
+   font-size: 10px;
+   font-weight: lighter;
+   height: 23px;
+   color: #fff;
+   border-radius: 100px;
+   text-decoration: none;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   background: var(--color-primario);
+   transition: 0.3s ease all;
+   margin-right: 4.5rem;
 }
 
-.detalle_titlePrueba {
-  justify-content: center;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
+.amarillo {
+   color: var(--color-primario);
 }
 
-.descriptionPrueba {
-  font-family: "Roboto";
-  font-size: 12px;
-  font-weight: lighter;
-  margin-top: 0;
+.store .gris {
+   color: var(--color-gris-claro);
 }
 
-.button_precioPrueba {
-  border-radius: 50%;
-  width: 80px;
-  height: 23px;
-  padding: 5px;
-  margin-right: 10px;
-  background-color: var(--color-primario);
-  color: #fff;
-  text-align: center;
-  font-size: 10px;
-  margin-top: 40px;
-  margin-left: 100px;
+.store .buton_redondo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 23px;
+   width: 23px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+   border-radius: 50%;
+}
+
+.store .buton_redondo_suma {
+   position: absolute;
+   width: 23px;
+   height: 23px;
+   padding: 3px;
+   display: block;
+   background-color: #fff;
+   text-align: center;
+   border-radius: 40px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
 /* iconos productos */
 
-.fa-external-link-alt {
-  display: flex;
-  position: absolute;
-  font-weight: 14px;
-  width: 23px;
-  height: 23px;
-  padding: 3px;
-  display: block;
-  color: var(--color-primario);
-  text-align: center;
-  border-radius: 40px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+.ver_mas {
+   display: flex;
+   position: absolute;
+   font-weight: 14px;
+   width: 23px;
+   height: 23px;
+   padding: 3px;
+   display: block;
+   color: var(--color-primario);
+   text-align: center;
+   border-radius: 40px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
-.fa-check {
-  display: flex;
-  position: absolute;
-  font-weight: 14px;
-  width: 23px;
-  height: 23px;
-  padding: 3px;
-  margin: 5px;
-  display: block;
-  color: var(--color-verde);
-  text-align: center;
-  border-radius: 40px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+.boton_check {
+   display: flex;
+   position: absolute;
+   font-weight: 14px;
+   width: 23px;
+   height: 23px;
+   padding: 3px;
+   margin: 5px;
+   display: block;
+   color: var(--color-verde);
+   text-align: center;
+   border-radius: 40px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
-.fa-times {
-  display: flex;
-  position: absolute;
-  font-weight: 14px;
-  width: 23px;
-  height: 23px;
-  padding: 3px;
-  margin: 5px;
-  display: block;
-  color: var(--color-rojo);
-  text-align: center;
-  border-radius: 40px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-}
-
-.fa-plus {
-  position: absolute;
-  font-weight: 14px;
-  width: 23px;
-  height: 23px;
-  padding: 3px;
-  margin-left: 160px;
-  display: block;
-  background-color: #fff;
-  color: var(--color-primario);
-  text-align: center;
-  border-radius: 40px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-}
-
-.more_productPrueba .times {
-  position: absolute;
-  font-weight: 14px;
-  width: 23px;
-  height: 23px;
-  padding: 3px;
-  margin-left: 160px;
-  display: block;
-  background-color: #fff;
-  color: var(--color-gris-claro);
-  text-align: center;
-  border-radius: 40px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-}
-
-
-
-
-.imgproduct {
-  width: 50%;
-}
-
-.imgproduct img {
-  object-fit: cover;
-  height: 100%;
-}
-
-.detalle {
-  display: flex;
-  flex-direction: column;
-  font-size: 10px;
-  margin-left: 1rem;
-}
-
-.detalle_title {
-  justify-content: center;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-}
-
-.descriptionPrueba {
-  font-family: "Roboto";
-  font-size: 12px;
-  font-weight: lighter;
-  margin-top: 0;
-}
-
-.more_product {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.button_precio {
-  border-radius: 40%;
-  width: 80px;
-  height: 23px;
-  background-color: var(--color-primario);
-  color: #fff;
-  text-align: center;
+.boton_cruz {
+   display: flex;
+   position: absolute;
+   font-weight: 14px;
+   width: 23px;
+   height: 23px;
+   padding: 3px;
+   margin: 5px;
+   display: block;
+   color: var(--color-rojo);
+   text-align: center;
+   border-radius: 40px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
 /* footer */
@@ -207,9 +214,23 @@
 /* @import url(mediasq.css);  YA ESTA IMPORTADO*/
 
 /* Cuando la pantalla sea  mas grande que*/
+
 @media screen and (min-width: 768px) {
+   .filter {
+      width: 80px;
+      height: 30px;
+   }
+   
+   .filter li {
+      font-size: 16px;
+      padding-top: 5px;
+   }
 }
-@media screen and (min-width: 1025px) {
+
+@media screen and (min-width: 1024px) {
+   .store .filtro_busqueda {
+      display: flex;
+   }
 }
 
 /* Cuando la pantalla sea mas chica que... */
