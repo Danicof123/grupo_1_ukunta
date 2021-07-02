@@ -13,6 +13,13 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+.button-rojo{
+  color: var(--color-rojo);
+}
+
+.button-verde{
+  color: var(--color-verde);
+}
 
 .button.button-cat {
   height: 3rem;
@@ -34,6 +41,18 @@
 .button:hover {
   color: #fff;
   background-color: var(--color-primario);
+  cursor: pointer;
+}
+
+.button-rojo:hover {
+  color: #fff;
+  background-color: var(--color-rojo);
+  cursor: pointer;
+}
+
+.button-verde:hover {
+  color: #fff;
+  background-color: var(--color-verde);
   cursor: pointer;
 }
 
