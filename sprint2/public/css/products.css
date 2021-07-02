@@ -1,0 +1,119 @@
+.products .container {
+   padding-left: 0;
+   padding-right: 0;
+}
+
+/* header */
+
+.products {
+   margin: 1em;
+}
+
+.products .navbarproducts {
+   padding-bottom: 16px;
+   background-color: #fff;
+   border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.products .navbarproducts img {
+   margin: 0 auto;
+   filter: invert(0);
+}
+
+/* titulo */
+
+.products .totalBuy,
+.nombre_valoracion {
+   font-family: 'Raleway';
+   font-weight: bold;
+   text-transform: uppercase;
+}
+
+.products .total_elementos {
+   font-size: 16px;
+   text-align: left;
+   padding: 0;
+}
+
+.products .ventas,
+.valoracion {
+   font-size: 8px;
+   color: var(--color-gris);
+   text-align: right;
+   margin-top: 1.3rem;
+}
+
+/* imagen */
+
+.products .imagen_producto {
+   width: 66%;
+   margin: 0 auto;
+}
+
+/* Valoracion */
+
+.products .nombre_valoracion {
+   border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.products .estrella_amarilla {
+   color: var(--color-primario);
+}
+
+/* Información productos */
+
+.products .info_titulo {
+   display: flex;
+   align-items: center;
+   font-size: 16px;
+   color: var(--color-gris-claro);
+}
+
+.info_titulo_detalle {
+   margin-left: 1rem;
+   color: var(--color-gris);
+}
+
+.info_titulo_precio {
+   margin-right: 0;
+   font-size: 24px;
+   color: var(--color-verde);
+   display: flex;
+   justify-content: flex-end;
+}
+
+.botones_info_mas_menos {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.products .buton_redondo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 23px;
+   width: 23px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+   border-radius: 50%;
+}
+
+.media_flecha_abajo {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   color: var(--color-primario);
+}
+
+.detalle_envio{
+    font-size: 12px;
+    color: var(--color-gris);
+}
+
+.nuevo_domicilio {
+    font-size: 10px;
+    text-align: right;
+    color: var(--color-azul);
+    padding-bottom:  2px;
+    border-bottom: 1px solid var(--color-gris-claro);
+}

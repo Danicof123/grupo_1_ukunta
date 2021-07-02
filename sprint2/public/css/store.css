@@ -35,19 +35,21 @@
 .store .filtro_busqueda {
    display: none;
    flex-direction: row;
-   margin-top: .5rem;
+   margin-top: 0.5rem;
    margin-bottom: 1rem;
 }
 
 @font-face {
-   font-family: "FontAwesome";
-   src: url("fontawesome-webfont.woff");
- }
+   font-family: 'FontAwesome';
+   src: url('fontawesome-webfont.woff');
+}
 
-.store .filter__input{
+.store .filter__input {
    border-color: var(--color-gris-claro);
    width: 66%;
-   font-family: "FontAwesome", "Roboto";
+   padding-left: 0.5rem;
+   font-family: 'FontAwesome', 'Roboto';
+   border: 1px solid var(--color-gris-claro);
 }
 
 .filter__form {
@@ -91,7 +93,7 @@
    justify-content: center;
    font-size: 1rem;
    font-weight: bold;
-   margin-top: 0.5rem;
+   margin-top: 1rem;
    margin-bottom: 0;
    text-transform: uppercase;
 }
@@ -103,8 +105,6 @@
    font-weight: lighter;
    margin-top: 5px;
 }
-
-
 
 .cervezas {
    padding: 0;
@@ -178,10 +178,15 @@
    border-radius: 40px;
    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
+.button--stock {
+   position: absolute;
+   z-index: 20;
+   top: 2px;
+   left: -4px;
+}
 
 .boton_check {
    display: flex;
-   position: absolute;
    font-weight: 14px;
    width: 23px;
    height: 23px;
@@ -220,7 +225,7 @@
       width: 80px;
       height: 30px;
    }
-   
+
    .filter li {
       font-size: 16px;
       padding-top: 5px;
