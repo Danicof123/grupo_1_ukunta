@@ -75,6 +75,24 @@ h4{
 } */
 
 /*------------------------------------------- Paddings -------------------------------------------*/
+.p-0{
+    padding: 0;
+}
+.p-1{
+    padding: .25rem;
+}
+.p-2{
+    padding: .5rem;
+}
+.p-3{
+    padding: .75rem;
+}
+.p-4{
+    padding: 1rem;
+}
+.p-5{
+    padding: 2rem;
+}
 .pl-0{
     padding-left: 0;
 }
@@ -132,25 +150,6 @@ h4{
     padding-top: 2rem;
 }
 
-.mbt-0{
-    padding-bottom: 0;
-}
-.mbt-1{
-    padding-bottom: .25rem;
-}
-.mbt-2{
-    padding-bottom: .5rem;
-}
-.mbt-3{
-    padding-bottom: .75rem;
-}
-.mbt-4{
-    padding-bottom: 1rem;
-}
-.mbt-5{
-    padding-bottom: 2rem;
-}
-
 .px-0{
     padding-left: 0;
     padding-right: 0;
@@ -203,6 +202,25 @@ h4{
 
 
 /*------------------------------------------- Margin -------------------------------------------*/
+.m-0{
+    margin: 0;
+}
+.m-1{
+    margin: .25rem;
+}
+.m-2{
+    margin: .5rem;
+}
+.m-3{
+    margin: .75rem;
+}
+.m-4{
+    margin: 1rem;
+}
+.m-5{
+    margin: 2rem;
+}
+
 .ml-0{
     margin-left: 0;
 }
@@ -303,7 +321,10 @@ h4{
     margin-left: 2rem;
     margin-right: 2rem;
 }
-
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
 .my-0{
     margin-top: 0;
     margin-bottom: 0;
@@ -329,3 +350,65 @@ h4{
     margin-bottom: 2rem;
 }
 
+/*------------------------- TEXTO -------------------------*/
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-justify{
+    text-align: justify;
+}
+
+
+/*------------------------- TAMAÑOS -------------------------*/
+.w-25{
+    width: 25%;
+}
+
+.w-50{
+    width: 50%;
+}
+
+.w-75{
+    width: 75%;
+}
+
+.w-100{
+    width: 100%;
+}
+.w-auto{
+    width: auto;
+}
+
+.h-25{
+    height: 25%;
+}
+
+.h-50{
+    height: 50%;
+}
+
+.h-75{
+    height: 75%;
+}
+
+.h-100{
+    height: 100%;
+}
+
+.h-auto{
+    height: auto;
+}
+
+.minvh-100{
+    min-height: 100vh;
+}

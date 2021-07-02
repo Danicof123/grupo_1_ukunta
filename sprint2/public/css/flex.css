@@ -23,15 +23,15 @@
     justify-content: flex-end;
 }
 /* // Cross Axis ---------------------------------- */
-.f-croos-center{
+.f-cross-center{
     align-items: center;
     align-content: center;
 }
-.f-croos-start{
+.f-cross-start{
     align-items: flex-start;
     align-content: flex-start;
 }
-.f-croos-end{
+.f-cross-end{
     align-items: flex-end;
     align-content: flex-end;
 }
@@ -62,4 +62,20 @@
 }
 .f-nowrap{
     flex-wrap: nowrap;
+}
+
+.f-grow-1{
+    flex-grow: 1;
+}
+
+.f-grow-2{
+    flex-grow: 2;
+}
+
+.f-grow-3{
+    flex-grow: 3;
+}
+
+.f-grow-4{
+    flex-grow: 4;
 }

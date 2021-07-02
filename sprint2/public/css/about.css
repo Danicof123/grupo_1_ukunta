@@ -1,0 +1,41 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.about .header {
+    padding-top: 40px;
+}
+
+
+.about main{
+    flex-grow: 1;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media screen and (min-width: 769px){
+    h3{
+        font-size: 24px;
+    }
+    .view-about__redes{
+        min-height: 15vh;
+    }
+    .footer_copyright{
+        height: 80px;
+        font-size: .8rem;
+    }
+}
+
+@media screen and (min-width: 1025px){
+    .view-about__redes{
+        min-height: 30vh;
+    }
+
+    .footer_copyright{
+        height: 100px;
+        font-size: 1rem;
+    }
+}
