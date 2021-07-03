@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/76d25d6fff.js" crossorigin="anonymous"></script>
+    <title>Register</title>
+</head>
+<body class="register">
+    <div class="container f-main-center">
+        <div class="border__only">
+            <div class="img sep-inf f-main-center mb-5">
+                <img src="/images/logo/ukunta-amarillo.svg" alt="">
+            </div>
+        </div>
+        <div class="mb-12 lp-6 f-main-y">
+            <form class= "form" action="">
+                <input type="text" placeholder="*Nombre" class="reg__input">
+                <input type="text" placeholder="*Apellido" class="reg__input">
+                <div class="control-fecha mb-12">
+                    <label for="" class="reg__date__age">Fecha de nacimiento +18*</label>
+                    <input type="date" class="reg__date__date">
+                </div>
+                <input type="text" placeholder="*DNI" class="reg__input__one">
+                <input type="text" placeholder="*Numero de telefono" class="reg__input">
+                <input type="text" placeholder="*Correo Electronico" class="reg__input">
+                <input type="text" placeholder="*Contraseña" class="reg__input">
+                <input type="text" placeholder="*Repetir contraseña" class="reg__input">
+                <select name="select" class="reg__input">
+                    <option value="value1" selected>*Pais</option>
+                    <option value="value2" >Argentina</option>
+                    <option value="value3" >Croacia</option>
+                    <option value="value4">Costa Rica</option>
+                </select>
+                <select name="select" class="reg__input">
+                    <option value="value1" selected>*Provincia/Estado</option>
+                    <option value="value2" >Buenos Aires</option>
+                    <option value="value3" >Cordoba</option>
+                    <option value="value4">Santa Fe</option>
+                </select>
+                <select name="select" class="reg__input">
+                    <option value="value1" selected>*Ciudad</option>
+                    <option value="value2" >CABA</option>
+                    <option value="value3" >La Matanza</option>
+                    <option value="value4">Rosario</option>
+                </select>
+                <textarea name="" id="" cols="30" rows="10"class="text__area">*Escriba una descripcion de su domicilio</textarea>
+                <div class="check__box">
+                    <input type="checkbox">
+                    <p class="check__box__p">Acepto los términos y condiciones y autorizo el uso de mis datos deacuerdo a la declaracion de privacidad</p>
+                </div>
+                <div class="send__choise mb-12 f-main-between">
+                     <div class="send__decline__not button">
+                        <a href=""><i class="fas fa-times"></i></a>
+                    </div>    
+                    <div class="send__accept__ok button">
+                        <a href=""><i class="fas fa-angle-down"></i></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
