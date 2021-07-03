@@ -1,0 +1,85 @@
+.reg__input{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    padding-left: .5rem;
+    border: 1px solid var(--color-gris-claro);
+    outline: none;
+    margin-bottom: 1rem;
+    font-family: 'Raleway';
+}
+.reg_input{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    padding-left: .5rem;
+    border: 1px solid var(--color-gris-claro);
+    outline: none;
+    font-family: 'Raleway';
+}
+.reg__input__in{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    border: 1px solid var(--color-gris-claro);
+    outline: none;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Raleway';
+    background-color: var(--color-primario);    
+}
+
+.login__form__key__eye{
+    position: relative;
+    margin-bottom: 1rem;
+}
+.eye__button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: transparent;
+    border:none;
+    color: var(--color-gris-claro);
+}
+.options__sesion{
+    display: flex;
+}
+.option__sesion__maintain__text{
+    font-size: .9rem;
+    margin: 0 0 0 5px;
+    color: var(--color-gris-claro);
+}
+.options__forgot{
+    font-size: .9rem;
+    color: var(--color-azul);
+    text-decoration: none;
+}
+.end {
+    position: absolute;
+    bottom: .5rem;
+    left: 1rem;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 2rem);
+}
+.end__button{
+    width: 2rem;
+    height: 2rem;
+}
+
+.ingresar{
+    background-color: var(--color-primario);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Raleway';
+    height: 2rem;
+    font-weight:bold;
+    margin-bottom: 1rem;
+}
+.forgot{
+    color: inherit;
+    text-decoration: inherit;
+}
