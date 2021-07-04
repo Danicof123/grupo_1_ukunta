@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,59 +9,133 @@
     <script src="https://kit.fontawesome.com/76d25d6fff.js" crossorigin="anonymous"></script>
     <title>Register</title>
 </head>
-<body class="register">
-    <div class="container f-main-center">
-        <div class="border__only">
-            <div class="img sep-inf f-main-center mb-5">
-                <img src="/images/logo/ukunta-amarillo.svg" alt="">
+
+<body class="register f-display f-main-y minvh-100">
+    <header class="sep-inf">
+        <nav class="container f-main-center py-3">
+            <!-- Logo -->
+            <div class="mb-4 tb-2 ldk-1">
+                <a href="/home"><img src="images/logo/ukunta-amarillo.svg" alt="logotipo"></a>
             </div>
-        </div>
-        <div class="mb-12 lp-6 f-main-y">
-            <form class= "form" action="">
-                <input type="text" placeholder="*Nombre" class="reg__input">
-                <input type="text" placeholder="*Apellido" class="reg__input">
-                <div class="control-fecha mb-12">
-                    <label for="" class="reg__date__age">Fecha de nacimiento +18*</label>
-                    <input type="date" class="reg__date__date">
+        </nav>
+    </header>
+
+    <div class="container f-main-center f-grow-1">
+        <div class="mb-12 lp-6 f-main-y f-cross-center">
+
+            <h3 class="f-self-start my-4">REGISTRO</h3>
+
+            <form class="w-100 mbt-4" action="#">
+
+                <!-- Nombre -->
+                <div class="reg__ctrl-input mbt-4">
+                    <input type="text" placeholder="*Nombre" name="name" class="reg__input">
                 </div>
-                <input type="text" placeholder="*DNI" class="reg__input__one">
-                <input type="text" placeholder="*Numero de telefono" class="reg__input">
-                <input type="text" placeholder="*Correo Electronico" class="reg__input">
-                <input type="text" placeholder="*Contraseña" class="reg__input">
-                <input type="text" placeholder="*Repetir contraseña" class="reg__input">
-                <select name="select" class="reg__input">
-                    <option value="value1" selected>*Pais</option>
-                    <option value="value2" >Argentina</option>
-                    <option value="value3" >Croacia</option>
-                    <option value="value4">Costa Rica</option>
-                </select>
-                <select name="select" class="reg__input">
-                    <option value="value1" selected>*Provincia/Estado</option>
-                    <option value="value2" >Buenos Aires</option>
-                    <option value="value3" >Cordoba</option>
-                    <option value="value4">Santa Fe</option>
-                </select>
-                <select name="select" class="reg__input">
-                    <option value="value1" selected>*Ciudad</option>
-                    <option value="value2" >CABA</option>
-                    <option value="value3" >La Matanza</option>
-                    <option value="value4">Rosario</option>
-                </select>
-                <textarea name="" id="" cols="30" rows="10"class="text__area">*Escriba una descripcion de su domicilio</textarea>
-                <div class="check__box">
-                    <input type="checkbox">
-                    <p class="check__box__p">Acepto los términos y condiciones y autorizo el uso de mis datos deacuerdo a la declaracion de privacidad</p>
+
+                <!-- Apellido -->
+                <div class="reg__ctrl-input my-4">
+                    <input type="text" placeholder="*Apellido" class="reg__input">
                 </div>
-                <div class="send__choise mb-12 f-main-between">
-                     <div class="send__decline__not button">
-                        <a href=""><i class="fas fa-times"></i></a>
-                    </div>    
-                    <div class="send__accept__ok button">
-                        <a href=""><i class="fas fa-angle-down"></i></a>
+
+                <!-- Fecha nacimiento -->
+                <div class="row my-0 f-cross-center my-4">
+                    <div class="mb-6">
+                        <label for="inp-surname" class="reg__date__age">Fecha de nacimiento +18*</label>
+                    </div>
+                    <div class="mb-6">
+                        <div class="reg__ctrl-input">
+                            <input type="date" class="reg__input" name="date" id="inp-date">
+                        </div>
                     </div>
                 </div>
+
+                <!-- DNI -->
+                <div class="reg__ctrl-input my-4">
+                    <input type="number" placeholder="*DNI" class="reg__input">
+                </div>
+
+                <!-- Teléfono -->
+                <div class="reg__ctrl-input my-4">
+                    <input type="tel" placeholder="*Numero de telefono" class="reg__input">
+                </div>
+
+                <!-- Correo electronico -->
+                <div class="reg__ctrl-input my-4">
+                    <input type="email" placeholder="*Correo electronico" class="reg__input" name="email">
+                </div>
+
+                <div class="reg__ctrl-input my-4">
+                    <input type="email" placeholder="*Repetir correo electronico" class="reg__input"
+                        name="email-repeat">
+                </div>
+
+                <!-- Contraseña -->
+                <div class="reg__ctrl-input my-4">
+                    <input type="password" placeholder="*Contraseña" class="reg__input" name="pass">
+                </div>
+                <div class="reg__ctrl-input my-4">
+                    <input type="password" placeholder="*Repetir contraseña" class="reg__input" name="pass-repeat">
+                </div>
+
+                <!-- Paises -->
+                <div class="reg__ctrl-input my-4">
+                    <select name="country" class="reg__input">
+                        <option value="value1" selected>*Pais</option>
+                        <option value="value2">Argentina</option>
+                        <option value="value3">Croacia</option>
+                        <option value="value4">Costa Rica</option>
+                    </select>
+                </div>
+
+
+                <!-- Provincias -->
+                <div class="reg__ctrl-input my-4">
+                    <select name="province" class="reg__input">
+                        <option value="value1" selected>*Provincia/Estado</option>
+                        <option value="value2">Buenos Aires</option>
+                        <option value="value3">Cordoba</option>
+                        <option value="value4">Santa Fe</option>
+                    </select>
+                </div>
+                
+                <!-- Ciudades -->
+                <div class="reg__ctrl-input my-4">
+                    <select name="city" class="reg__input">
+                        <option value="value1" selected>*Ciudad</option>
+                        <option value="value2">CABA</option>
+                        <option value="value3">La Matanza</option>
+                        <option value="value4">Rosario</option>
+                    </select>
+                </div>
+
+                <!-- Descripcion domicilio -->
+                <div class="reg__ctrl-textarea my-4">
+                    <textarea name="comment" class="text__area" placeholder="*Escriba una descripcion de su domicilio"></textarea>
+                </div>
+
+                <!-- Terminos y condiciones de uso -->
+                <div class="check__box__p active my-4">
+
+                    <input type="checkbox" id="inp_terms" class="d-none" name="terms">
+
+                    <label for="inp_terms">Acepto los <a href="#">términos y condiciones</a> y autorizo el uso de mis datos deacuerdo
+                        a la <a href="#">Declaracion de privacidad</a></label>
+                </div>
+
             </form>
+
+            <nav class="f-display f-main-between reg__navbottom f-grow-1 f-cross-end mbt-5">
+                <div class="button button-rojo reg__navbutton">
+                    <a href="/home"><i class="fas fa-times"></i></a>
+                </div>
+                <div class="button button-verde reg__navbutton">
+                    <a href="/home"><i class="fas fa-check"></i></a>
+                </div>
+            </nav>
+
         </div>
+
     </div>
 </body>
+
 </html>

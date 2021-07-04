@@ -57,7 +57,6 @@ h4{
     font: normal 18px 'Raleway', 'sans-serif';
 }
 
-
 .sep-inf::after{
     content: "";
     display: block;
