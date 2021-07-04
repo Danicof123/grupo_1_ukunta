@@ -84,6 +84,12 @@
   color: var(--color-secundario);
 }
 
+.button-ghost:hover{
+  color: #fff;
+  background-color: var(--color-secundario);
+
+}
+
 /* button label */
 
 .ctrl-label-button {
