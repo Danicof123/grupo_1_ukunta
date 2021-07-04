@@ -39,11 +39,6 @@
    margin-bottom: 1rem;
 }
 
-@font-face {
-   font-family: 'FontAwesome';
-   src: url('fontawesome-webfont.woff');
-}
-
 .store .filter__input {
    border-color: var(--color-gris-claro);
    width: 66%;

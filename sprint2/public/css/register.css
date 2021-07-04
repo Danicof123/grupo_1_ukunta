@@ -1,5 +1,6 @@
 .reg__ctrl-input,
 .reg__ctrl-textarea{
+    position: relative;
     width: 100%;
 }
 
