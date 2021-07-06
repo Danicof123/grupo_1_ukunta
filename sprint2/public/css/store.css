@@ -79,21 +79,15 @@
    padding-bottom: 0.8rem;
 }
 
-.titulo-desc {
-   position: absolute;
-   top: 0;
-}
-
-.detail_titleBuy {
-   justify-content: center;
+.producto__title {
    font-size: 1rem;
    font-weight: bold;
-   margin-top: 1rem;
-   margin-bottom: 0;
    text-transform: uppercase;
+   margin-top: .8rem;
+   margin-bottom: 0;
 }
 
-.descriptionBuy {
+.producto__description {
    color: rgba(0, 0, 0, 0.6);
    font-family: 'Roboto';
    font-size: 12px;
@@ -110,22 +104,36 @@
    justify-content: flex-end;
    padding: 0.5rem;
 }
+.producto__vermas{
+   height: 1.5rem;
+   width: 1.5rem;
+   font-size: .8rem;
+}
+.controlador-buton-precio{
+   position: relative;
+   width: 100px;
+   height: 1.5rem;
+}
+
+.buton_redondo_suma {
+   position: absolute;
+   top: 0;
+   right: 0;
+   height: 100%;
+   width: 1.5rem;
+}
 
 .precio_store {
-   border: none;
-   min-width: 80px;
-   font-size: 10px;
-   font-weight: lighter;
-   height: 23px;
-   color: #fff;
-   border-radius: 100px;
-   text-decoration: none;
-   display: inline-flex;
-   justify-content: center;
+   display: flex;
    align-items: center;
+   justify-content: flex-end;
+   padding-right: 2.5rem;
+   height: 100%;
+   font-size: 12px;
+   color: #fff;
+   border-radius: 1rem;
    background: var(--color-primario);
-   transition: 0.3s ease all;
-   margin-right: 4.5rem;
+
 }
 
 .amarillo {
@@ -146,33 +154,16 @@
    border-radius: 50%;
 }
 
-.store .buton_redondo_suma {
-   position: absolute;
-   width: 23px;
-   height: 23px;
-   padding: 3px;
-   display: block;
-   background-color: #fff;
-   text-align: center;
-   border-radius: 40px;
-   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-}
-
 /* iconos productos */
-
-.ver_mas {
-   display: flex;
+.producto__buttons{
    position: absolute;
-   font-weight: 14px;
-   width: 23px;
-   height: 23px;
-   padding: 3px;
-   display: block;
-   color: var(--color-primario);
-   text-align: center;
-   border-radius: 40px;
-   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+   bottom: .5rem;
+   right: .5rem;
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
 }
+
 .button--stock {
    position: absolute;
    z-index: 20;
@@ -231,8 +222,24 @@
    .store .filtro_busqueda {
       display: flex;
    }
+   .controlador-buton-precio,
+   .precio_store{
+      height: 2rem;
+   }
+   .producto__vermas,
+   .buton_redondo_suma{
+      height: 2rem;
+      width: 2rem;
+   }
+   .precio_store{
+      border-radius: 1rem;
+   }
+
 }
 
-/* Cuando la pantalla sea mas chica que... */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1200px) {
+   .controlador-buton-precio{
+      width: 125px;
+   }
 }
+

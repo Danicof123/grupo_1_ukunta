@@ -12,7 +12,7 @@ app.get('/', (req,res) => res.redirect('/home'));
 app.get('/home', (req,res) => res.sendFile(path.join(__dirname, 'views', 'home.html')));
 
 app.get('/404', (req,res) => res.sendFile(path.join(__dirname, 'views', '404.html')));
-app.get('/grid', (req,res) => res.sendFile(path.join(__dirname, 'views', 'test', 'grid-test.html'))); //Eliminar esta linea - solo para testeo
+// app.get('/grid', (req,res) => res.sendFile(path.join(__dirname, 'views', 'test', 'grid-test.html'))); //Eliminar esta linea - solo para testeo
 app.get('/nosotros', (req,res) => res.sendFile(path.join(__dirname, 'views', 'about.html')));
 app.get('/cart', (req,res) => res.sendFile(path.join(__dirname, 'views', 'cart.html')));
 app.get('/login', (req,res) => res.sendFile(path.join(__dirname, 'views', 'login.html')));
