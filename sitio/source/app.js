@@ -9,7 +9,7 @@
         //configuración de express
         port = process.env.PORT || 3000,
         app = express(),
-        {error404} = require('./controllers/errorControllers'),
+        {error404} = require('./controllers/errorController'),
         //Enrutador
         router = require('./routes/index');
   
