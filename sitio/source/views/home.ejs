@@ -1,11 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
 <%- include('partials/head.ejs') %>
-  <body class="bg-dark of-hidden">
-    <div class="f-display f-main-y f-center mh-100vh">
-      <h1 class="c-white"><%= title %></h1>
-      <div class="w-25">
-        <img src="/images/favicon.png" alt="cof">
+<body class="home">
+  <header class="header">
+      <nav class="navbar">
+
+          <!-- Logo -->
+          <div class="navbar__logo">
+              <a href="/"><img src="images/logo/ukunta.svg" alt="logotipo"></a>
+          </div>
+
+          <!-- Search -->
+          <div class="navbar__search only-desktop">
+              <input type="search" name="search" class="input-search" placeholder="Buscar productos">
+              <button><i class="fas fa-arrow-right"></i></button>
+          </div>
+
+          <!-- Navegacion -->
+          <div class="navbar__menu">
+              <ul class="navbar_ul only-desktop">
+                  <li class="navbar__item active"><a href="#">INICIO</a></li>
+                  <li class="navbar__item"><a href="/nosotros">NOSOTROS</a></li>
+                  <li class="navbar__item"><a href="/store">TIENDA</a></li>
+                  <li class="navbar__item"><a href="#contacto">CONTACTO</a></li>
+                  <!-- boton del menu desplegable para cerrar -->
+                  <button class="navbar__back no-desktop">
+                      <i class="fas fa-arrow-down"></i>
+                  </button>
+              </ul>
+
+              <div class="navbar__shop only-desktop">
+                  <a href="/cart" class="navbar__item">
+                      <i class="fas fa-shopping-cart only-desktop"></i>
+                  </a>
+                  <div class="navbar__badge">3</div>
+              </div>
+
+              <a href="/login" class="navbar__item"><i class="fas fa-user"></i></a>
+          </div>
+      </nav>
+
+      <div class="header__carrousel">
+          <img src="/images/headerMain-1.jpg" alt="header-1">
       </div>
-      <h2 class="c-white">Generador desarrollado por <a href="https://github.com/Danicof123/cof-generator" target="_blank">Danicof</a></h2>
-    </div>
-  </body>
+  </header>
+  <!-- Barra de navegación inferior -->
+  <nav class="navbar-bottom no-desktop">
+      <ul class="navbar-bottom__ul">
+          <li class="navbar__item"><a href="#"><i class="fas fa-home"></i></a></li>
+          <li class="navbar__item"><a href="#"><i class="fas fa-search"></i></a></li>
+          <li class="navbar__item"><a href="/store"><i class="fas fa-store"></i></a></li>
+
+          <li class="navbar__shop">
+              <a href="/cart" class="navbar__item">
+                  <i class="fas fa-shopping-cart"></i>
+              </a>
+              <div class="navbar__badge">3</div>
+          </li>
+
+          <li class="navbar__item"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+  </nav>
+<main>
+  <aside class="categories sep-inf ">
+      <div class="categories__items">
+          <div class="categories__item">
+              <a href="/store" class="button button-cat">
+                  <img src="/images/icon-hidro.svg" alt="hidromiel">
+              </a>
+              <span class="categories__legend">HIDROMIEL</span>
+          </div>
+
+          <div class="categories__item">
+              <a href="/store" class="button button-cat">
+                  <img src="/images/icon-beer.svg" alt="cerveza">
+              </a>
+              <span class="categories__legend">CERVEZA</span>
+          </div>
+
+          <div class="categories__item">
+              <a href="/store" class="button button-cat">
+                  <img src="/images/icon-merch.svg" alt="merchandasing">
+              </a>
+              <span class="categories__legend">MERCHANDASING</span>
+          </div>
+      </div>
+
+  </aside>
+
+  <section class="combos sep-inf" id="combos">
+      <article>
+          <h3 class="mx-4 my-2 seccion__title">COMBOS</h3>
+          <div class="combos__carrousel">
+              <img src="/images/carrouselCombo-1.png" alt="black-off">
+          </div>
+          <a href="/store" class="button-ghost">TIENDA</a>
+      </article>
+  </section>
+
+  <section class="contacto" id="contacto">
+      <article class="container f-wrap">
+          <h3 class="mb-12 seccion__title">CONTÁCTENOS</h3>
+
+          <div class="mb-12 tb-6 contacto__form">
+              <form name="f-contact" class="f-contact">
+                  <input type="text" name="f-name" placeholder="Escriba su nombre" class="contacto__input">
+                  <input type="email" name="f-mail" placeholder="Escriba su correo electrónico"
+                      class="contacto__input">
+                  <textarea name="f-comment" cols="30" rows="10" placeholder="Escriba un comentario"
+                      class="contacto__textarea"></textarea>
+                  <input type="submit" value="ENVIAR" class="contacto__button">
+              </form>
+          </div>
+          <div class="contacto__map no-mb tb-6">
+              <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17198.63439706699!2d10.755380614092434!3d59.91427007484662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e61f267f039%3A0x7e92605fd3231e9a!2sOslo%2C%20Noruega!5e0!3m2!1ses-419!2sar!4v1624465883454!5m2!1ses-419!2sar"
+                  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+      </article>
+
+      <div class="contacto__map mbt-4 only-mb">
+          <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17198.63439706699!2d10.755380614092434!3d59.91427007484662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e61f267f039%3A0x7e92605fd3231e9a!2sOslo%2C%20Noruega!5e0!3m2!1ses-419!2sar!4v1624465883454!5m2!1ses-419!2sar"
+              style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+  </section>
+</main>
+<%- include('partials/footer.ejs') %>
+</body>
 </html>
