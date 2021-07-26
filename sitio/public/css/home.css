@@ -1,0 +1,78 @@
+@import url('components/header.css');
+@import url('components/navbar.css');
+@import url('components/categories.css');
+@import url('components/buttons.css');
+@import url('components/footer.css');
+
+
+.f-contact{
+    width: 100%;
+}
+
+.contacto__input{
+    width: 100%;
+    margin-bottom: 1rem;
+    height: 2rem;
+    padding-left: .5rem;
+}
+.contacto__textarea{
+    width: 100%;
+    height: 8rem;
+    padding-left: .5rem;
+    padding-top: .5rem;
+    font-family: 'Roboto';
+    font-size: 14;
+    resize: none;
+}
+.contacto__button{
+    display: block;
+    height: 2rem;
+    width: 100%;
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--color-primario);
+    cursor: pointer;
+    
+}
+
+.contacto__button:hover{
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
+.contacto__map{
+    height: 74px;
+}
+
+.contacto__map>iframe{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Cuando la pantalla sea  mas grande que*/
+@media screen and (min-width: 768px) {
+    .contacto__map{
+        height: 276px;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .contacto__map{
+        height: 400px;
+    }
+    .contacto__input,
+    .contacto__button{
+        height: 3rem;
+    }
+    .contacto__textarea{
+        height: 12rem;
+    }
+    .contacto__map{
+        height: 388px;
+    }
+}

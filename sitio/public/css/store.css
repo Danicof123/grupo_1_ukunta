@@ -1,0 +1,245 @@
+@import url('components/header.css');
+@import url('components/navbar.css');
+@import url('components/categories.css');
+@import url('components/buttons.css');
+@import url('components/footer.css');
+
+.store .header {
+   padding-top: 40px;
+}
+
+/* main */
+
+/* Filtro */
+
+.filter {
+   display: inline-block;
+   margin-left: 1rem;
+   margin-bottom: 1rem;
+   width: 29px;
+   height: 16px;
+   background-color: var(--color-primario);
+   color: #fff;
+}
+
+.filter li {
+   font-size: 8px;
+   font-weight: lighter;
+   list-style: none;
+   text-align: center;
+   padding-top: 3px;
+}
+
+/* Filtro y Busqueda */
+
+.store .filtro_busqueda {
+   display: none;
+   flex-direction: row;
+   margin-top: 0.5rem;
+   margin-bottom: 1rem;
+}
+
+.store .filter__input {
+   border-color: var(--color-gris-claro);
+   width: 66%;
+   padding-left: 0.5rem;
+   font-family: 'FontAwesome', 'Roboto';
+   border: 1px solid var(--color-gris-claro);
+}
+
+.filter__form {
+   width: 300px;
+   height: 40px;
+}
+
+.filter__orden {
+   justify-content: flex-end;
+}
+
+/* Productos */
+
+.productos_tienda {
+   margin-top: 1rem;
+}
+
+.producto {
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+   margin-bottom: 1rem;
+   padding-left: 0;
+}
+
+.producto__imagen {
+   padding-left: 0;
+}
+
+.producto__detalle {
+   flex-direction: column;
+   justify-content: flex-end;
+   padding: 0.5rem;
+   padding-bottom: 0.8rem;
+}
+
+.producto__title {
+   font-size: 1rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   margin-top: .8rem;
+   margin-bottom: 0;
+}
+
+.producto__description {
+   color: rgba(0, 0, 0, 0.6);
+   font-family: 'Roboto';
+   font-size: 12px;
+   font-weight: lighter;
+   margin-top: 5px;
+}
+
+.cervezas {
+   padding: 0;
+}
+
+.producto__detalle {
+   flex-direction: column;
+   justify-content: flex-end;
+   padding: 0.5rem;
+}
+.producto__vermas{
+   height: 1.5rem;
+   width: 1.5rem;
+   font-size: .8rem;
+}
+.controlador-buton-precio{
+   position: relative;
+   width: 100px;
+   height: 1.5rem;
+}
+
+.buton_redondo_suma {
+   position: absolute;
+   top: 0;
+   right: 0;
+   height: 100%;
+   width: 1.5rem;
+}
+
+.precio_store {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   padding-right: 2.5rem;
+   height: 100%;
+   font-size: 12px;
+   color: #fff;
+   border-radius: 1rem;
+   background: var(--color-primario);
+
+}
+
+.amarillo {
+   color: var(--color-primario);
+}
+
+.store .gris {
+   color: var(--color-gris-claro);
+}
+
+.store .buton_redondo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 23px;
+   width: 23px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+   border-radius: 50%;
+}
+
+/* iconos productos */
+.producto__buttons{
+   position: absolute;
+   bottom: .5rem;
+   right: .5rem;
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.button--stock {
+   position: absolute;
+   z-index: 20;
+   top: 2px;
+   left: -4px;
+}
+
+.boton_check {
+   display: flex;
+   font-weight: 14px;
+   width: 23px;
+   height: 23px;
+   padding: 3px;
+   margin: 5px;
+   display: block;
+   color: var(--color-verde);
+   text-align: center;
+   border-radius: 40px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+.boton_cruz {
+   display: flex;
+   position: absolute;
+   font-weight: 14px;
+   width: 23px;
+   height: 23px;
+   padding: 3px;
+   margin: 5px;
+   display: block;
+   color: var(--color-rojo);
+   text-align: center;
+   border-radius: 40px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* footer */
+
+/* @import url(mediasq.css);  YA ESTA IMPORTADO*/
+
+/* Cuando la pantalla sea  mas grande que*/
+
+@media screen and (min-width: 768px) {
+   .filter {
+      width: 80px;
+      height: 30px;
+   }
+
+   .filter li {
+      font-size: 16px;
+      padding-top: 5px;
+   }
+}
+
+@media screen and (min-width: 1024px) {
+   .store .filtro_busqueda {
+      display: flex;
+   }
+   .controlador-buton-precio,
+   .precio_store{
+      height: 2rem;
+   }
+   .producto__vermas,
+   .buton_redondo_suma{
+      height: 2rem;
+      width: 2rem;
+   }
+   .precio_store{
+      border-radius: 1rem;
+   }
+
+}
+
+@media screen and (min-width: 1200px) {
+   .controlador-buton-precio{
+      width: 125px;
+   }
+}
+

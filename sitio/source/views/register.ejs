@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('partials/head')  %> 
+
+<body class="register f-display f-main-y minvh-100">
+    
+    <%- include('partials/header')  %>
+
+    <div class="container f-main-center f-grow-1">
+        <div class="mb-12 lp-6 f-main-y f-cross-center">
+
+            <h3 class="f-self-start my-4">REGISTRO</h3>
+
+            <form class="w-100 mbt-4" action="#">
+
+                <!-- Nombre -->
+                <div class="reg__ctrl-input mbt-4">
+                    <input type="text" placeholder="*Nombre" name="name" class="reg__input">
+                </div>
+
+                <!-- Apellido -->
+                <div class="reg__ctrl-input my-4">
+                    <input type="text" placeholder="*Apellido" class="reg__input" name="lastname">
+                </div>
+
+                <!-- Fecha nacimiento -->
+                <div class="row my-0 f-cross-center my-4">
+                    <div class="mb-6">
+                        <label for="inp-surname" class="reg__date__age">Fecha de nacimiento +18*</label>
+                    </div>
+                    <div class="mb-6">
+                        <div class="reg__ctrl-input">
+                            <input type="date" class="reg__input" name="date" id="inp-date">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DNI -->
+                <div class="reg__ctrl-input my-4">
+                    <input type="number" placeholder="*DNI" class="reg__input" name="dni">
+                </div>
+
+                <!-- Teléfono -->
+                <div class="reg__ctrl-input my-4">
+                    <input type="tel" placeholder="*Numero de telefono" class="reg__input" name="tel">
+                </div>
+
+                <!-- Correo electronico -->
+                <div class="reg__ctrl-input my-4">
+                    <input type="email" placeholder="*Correo electronico" class="reg__input" name="email">
+                </div>
+
+                <div class="reg__ctrl-input my-4">
+                    <input type="email" placeholder="*Repetir correo electronico" class="reg__input"
+                        name="email-repeat">
+                </div>
+
+                <!-- Contraseña -->
+                <div class="reg__ctrl-input my-4">
+                    <input type="password" placeholder="*Contraseña" class="reg__input" name="pass">
+                </div>
+                <div class="reg__ctrl-input my-4">
+                    <input type="password" placeholder="*Repetir contraseña" class="reg__input" name="pass-repeat">
+                </div>
+
+                <!-- Paises -->
+                <div class="reg__ctrl-input my-4">
+                    <select name="country" class="reg__input">
+                        <option value="value1" selected>*Pais</option>
+                        <option value="value2">Argentina</option>
+                        <option value="value3">Croacia</option>
+                        <option value="value4">Costa Rica</option>
+                    </select>
+                </div>
+
+
+                <!-- Provincias -->
+                <div class="reg__ctrl-input my-4">
+                    <select name="province" class="reg__input">
+                        <option value="value1" selected>*Provincia/Estado</option>
+                        <option value="value2">Buenos Aires</option>
+                        <option value="value3">Cordoba</option>
+                        <option value="value4">Santa Fe</option>
+                    </select>
+                </div>
+                
+                <!-- Ciudades -->
+                <div class="reg__ctrl-input my-4">
+                    <select name="city" class="reg__input">
+                        <option value="value1" selected>*Ciudad</option>
+                        <option value="value2">CABA</option>
+                        <option value="value3">La Matanza</option>
+                        <option value="value4">Rosario</option>
+                    </select>
+                </div>
+
+                <!-- Descripcion domicilio -->
+                <div class="reg__ctrl-textarea my-4">
+                    <textarea name="comment" class="text__area" placeholder="*Escriba una descripcion de su domicilio"></textarea>
+                </div>
+
+                <!-- Terminos y condiciones de uso -->
+                <div class="check__box__p active my-4">
+
+                    <input type="checkbox" id="inp_terms" class="d-none" name="terms">
+
+                    <label for="inp_terms">Acepto los <a href="#">términos y condiciones</a> y autorizo el uso de mis datos deacuerdo
+                        a la <a href="#">Declaracion de privacidad</a></label>
+                </div>
+
+            </form>
+
+            <nav class="f-display f-main-between reg__navbottom f-grow-1 f-cross-end mbt-5">
+                <div class="button button-rojo reg__navbutton">
+                    <a href="/home"><i class="fas fa-times"></i></a>
+                </div>
+                <div class="button button-verde reg__navbutton">
+                    <a href="/home"><i class="fas fa-check"></i></a>
+                </div>
+            </nav>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

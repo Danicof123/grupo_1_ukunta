@@ -1,0 +1,163 @@
+/* titulo */
+
+.products .totalBuy,
+.nombre_valoracion {
+   font-family: 'Raleway';
+   font-weight: bold;
+   text-transform: uppercase;
+}
+
+.ventas--numero{
+   font-size: 12px;
+   color: var(--color-gris);
+   text-align: right;
+}
+
+.vproduct__val {
+   font-size: 12px;
+   color: var(--color-gris);
+}
+
+.vproduct__val--iconStar{
+   color: var(--color-primario);
+
+}
+
+
+/* Información productos */
+.vproduct .info__titulo {
+   font-size: 16px;
+   color: var(--color-gris-claro);
+}
+
+.info__valor-titulo {
+   margin-left: .5rem;
+   color: var(--color-gris);
+}
+
+.info__precio-titulo {
+   font-size: 24px;
+   color: var(--color-verde);
+}
+
+.info__button{
+   width: 1.5rem;
+   height: 1.5rem;
+}
+
+.product__label-button{
+   font-size: 12px;
+   border-radius: 12px;
+}
+
+.producto-button-plus,
+.producto-button{
+   position: absolute;
+   bottom: 0px;
+   width: 1.5rem;
+   height: 1.5rem;
+   font-size: .9rem;
+}
+
+.product__ctrl-label-button{
+   position: absolute;
+   bottom: 0px;
+   right: -12px;
+   display: flex;
+   align-items: center;
+   width: 80px;
+   height: 1.5rem;
+}
+
+.producto-button-plus{
+   top: 0;
+   right: 0;
+}
+
+.media_flecha_abajo {
+   color: var(--color-primario);
+}
+
+.info__item-medio{
+   width: 2.5rem;
+}
+
+.vproduct__descripcion,
+.detalle_envio{
+    font-size: 12px;
+    color: var(--color-gris);
+}
+
+.info__change-dom{
+   font-size: 10px;
+   color: var(--color-azul);
+   text-decoration: none;
+}
+
+.sep-inf-100::after{
+   content: '';
+   width: 100%;
+   padding-bottom: .5rem;
+   border-bottom: 1px solid #000;
+}
+
+.vproduct .boton_check{
+   position: absolute;
+   top: 0px;
+   left: 6px;
+}
+
+.vproduct__navbottom{
+   position: fixed;
+   z-index: 100;
+   bottom: 0px;
+}
+
+.vproduct__relacionados{
+   margin-bottom: 4rem;
+}
+
+
+
+/* diseño tablet + */
+.item__preview-img{
+   width: 23%;
+   border: 1px solid var(--color-gris-claro);
+
+}
+
+.item__preview-img.active,
+.item__preview-img:hover{
+   border: 2px solid var(--color-primario);
+}
+
+.separador{
+   width: 100%;
+   height: 1px;
+   background-color: #000;
+}
+
+.bereng-1{
+   color: inherit;
+   text-decoration: none;
+}
+@media screen and (min-width: 1024px) {
+   .vproduct__carrousel{
+      flex-direction: row;
+   }
+
+   .vproduct__carrousel .image-preview{
+      order: -1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+      margin-top: 0;
+      margin-right: 1rem;
+   }
+   .item__preview-img{
+      width: 100px;
+      height: 100px;
+      margin-bottom: 1rem;
+   }
+}

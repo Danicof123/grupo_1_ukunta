@@ -12,7 +12,8 @@
         {error404} = require('./controllers/errorController'),
         //Enrutador
         router = require('./routes/index');
-  
+        usersRouter = require('./routes/users')
+
   app
       //Configuracion app
       .set('views', viewDir)
@@ -24,6 +25,7 @@
       .use(express.urlencoded({extended: false}))
       .use(staticDir)
       //Conectando rutas
+      .use('/users', usersRouter)
       .use(router)
       .use(error404);
   
