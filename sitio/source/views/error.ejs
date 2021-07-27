@@ -1,10 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
 <%- include('partials/head.ejs') %>
-<body class="bg-dark of-hidden">
-  <div class="f-display f-main-y f-center mh-100vh">
-    <h1 class="c-white"><%= title %></h1>
-    <h2 class="c-white"><%= description %> </h2>
-    <pre>
-      <code class="c-green"><%= error.stack %> </code>
-    </pre>
-  </div>
+<body class="view-error">
+  <header class="header mbt-5">
+    <%- include('partials/navbar-top.ejs') %>
+
+      <div class="header__imagen-error">
+          
+      </div>
+  </header>
+  <%- include('partials/navbar-bottom.ejs') %>
+
+  
+
+
+  <%- include('partials/footer.ejs') %>
 </body>
+</html>
