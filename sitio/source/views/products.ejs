@@ -187,7 +187,7 @@
    
                      <div class="producto__buttons">
                         <div class="f-display">
-                           <a href="/products">
+                           <a href="/store/products/<%= productos_db[i].id %> ">
                               <div class="button producto__vermas mr-1">
                                  <i class="fas fa-external-link-alt"></i>
                               </div>
@@ -218,11 +218,11 @@
    <nav class="vproduct__navbottom w-100 p-4">
       <div class="f-display f-main-between w-100">
          <div class="button icono_flecha">
-            <i class="fas fa-shopping-cart"></i>
+            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
          </div>
 
          <div class="button icono_card">
-            <i class="fas fa-undo-alt"></i>
+            <a href="/store"><i class="fas fa-undo-alt"></i></a>
          </div>
       </div>
    </nav>

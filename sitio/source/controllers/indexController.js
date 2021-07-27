@@ -4,6 +4,10 @@ const home = (req, res) => {
 })
 }
 
+const index = (req, res) => {
+  res.redirect('home')
+}
+
 const about = (req, res) => {
   res.render('about', {
     title : 'Sobre Nosotros',
@@ -19,5 +23,6 @@ const welcome = (req,res) => {
 module.exports = {
   home,
   about,
-  welcome
+  welcome,
+  index,
 }
