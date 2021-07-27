@@ -10,8 +10,14 @@ const about = (req, res) => {
 })
 }
 
+const welcome = (req,res) => {
+  res.render('welcome', {
+      title : 'Bienvenido a Ukunta',
+  })
+}
 
 module.exports = {
   home,
   about,
+  welcome
 }

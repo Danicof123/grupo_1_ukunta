@@ -8,10 +8,6 @@ module.exports = {
         res.render('register', {
             title : 'Registrese',
         })
-    },
-    welcome : (req,res) => {
-        res.render('welcome', {
-            title : 'Bienvenido a Ukunta',
-        })
     }
+    
 }
