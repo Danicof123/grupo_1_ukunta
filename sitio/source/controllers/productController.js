@@ -17,4 +17,16 @@ module.exports = {
          productos_db,
       });
    },
+   addProduct : (req, res) => {
+      res.render('addProduct', {
+         title: 'Agregar producto',
+         productos_db,
+      });
+   },
+   editProducto: (req, res) => {
+      res.render('editProduct', {
+         title: 'Editar producto',
+         productos_db,
+      });
+   },
 };
