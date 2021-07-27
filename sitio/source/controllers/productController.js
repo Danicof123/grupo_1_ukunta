@@ -1,8 +1,8 @@
 const productos_db = require('../data/products_db');
 
 module.exports = {
-   store : (req, res) => {
-      return res.render('store', {
+   store: (req, res) => {
+      res.render('store', {
          title: 'Tienda Ukunta',
          productos_db,
       });
@@ -11,10 +11,10 @@ module.exports = {
    detail: (req, res) => {
       let producto = productos_db.find((producto) => producto.id === +req.params.id);
 
-      return res.render('products', {
+      res.render('products', {
          title: 'Detalle Producto',
          producto,
          productos_db,
       });
    },
-}
+};

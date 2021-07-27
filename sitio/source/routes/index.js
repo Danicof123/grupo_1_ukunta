@@ -1,10 +1,11 @@
 const express = require('express'),
       router = express.Router(),
       // Controllers
-      {home} = require('../controllers/indexController');
+      {home,about} = require('../controllers/indexController');
 
 router
       .get('/', home)
+      .get('/nosotros', about)
 
 
 module.exports = router;

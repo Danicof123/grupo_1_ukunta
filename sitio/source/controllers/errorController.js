@@ -2,7 +2,7 @@ const error404 = (req, res) => {
   let error = new Error(),
       locals = {
         title: 'error 404',
-        description: 'Page not found',
+        description: 'Página no encontrada',
         error,
       }
   error.status = 404;
