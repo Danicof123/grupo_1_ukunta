@@ -1,0 +1,81 @@
+.f-main-y{
+    flex-direction: column;
+}
+.f-main-x{
+    flex-direction: row;
+}
+.f-main-between{
+    justify-content: space-between;
+}
+.f-main-around{
+    justify-content: space-around;
+}
+.f-main-evenly{
+    justify-content: space-evenly;
+}
+.f-main-center{
+    justify-content: center;
+}
+.f-main-start{
+    justify-content: flex-start;
+}
+.f-main-end{
+    justify-content: flex-end;
+}
+/* // Cross Axis ---------------------------------- */
+.f-cross-center{
+    align-items: center;
+    align-content: center;
+}
+.f-cross-start{
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.f-cross-end{
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
+/* // items */
+.f-self-start{
+    align-self: flex-start;
+}
+.f-self-end{
+    align-self: flex-end;
+}
+.f-self-center{
+    align-self: center;
+}
+
+/* // Otros ---------------------------- */
+.f-center{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.f-display{
+    display: flex;
+}
+.f-wrap{
+    flex-wrap: wrap;
+}
+.f-nowrap{
+    flex-wrap: nowrap;
+}
+
+.f-grow-1{
+    flex-grow: 1;
+}
+
+.f-grow-2{
+    flex-grow: 2;
+}
+
+.f-grow-3{
+    flex-grow: 3;
+}
+
+.f-grow-4{
+    flex-grow: 4;
+}

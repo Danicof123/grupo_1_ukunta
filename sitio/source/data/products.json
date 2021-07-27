@@ -1,0 +1,178 @@
+[
+    {
+        "id" : 1,
+        "name" : "Ale Porter Negra",
+        "category" : "cerveza",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "ale-porter-negra-305x368.jpg"
+    },
+    {
+        "id" : 2,
+        "name" : "Ale Stout Negra",
+        "category" : "cerveza",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "Ale-stout-Negra-305x368.jpg"
+    },
+    {
+        "id" : 3,
+        "name" : "IPA Negra",
+        "category" : "cerveza",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "ipa-Negra-305x368.jpg"
+    },
+    {
+        "id" : 4,
+        "name" : "IPA Roja",
+        "category" : "cerveza",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "ipa-Roja-305x368.jpg"
+    },
+    {
+        "id" : 5,
+        "name" : "IPA Rubia",
+        "category" : "cerveza",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "ipa-Rubia-305x368.jpg"
+    },
+    {
+        "id" : 6,
+        "name" : "Lager Pilsen Rubia",
+        "category" : "cerveza",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "lager-pilsen-Rubia-305x368.jpg"
+    },
+    {
+        "id" : 7,
+        "name" : "Lager Rubia",
+        "category" : "cerveza",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "lager-Rubia-305x368.jpg"
+    },
+    {
+        "id" : 8,
+        "name" : "Cannabica",
+        "category" : "hidromiel",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "cannabica-305x368.jpg"
+    },
+    {
+        "id" : 9,
+        "name" : "Extra Picante",
+        "category" : "hidromiel",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "extra-picante-305x368.jpg"
+    },
+    {
+        "id" : 10,
+        "name" : "Fresa",
+        "category" : "hidromiel",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "fresa-305x368.jpg"
+    },
+    {
+        "id" : 11,
+        "name" : "Petalo Rosa",
+        "category" : "hidromiel",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "petalo-rosa-305x368.jpg"
+    },
+    {
+        "id" : 12,
+        "name" : "Tostada",
+        "category" : "hidromiel",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "tostada-305x368.jpg"
+    },
+    {
+        "id" : 13,
+        "name" : "Tradicional",
+        "category" : "hidromiel",
+        "description" : "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
+        "price": 9999.99,
+        "image": "tradicional-305x368.jpg"
+    },
+    {
+        "id" : 14,
+        "name" : "Cenicero",
+        "category" : "merchandising",
+        "description" : "Lorem ipsum",
+        "price": 9999.99,
+        "image": "cenicero01-305x368.jpg"
+    },
+    {
+        "id" : 15,
+        "name" : "Cuerno",
+        "category" : "merchandising",
+        "description" : "Lorem ipsum",
+        "price": 9999.99,
+        "image": "cuerno01-305x368.jpg"
+    },
+    {
+        "id" : 16,
+        "name" : "Cuerno Soporte",
+        "category" : "merchandising",
+        "description" : "Lorem ipsum",
+        "price": 9999.99,
+        "image": "cuerno-soporte01-305x368.jpg"
+    },
+    {
+        "id" : 17,
+        "name" : "Destapador",
+        "category" : "merchandising",
+        "description" : "Lorem ipsum",
+        "price": 9999.99,
+        "image": "destapador01-305x368.jpg"
+    },
+    {
+        "id" : 18,
+        "name" : "Jarra",
+        "category" : "merchandising",
+        "description" : "Lorem ipsum",
+        "price": 9999.99,
+        "image": "Jarra01-305x368.jpg"
+    },
+    {
+        "id" : 19,
+        "name" : "Posavasos",
+        "category" : "merchandising",
+        "description" : "Lorem ipsum",
+        "price": 9999.99,
+        "image": "posavasos01-305x368.jpg"
+    },
+    {
+        "id" : 20,
+        "name" : "Remera Femenina",
+        "category" : "merchandising",
+        "description" : "Lorem ipsum",
+        "price": 9999.99,
+        "image": "rem-fem-01-305x368.jpg"
+    },
+    {
+        "id" : 21,
+        "name" : "Remera Masculina",
+        "category" : "merchandising",
+        "description" : "Lorem ipsum",
+        "price": 9999.99,
+        "image": "rem-masc-01-305x368.jpg"
+    },
+    {
+        "id" : 22,
+        "name" : "Tapabocas",
+        "category" : "merchandising",
+        "description" : "Lorem ipsum",
+        "price": 9999.99,
+        "image": "tapaboca01-305x368.jpg"
+    }
+]

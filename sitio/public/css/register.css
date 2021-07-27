@@ -1,0 +1,88 @@
+.reg__ctrl-input,
+.reg__ctrl-textarea{
+    position: relative;
+    width: 100%;
+}
+
+.reg__ctrl-input{
+    height: 2rem;
+}
+.reg__ctrl-textarea{
+    height: 10rem;
+}
+.reg__input,
+.text__area{
+    padding-left: .5rem;
+    width: 100%;
+    height: 100%;
+    font-family: 'Raleway';
+    border: 1px solid var(--color-gris-claro);
+    outline: none;
+}
+.text__area{
+    padding-top: .5rem;
+    height: 10rem;
+    resize: none;
+}
+
+.reg__input:focus,
+.text__area:focus{
+    border: 1px solid var(--color-primario);
+}
+.reg__date__age{
+    font-size: 12px;
+    font-family: 'Raleway'; 
+}
+
+.check__box__p{
+    display: flex;
+}
+
+.check__box__p::before{
+    content: '';
+    flex-shrink: 0;
+    display: block;
+    margin-right: 1rem;
+    width: 25px;
+    height: 25px;
+    outline: 1px solid var(--color-primario);
+}
+
+.check__box__p.active::before{
+    background-color: var(--color-primario);
+    border: 2px solid #fff;
+}
+
+.container .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -.5rem;
+    margin-left: -.5rem;
+    width: calc(100% + 1rem);
+}
+
+.d-none{
+    display: none;
+}
+
+label a{
+    color: var(--color-azul);
+    text-decoration: none;
+}
+.reg__navbottom{
+    width: 100%;
+    
+}
+.reg__navbutton{
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+}
+@media screen and (min-width: 768px){
+    .reg__ctrl-input{
+        height: 3rem;
+    }
+    .reg__ctrl-textarea{
+        height: 14rem;
+    }
+}

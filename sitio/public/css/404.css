@@ -1,0 +1,28 @@
+.view-error{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.header__imagen-error{
+    height: 60vh;
+    background-color: #000;
+    background-image: url('/images/404.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+
+@media screen and (min-width: 769px){
+    .view-error__redes{
+        min-height: 15vh;
+    }
+}
+
+@media screen and (min-width: 1025px){
+    .view-error__redes{
+        min-height: 20vh;
+    }
+}
