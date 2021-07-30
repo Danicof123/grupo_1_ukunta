@@ -32,31 +32,24 @@
                     </select>
                 </div>             
 
-                <!-- Descripcion domicilio -->
+                <!-- Descripciono -->
                 <div class="reg__ctrl-textarea my-4">
-                    <textarea name="*description" class="text__area" placeholder="*Descripción del producto"><%= product.description %></textarea>
+                    <textarea name="description" class="text__area" placeholder="*Descripción del producto"><%= product.description %></textarea>
                 </div>
 
                 <!-- precio -->
                 <div class="reg__ctrl-input my-4">
                     <input type="number" placeholder="*precio" class="reg__input" name="price" value="<%= product.price %>">
                 </div>
-                
-                <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
-
-            </form>
-
-            <nav class="f-display f-main-between reg__navbottom f-cross-end mbt-5">
-                <div class="button button-rojo reg__navbutton">
-                    <a href="/home"><i class="fas fa-times"></i></a>
+                <div class="f-display f-main-between reg__navbottom f-cross-end mbt-5">
+                    <a href="/store" class="no-decor">
+                        <div class="button button-rojo reg__navbutton">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </a> 
+                    <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
                 </div>
-
-                <!-- <div class="button button-verde reg__navbutton">
-                    <a href="/home"><i class="fas fa-check"></i></a>
-                </div> -->
-
-            </nav>
-
+            </form>
         </div>
 
     </div>

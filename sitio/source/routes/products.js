@@ -4,9 +4,9 @@ const express = require('express'),
    {store, detail, addProduct, editProducto, updateProducto, remove, createProduct} = require('../controllers/productController');
 
 /* /store */
-router.get('/', store);
+router.get('/:cat?', store);
+router.get('/products/add', addProduct);
 router.get('/products/:id', detail);
-router.get('/add', addProduct);
 router.post('/', createProduct)
 router.get('/edit/:id', editProducto);
 router.put('/', updateProducto);

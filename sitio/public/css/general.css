@@ -73,12 +73,9 @@ h4{
     background-color: var(--color-gris);
 }
 
-/* selector{
-    posiciones
-    modelo de caja
-    font
-    visual
-} */
+.no-decor{
+    text-decoration: none;
+}
 
 /*------------------------------------------- Paddings -------------------------------------------*/
 .p-0{

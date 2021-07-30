@@ -12,31 +12,7 @@
   <!-- Barra de navegación inferior -->
   <%- include('partials/navbar-bottom.ejs') %>
 <main>
-  <aside class="categories sep-inf ">
-      <div class="categories__items">
-          <div class="categories__item">
-              <a href="/store" class="button button-cat">
-                  <img src="/images/icon-hidro.svg" alt="hidromiel">
-              </a>
-              <span class="categories__legend">HIDROMIEL</span>
-          </div>
-
-          <div class="categories__item">
-              <a href="/store" class="button button-cat">
-                  <img src="/images/icon-beer.svg" alt="cerveza">
-              </a>
-              <span class="categories__legend">CERVEZA</span>
-          </div>
-
-          <div class="categories__item">
-              <a href="/store" class="button button-cat">
-                  <img src="/images/icon-merch.svg" alt="merchandasing">
-              </a>
-              <span class="categories__legend">MERCHANDASING</span>
-          </div>
-      </div>
-
-  </aside>
+    <%- include('partials/categories.ejs') %>
 
   <section class="combos sep-inf" id="combos">
       <article>
