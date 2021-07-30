@@ -18,15 +18,19 @@ module.exports = {
       });
    },
    addProduct : (req, res) => {
+
       res.render('addProduct', {
          title: 'Agregar producto',
          productos_db,
       });
    },
    editProducto: (req, res) => {
+      let producto = productos_db.forEach(producto => producto.id === +req.params.id);
+      
       res.render('editProduct', {
          title: 'Editar producto',
          productos_db,
+         producto
       });
    },
 };
