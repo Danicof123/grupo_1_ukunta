@@ -1,3 +1,9 @@
+const {productos_db} = require('../data/products_db');
+
+const removeAccents = (str) => {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+} 
+
 const home = (req, res) => {
   res.render('home', {
     title : 'Ukunta',
@@ -20,9 +26,19 @@ const welcome = (req,res) => {
   })
 }
 
+const search = (req,res) => {
+  const search = removeAccents(req.query.s.toLowerCase());
+		const locals = {
+      title: "Resultado de búsqueda",
+			producto: productos_db.filter(pr => (removeAccents(pr.name.toLowerCase()).includes(search) || removeAccents(pr.category.toLowerCase()).includes(search)) )
+		}
+		res.render('results', locals)
+}
+
 module.exports = {
   home,
   about,
   welcome,
   index,
+  search,
 }
