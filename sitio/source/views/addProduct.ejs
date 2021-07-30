@@ -11,7 +11,7 @@
 
             <h3 class="f-self-start my-4">Añadir producto</h3>
 
-            <form class="w-100 mbt-4" action="#">
+            <form class="w-100 mbt-4" action="/store/" method="POST">
 
                 <!-- Nombre -->
                 <div class="reg__ctrl-input mbt-4">
@@ -26,16 +26,16 @@
                 <!-- Categoria -->
                 <div class="reg__ctrl-input my-4">
                     <select name="category" class="reg__input">
-                        <option value="value1" selected>*Categoria</option>
-                        <option value="value2">Cerveza</option>
-                        <option value="value3">Hidromiel</option>
-                        <option value="value4">Merchandasing</option>
+                        <option value="none" selected>*Categoria</option>
+                        <option value="cerveza" >Cerveza</option>
+                        <option value="hidromiel">Hidromiel</option>
+                        <option value="merchandising">Merchandasing</option>
                     </select>
                 </div>             
 
                 <!-- Descripcion domicilio -->
                 <div class="reg__ctrl-textarea my-4">
-                    <textarea name="*description" class="text__area" placeholder="*Descripción del producto"></textarea>
+                    <textarea name="description" class="text__area" placeholder="*Descripción del producto"></textarea>
                 </div>
 
                 <!-- precio -->
@@ -46,16 +46,18 @@
                 <div class="reg__ctrl-input mbt-4">
                     <input type="file" accept=".jpg, .png" name="image" max="5" maxfile="5" class="reg__input file__input" multiple>
                 </div>
+
+                <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
             </form>
 
-            <nav class="f-display f-main-between reg__navbottom f-cross-end mbt-5">
+            <!-- <nav class="f-display f-main-between reg__navbottom f-cross-end mbt-5">
                 <div class="button button-rojo reg__navbutton">
                     <a href="/home"><i class="fas fa-times"></i></a>
                 </div>
                 <div class="button button-verde reg__navbutton">
                     <a href="/home"><i class="fas fa-check"></i></a>
                 </div>
-            </nav>
+            </nav> -->
 
         </div>
 

@@ -1,4 +1,4 @@
-const {productos_db, guardarProducto} = require('../data/products_db');
+let {productos_db, guardarProducto} = require('../data/products_db');
 
 
 const comprobarId = id => (id && !!productos_db.find(e => e.id === id));
@@ -16,7 +16,12 @@ const reemplazarProd = obj => {
 	});
 }
 
-const eliminarProd = id => productos_db = productos_db.filter(pr => pr.id !== id)
+const eliminarProd = id => productos_db = productos_db.filter(pr => pr.id !== id);
+const crearProd = obj => {
+	obj.id = productos_db[productos_db.length - 1].id + 1;
+	obj.image = obj.image || "not.jpg"
+	productos_db.push(obj);
+}
 
 const escribirBD = () => {
 	guardarProducto(productos_db);
@@ -46,6 +51,11 @@ module.exports = {
          productos_db,
       });
    },
+   createProduct : (req,res) =>{
+      crearProd(req.body);
+      escribirBD();
+      res.redirect('/store');
+   },
 
    editProducto: (req, res) => {
       const locals = {
@@ -63,8 +73,14 @@ module.exports = {
          const pr = req.body; //Guarda el producto editado en pr
          pr.id = id;
          reemplazarProd(pr)
-         escribirBD()
+         escribirBD()   
          res.redirect('/store');
       }
+   },
+   remove: (req,res) =>{
+      const id = parseInt(req.params.id, 10);
+      eliminarProd(id)
+      escribirBD()   
+      res.redirect('/store');
    }
 };
