@@ -18,6 +18,23 @@ Como equipo nos decidimos a **implementar nuevos conocimientos** que hallamos ob
 ## Segunda retrospectiva
 
 #### Seguir haciendo
+Hemos decidido como equipo seguir **manteniendo el enfoque en la importancia del proyecto**, continuar con **reuniones semanales** según sea necesario, la **buena predisposición**, seguir implementando **nuevos conocimientos**
+
+#### Hacer más
+Reunión en los intervalos de los sprints
+
+#### Hacer menos
+No encontramos un punto en el cual deberíamos dejar de hacer.
+
+#### Comenzar a hacer
+Compartir información relevantes e ideas nuevas en el grupo.
+#### Dejar de hacer
+No encontramos un punto en el cual deberíamos dejar de hacer.
+
+---
+## Tercera retrospectiva
+
+#### Seguir haciendo
 
 #### Hacer más
 

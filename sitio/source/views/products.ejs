@@ -158,7 +158,18 @@
             <div class="mbt-4">
                <p class="vproduct__descripcion m-0"> <%= producto.description %> </p>
             </div>
+            <div class="ctrl-product-admin">
+               <form action="/store/edit/<%= producto.id %>">
+                  <button type="submit" class="button button-verde btn-edit mr-4">EDITAR</button>
+               </form>
 
+               <form action="/store/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                  <button type="submit" class="button button-rojo btn-edit">ELIMINAR</button>
+               </form>
+
+               
+
+            </div>
          </div>
       </div>
 

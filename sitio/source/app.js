@@ -2,6 +2,7 @@
   const express = require('express'),
         favicon = require('serve-favicon'),
         path = require('path'),
+        methodOverride =  require('method-override'), // Pasar poder usar los métodos PUT y DELETE  
         //variables de directorio
         faviconDir = path.join(__dirname, '..', 'public', 'images', 'favicon.png'),
         viewDir = path.join(__dirname, 'views'),
@@ -25,6 +26,7 @@
       .use(favicon(faviconDir))
       .use(express.json())
       .use(express.urlencoded({extended: false}))
+      .use(methodOverride('_method'))
       .use(staticDir)
       //Conectando rutas
       .use('/users', usersRouter)

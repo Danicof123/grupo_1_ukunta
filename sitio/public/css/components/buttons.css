@@ -18,6 +18,9 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+a.button{
+  text-decoration: none;
+}
 .button-rojo{
   color: var(--color-rojo);
 }
@@ -25,7 +28,14 @@
 .button-verde{
   color: var(--color-verde);
 }
-
+.btn-edit{
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: .5rem 1rem;
+}
 .button.button-cat {
   height: 3rem;
   width: 3rem;

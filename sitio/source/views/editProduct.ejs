@@ -11,11 +11,11 @@
 
             <h3 class="f-self-start my-4">Editar producto</h3>
 
-            <form class="w-100 mbt-4" action="#">
-
+            <form class="w-100 mbt-4" action="/store/?_method=PUT" method="POST">
+              <input type="hidden" name="id" value="<%= product.id %>" readonly required>
                 <!-- Nombre -->
                 <div class="reg__ctrl-input mbt-4">
-                    <input type="text" placeholder="*Nombre" name="name" value="Hidromiel Cannábica" class="reg__input">
+                    <input type="text" placeholder="*Nombre" name="name" value="<%= product.name %>" class="reg__input">
                 </div>  
 
                 <!-- stock -->
@@ -26,56 +26,23 @@
                 <!-- Categoria -->
                 <div class="reg__ctrl-input my-4">
                     <select name="category" class="reg__input">
-                        <option value="value1" selected>Hidromiel</option>
-                        <option value="value2">Cerveza</option>
-                        <option value="value4">Merchandasing</option>
+                        <option value="hidromiel" <%= (product.category === "hidromiel") ? "selected" : null %>>Hidromiel</option>
+                        <option value="cerveza" <%= (product.category === "cerveza") ? "selected" : null %>>Cerveza</option>
+                        <option value="merchandasing" <%= (product.category === "merchandising") ? "selected" : null %>>Merchandasing</option>
                     </select>
                 </div>             
 
                 <!-- Descripcion domicilio -->
                 <div class="reg__ctrl-textarea my-4">
-                    <textarea name="*description" class="text__area" placeholder="*Descripción del producto">Si tomas este producto, a los siguientes 7 días estarás con Thor (?</textarea>
+                    <textarea name="*description" class="text__area" placeholder="*Descripción del producto"><%= product.description %></textarea>
                 </div>
 
                 <!-- precio -->
                 <div class="reg__ctrl-input my-4">
-                    <input type="number" placeholder="*precio" class="reg__input" name="price" value="99999">
+                    <input type="number" placeholder="*precio" class="reg__input" name="price" value="<%= product.price %>">
                 </div>
-                <!-- Imagenes -->
-                <div class="concon">
-
-                  <!-- Imagen 01 -->
-                  <div class="mb-6 tb-3 my-5">
-                    <div class="reg__ctrl-input-image mbt-4">
-                      <img src="/images/products/Bebidas/Hidromiel/cannabica-305x368.jpg" alt="cannabica" class="input__image">
-                      <input type="file" accept=".jpg, .png" name="image" max="5" maxfile="5" class="image__input">
-                    </div>
-                  </div>
-                  <!-- Imagen 02 -->
-                  <div class="mb-6 tb-3 my-5">
-                    <div class="reg__ctrl-input-image mbt-4">
-                      <img src="/images/products/Bebidas/Hidromiel/cannabica-305x368.jpg" alt="cannabica" class="input__image">
-                      <input type="file" accept=".jpg, .png" name="image" max="5" maxfile="5" class="image__input">
-                    </div>
-                  </div>
-
-                  <!-- Imagen 03 -->
-                  <div class="mb-6 tb-3 my-5">
-                    <div class="reg__ctrl-input-image mbt-4">
-                      <img src="/images/products/Bebidas/not.jpg" alt="cannabica" class="input__image">
-                      <input type="file" accept=".jpg, .png" name="image" max="5" maxfile="5" class="image__input image__input--not">
-                    </div>
-                  </div>
-
-                  <!-- Imagen 04 -->
-                  <div class="mb-6 tb-3 my-5">
-                    <div class="reg__ctrl-input-image mbt-4">
-                      <img src="/images/products/Bebidas/not.jpg" alt="cannabica" class="input__image">
-                      <input type="file" accept=".jpg, .png" name="image" max="5" maxfile="5" class="image__input image__input--not">
-                    </div>
-                  </div>
-
-                </div>
+                
+                <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
 
             </form>
 
@@ -83,9 +50,11 @@
                 <div class="button button-rojo reg__navbutton">
                     <a href="/home"><i class="fas fa-times"></i></a>
                 </div>
-                <div class="button button-verde reg__navbutton">
+
+                <!-- <div class="button button-verde reg__navbutton">
                     <a href="/home"><i class="fas fa-check"></i></a>
-                </div>
+                </div> -->
+
             </nav>
 
         </div>

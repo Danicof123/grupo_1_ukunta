@@ -1,4 +1,26 @@
-const productos_db = require('../data/products_db');
+const {productos_db, guardarProducto} = require('../data/products_db');
+
+
+const comprobarId = id => (id && !!productos_db.find(e => e.id === id));
+
+const reemplazarProd = obj => {
+	productos_db.forEach(pr => {
+		if(pr.id === obj.id){
+			pr.name = obj.name
+			pr.category = obj.category
+			pr.description = obj.description
+			pr.price = obj.price
+			pr.image = obj.image || pr.image
+			return;
+		}
+	});
+}
+
+const eliminarProd = id => productos_db = productos_db.filter(pr => pr.id !== id)
+
+const escribirBD = () => {
+	guardarProducto(productos_db);
+}
 
 module.exports = {
    store: (req, res) => {
@@ -17,20 +39,32 @@ module.exports = {
          productos_db,
       });
    },
-   addProduct : (req, res) => {
+   addProduct: (req, res) => {
 
       res.render('addProduct', {
          title: 'Agregar producto',
          productos_db,
       });
    },
+
    editProducto: (req, res) => {
-      let producto = productos_db.forEach(producto => producto.id === +req.params.id);
-      
-      res.render('editProduct', {
-         title: 'Editar producto',
-         productos_db,
-         producto
-      });
+      const locals = {
+         title : "Editando ",
+         product : productos_db.find(pr => pr.id === +req.params.id)
+      }
+      res.render('editProduct', locals);
    },
+
+
+   updateProducto : (req, res) => {
+      const id = parseInt(req.body.id, 10);
+
+      if (comprobarId(id)) {
+         const pr = req.body; //Guarda el producto editado en pr
+         pr.id = id;
+         reemplazarProd(pr)
+         escribirBD()
+         res.redirect('/store');
+      }
+   }
 };
