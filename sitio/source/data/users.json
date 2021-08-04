@@ -1,0 +1,41 @@
+[
+    {
+        "name": "daniel",
+        "lastname": "fernandez",
+        "datebirth": 25091992,
+        "DNI" : 12345678,
+        "phone": 1122223333,
+        "email": "daniel@ukunta.com",
+        "password": "danicof",
+        "country": "argentina",
+        "state": "buenos aires",
+        "city": "campana",
+        "adress": "calle 1234"
+    },
+    {
+        "name": "bernado",
+        "lastname": "dinarte",
+        "datebirth": 14051985,
+        "DNI" : 23456789,
+        "phone": 1144445555,
+        "email": "bernardo@ukunta.com",
+        "password": "berna",
+        "country": "argentina",
+        "state": "buenos aires",
+        "city": "ballester",
+        "adress": "calle 5678"
+    },
+    {
+        "name": "emanuel",
+        "lastname": "romero",
+        "datebirth": 24011989,
+        "DNI" : 34567891,
+        "phone": 1166667777,
+        "email": "emanuel@ukunta.com",
+        "password": "emaromero",
+        "country": "argentina",
+        "state": "buenos aires",
+        "city": "lanus",
+        "adress": "calle 345"
+    }
+]
