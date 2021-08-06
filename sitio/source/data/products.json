@@ -1,12 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Ale Porter Negra",
-    "category": "cerveza",
-    "price": "9999.99",
-    "image": "ale-porter-negra-305x368.jpg"
-  },
-  {
     "id": 2,
     "name": "Ale Stout Negra",
     "category": "cerveza",
@@ -56,10 +49,10 @@
   },
   {
     "id": 8,
-    "name": "Cannabica",
+    "name": "Cannabica vgvg",
     "category": "hidromiel",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
-    "price": 9999.99,
+    "price": "9999.99",
     "image": "cannabica-305x368.jpg"
   },
   {
@@ -77,14 +70,6 @@
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": 9999.99,
     "image": "fresa-305x368.jpg"
-  },
-  {
-    "id": 11,
-    "name": "Petalo Rosa",
-    "category": "hidromiel",
-    "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
-    "price": 9999.99,
-    "image": "petalo-rosa-305x368.jpg"
   },
   {
     "id": 12,

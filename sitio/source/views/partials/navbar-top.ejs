@@ -35,6 +35,19 @@
           <div class="navbar__badge">3</div>
       </div>
 
-      <a href="/users/login" class="navbar__item"><i class="fas fa-user"></i></a>
+      <!-- <a href="/users/login" class="navbar__item"><i class="fas fa-user"></i></a> -->
+      <div class="navbar__item btn-drop" data-target="drop-menu"><i class="fas fa-user"></i></div>
+
+
+      
+  </div>
+
+  <div class="drop-menu menu--user" id="drop-menu">
+    <ul>
+      <li><a href="/users/login" class="navbar__item">ACCEDER</a></li>
+      <li><a href="/users/logout" class="navbar__item">CERRAR SESIÓN</a></li>
+      <li class="navbar__item drop-menu__separator"></li>
+      <li><a href="/admin/dashboard" class="navbar__item">ADMINISTRACIÓN</a></li>
+    </ul>
   </div>
 </nav>
