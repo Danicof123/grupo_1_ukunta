@@ -35,6 +35,20 @@ No encontramos un punto en el cual deberíamos dejar de hacer.
 ## Tercera retrospectiva
 
 #### Seguir haciendo
+Continuar **manteniendo el enfoque en la importancia del proyecto**, continuar con **reuniones semanales** según sea necesario, la **buena predisposición** y seguir implementando **nuevos conocimientos**
+#### Hacer más
+Continuar con el mismo enfoque en el trabajo del sprint.
+#### Hacer menos
+No encontramos un punto en el cual deberíamos dejar de hacer.
+#### Comenzar a hacer
+Comenzar a analizar mejoras de vistas y visuales.
+#### Dejar de hacer
+No encontramos un punto en el cual deberíamos dejar de hacer.
+
+---
+## Cuarta retrospectiva
+
+#### Seguir haciendo
 
 #### Hacer más
 
