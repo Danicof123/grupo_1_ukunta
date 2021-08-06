@@ -1,4 +1,4 @@
-let {productos_db, guardarProducto} = require('../data/products_db');
+let { productos_db, guardarProducto } = require('../data/products_db');
 
 
 const comprobarId = id => (id && !!productos_db.find(e => e.id === id));
@@ -17,6 +17,7 @@ const reemplazarProd = obj => {
 }
 
 const eliminarProd = id => productos_db = productos_db.filter(pr => pr.id !== id);
+
 const crearProd = obj => {
 	obj.id = productos_db[productos_db.length - 1].id + 1;
 	obj.image = obj.image || "not.jpg"
