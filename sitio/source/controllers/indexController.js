@@ -12,8 +12,6 @@ const home = (req, res) => {
     errors : errors.mapped(),
     old: req.body,
   }
-  // if(!errors.isEmpty())
-  //   res.send(locals)
   res.render('home', locals)
 }
 

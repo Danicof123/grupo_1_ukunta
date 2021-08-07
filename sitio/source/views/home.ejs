@@ -28,8 +28,11 @@
       <article class="container f-wrap">
           <h3 class="mb-12 seccion__title">CONTÁCTENOS</h3>
           <div class="mb-12 tb-6 contacto__form">
-              <form name="f-contact" class="f-contact" action="/home" method="POST">
+              <form name="f-contact" class="f-contact" action="/home#contacto" method="POST">
                     <!-- Nombre -->
+                  <% if(locals && locals.errors.name) {%> 
+                    <label for="name" class="error-input"><%= errors.name.msg %>  </label>
+                  <% } %> 
                   <input type="text" name="name" placeholder="Escriba su nombre" class="contacto__input"
                   value="<%= (locals && locals.errors) ? old.name : null %>" 
                   title="Escriba un nombre válido"
@@ -37,14 +40,20 @@
                   required 
                   >
                   <!-- email -->
+                  <% if(locals && locals.errors.email) {%> 
+                    <label for="name" class="error-input"><%= errors.email.msg %> </label>
+                  <% } %> 
                   <input type="email" name="email" placeholder="Escriba su correo electrónico" class="contacto__input"
                   title="Escribe un correo válido"
                   value="<%= (locals && locals.errors) ? old.email : null %>" 
                   pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
                   required>
                     <!-- Comentario -->
+                    <% if(locals && locals.errors.comment) {%> 
+                        <label for="name" class="error-input"><%= errors.comment.msg %> </label>
+                      <% } %> 
                   <textarea name="comment" cols="30" rows="10" placeholder="Escriba un comentario"
-                      class="contacto__textarea" minlength="10" maxlength="255" title="Comentario demasiado largo, máximo 255 caracteres." required></textarea>
+                      class="contacto__textarea" minlength="10" maxlength="255" required></textarea>
                   <input type="submit" value="ENVIAR" class="contacto__button">
 
               </form>
