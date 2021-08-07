@@ -29,10 +29,10 @@
       .use(methodOverride('_method'))
       .use(staticDir)
       //Conectando rutas
+      .use(router)
       .use('/users', usersRouter)
       .use('/store', productsRouter)
       .use('/cart', cartRouter)
-      .use(router)
       .use(error404);
       
   
