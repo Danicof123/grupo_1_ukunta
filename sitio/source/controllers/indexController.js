@@ -1,13 +1,18 @@
 const {productos_db} = require('../data/products_db');
+const {validationResult} = require('express-validator')
 
 const removeAccents = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 } 
 
 const home = (req, res) => {
-  res.render('home', {
-    title : 'Ukunta',
-})
+  const errors = validationResult(req);
+  const locals = {
+    title: 'Ukunta',
+    errors : errors.mapped(),
+    old: req.body,
+  }
+  res.render('home', locals)
 }
 
 const index = (req, res) => {
