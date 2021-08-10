@@ -158,5 +158,13 @@
     "description": "Lorem ipsum",
     "price": 9999.99,
     "image": "tapaboca01-305x368.jpg"
+  },
+  {
+    "name": "Prueba Editado Lindo 4",
+    "category": "hidromiel",
+    "description": "Agrego detalle 2",
+    "price": "7500",
+    "id": 23,
+    "image": "not.jpg"
   }
 ]
