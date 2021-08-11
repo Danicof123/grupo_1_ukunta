@@ -46,8 +46,7 @@
 
                   <!-- Descripcion producto -->
                   <div class="reg__ctrl-textarea my-4">
-                     <textarea name="description" class="text__area" placeholder="*Descripción del producto">
-                     <%= locals.old ? old.description : null %></textarea>
+                     <textarea name="description" class="text__area" placeholder="*Descripción del producto"><%= locals.old ? old.description : null %></textarea>
                      <% if (locals.errors && errors.description) { %>
                         <div class="text-danger">
                            <%= errors.description.msg %>

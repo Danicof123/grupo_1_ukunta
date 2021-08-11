@@ -20,9 +20,10 @@ const reemplazarProd = (obj) => {
 
 const eliminarProd = (id) => (productos_db = productos_db.filter((pr) => pr.id !== id));
 
-const crearProd = (obj) => {
+const crearProd = (req) => {
+   const obj = req.body;
    obj.id = productos_db[productos_db.length - 1].id + 1;
-   obj.image = obj.image || 'not.jpg';
+   obj.image = req.file.filename || 'not.jpg';
    productos_db.push(obj);
 };
 
@@ -86,9 +87,9 @@ module.exports = {
             productos_db,
          });
       } else {
-         crearProd(req.body);
+         crearProd(req);
          escribirBD();
-         res.redirect('/store');
+         res.redirect(`/store/products/${req.body.id}`);
       }
    },
 

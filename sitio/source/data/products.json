@@ -160,11 +160,19 @@
     "image": "tapaboca01-305x368.jpg"
   },
   {
-    "name": "Prueba Editado Lindo 4",
+    "name": "Prueba Editado 3",
     "category": "hidromiel",
     "description": "Agrego detalle 2",
     "price": "7500",
     "id": 23,
     "image": "not.jpg"
+  },
+  {
+    "name": "Cerveza Prueba 6 con imagen",
+    "category": "hidromiel",
+    "description": "Prueba 9",
+    "price": "330",
+    "id": 24,
+    "image": "1628708504446_img.jpg"
   }
 ]
