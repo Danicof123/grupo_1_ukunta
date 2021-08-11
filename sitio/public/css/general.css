@@ -78,6 +78,11 @@ h4{
     text-decoration: none;
 }
 
+.text-danger {
+    font-size: .7rem;
+    color: var(--color-rojo);
+}   
+
 /*------------------------------------------- Paddings -------------------------------------------*/
 .p-0{
     padding: 0;

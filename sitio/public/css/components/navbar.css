@@ -144,6 +144,11 @@
     visibility: hidden;
     transition: opacity .2s ease-in-out;
 }
+
+.drop-menu li {
+    margin-bottom: .5rem;
+}
+
 .drop-menu.active{
     opacity: 1;
     visibility: visible;
