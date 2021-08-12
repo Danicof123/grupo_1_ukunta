@@ -174,5 +174,13 @@
     "price": "330",
     "id": 24,
     "image": "1628708504446_img.jpg"
+  },
+  {
+    "name": "",
+    "category": "",
+    "description": "",
+    "price": "",
+    "id": 25,
+    "image": "not.jpg"
   }
 ]
