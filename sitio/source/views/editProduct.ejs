@@ -14,11 +14,11 @@
             <form class="w-100 mbt-4" action="/store/products/edit/<%= product.id %>?_method=PUT" method="POST">
               <input type="hidden" name="id" value="<%= product.id %>" readonly required>
                 <!-- Nombre -->
+                <% if (locals.errors && errors.name) { %>
+                    <div class="text-danger"><%= errors.name.msg %></div>
+                <% } %>
                 <div class="reg__ctrl-input mbt-4">
                     <input type="text" placeholder="*Nombre" name="name" value="<%= product.name %>" class="reg__input">
-                    <% if (locals.errors && errors.name) { %>
-                        <div class="text-danger"><%= errors.name.msg %></div>
-                    <% } %>
                 </div>  
 
                 <!-- stock -->
@@ -37,18 +37,18 @@
 
                 <!-- Descripciono -->
                 <div class="reg__ctrl-textarea my-4">
-                    <textarea name="description" class="text__area" placeholder="*Descripción del producto"><%= product.description %></textarea>
                     <% if (locals.errors && errors.description) { %>
                         <div class="text-danger"><%= errors.description.msg %></div>
                         <% } %>
+                    <textarea name="description" class="text__area" placeholder="*Descripción del producto"><%= product.description %></textarea>
                 </div>
 
                 <!-- precio -->
                 <div class="reg__ctrl-input my-4">
-                    <input type="number" placeholder="*precio" class="reg__input" name="price" value="<%= product.price %>">
                     <% if (locals.errors && errors.price) { %>
                         <div class="text-danger"><%= errors.price.msg %></div>
                         <% } %>
+                    <input type="number" placeholder="*precio" class="reg__input" name="price" value="<%= product.price %>">
                 </div>
                 <div class="f-display f-main-between reg__navbottom f-cross-end mbt-5">
                     <a href="/store/products/<%= product.id %>" class="no-decor">

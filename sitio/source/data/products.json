@@ -166,21 +166,5 @@
     "price": "7500",
     "id": 23,
     "image": "not.jpg"
-  },
-  {
-    "name": "Cerveza Prueba 6 con imagen",
-    "category": "hidromiel",
-    "description": "Prueba 9",
-    "price": "330",
-    "id": 24,
-    "image": "1628708504446_img.jpg"
-  },
-  {
-    "name": "",
-    "category": "",
-    "description": "",
-    "price": "",
-    "id": 25,
-    "image": "not.jpg"
   }
 ]
