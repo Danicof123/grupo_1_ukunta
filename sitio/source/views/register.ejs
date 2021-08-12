@@ -11,43 +11,54 @@
 
             <h3 class="f-self-start my-4">REGISTRO</h3>
 
-            <form class="w-100 mbt-4" action="#">
+            <form class="w-100 mbt-4" method="POST" action="">
 
                 <!-- Nombre -->
+               
+                <label for="name" class="error-input"><%= locals.errors && locals.errors.name ? errors.name.msg : null %>  </label>
                 <div class="reg__ctrl-input mbt-4">
-                    <input type="text" placeholder="*Nombre" name="name" class="reg__input">
+                    <input type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : null %>">
                 </div>
 
                 <!-- Apellido -->
+              
+                <label for="name" class="error-input"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
-                    <input type="text" placeholder="*Apellido" class="reg__input" name="lastname">
+                    <input type="text" placeholder="*Apellido" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>">
                 </div>
 
                 <!-- Fecha nacimiento -->
+
+                <label for="inp-date" class="error-input"><%= locals.errors && locals.errors.datebirth ? errors.datebirth.msg : null %></label>
                 <div class="row my-0 f-cross-center my-4">
+                    
                     <div class="mb-6">
-                        <label for="inp-surname" class="reg__date__age">Fecha de nacimiento +18*</label>
+                        <label for="inp-surname" class="reg__date__age" >Fecha de nacimiento +18*</label>
                     </div>
                     <div class="mb-6">
                         <div class="reg__ctrl-input">
-                            <input type="date" class="reg__input" name="date" id="inp-date">
+                            <input type="date" class="reg__input" name="datebirth" id="inp-date">
                         </div>
                     </div>
                 </div>
 
                 <!-- DNI -->
                 <div class="reg__ctrl-input my-4">
-                    <input type="number" placeholder="*DNI" class="reg__input" name="dni">
+                    <input type="number" placeholder="*DNI" class="reg__input" name="DNI">
                 </div>
 
                 <!-- Teléfono -->
+                
+                <label for="name" class="error-input"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
-                    <input type="tel" placeholder="*Numero de telefono" class="reg__input" name="tel">
+                    <input type="tel" placeholder="*Numero de telefono" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
                 </div>
 
                 <!-- Correo electronico -->
+                
+                <label for="name" class="error-input"><%= locals.errors && locals.errors.name ? errors.email.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
-                    <input type="email" placeholder="*Correo electronico" class="reg__input" name="email">
+                    <input type="email" placeholder="*Correo electronico" class="reg__input" name="email" value="<%= (locals && locals.errors) ? old.email : null %>">
                 </div>
 
                 <div class="reg__ctrl-input my-4">
@@ -56,11 +67,15 @@
                 </div>
 
                 <!-- Contraseña -->
+                
+                <label for="name" class="error-input"><%= locals.errors && locals.errors.name ? errors.password.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
-                    <input type="password" placeholder="*Contraseña" class="reg__input" name="pass">
+                    <input type="password" placeholder="*Contraseña" class="reg__input" name="password">
                 </div>
+                
+                <label for="name" class="error-input"><%= locals.errors && locals.errors.name ? errors.password2.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
-                    <input type="password" placeholder="*Repetir contraseña" class="reg__input" name="pass-repeat">
+                    <input type="password2" placeholder="*Repetir contraseña" class="reg__input" name="password-repeat">
                 </div>
 
                 <!-- Paises -->
@@ -76,7 +91,7 @@
 
                 <!-- Provincias -->
                 <div class="reg__ctrl-input my-4">
-                    <select name="province" class="reg__input">
+                    <select name="state" class="reg__input">
                         <option value="value1" selected>*Provincia/Estado</option>
                         <option value="value2">Buenos Aires</option>
                         <option value="value3">Cordoba</option>
@@ -95,8 +110,10 @@
                 </div>
 
                 <!-- Descripcion domicilio -->
+                
+                <label for="name" class="error-input"><%= locals.errors && locals.errors.name ? errors.adress.msg : null %>  </label>
                 <div class="reg__ctrl-textarea my-4">
-                    <textarea name="comment" class="text__area" placeholder="*Escriba una descripcion de su domicilio"></textarea>
+                    <textarea name="adress" class="text__area" placeholder="*Escriba una descripcion de su domicilio" value="<%= (locals && locals.errors) ? old.adress : null %>"></textarea>
                 </div>
 
                 <!-- Terminos y condiciones de uso -->
@@ -108,16 +125,16 @@
                         a la <a href="#">Declaracion de privacidad</a></label>
                 </div>
 
+                
+                <nav class="f-display f-main-between reg__navbottom f-grow-1 f-cross-end mbt-5">
+                    <div class="button button-rojo reg__navbutton">
+                        <a href="/home"><i class="fas fa-times"></i></a>
+                    </div>
+                    <div class="button button-verde reg__navbutton">
+                        <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
+                    </div>
+                </nav>
             </form>
-
-            <nav class="f-display f-main-between reg__navbottom f-grow-1 f-cross-end mbt-5">
-                <div class="button button-rojo reg__navbutton">
-                    <a href="/home"><i class="fas fa-times"></i></a>
-                </div>
-                <div class="button button-verde reg__navbutton">
-                    <a href="/home"><i class="fas fa-check"></i></a>
-                </div>
-            </nav>
 
         </div>
 
