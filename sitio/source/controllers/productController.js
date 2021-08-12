@@ -1,5 +1,5 @@
 const {validationResult} = require('express-validator');
-const productos_db = require('../data/products_db');
+const products_db = require('../data/products_db');
 
 let {productos_db, guardarProducto} = require('../data/products_db');
 
