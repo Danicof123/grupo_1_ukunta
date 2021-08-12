@@ -61,7 +61,7 @@ module.exports = {
       if (!comprobarId(id)) res.redirect('/store');
 
       let producto = productos_db.find((producto) => producto.id === id);
-      let prRelations = productos_db.filter(pr => pr.category === producto.category && pr.id !=producto.id);
+      let prRelations = productos_db.filter(pr => pr.category === producto.category && pr.id !== producto.id);
 
       res.render('products', {
          title: 'Detalle Producto',
