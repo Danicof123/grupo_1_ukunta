@@ -6,8 +6,13 @@
 
 .checkbox{
     display: flex;
+    cursor: pointer;
 }
 
+.checkbox a{
+    margin-right: 4px;
+    margin-left: 4px;
+}
 
 .checkbox::before{
     content: '';
@@ -19,7 +24,7 @@
     outline: 1px solid var(--color-primario);
 }
 
-.checkbox.active::before{
+.chk-keep:checked+.checkbox::before{
     background-color: var(--color-primario);
     border: 1px solid #fff;
 }

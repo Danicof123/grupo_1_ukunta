@@ -121,10 +121,11 @@
     outline: 1px solid var(--color-primario);
 }
 
-.check__box__p.active::before{
+.check__box__p::before{
     background-color: var(--color-primario);
     border: 2px solid #fff;
 }
+
 
 .container .row{
     display: flex;
