@@ -1,5 +1,4 @@
 const {validationResult} = require('express-validator');
-const products_db = require('../data/products_db');
 
 let {productos_db, guardarProducto} = require('../data/products_db');
 
@@ -12,7 +11,7 @@ const reemplazarProd = (obj) => {
          pr.category = obj.category;
          pr.description = obj.description;
          pr.price = obj.price;
-         pr.image = obj.image || pr.image;
+         pr.images = obj.images || pr.images;
          return;
       }
    });
@@ -23,7 +22,10 @@ const eliminarProd = (id) => (productos_db = productos_db.filter((pr) => pr.id !
 const crearProd = (req) => {
    const obj = req.body;
    obj.id = productos_db[productos_db.length - 1].id + 1;
-   obj.image = req.file.filename || 'not.jpg';
+   if(req.files) {
+      var allImages = req.files.map(image => image.filename)
+   }
+   obj.images = allImages;
    productos_db.push(obj);
 };
 

@@ -14,26 +14,18 @@
             <!-- imagen carrousel (1) -->
             <div class="mb-12 tb-7 lp-6 dk-5 f-main-y mbt-4 vproduct__carrousel">
                <div class="ctrl__carrousel">
-                  <img src="/images/products/Bebidas/Cervezas/<%= producto.image %>" />
+                  <img src="/images/products/Bebidas/Cervezas/<%= producto.images[0] %>" />
                </div>
 
                <!-- vistas previas -->
                <div class="no-mb f-display f-main-between mtp-4 image-preview">
-                  <div class="item__preview-img">
-                     <img src="/images/products/Bebidas/Cervezas/<%= producto.image %>" alt="preview-1" />
-                  </div>
 
-                  <div class="item__preview-img">
-                     <img src="/images/products/Bebidas/Cervezas/<%= producto.image %>" alt="preview-1" />
-                  </div>
+                  <% producto.images.forEach((imagen, index) => { %>
+                     <div class="item__preview-img">
+                        <img src="/images/products/Bebidas/Cervezas/<%= imagen %>" alt="preview-1" />
+                     </div>
+                  <% }) %>
 
-                  <div class="item__preview-img">
-                     <img src="/images/products/Bebidas/Cervezas/<%= producto.image %>" alt="preview-1" />
-                  </div>
-
-                  <div class="item__preview-img mr-0">
-                     <img src="/images/products/Bebidas/Cervezas/<%= producto.image %>" alt="preview-1" />
-                  </div>
                </div>
             </div>
 
@@ -153,7 +145,7 @@
                <!-- Boton verde de stock -->
                <div class="concon">
                   <div class="mb-5">
-                     <img src="/images/products/Bebidas/Cervezas/<%= prRelations[i].image %> " alt="ipa brown" />
+                     <img src="/images/products/Bebidas/Cervezas/<%= prRelations[i].images[0] %> " alt="ipa brown" />
                   </div>
 
                   <div class="mb-7 f-main-y">

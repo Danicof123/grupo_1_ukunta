@@ -5,7 +5,9 @@
     "category": "cerveza",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": 9999.99,
-    "image": "Ale-stout-Negra-305x368.jpg"
+    "images": [
+      "Ale-stout-Negra-305x368.jpg"
+    ]
   },
   {
     "id": 3,
@@ -13,7 +15,9 @@
     "category": "cerveza",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": "9999.99",
-    "image": "ipa-Negra-305x368.jpg"
+    "images": [
+      "ipa-Negra-305x368.jpg"
+    ]
   },
   {
     "id": 4,
@@ -21,7 +25,9 @@
     "category": "cerveza",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": 9999.99,
-    "image": "ipa-Roja-305x368.jpg"
+    "images": [
+      "ipa-Roja-305x368.jpg"
+    ]
   },
   {
     "id": 5,
@@ -29,7 +35,9 @@
     "category": "cerveza",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": 9999.99,
-    "image": "ipa-Rubia-305x368.jpg"
+    "images": [
+      "ipa-Rubia-305x368.jpg"
+    ]
   },
   {
     "id": 6,
@@ -37,7 +45,9 @@
     "category": "cerveza",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": 9999.99,
-    "image": "lager-pilsen-Rubia-305x368.jpg"
+    "images": [
+      "lager-pilsen-Rubia-305x368.jpg"
+    ]
   },
   {
     "id": 7,
@@ -45,15 +55,19 @@
     "category": "cerveza",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": 9999.99,
-    "image": "lager-Rubia-305x368.jpg"
+    "images": [
+      "lager-Rubia-305x368.jpg"
+    ]
   },
   {
     "id": 8,
-    "name": "Cannabica vgvg",
+    "name": "Cannabica",
     "category": "hidromiel",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": "9999.99",
-    "image": "cannabica-305x368.jpg"
+    "images": [
+      "cannabica-305x368.jpg"
+    ]
   },
   {
     "id": 9,
@@ -61,7 +75,9 @@
     "category": "hidromiel",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": 9999.99,
-    "image": "extra-picante-305x368.jpg"
+    "images": [
+      "extra-picante-305x368.jpg"
+    ]
   },
   {
     "id": 10,
@@ -69,7 +85,9 @@
     "category": "hidromiel",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": 9999.99,
-    "image": "fresa-305x368.jpg"
+    "images": [
+      "fresa-305x368.jpg"
+    ]
   },
   {
     "id": 12,
@@ -77,7 +95,9 @@
     "category": "hidromiel",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": 9999.99,
-    "image": "tostada-305x368.jpg"
+    "images": [
+      "tostada-305x368.jpg"
+    ]
   },
   {
     "id": 13,
@@ -85,7 +105,9 @@
     "category": "hidromiel",
     "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
     "price": 9999.99,
-    "image": "tradicional-305x368.jpg"
+    "images": [
+      "tradicional-305x368.jpg"
+    ]
   },
   {
     "id": 14,
@@ -93,7 +115,9 @@
     "category": "merchandising",
     "description": "Lorem ipsum",
     "price": 9999.99,
-    "image": "cenicero01-305x368.jpg"
+    "images": [
+      "cenicero01-305x368.jpg"
+    ]
   },
   {
     "id": 15,
@@ -101,7 +125,9 @@
     "category": "merchandising",
     "description": "Lorem ipsum",
     "price": 9999.99,
-    "image": "cuerno01-305x368.jpg"
+    "images": [
+      "cuerno01-305x368.jpg"
+    ]
   },
   {
     "id": 16,
@@ -109,7 +135,9 @@
     "category": "merchandasing",
     "description": "Lorem ipsum",
     "price": "9999.99",
-    "image": "cuerno-soporte01-305x368.jpg"
+    "images": [
+      "cuerno-soporte01-305x368.jpg"
+    ]
   },
   {
     "id": 17,
@@ -117,7 +145,9 @@
     "category": "merchandising",
     "description": "Lorem ipsum",
     "price": 9999.99,
-    "image": "destapador01-305x368.jpg"
+    "images": [
+      "destapador01-305x368.jpg"
+    ]
   },
   {
     "id": 18,
@@ -125,7 +155,9 @@
     "category": "merchandising",
     "description": "Lorem ipsum",
     "price": "9999.99",
-    "image": "Jarra01-305x368.jpg"
+    "images": [
+      "Jarra01-305x368.jpg"
+    ]
   },
   {
     "id": 19,
@@ -133,7 +165,9 @@
     "category": "merchandising",
     "description": "Lorem ipsum",
     "price": 9999.99,
-    "image": "posavasos01-305x368.jpg"
+    "images": [
+      "posavasos01-305x368.jpg"
+    ]
   },
   {
     "id": 20,
@@ -141,7 +175,10 @@
     "category": "merchandising",
     "description": "Lorem ipsum",
     "price": 9999.99,
-    "image": "rem-fem-01-305x368.jpg"
+    "images": [
+      "rem-fem-01-305x368.jpg",
+      "rem-fem-02-305x368.jpg"
+    ]
   },
   {
     "id": 21,
@@ -149,7 +186,9 @@
     "category": "merchandising",
     "description": "Lorem ipsum",
     "price": 9999.99,
-    "image": "rem-masc-01-305x368.jpg"
+    "images": [
+      "rem-masc-01-305x368.jpg"
+    ]
   },
   {
     "id": 22,
@@ -157,14 +196,19 @@
     "category": "merchandising",
     "description": "Lorem ipsum",
     "price": 9999.99,
-    "image": "tapaboca01-305x368.jpg"
+    "images": [
+      "tapaboca01-305x368.jpg"
+    ]
   },
   {
-    "name": "Prueba Editado 3",
-    "category": "hidromiel",
-    "description": "Agrego detalle 2",
-    "price": "7500",
+    "name": "Prueba Carga Imagenes 12",
+    "category": "cerveza",
+    "description": "Probando 1515",
+    "price": "2225",
     "id": 23,
-    "image": "not.jpg"
+    "images": [
+      "1629255892003_img.jpg",
+      "1629255892037_img.jpg"
+    ]
   }
 ]

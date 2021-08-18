@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 const {body} = require('express-validator');
 
 const validationsCreate = [
@@ -7,18 +7,20 @@ const validationsCreate = [
    body('description').notEmpty().withMessage('Debes ingresar la descripción del producto.'),
    body('price').notEmpty().withMessage('Debes ingresar el precio del producto.'),
    body('images').custom((value, {req}) => {
-      let file = req.file;
+      let files = req.files;
       let aceptedExtensions = ['.jpg', '.jpeg', '.png'];
 
-      if (!file) {
+      if (!files.length > 0) {
          throw new Error('Debes seleccionar al menos una imagen para tu producto');
       } else {
-         let fileExtension = path.extname(file.originalname);
-         if (!aceptedExtensions.includes(fileExtension)) {
-            throw new Error(`La imagen debe ser de tipo: ${aceptedExtensions.join(', ')}.`);
-         }
+         files.forEach((file) => {
+            let fileExtension = path.extname(file.originalname);
+            if (!aceptedExtensions.includes(fileExtension)) {
+               throw new Error(`La imagen debe ser de tipo: ${aceptedExtensions.join(', ')}.`);
+            }
+         });
+         return true;
       }
-      return true;
    }),
 ];
 
@@ -29,6 +31,6 @@ const validationsEdit = [
 ];
 
 module.exports = {
-    validationsCreate,
-    validationsEdit
-}
+   validationsCreate,
+   validationsEdit,
+};
