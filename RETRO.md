@@ -49,6 +49,19 @@ No encontramos un punto en el cual deberíamos dejar de hacer.
 ## Cuarta retrospectiva
 
 #### Seguir haciendo
+Continuar **manteniendo el enfoque en la importancia del proyecto**, continuar con **reuniones semanales** según sea necesario, la **buena predisposición**, seguir implementando **nuevos conocimientos** y resolviendo conflictos en equipo.
+#### Hacer más
+Implementar mejoras en lo que respecta a la experiencia de usuario.
+#### Hacer menos
+No encontramos un punto en el cual deberíamos dejar de hacer.
+#### Comenzar a hacer
+Implementar los comentarios en el código.
+#### Dejar de hacer
+No encontramos un punto en el cual deberíamos dejar de hacer.
+___
+## Quin retrospectiva
+
+#### Seguir haciendo
 
 #### Hacer más
 
