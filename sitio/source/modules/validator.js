@@ -42,7 +42,7 @@ const usersValidator = [
     .isAlpha().withMessage('El apellido debe tener solo letras'),
 
     check('datebirth')
-    .isISO8601('datebirth').withMessage('no tengo idea'),
+    .isISO8601('datebirth').withMessage('Formato de fecha inválido'),
 
     check('DNI')
     .notEmpty().withMessage('Debe ingresar un DNI')
@@ -105,7 +105,10 @@ const usersValidator = [
     .isLength({
         min : 2,
         max : 58,
-    }).withMessage('Debe ingresar una dirección válida')
+    }).withMessage('Debe ingresar una dirección válida'),
+
+    check('terms')
+    .notEmpty().withMessage('Debes aceptar los terminos y condiciones')
 ]
 
 module.exports = {

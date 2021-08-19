@@ -16,7 +16,9 @@ const home = (req, res) => {
 }
 
 const index = (req, res) => {
-  res.redirect('home')
+  res.render('welcome', {
+    title: 'Ukunta'
+  })
 }
 
 const about = (req, res) => {

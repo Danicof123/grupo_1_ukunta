@@ -10,7 +10,8 @@
         "country": "argentina",
         "state": "buenos aires",
         "city": "campana",
-        "adress": "calle 1234"
+        "adress": "calle 1234",
+        "rol": "admin"
     },
     {
         "name": "bernado",
@@ -23,7 +24,8 @@
         "country": "argentina",
         "state": "buenos aires",
         "city": "ballester",
-        "adress": "calle 5678"
+        "adress": "calle 5678",
+        "rol": "admin"
     },
     {
         "name": "emanuel",
@@ -36,6 +38,7 @@
         "country": "argentina",
         "state": "buenos aires",
         "city": "lanus",
-        "adress": "calle 345"
+        "adress": "calle 345",
+        "rol": "admin"
     }
 ]

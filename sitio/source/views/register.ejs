@@ -56,7 +56,7 @@
 
                 <!-- Correo electronico -->
                 
-                <label for="name" class="error-input"><%= locals.errors && locals.errors.name ? errors.email.msg : null %>  </label>
+                <label for="name" class="error-input"><%= locals.errors && locals.errors.email ? errors.email.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
                     <input type="email" placeholder="*Correo electronico" class="reg__input" name="email" value="<%= (locals && locals.errors) ? old.email : null %>">
                 </div>
@@ -68,14 +68,14 @@
 
                 <!-- Contraseña -->
                 
-                <label for="name" class="error-input"><%= locals.errors && locals.errors.name ? errors.password.msg : null %>  </label>
+                <label for="name" class="error-input"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
                     <input type="password" placeholder="*Contraseña" class="reg__input" name="password">
                 </div>
                 
                 <label for="name" class="error-input"><%= locals.errors && locals.errors.name ? errors.password2.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
-                    <input type="password2" placeholder="*Repetir contraseña" class="reg__input" name="password-repeat">
+                    <input type="password" placeholder="*Repetir contraseña" class="reg__input" name="password-repeat">
                 </div>
 
                 <!-- Paises -->
@@ -119,19 +119,23 @@
                 <!-- Terminos y condiciones de uso -->
 
                 <div class="f-display f-main-between">
+                    
                     <div class="ctrl-checkbox">
-                        <input type="checkbox" id="chk-keep" class="chk-keep d-none" name="keep">
+                        <input type="checkbox" id="chk-keep" class="chk-keep d-none" name="terms">
                         <label for="chk-keep" class="checkbox">
                             Acepto los <a href="#">términos y condiciones </a> y autorizo el uso de mis datos deacuerdo
                         a la <a href="#">Declaracion de privacidad</a>
                         </label>
+                        <p class="error-input"><%= locals.errors && locals.errors.terms ? errors.terms.msg : null %>  </p>
                     </div>
                 </div>  
                 
                 <nav class="f-display f-main-between reg__navbottom f-grow-1 f-cross-end my-5">
+                    <a class="no-decor" href="/home">
                     <div class="button button-rojo reg__navbutton">
-                        <a href="/home"><i class="fas fa-times"></i></a>
+                        <i class="fas fa-times"></i>
                     </div>
+                    </a>
                     <div class="button button-verde reg__navbutton">
                         <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
                     </div>
