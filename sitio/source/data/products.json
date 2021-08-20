@@ -110,16 +110,6 @@
     ]
   },
   {
-    "id": 14,
-    "name": "Cenicero",
-    "category": "merchandising",
-    "description": "Lorem ipsum",
-    "price": 9999.99,
-    "images": [
-      "cenicero01-305x368.jpg"
-    ]
-  },
-  {
     "id": 15,
     "name": "Cuerno",
     "category": "merchandising",
@@ -132,7 +122,7 @@
   {
     "id": 16,
     "name": "Cuerno Soporte",
-    "category": "merchandasing",
+    "category": "merchandising",
     "description": "Lorem ipsum",
     "price": "9999.99",
     "images": [
@@ -201,14 +191,36 @@
     ]
   },
   {
-    "name": "Prueba Carga Imagenes 12",
-    "category": "cerveza",
-    "description": "Probando 1515",
-    "price": "2225",
     "id": 23,
+    "name": "Cenicero",
+    "category": "merchandising",
+    "description": "Lorem ipsum",
+    "price": "9999.99",
     "images": [
-      "1629255892003_img.jpg",
-      "1629255892037_img.jpg"
+      "cenicero01-305x368.jpg"
     ]
+  },
+  {
+    "name": "Cenicerosdqdw",
+    "category": "hidromiel",
+    "description": "dadasd",
+    "price": "2312",
+    "images": [
+      "1629502897705_img.png",
+      "1629502898164_img.png",
+      "1629502898379_img.png"
+    ],
+    "id": 24
+  },
+  {
+    "name": "Cenicerosdas1ed324",
+    "category": "cerveza",
+    "description": "sadasd",
+    "price": "23213",
+    "images": [
+      "1629503011054_img.png",
+      "1629503011217_img.png"
+    ],
+    "id": 25
   }
 ]

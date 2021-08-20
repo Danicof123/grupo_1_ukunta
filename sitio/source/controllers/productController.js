@@ -1,142 +1,140 @@
 const {validationResult} = require('express-validator');
+const productsDB = require('../models/ProductsDB');
 
-let {productos_db, guardarProducto} = require('../data/products_db');
-
-const comprobarId = (id) => id && !!productos_db.find((e) => e.id === id);
-
-const reemplazarProd = (obj) => {
-   productos_db.forEach((pr) => {
-      if (pr.id === obj.id) {
-         pr.name = obj.name;
-         pr.category = obj.category;
-         pr.description = obj.description;
-         pr.price = obj.price;
-         pr.images = obj.images || pr.images;
-         return;
-      }
-   });
-};
-
-const eliminarProd = (id) => (productos_db = productos_db.filter((pr) => pr.id !== id));
-
-const crearProd = (req) => {
-   const obj = req.body;
-   obj.id = productos_db[productos_db.length - 1].id + 1;
-   if(req.files) {
-      var allImages = req.files.map(image => image.filename)
+// Controlador de la Tienda
+const store = (req, res) => {
+   let productos_db = productsDB.getDB;
+   // Obtiene la categoria por params y muestra el resultado
+   switch (req.params.cat) {
+      case 'cerveza':
+         productos_db = productsDB.getForCategory('cerveza')
+         break;
+      case 'hidromiel':
+         productos_db = productsDB.getForCategory('hidromiel')
+         break;
+      case 'merchandising':
+         productos_db = productsDB.getForCategory('merchandising')
+         break;
+      default:
+         productos_db = productsDB.getDB;
+         break;
    }
-   obj.images = allImages;
-   productos_db.push(obj);
-};
+   const locals = {
+      title: 'Tienda Ukunta',
+      productos_db,
+   };
+   res.render('store', locals);
+}
 
-const escribirBD = () => {
-   guardarProducto(productos_db);
-};
+const detail = (req, res) => {
+   const id = parseInt(req.params.id, 10);
+   // Si el id del detalle no existe, redirecciona a la tienda
+   if (!productsDB.comprobarId(id)) res.redirect('/store');
 
-module.exports = {
-   store: (req, res) => {
-      let productos;
-      switch (req.params.cat) {
-         case 'cerveza':
-            productos = productos_db.filter((pr) => pr.category === 'cerveza');
-            break;
-         case 'hidromiel':
-            productos = productos_db.filter((pr) => pr.category === 'hidromiel');
-            break;
-         case 'merchandising':
-            productos = productos_db.filter((pr) => pr.category === 'merchandising');
-            break;
-         default:
-            productos = productos_db;
-            break;
-      }
+   // Guardo el producto
+   let producto = productsDB.getFind('id', id)
+
+   // Variables a enviar a la vista (products)
+   const locals = {
+      title: `Detalle ${producto.name}`,
+      producto,
+      productos_db: productsDB.getDB,
+      prRelations: productsDB.getRelations(id, producto.category),
+   }
+   // Renderizado de la vista
+   res.render('products', locals);
+}
+
+const addProduct = (req, res) => {
+   const locals = {
+      title: 'Agregar producto',
+      productos_db: productsDB.getDB,
+   }
+
+   res.render('addProduct', locals);
+}
+
+const createProduct = (req, res) => {
+   const id = parseInt(req.body.id, 10);
+   const resultValidation = validationResult(req);
+
+   if (resultValidation.errors.length > 0) {
+      console.log(2)
+      // Variables a la vista
       const locals = {
-         title: 'Tienda Ukunta',
-         productos_db: productos,
-      };
-      res.render('store', locals);
-   },
-
-   detail: (req, res) => {
-      const id = parseInt(req.params.id, 10);
-
-      if (!comprobarId(id)) res.redirect('/store');
-
-      let producto = productos_db.find((producto) => producto.id === id);
-      let prRelations = productos_db.filter(pr => pr.category === producto.category && pr.id !== producto.id);
-
-      res.render('products', {
-         title: 'Detalle Producto',
-         producto,
-         productos_db,
-         prRelations,
-      });
-   },
-   addProduct: (req, res) => {
-      res.render('addProduct', {
+         errors: resultValidation.mapped(),
+         old: req.body,
          title: 'Agregar producto',
-         productos_db,
-      });
-   },
-   createProduct: (req, res) => {
-      const resultValidation = validationResult(req);
+         productos_db: productsDB.getDB,
+      }
 
-      if (resultValidation.errors.length > 0) {
-         return res.render('addProduct', {
+      return res.render('addProduct', locals);
+   } else {
+      // Creo un nuevo producto con lo que viene en el body
+      const newProduct = {...req.body}
+      // Agrego las imagenes
+      newProduct.images = req.files.map((image) => image.filename)
+      // Añado en la BD el nuevo PRoducto
+      productsDB.add(newProduct)
+      // Redirecciono al detalle
+      res.redirect(`/store/products/${id}`);
+   }
+}
+const editProducto = (req, res) => {
+   const id = parseInt(req.params.id, 10); //Convierte el string a Integer
+   // Si el id del producto a editar no existe en la BD, redirige a la tienda
+   if (!productsDB.comprobarId(id)) res.redirect('/store');
+   // Variables a la vista
+   const locals = {
+      title: `Editando ${productsDB.getFind('id', id).name}`,
+      product: productsDB.getFind('id', id),
+   };
+
+   res.render('editProduct', locals);
+}
+// Actualizar un producto
+const updateProducto = (req, res) => {
+   const id = parseInt(req.body.id, 10);
+
+   const resultValidation = validationResult(req);
+
+   // Si hay errores en el formulario de la edicion
+   if (resultValidation.errors.length > 0) {
+      // Si existe el id
+      if (productsDB.comprobarId(id)) {
+         // Variables a la vista
+         const locals = {
             errors: resultValidation.mapped(),
             old: req.body,
-            title: 'Agregar producto',
-            productos_db,
-         });
-      } else {
-         crearProd(req);
-         escribirBD();
-         res.redirect(`/store/products/${req.body.id}`);
-      }
-   },
-
-   editProducto: (req, res) => {
-      const id = parseInt(req.params.id, 10);
-
-      if (!comprobarId(id)) res.redirect('/store');
-      const locals = {
-         title: 'Editando ',
-         product: productos_db.find((pr) => pr.id === +req.params.id),
-      };
-      res.render('editProduct', locals);
-   },
-
-   updateProducto: (req, res) => {
-      const id = parseInt(req.body.id, 10);
-
-      const resultValidation = validationResult(req);
-
-      if (resultValidation.errors.length > 0) {
-         if (comprobarId(id)) {
-            return res.render('editProduct', {
-               errors: resultValidation.mapped(),
-               old: req.body,
-               title: 'Editando ',
-               product: productos_db.find((pr) => pr.id === +req.params.id),
-            });
+            title: 'Editando ',
+            product: productsDB.getFind('id', id),
          }
-      } else {
-         if (comprobarId(id)) {
-            const pr = req.body; //Guarda el producto editado en pr
-            pr.id = id;
-            reemplazarProd(pr);
-            escribirBD();
-            res.redirect(`/store/products/${req.params.id}`);
-         }
+         return res.render('editProduct', locals);
       }
-   },
+      // Si no hay errores en el formulario de la edicion
+   } else {
+      // Comprueba el id si existe en la BD
+      if (productsDB.comprobarId(id)) {
+         const pr = req.body; //Guarda el producto editado en pr
+         pr.id = id;
+         productsDB.setElement = pr;
+         res.redirect(`/store/products/${id}`);
+      }
+   }
+}
+const remove = (req, res) => {
+   const id = parseInt(req.params.id, 10);
+   if (productsDB.comprobarId(id)) productsDB.delete(id);
 
-   remove: (req, res) => {
-      const id = parseInt(req.params.id, 10);
-      if (comprobarId(id)) {
-         eliminarProd(id);
-         escribirBD();
-      }
-      res.redirect('/store');
-   },
+   res.redirect('/store');
+}
+
+module.exports = {
+   store,
+   detail,
+   addProduct,
+   createProduct,
+   editProducto,
+   updateProducto,
+   remove,
 };

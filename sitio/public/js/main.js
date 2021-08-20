@@ -5,6 +5,5 @@ import dropMenu from "./modules/drop-menu.js";
 
     d.addEventListener('DOMContentLoaded', e => {
         dropMenu(".btn-drop") //Funcionalidad de menu desplegable al icono de usuario
-        checkedAtrribute(".checkbox-lbl", ".chk-keep");
     })
 })(console, document, window);
