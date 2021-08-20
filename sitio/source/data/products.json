@@ -199,16 +199,5 @@
     "images": [
       "tapaboca01-305x368.jpg"
     ]
-  },
-  {
-    "name": "Prueba Carga Imagenes 12",
-    "category": "cerveza",
-    "description": "Probando 1515",
-    "price": "2225",
-    "id": 23,
-    "images": [
-      "1629255892003_img.jpg",
-      "1629255892037_img.jpg"
-    ]
   }
 ]
