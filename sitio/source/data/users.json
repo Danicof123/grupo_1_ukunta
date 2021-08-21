@@ -1,9 +1,10 @@
 [
     {
+        "id": 1,
         "name": "daniel",
         "lastname": "fernandez",
         "datebirth": 25091992,
-        "DNI" : 12345678,
+        "DNI": 12345678,
         "phone": 1122223333,
         "email": "daniel@ukunta.com",
         "password": "danicof",
@@ -14,10 +15,11 @@
         "rol": "admin"
     },
     {
+        "id": 2,
         "name": "bernado",
         "lastname": "dinarte",
         "datebirth": 14051985,
-        "DNI" : 23456789,
+        "DNI": 23456789,
         "phone": 1144445555,
         "email": "bernardo@ukunta.com",
         "password": "berna",
@@ -28,10 +30,11 @@
         "rol": "admin"
     },
     {
+        "id": 3,
         "name": "emanuel",
         "lastname": "romero",
         "datebirth": 24011989,
-        "DNI" : 34567891,
+        "DNI": 34567891,
         "phone": 1166667777,
         "email": "emanuel@ukunta.com",
         "password": "emaromero",

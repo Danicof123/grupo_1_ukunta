@@ -13,6 +13,7 @@
         {error404} = require('./controllers/errorController'),
         //Enrutador
         router = require('./routes/index');
+        adminRouter = require('./routes/admin')
         usersRouter = require('./routes/users')
         productsRouter = require('./routes/products'),
         cartRouter = require('./routes/cart');
@@ -30,6 +31,7 @@
       .use(staticDir)
       //Conectando rutas
       .use(router)
+      .use('/admin',adminRouter)
       .use('/users', usersRouter)
       .use('/store', productsRouter)
       .use('/cart', cartRouter)

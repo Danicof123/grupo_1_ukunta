@@ -1,4 +1,4 @@
-const {productos_db} = require('../data/products_db');
+const productsDB = require('../models/ProductsDB');
 const {validationResult} = require('express-validator')
 
 const removeAccents = (str) => {
@@ -37,7 +37,7 @@ const search = (req,res) => {
   const search = removeAccents(req.query.s.toLowerCase());
 		const locals = {
       title: "Resultado de búsqueda",
-			producto: productos_db.filter(pr => (removeAccents(pr.name.toLowerCase()).includes(search) || removeAccents(pr.category.toLowerCase()).includes(search)) )
+			producto: productsDB.search(search)
 		}
 		res.render('results', locals)
 }
