@@ -14,21 +14,25 @@
             <div class="row f-main-center">
                 <div class="mb-12 lp-10 dk-9 f-main-y">
                     <h3 class="no-mb no-tb f-self-start">INICIAR SESIÓN</h3>
-                    <form action="/home" class="w-100">
+                    <form action="/users/login" class="w-100" method="POST">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="text-danger"><%= errors.email.msg %></div>
+                        <% } %>
                         <!-- Usuario -->
                         <div class="reg__ctrl-input mbt-4">
-                            <input type="text" placeholder="Escriba su usuario" name="name" class="reg__input">
+                            <input type="text" placeholder="Ingrese su email" name="email" class="reg__input">
                         </div>
                         <!-- Usuario -->
                         <div class="reg__ctrl-input mbt-4">
-                            <input type="password" placeholder="Escriba su contraseña" name="passw" class="reg__input">
+                            <input type="password" placeholder="Ingrese su contraseña" name="password" class="reg__input">
                             <button class="eye__button"><i class="fas fa-eye"></i></button>
                         </div>
                         <!-- Enviar -->
+                        
                         <div class="reg__ctrl-input mbt-4">
                             <input type="submit" class="contacto__button" value="ENVIAR">
                         </div>
-        
+                        
                         <div class="f-display f-main-between">
                             <div class="ctrl-checkbox">
                                 <input type="checkbox" id="chk-keep" class="chk-keep d-none" name="keep">

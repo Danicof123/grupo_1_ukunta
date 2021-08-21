@@ -10,14 +10,12 @@ const path = require('path'),
       },
    }),
    uploadFile = multer({storage}),
-
-   fileFilter = (req, file,callback) => {
-      if(!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)){
-          req.fileValidationError = "Only Images";
-          return callback(null,false,req.fileValidationError);
+   fileFilter = (req, file, callback) => {
+      if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
+         req.fileValidationError = 'Only Images';
+         return callback(null, false, req.fileValidationError);
       }
-      callback(null,true);
-  }
-  
+      callback(null, true);
+   };
 
 module.exports = uploadFile;

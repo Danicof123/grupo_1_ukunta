@@ -59,7 +59,6 @@ const createProduct = (req, res) => {
    const resultValidation = validationResult(req);
 
    if (resultValidation.errors.length > 0) {
-      console.log(2)
       // Variables a la vista
       const locals = {
          errors: resultValidation.mapped(),

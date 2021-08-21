@@ -1,5 +1,6 @@
       //Dependencias
   const express = require('express'),
+        session = require('express-session'),
         favicon = require('serve-favicon'),
         path = require('path'),
         methodOverride =  require('method-override'), // Pasar poder usar los métodos PUT y DELETE  
@@ -24,6 +25,11 @@
       .set('view engine', 'ejs')
       .set('port', port)
       //Uso de middleware
+      .use(session({
+          secret: 'Ukunta',
+          resave: false,
+          saveUninitialized: false,
+      }))
       .use(favicon(faviconDir))
       .use(express.json())
       .use(express.urlencoded({extended: false}))

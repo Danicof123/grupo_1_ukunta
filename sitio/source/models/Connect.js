@@ -13,7 +13,6 @@ class Connect{
     }
     // Elimina un elemento, recibe un id para saber cual eliminar
     delete(id){
-        console.log(this.__database.filter(element => element.id !== id))
         this.__database = this.__database.filter(element => element.id !== id)
         this.__saveDB(this.__database)
     }
@@ -22,7 +21,6 @@ class Connect{
         elemento.id = this.__database.lastElement().id + 1;
         this.__database.push(elemento);
         this.__saveDB(this.__database);
-        console.log(this.__database)
     }
     // Comprueba si el id existe en la BD
     comprobarId(id){
