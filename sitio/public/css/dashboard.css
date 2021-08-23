@@ -1,0 +1,54 @@
+.title__dashboard{
+    font-size: 1.5rem;
+}
+.dashb__input{
+    padding-left: .5rem;
+    height: 2rem;
+    width: calc(100% - .5rem);
+}
+.toggle__dashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 3rem;
+    color: var(--color-gris);
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+    cursor: pointer;
+}
+
+.btn-user__dashboard,
+.btn-products__dashboard{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+.btn-user__dashboard:hover,
+.btn-products__dashboard.active{
+    color: var(--color-primario);
+}
+
+@media screen and (min-width: 768px) {
+    .toggle__dashboard{
+        flex-direction: row;
+        width: 10rem;
+        font-size: 1.8rem;
+    }
+    .dashb__input{
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .ctrl-input__dashboard{
+        display: flex;
+        height: 3.5rem;
+    }
+    .dashb__input{
+        height: 3.5rem;
+    }
+}
