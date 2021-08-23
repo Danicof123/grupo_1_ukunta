@@ -1,6 +1,7 @@
 const bcryptjs = require('bcryptjs');
 
 const {users_db, guardarUser} = require('../data/users_db');
+const userDB = require('../models/UserDB');
 const {validationResult} = require('express-validator');
 
 const userCreation = (user) => {
@@ -19,24 +20,19 @@ module.exports = {
    },
 
    loginProcess: (req, res) => {
-      let userToLogin = users_db.find((user) => user.email === req.body.email); // Busco al usuario a loguear
-
-      if (userToLogin) {
-         //let checkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
-         if (userToLogin.password === req.body.password) { // Valido la contraseña del usuario a loguear
-            delete userToLogin.password; // Elimino el password para no guardar informacion sensible en la cookie
-            req.session.userLogged = userToLogin // Creo la propiedad UserLogged en session para almacenar los datos del usuario
+      
+      let userToLogin = userDB.getDB.find((user) => user.email === req.body.email); // Busco al usuario a loguear
+      //let checkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
+      if (userToLogin && userToLogin.password === req.body.password) { // Si tengo usuario a loguear...
+            req.session.userLogged = { // Guardo los datos del usuario en session
+               id: userToLogin.id,
+               nombre: userToLogin.nombre,
+               rol: userToLogin.rol,
+            };
+            if (req.body.keep) { // Si doy check a mantener sesion, creo la cookie
+               res.cookie('keepSession', req.session.userLogged, {maxAge: 1000 * 60 * 60});
+            }
             return res.redirect('/home');
-         } else {
-            return res.render('login', {
-               title: 'Iniciar sesión',
-               errors: {
-                  email: {
-                     msg: 'Credenciales inválidas',
-                  },
-               },
-            });
-         }
       } else {
          return res.render('login', {
             title: 'Iniciar sesión',
@@ -49,9 +45,10 @@ module.exports = {
       }
    },
 
-   logout: (req,res) => {
+   logout: (req, res) => {
+      res.clearCookie('keepSession');
       req.session.destroy();
-      return res.redirect('/home')
+      return res.redirect('/home');
    },
 
    register: (req, res) => {

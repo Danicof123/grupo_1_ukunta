@@ -2,7 +2,7 @@
 
   <!-- Logo -->
   <div class="navbar__logo">
-      <a href="/"><img src="/images/logo/ukunta.svg" alt="logotipo"></a>
+      <a href="/home"><img src="/images/logo/ukunta.svg" alt="logotipo"></a>
   </div>
 
   <!-- Search -->
@@ -44,11 +44,18 @@
 
   <div class="drop-menu menu--user" id="drop-menu">
     <ul>
-      <li><a href="/users/login" class="navbar__item">ACCEDER</a></li>
-      <li><a href="/users/logout" class="navbar__item">CERRAR SESIÓN</a></li>
-      <li class="navbar__item drop-menu__separator"></li>
-      <li><a href="/admin/dashboard" class="navbar__item">ADMINISTRACIÓN</a></li>
-      <li><a href="/store/products/add" class="navbar__item">AGREGAR PRODUCTO</a></li>
+      <% if (locals.isLogged) { %>
+        <li><a href="/users/profile" class="navbar__item">MI PERFÍL</a></li>
+        <li><a href="/users/logout" class="navbar__item">CERRAR SESIÓN</a></li>
+        <li class="navbar__item drop-menu__separator"></li>
+      <% if (locals.userLogged && locals.userLogged.rol === "admin") { %>
+        <li><a href="/admin/dashboard" class="navbar__item">ADMINISTRACIÓN</a></li>
+        <li><a href="/store/products/add" class="navbar__item">AGREGAR PRODUCTO</a></li>
+      <% } %>
+      <% } else { %>
+        <li><a href="/users/login" class="navbar__item">ACCEDER</a></li>
+        <li><a href="/users/register" class="navbar__item">REGISTRARME</a></li>
+      <% } %>
     </ul>
   </div>
 </nav>

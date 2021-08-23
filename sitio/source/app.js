@@ -1,6 +1,7 @@
-      //Dependencias
+//Dependencias
   const express = require('express'),
         session = require('express-session'),
+        cookies = require('cookie-parser'),
         favicon = require('serve-favicon'),
         path = require('path'),
         methodOverride =  require('method-override'), // Pasar poder usar los métodos PUT y DELETE  
@@ -11,11 +12,15 @@
         //configuración de express
         port = process.env.PORT || 3000,
         app = express(),
+        //Controladores
         {error404} = require('./controllers/errorController'),
+        //Middlewares
+        userLoggedMiddleware = require('./middlewares/userLoggedMiddleware'),
+        localsUserCheck = require('./middlewares/localsUserCheck'),
         //Enrutador
-        router = require('./routes/index');
-        adminRouter = require('./routes/admin')
-        usersRouter = require('./routes/users')
+        router = require('./routes/index'),
+        adminRouter = require('./routes/admin'),
+        usersRouter = require('./routes/users'),
         productsRouter = require('./routes/products'),
         cartRouter = require('./routes/cart');
 
@@ -30,6 +35,10 @@
           resave: false,
           saveUninitialized: false,
       }))
+      .use(cookies())
+      .use(userLoggedMiddleware)
+      .use(localsUserCheck)
+      //
       .use(favicon(faviconDir))
       .use(express.json())
       .use(express.urlencoded({extended: false}))

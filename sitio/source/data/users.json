@@ -43,5 +43,20 @@
         "city": "lanus",
         "adress": "calle 345",
         "rol": "admin"
+    },
+    {
+        "id": 4,
+        "name": "eric",
+        "lastname": "mena",
+        "datebirth": 14021976,
+        "DNI": 28000000,
+        "phone": 1188889999,
+        "email": "eric@ukunta.com",
+        "password": "ericmena",
+        "country": "argentina",
+        "state": "buenos aires",
+        "city": "formar",
+        "adress": "calle 678",
+        "rol": "guest"
     }
 ]

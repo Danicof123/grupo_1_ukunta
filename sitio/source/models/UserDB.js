@@ -13,4 +13,4 @@ class UserDB extends Connect{
     }
 }
 
-module.exports = new ProductsDB(dirProductsDB)
+module.exports = new UserDB(dirUserDB)
