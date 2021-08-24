@@ -71,7 +71,7 @@ module.exports = {
         const locals = {
             title: 'Profile'
         }
-        res.render('profile')
+        res.render('profile', locals)
     }
     
 }   
