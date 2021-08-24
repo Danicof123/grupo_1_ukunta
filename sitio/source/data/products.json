@@ -199,28 +199,5 @@
     "images": [
       "cenicero01-305x368.jpg"
     ]
-  },
-  {
-    "name": "Cenicerosdqdw",
-    "category": "hidromiel",
-    "description": "dadasd",
-    "price": "2312",
-    "images": [
-      "1629502897705_img.png",
-      "1629502898164_img.png",
-      "1629502898379_img.png"
-    ],
-    "id": 24
-  },
-  {
-    "name": "Cenicerosdas1ed324",
-    "category": "cerveza",
-    "description": "sadasd",
-    "price": "23213",
-    "images": [
-      "1629503011054_img.png",
-      "1629503011217_img.png"
-    ],
-    "id": 25
   }
 ]

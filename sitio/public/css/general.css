@@ -82,7 +82,17 @@ h4{
     font-size: .7rem;
     color: var(--color-rojo);
 }   
-
+.msg-alert{
+    position: absolute;
+    left: -.5rem;
+    z-index: 10;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: var(--color-secundario);
+    background-color: var(--color-rojo);
+    cursor: pointer;
+}
 /*------------------------------------------- Paddings -------------------------------------------*/
 .p-0{
     padding: 0;

@@ -59,7 +59,6 @@ const createProduct = (req, res) => {
    const resultValidation = validationResult(req);
 
    if (resultValidation.errors.length > 0) {
-      console.log(2)
       // Variables a la vista
       const locals = {
          errors: resultValidation.mapped(),
@@ -89,6 +88,7 @@ const editProducto = (req, res) => {
       title: `Editando ${productsDB.getFind('id', id).name}`,
       product: productsDB.getFind('id', id),
    };
+
 
    res.render('editProduct', locals);
 }
@@ -125,8 +125,8 @@ const updateProducto = (req, res) => {
 const remove = (req, res) => {
    const id = parseInt(req.params.id, 10);
    if (productsDB.comprobarId(id)) productsDB.delete(id);
-
-   res.redirect('/store');
+   // Redirecciona por donde viene
+   res.redirect(req.headers.referer);
 }
 
 module.exports = {
