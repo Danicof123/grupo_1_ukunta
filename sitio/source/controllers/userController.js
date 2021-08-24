@@ -65,6 +65,13 @@ module.exports = {
         }
         
         
+    },
+
+    profile : (req, res) => {
+        const locals = {
+            title: 'Profile'
+        }
+        res.render('profile')
     }
     
 }   
