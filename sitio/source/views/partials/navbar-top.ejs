@@ -46,9 +46,10 @@
     <ul>
       <% if (locals.isLogged) { %>
         <li><a href="/users/profile" class="navbar__item">MI PERFÍL</a></li>
-        <li><a href="/users/logout" class="navbar__item">CERRAR SESIÓN</a></li>
         <li class="navbar__item drop-menu__separator"></li>
+        <li><a href="/users/logout" class="navbar__item">CERRAR SESIÓN</a></li>
       <% if (locals.userLogged && locals.userLogged.rol === "admin") { %>
+        <li class="navbar__item drop-menu__separator"></li>
         <li><a href="/admin/dashboard" class="navbar__item">ADMINISTRACIÓN</a></li>
         <li><a href="/store/products/add" class="navbar__item">AGREGAR PRODUCTO</a></li>
       <% } %>
