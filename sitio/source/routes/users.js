@@ -5,7 +5,7 @@ const {usersValidator} = require('../modules/validator');
 // Middlewares
 const guestMiddleware = require('../middlewares/guestMiddleware'); // Si ya esta logueado, no puede ingresar a registro ni login
 // Controllers
-const {login, loginProcess, register, createUser, logout} = require('../controllers/userController');
+const {login, loginProcess, register, createUser, logout, profile} = require('../controllers/userController');
 
 // Login
 router.get('/login', guestMiddleware, login);
@@ -15,5 +15,7 @@ router.get('/register', guestMiddleware, register);
 router.post('/register', usersValidator, createUser);
 // Logout
 router.get('/logout', logout);
+// Profile
+router.get('/profile', profile);
 
 module.exports = router;

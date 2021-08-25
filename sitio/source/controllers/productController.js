@@ -89,6 +89,7 @@ const editProducto = (req, res) => {
       product: productsDB.getFind('id', id),
    };
 
+
    res.render('editProduct', locals);
 }
 // Actualizar un producto
@@ -124,8 +125,8 @@ const updateProducto = (req, res) => {
 const remove = (req, res) => {
    const id = parseInt(req.params.id, 10);
    if (productsDB.comprobarId(id)) productsDB.delete(id);
-
-   res.redirect('/store');
+   // Redirecciona por donde viene
+   res.redirect(req.headers.referer);
 }
 
 module.exports = {

@@ -1,0 +1,96 @@
+.title__dashboard{
+    font-size: 1.5rem;
+}
+.dashb__input{
+    padding-left: .5rem;
+    height: 2rem;
+    width: calc(100% - .5rem);
+}
+.plus__dashboard,
+.toggle__dashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 3rem;
+    color: var(--color-gris);
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+    cursor: pointer;
+}
+.plus__dashboard{
+    width: 3rem;
+    margin-left: .5rem;
+}
+.btn-plus__dashboard,
+.btn-user__dashboard,
+.btn-products__dashboard{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+.btn-plus__dashboard:hover,
+.btn-user__dashboard:hover,
+.btn-products__dashboard.active{
+    color: var(--color-primario);
+}
+
+/* ----------------------------------- Tabla ----------------------------------- */
+
+.table__dashboard {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+ }
+
+ .table__dashboard th,
+ .table__dashboard td{
+     text-align: left;
+ }
+ .table-action__dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+ .table__dashboard img{
+     max-height: 3rem;
+ }
+ .table__dashboard th, .table__dashboard td{
+     padding: .5rem
+ }
+
+ .table__dashboard thead{
+     background-color: var(--color-secundario);
+     color: #fff;
+ }
+ .table__dashboard tbody tr{
+    border-bottom: 1px solid #ccc;     
+ }
+
+
+
+@media screen and (min-width: 768px) {
+    .toggle__dashboard{
+        flex-direction: row;
+        width: 10rem;
+        font-size: 1.8rem;
+    }
+    .dashb__input{
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .ctrl-input__dashboard{
+        display: flex;
+        height: 3.5rem;
+    }
+    .dashb__input{
+        height: 3.5rem;
+    }
+}

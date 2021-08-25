@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head.ejs') %>
+<body class="home">
+  <header class="header">
+    <%- include('partials/navbar-top.ejs') %>
+  </header>
+  <!-- Barra de navegación inferior -->
+  <%- include('partials/navbar-bottom.ejs') %>
+  <main class="container f-center">
+    <div class="mb-12 f-main-center my-5">
+        <div class="image__profile">
+            <img src="/images/users/default.png" alt="user">
+            <input type="file" name="avatar" accept="image/*" class="input_avatar">
+            <div class="edit-avatar">
+                <span class="text-avatar">Actualizar imagen</span>
+                <i class="fas fa-edit"></i></div>
+        </div>
+    </div>
+    <form class="mb-12 lp-8 pc-6 f-main-y mbt-5" method="POST" action="">
+
+        <!-- Nombre -->
+        <div class="profile-data">
+            <h4 class="data">Nombre: Cosme Fulanito</h4>
+            <div class="edit-profile" data-target="change-nombre"><i class="fas fa-edit"></i></div>
+        </div>
+       
+        <div id="change-nombre" class="change-data">
+            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.name.msg : null %></label>
+            <div class="reg__ctrl-input mbt-4">
+                <input type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : null %>" disabled>
+            </div>
+    
+            <!-- Apellido -->
+          
+            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input type="text" placeholder="*Apellido" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>" disabled>
+            </div>
+        </div>
+        
+
+        <!-- Fecha nacimiento -->
+        <div class="profile-data">
+            <h4 class="data">Fecha nacimiento: 12/12/2012</h4>
+            <div class="edit-profile" data-target="change-date"><i class="fas fa-edit"></i></div>
+        </div>
+
+        <div id="change-date" class="change-data">
+            <label for="inp-date" class="error-input d-none"><%= locals.errors && locals.errors.datebirth ? errors.datebirth.msg : null %></label>
+            <div class="row my-0 f-cross-center my-4">
+                
+                <div class="mb-6">
+                    <label for="inp-surname" class="reg__date__age" >Fecha de nacimiento +18*</label>
+                </div>
+                <div class="mb-6">
+                    <div class="reg__ctrl-input">
+                        <input type="date" class="reg__input" name="datebirth" id="inp-date" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teléfono -->
+
+        <div class="profile-data">
+            <h4 class="data">Teléfono: 123123123</h4>
+            <div class="edit-profile" data-target="change-phone"><i class="fas fa-edit"></i></div>
+        </div>
+        
+        <div id="change-phone" class="change-data">
+            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled type="tel" placeholder="*Numero de telefono" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
+            </div>
+        </div>
+
+        <!-- Correo electronico -->
+        
+        <div class="profile-data">
+            <h4 class="data">Correo electrónico: ******@***mail.com</h4>
+            <div class="edit-profile" data-target="change-email"><i class="fas fa-edit"></i></div>
+        </div>
+
+        <div id="change-email" class="change-data">
+            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.email ? errors.email.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled type="email" placeholder="*Correo electronico actual" class="reg__input" name="old_email" value="<%= (locals && locals.errors) ? old.email : null %>">
+            </div>
+
+            <div class="reg__ctrl-input my-4">
+                <input disabled type="email" placeholder="*Nuevo correo electronico" class="reg__input"
+                    name="email">
+            </div>
+
+            <div class="reg__ctrl-input my-4">
+                <input disabled type="email" placeholder="*Repetir correo electronico" class="reg__input"
+                    name="email-repeat">
+            </div>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="profile-data">
+            <h4 class="data">Editar Contraseña</h4>
+            <div class="edit-profile" data-target="change-psw"><i class="fas fa-edit"></i></div>
+        </div>
+
+        <div id="change-psw" class="change-data">
+            <label for="old_password" class="error-input d-none"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled id="old_password" type="password" placeholder="*Contraseña actual" class="reg__input" name="old_password">
+            </div>
+
+            <label for="password" class="error-input d-none"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled id="password" type="password" placeholder="*Contraseña nueva" class="reg__input" name="password">
+            </div>
+            
+            <label for="password-repeat" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.password2.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled id="password-repeat" type="password" placeholder="*Repetir contraseña" class="reg__input" name="password-repeat">
+            </div>
+        </div>
+
+        <!-- Domicilio -->
+        <div class="profile-data">
+            <h4 class="data">Editar Domicilio</h4>
+            <div class="edit-profile" data-target="change-address"><i class="fas fa-edit"></i></div>
+        </div>
+        <div id="change-address" class="change-data">
+            <!-- Paises -->
+            <div class="reg__ctrl-input my-4">
+                <select name="country" class="reg__input">
+                    <option value="value1" selected>*Pais</option>
+                    <option value="value2">Argentina</option>
+                    <option value="value3">Croacia</option>
+                    <option value="value4">Costa Rica</option>
+                </select>
+            </div>
+
+
+            <!-- Provincias -->
+            <div class="reg__ctrl-input my-4">
+                <select name="state" class="reg__input">
+                    <option value="value1" selected>*Provincia/Estado</option>
+                    <option value="value2">Buenos Aires</option>
+                    <option value="value3">Cordoba</option>
+                    <option value="value4">Santa Fe</option>
+                </select>
+            </div>
+            
+            <!-- Ciudades -->
+            <div class="reg__ctrl-input my-4">
+                <select name="city" class="reg__input">
+                    <option value="value1" selected>*Ciudad</option>
+                    <option value="value2">CABA</option>
+                    <option value="value3">La Matanza</option>
+                    <option value="value4">Rosario</option>
+                </select>
+            </div>
+
+            <!-- Descripcion domicilio -->
+            
+            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.adress.msg : null %>  </label>
+            <div class="reg__ctrl-textarea my-4">
+                <textarea name="adress" class="text__area" placeholder="*Escriba una descripcion de su domicilio" value="<%= (locals && locals.errors) ? old.adress : null %>"></textarea>
+            </div>
+        </div>
+        <!-- Terminos y condiciones de uso -->
+        
+        <nav class="f-display f-main-between reg__navbottom f-grow-1 f-cross-end my-5">
+            <a class="no-decor" href="/home">
+            <div class="button button-rojo reg__navbutton">
+                <i class="fas fa-times"></i>
+            </div>
+            </a>
+            <div class="button button-verde reg__navbutton">
+                <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
+            </div>
+        </nav>
+    </form>
+  </main>
+  <script src="/js/profile.js" type="module"></script>
+</body>
+</html>
