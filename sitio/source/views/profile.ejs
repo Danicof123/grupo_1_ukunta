@@ -8,41 +8,46 @@
   <!-- Barra de navegación inferior -->
   <%- include('partials/navbar-bottom.ejs') %>
   <main class="container f-center">
+
     <div class="mb-12 f-main-center my-5">
-        <div class="image__profile">
-            <img src="/images/users/default.png" alt="user">
-            <input type="file" name="avatar" accept="image/*" class="input_avatar">
-            <div class="edit-avatar">
-                <span class="text-avatar">Actualizar imagen</span>
-                <i class="fas fa-edit"></i></div>
-        </div>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="image__profile">
+                <img src="/images/users/default.png" alt="user">
+                <input type="file" name="avatar" accept="image/*" class="input_avatar">
+                <div class="edit-avatar">
+                    <span class="text-avatar">Actualizar imagen</span>
+                    <i class="fas fa-edit"></i></div>
+            </div>
+        </form>   
     </div>
+    
     <form class="mb-12 lp-8 pc-6 f-main-y mbt-5" method="POST" action="">
 
         <!-- Nombre -->
+
         <div class="profile-data">
-            <h4 class="data">Nombre: Cosme Fulanito</h4>
+            <h4 class="data">Nombre: <%= (user.name).replace(/\b\w/g, l => l.toUpperCase()) %> <%= (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>  </h4>
             <div class="edit-profile" data-target="change-nombre"><i class="fas fa-edit"></i></div>
         </div>
        
         <div id="change-nombre" class="change-data">
             <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.name.msg : null %></label>
             <div class="reg__ctrl-input mbt-4">
-                <input type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : null %>" disabled>
+                <input type="text" placeholder="*<%= (user.name).replace(/\b\w/g, l => l.toUpperCase()) %>" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : null %>" disabled>
             </div>
     
             <!-- Apellido -->
           
             <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
-                <input type="text" placeholder="*Apellido" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>" disabled>
+                <input type="text" placeholder="*<%= (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>" disabled>
             </div>
         </div>
         
-
         <!-- Fecha nacimiento -->
+
         <div class="profile-data">
-            <h4 class="data">Fecha nacimiento: 12/12/2012</h4>
+            <h4 class="data">Fecha nacimiento: <%= user.datebirth %></h4>
             <div class="edit-profile" data-target="change-date"><i class="fas fa-edit"></i></div>
         </div>
 
@@ -64,28 +69,28 @@
         <!-- Teléfono -->
 
         <div class="profile-data">
-            <h4 class="data">Teléfono: 123123123</h4>
+            <h4 class="data">Teléfono: <%= user.phone %></h4>
             <div class="edit-profile" data-target="change-phone"><i class="fas fa-edit"></i></div>
         </div>
         
         <div id="change-phone" class="change-data">
             <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
-                <input disabled type="tel" placeholder="*Numero de telefono" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
+                <input disabled type="tel" placeholder="*<%= user.phone %>" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
             </div>
         </div>
 
         <!-- Correo electronico -->
         
         <div class="profile-data">
-            <h4 class="data">Correo electrónico: ******@***mail.com</h4>
+            <h4 class="data">Correo electrónico: <%= user.email %>  </h4>
             <div class="edit-profile" data-target="change-email"><i class="fas fa-edit"></i></div>
         </div>
 
         <div id="change-email" class="change-data">
             <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.email ? errors.email.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
-                <input disabled type="email" placeholder="*Correo electronico actual" class="reg__input" name="old_email" value="<%= (locals && locals.errors) ? old.email : null %>">
+                <input disabled type="email" placeholder="*<%= user.email %>" class="reg__input" name="old_email" value="<%= (locals && locals.errors) ? old.email : null %>">
             </div>
 
             <div class="reg__ctrl-input my-4">
@@ -100,6 +105,7 @@
         </div>
 
         <!-- Contraseña -->
+
         <div class="profile-data">
             <h4 class="data">Editar Contraseña</h4>
             <div class="edit-profile" data-target="change-psw"><i class="fas fa-edit"></i></div>
@@ -123,6 +129,7 @@
         </div>
 
         <!-- Domicilio -->
+
         <div class="profile-data">
             <h4 class="data">Editar Domicilio</h4>
             <div class="edit-profile" data-target="change-address"><i class="fas fa-edit"></i></div>
@@ -160,12 +167,12 @@
             </div>
 
             <!-- Descripcion domicilio -->
-            
             <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.adress.msg : null %>  </label>
             <div class="reg__ctrl-textarea my-4">
-                <textarea name="adress" class="text__area" placeholder="*Escriba una descripcion de su domicilio" value="<%= (locals && locals.errors) ? old.adress : null %>"></textarea>
+                <textarea name="adress" class="text__area" placeholder="*<%= user.adress%>" value="<%= (locals && locals.errors) ? old.adress : null %>"></textarea>
             </div>
         </div>
+
         <!-- Terminos y condiciones de uso -->
         
         <nav class="f-display f-main-between reg__navbottom f-grow-1 f-cross-end my-5">

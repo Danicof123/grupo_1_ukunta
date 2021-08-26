@@ -3,6 +3,7 @@ const router = express.Router();
 // Modules
 const {usersValidator} = require('../modules/validator');
 // Middlewares
+const authMiddleware = require('../middlewares/authMiddleware'); // Si no esta logueado, no puede ingresar al perfil
 const guestMiddleware = require('../middlewares/guestMiddleware'); // Si ya esta logueado, no puede ingresar a registro ni login
 // Controllers
 const {login, loginProcess, register, createUser, logout, profile} = require('../controllers/userController');
@@ -16,6 +17,6 @@ router.post('/register', usersValidator, createUser);
 // Logout
 router.get('/logout', logout);
 // Profile
-router.get('/profile', profile);
+router.get('/profile', authMiddleware, profile);
 
 module.exports = router;

@@ -24,17 +24,12 @@ module.exports = {
       //let checkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
       if (userToLogin && userToLogin.password === req.body.password) {
          // Si tengo usuario a loguear...
-         req.session.userLogged = {
-            // Guardo los datos del usuario en session
-            id: userToLogin.id,
-            nombre: userToLogin.nombre,
-            rol: userToLogin.rol,
-         };
+         req.session.userLogged = userToLogin;
          if (req.body.keep) {
             // Si doy check a mantener sesion, creo la cookie
             res.cookie('keepSession', req.session.userLogged, {maxAge: 1000 * 60 * 60});
          }
-         return res.redirect('/home');
+         return res.redirect('/users/profile');
       } else {
          return res.render('login', {
             title: 'Iniciar sesión',
@@ -96,6 +91,7 @@ module.exports = {
    profile: (req, res) => {
       const locals = {
          title: 'Profile',
+         user: req.session.userLogged,
       };
       res.render('profile', locals);
    },
