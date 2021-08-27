@@ -111,7 +111,18 @@ const usersValidator = [
     .notEmpty().withMessage('Debes aceptar los terminos y condiciones')
 ]
 
+const validationLogin = [
+    check('email')
+    .isEmail().withMessage('Debe ingresar un email válido'),
+    check('password')
+    .isLength({
+        min : 6,
+        max : 8,
+    }).withMessage('La contraseña debe tener un mínimo de 6 caracteres y un máximo e 8')
+]
+
 module.exports = {
     indexValidator,
-    usersValidator
+    usersValidator,
+    validationLogin
 }

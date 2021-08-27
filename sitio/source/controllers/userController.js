@@ -74,7 +74,7 @@ module.exports = {
             DNI,
             phone,
             email,
-            password,
+            password: bcrypt.hashSync(contrasenia,8),
             country,
             state,
             city,

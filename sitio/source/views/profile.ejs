@@ -11,6 +11,11 @@
 
     <div class="mb-12 f-main-center my-5">
         <form action="" method="POST" enctype="multipart/form-data">
+            <% if (locals.errors && errors.images) { %>
+                <div class="text-danger">
+                   <%= errors.images.msg %>
+                </div>
+                <% } %>
             <div class="image__profile">
                 <img src="/images/users/default.png" alt="user">
                 <input type="file" name="avatar" accept="image/*" class="input_avatar">
