@@ -61,7 +61,7 @@
                   <div class="info__titulo">Volumen: <span class="info__valor-titulo">330ml</span></div>
 
                   <div class="info__precio-titulo">
-                     <span><%= producto.price %></span>
+                     <span>$ <%= producto.price %></span>
                   </div>
                </div>
 
@@ -143,7 +143,7 @@
 
             <!-- Caja -->
             <% for( let i = 0; i < 3; i++ ) { %>
-            <article class="mb-12 tb-6 lp-4 container producto">
+            <article class="mb-12 tb-6 lp-4 container producto shadow-drop-2-center">
                <div class="button--stock">
                   <i class="fas fa-check boton_check"></i>
                </div>
@@ -169,7 +169,7 @@
                         </div>
 
                         <div class="controlador-buton-precio">
-                           <div class="precio_store"><%= prRelations[i].price %></div>
+                           <div class="precio_store">$ <%= prRelations[i].price %></div>
                            <div class="button buton_redondo_suma">
                               <i class="fas fa-plus"></i>
                            </div>

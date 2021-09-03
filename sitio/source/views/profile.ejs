@@ -43,28 +43,6 @@
                 <input type="text" placeholder="*<%= (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>" disabled>
             </div>
         </div>
-        
-        <!-- Fecha nacimiento -->
-
-        <div class="profile-data">
-            <h4 class="data">Fecha nacimiento: <%= user.datebirth %></h4>
-            <div class="edit-profile" data-target="change-date"><i class="fas fa-edit"></i></div>
-        </div>
-
-        <div id="change-date" class="change-data">
-            <label for="inp-date" class="error-input d-none"><%= locals.errors && locals.errors.datebirth ? errors.datebirth.msg : null %></label>
-            <div class="row my-0 f-cross-center my-4">
-                
-                <div class="mb-6">
-                    <label for="inp-surname" class="reg__date__age" >Fecha de nacimiento +18*</label>
-                </div>
-                <div class="mb-6">
-                    <div class="reg__ctrl-input">
-                        <input type="date" class="reg__input" name="datebirth" id="inp-date" disabled>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Teléfono -->
 
@@ -77,30 +55,6 @@
             <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
                 <input disabled type="tel" placeholder="*<%= user.phone %>" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
-            </div>
-        </div>
-
-        <!-- Correo electronico -->
-        
-        <div class="profile-data">
-            <h4 class="data">Correo electrónico: <%= user.email %>  </h4>
-            <div class="edit-profile" data-target="change-email"><i class="fas fa-edit"></i></div>
-        </div>
-
-        <div id="change-email" class="change-data">
-            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.email ? errors.email.msg : null %>  </label>
-            <div class="reg__ctrl-input my-4">
-                <input disabled type="email" placeholder="*<%= user.email %>" class="reg__input" name="old_email" value="<%= (locals && locals.errors) ? old.email : null %>">
-            </div>
-
-            <div class="reg__ctrl-input my-4">
-                <input disabled type="email" placeholder="*Nuevo correo electronico" class="reg__input"
-                    name="email">
-            </div>
-
-            <div class="reg__ctrl-input my-4">
-                <input disabled type="email" placeholder="*Repetir correo electronico" class="reg__input"
-                    name="email-repeat">
             </div>
         </div>
 
