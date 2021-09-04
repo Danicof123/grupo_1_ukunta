@@ -99,8 +99,26 @@ module.exports = {
    profile: (req, res) => {
       const locals = {
          title: 'Profile',
-         user: req.session.userLogged,
+         user: userDB.getFind('id', req.session.userLogged.id),
       };
       res.render('profile', locals);
    },
+   updateProfile: (req, res) => {
+      let setUser = req.body; //Guardo lo que viene en el body en setUser
+      setUser.id = req.session.userLogged.id //Tomo el id de la session
+      //Agrego el nombre de la imagen si existe
+      setUser.avatar = (req.file && req.file.filename)
+                       ? req.file.filename 
+                       : userDB.getFind('id', req.session.userLogged.id).avatar;
+      // Si se cambia la contraseña, la encripto antes de enviar al modelo
+      if(setUser.password)
+         setUser.password = bcryptjs.hashSync(setUser.password, 10)
+
+      // Elimino propiedades inecesarias
+      delete setUser.old_password
+      delete setUser["password-repeat"]
+
+      userDB.setElement = setUser; //Actualizo el usuario
+      res.redirect('/users/profile')
+   }
 };

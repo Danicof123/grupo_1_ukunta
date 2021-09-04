@@ -1,7 +1,10 @@
 const { check } = require('express-validator');
+const bcryptjs = require('bcryptjs');
+const userDB = require('../models/UserDB');
 
 const regName = /^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$/;
 const regEmail = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
+const regPhone = /^[0-9]{9,10}$/;
 
 const indexValidator = [
     check('name').custom((value, req) => {
@@ -11,8 +14,8 @@ const indexValidator = [
         return true;
     }),
     check('email').custom((value, req) => {
-        const name = value.trim();
-        if (!regEmail.test(name))
+        const email = value.trim();
+        if (!regEmail.test(email))
             throw new Error('El correo electrónico introducido no es válido.')
         return true;
     }),
@@ -23,8 +26,7 @@ const indexValidator = [
 ]
 
 
-const usersValidator = [
-    
+const usersValidator = [ 
     check('name')
     .notEmpty().withMessage('El nombre es obligatorio')
     .isLength({
@@ -121,8 +123,19 @@ const validationLogin = [
     }).withMessage('La contraseña debe tener un mínimo de 6 caracteres y un máximo e 8')
 ]
 
+const validationProfile = [
+    check('old_password').custom((val, req) => {
+        const psw = val.trim();
+        const user = userDB.getFind('id', req.session.userLogged.id)
+        console.log(psw, user.password)
+        if(!bcryptjs.compareSync(psw, user.id))
+            throw new Error('La contraseña no es válida.')
+        return true;
+    })
+]
 module.exports = {
     indexValidator,
     usersValidator,
-    validationLogin
+    validationLogin,
+    validationProfile
 }
