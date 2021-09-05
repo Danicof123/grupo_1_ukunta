@@ -1,4 +1,5 @@
 const { check } = require('express-validator');
+const bcryptjs = require('bcryptjs')
 
 const regName = /^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$/;
 const regEmail = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
@@ -47,10 +48,9 @@ const usersValidator = [
     check('DNI')
     .notEmpty().withMessage('Debe ingresar un DNI')
     .isLength({
-        min : 8,
+        
         max : 8
-    }).withMessage('Debe ingresar un DNI válido')
-    .isAlpha().withMessage('Debe ingresar un DNI válido'),
+    }).withMessage('Debe ingresar un DNI válido'),
 
     check('phone')
     .notEmpty().withMessage('Debe ingresar un numero de telefono')
@@ -65,20 +65,19 @@ const usersValidator = [
     check('password')
     .isLength({
         min : 6,
-        max : 8,
+        max : 20,
     }).withMessage('La contraseña debe tener un mínimo de 6 caracteres y un máximo e 8'),
 
     check('password2')
     .custom((value, {req}) => {
         if(value !== req.body.password){
-            return false
+            return true
         }
-        return true;
+        return false;
     }).withMessage('Las contraseñas no coinciden'),
 
     check('country')
     .notEmpty().withMessage('Debe ingresar un país')
-    .isAlpha().withMessage('El pais no debe contener números')
     .isLength({
         min : 2,
         max : 56,
@@ -94,7 +93,6 @@ const usersValidator = [
 
     check('state')
     .notEmpty().withMessage('Debe ingresar un Estado')
-    .isAlpha().withMessage('El nombre del estado no debe contener números')
     .isLength({
         min : 2,
         max : 58

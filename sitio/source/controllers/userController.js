@@ -51,7 +51,8 @@ module.exports = {
    register: (req, res) => {
       res.render('register', {
          title: 'Registrese',
-         users_db,
+         userDB
+         //users_db,
       });
    },
 
@@ -63,8 +64,11 @@ module.exports = {
          title: 'Registrese',
          errors: errors.mapped(),
          old: req.body,
-         users_db,
+         userDB
+         //users_db,
       };
+      console.log(errors);
+      //console.log(user)
 
       if (errors.isEmpty()) {
          let user = {
@@ -74,15 +78,22 @@ module.exports = {
             DNI,
             phone,
             email,
-            password: bcrypt.hashSync(contrasenia,8),
+            password: bcryptjs.hashSync(password,10),
             country,
             state,
             city,
             adress,
+            avatar: "default.png",
+            rol : "guest"
+
          };
 
-         userCreation(user);
-         saveUser();
+        
+         userDB.add(user)
+         
+         //userCreation(user);
+         //userDB.__saveDB()
+         //saveUser();
          res.redirect('/');
       } else {
          res.render('register', locals);

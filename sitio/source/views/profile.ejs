@@ -36,14 +36,14 @@
         </div>
        
         <div id="change-nombre" class="change-data">
-            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.name.msg : null %></label>
+            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.name.msg : null %></label>
             <div class="reg__ctrl-input mbt-4">
                 <input type="text" placeholder="*<%= (user.name).replace(/\b\w/g, l => l.toUpperCase()) %>" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : null %>" disabled>
             </div>
     
             <!-- Apellido -->
           
-            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
+            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
                 <input type="text" placeholder="*<%= (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>" disabled>
             </div>
@@ -57,7 +57,7 @@
         </div>
 
         <div id="change-date" class="change-data">
-            <label for="inp-date" class="error-input d-none"><%= locals.errors && locals.errors.datebirth ? errors.datebirth.msg : null %></label>
+            <label for="inp-date" class="text-danger d-none"><%= locals.errors && locals.errors.datebirth ? errors.datebirth.msg : null %></label>
             <div class="row my-0 f-cross-center my-4">
                 
                 <div class="mb-6">
@@ -79,7 +79,7 @@
         </div>
         
         <div id="change-phone" class="change-data">
-            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
+            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
                 <input disabled type="tel" placeholder="*<%= user.phone %>" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
             </div>
@@ -93,7 +93,7 @@
         </div>
 
         <div id="change-email" class="change-data">
-            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.email ? errors.email.msg : null %>  </label>
+            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.email ? errors.email.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
                 <input disabled type="email" placeholder="*<%= user.email %>" class="reg__input" name="old_email" value="<%= (locals && locals.errors) ? old.email : null %>">
             </div>
@@ -117,17 +117,17 @@
         </div>
 
         <div id="change-psw" class="change-data">
-            <label for="old_password" class="error-input d-none"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
+            <label for="old_password" class="text-danger d-none"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
                 <input disabled id="old_password" type="password" placeholder="*Contraseña actual" class="reg__input" name="old_password">
             </div>
 
-            <label for="password" class="error-input d-none"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
+            <label for="password" class="text-danger d-none"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
                 <input disabled id="password" type="password" placeholder="*Contraseña nueva" class="reg__input" name="password">
             </div>
             
-            <label for="password-repeat" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.password2.msg : null %>  </label>
+            <label for="password-repeat" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.password2.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
                 <input disabled id="password-repeat" type="password" placeholder="*Repetir contraseña" class="reg__input" name="password-repeat">
             </div>
@@ -140,13 +140,14 @@
             <div class="edit-profile" data-target="change-address"><i class="fas fa-edit"></i></div>
         </div>
         <div id="change-address" class="change-data">
+            
             <!-- Paises -->
             <div class="reg__ctrl-input my-4">
                 <select name="country" class="reg__input">
-                    <option value="value1" selected>*Pais</option>
-                    <option value="value2">Argentina</option>
-                    <option value="value3">Croacia</option>
-                    <option value="value4">Costa Rica</option>
+                    <option value="value" selected>*Pais</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Croacia">Croacia</option>
+                    <option value="Costa Rica">Costa Rica</option>
                 </select>
             </div>
 
@@ -154,25 +155,25 @@
             <!-- Provincias -->
             <div class="reg__ctrl-input my-4">
                 <select name="state" class="reg__input">
-                    <option value="value1" selected>*Provincia/Estado</option>
-                    <option value="value2">Buenos Aires</option>
-                    <option value="value3">Cordoba</option>
-                    <option value="value4">Santa Fe</option>
+                    <option value="value" selected>*Provincia/Estado</option>
+                    <option value="Buenos Aires">Buenos Aires</option>
+                    <option value="Cordoba">Cordoba</option>
+                    <option value="Santa Fe">Santa Fe</option>
                 </select>
             </div>
             
             <!-- Ciudades -->
             <div class="reg__ctrl-input my-4">
                 <select name="city" class="reg__input">
-                    <option value="value1" selected>*Ciudad</option>
-                    <option value="value2">CABA</option>
-                    <option value="value3">La Matanza</option>
-                    <option value="value4">Rosario</option>
+                    <option value="value" selected>*Ciudad</option>
+                    <option value="CABA">CABA</option>
+                    <option value="La Matanza">La Matanza</option>
+                    <option value="Rosario">Rosario</option>
                 </select>
             </div>
 
             <!-- Descripcion domicilio -->
-            <label for="name" class="error-input d-none"><%= locals.errors && locals.errors.name ? errors.adress.msg : null %>  </label>
+            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.adress.msg : null %>  </label>
             <div class="reg__ctrl-textarea my-4">
                 <textarea name="adress" class="text__area" placeholder="*<%= user.adress%>" value="<%= (locals && locals.errors) ? old.adress : null %>"></textarea>
             </div>
