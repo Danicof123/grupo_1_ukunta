@@ -20,6 +20,6 @@ router.post('/register', usersValidator, createUser);
 router.get('/logout', logout);
 // Profile
 router.get('/profile', authMiddleware, profile);
-router.put('/profile',avatarUpload.single('avatar'), validationProfile, updateProfile)
+router.put('/profile', usersValidator,avatarUpload.single('avatar'), updateProfile)
 
 module.exports = router;

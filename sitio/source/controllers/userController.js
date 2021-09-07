@@ -115,6 +115,7 @@ module.exports = {
       res.render('profile', locals);
    },
    updateProfile: (req, res) => {
+      console.log(req.session.userLogged);
       let setUser = req.body; //Guardo lo que viene en el body en setUser
       setUser.id = req.session.userLogged.id //Tomo el id de la session
       //Agrego el nombre de la imagen si existe
@@ -126,8 +127,8 @@ module.exports = {
          setUser.password = bcryptjs.hashSync(setUser.password, 10)
 
       // Elimino propiedades inecesarias
-      delete setUser.old_password
-      delete setUser["password-repeat"]
+      //delete setUser.old_password
+      //delete setUser["password-repeat"]
 
       userDB.setElement = setUser; //Actualizo el usuario
       res.redirect('/users/profile')

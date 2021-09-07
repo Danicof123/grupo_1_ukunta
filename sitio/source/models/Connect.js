@@ -18,7 +18,12 @@ class Connect{
     }
     // Agrega un elemento, el que llega por parámetro
     add(elemento, id){
-        elemento.id = id || this.__database.lastElement().id + 1;
+        if(id){
+            elemento.id = id
+        } else{
+            elemento.id = this.__database.length + 1;
+        }
+        console.log(elemento);    
         this.__database.push(elemento);
         this.__saveDB(this.__database);
     }
@@ -42,8 +47,10 @@ class Connect{
         let element = this.getFind('id', obj.id)
         // Sobreescribo las props que existen en obj
         element = {...element, ...obj}
+        
         // elimino el elemento viejo
         this.delete(element.id)
+
         // añado el nuevo
         this.add(element, obj.id);
     }

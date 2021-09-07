@@ -10,16 +10,6 @@
     ]
   },
   {
-    "id": 3,
-    "name": "IPA Negra",
-    "category": "cerveza",
-    "description": "Con maltas de chocolate y caramelo, lo que le da su caracteristico color café.",
-    "price": "9999.99",
-    "images": [
-      "ipa-Negra-305x368.jpg"
-    ]
-  },
-  {
     "id": 4,
     "name": "IPA Roja",
     "category": "cerveza",
@@ -198,6 +188,16 @@
     "price": "9999.99",
     "images": [
       "cenicero01-305x368.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "IPA Negra",
+    "category": "cerveza",
+    "description": "Con maltas de chocolate y caramelo, lo que le da su característico color café.",
+    "price": "9999.99",
+    "images": [
+      "ipa-Negra-305x368.jpg"
     ]
   }
 ]

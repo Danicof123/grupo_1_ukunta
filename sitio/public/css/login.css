@@ -12,6 +12,9 @@
 .ctrl-logo img{
     width: 50%;
 }
+.ctrl-logo1 img{
+    width: 100%;
+}
 
 .eye__button{
     position: absolute;
