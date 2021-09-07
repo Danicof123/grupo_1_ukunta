@@ -4,7 +4,6 @@ const editInput = (btn) => {
     d.addEventListener('click', e => {
         if(e.target.matches(`${btn} *`)){
             const $target = e.target.parentNode.dataset.target;
-            console.log($target)
             const $changeTarget = d.getElementById($target)
             //Hago visible el bloque
             $changeTarget.classList.add('active')
@@ -13,9 +12,11 @@ const editInput = (btn) => {
             // Obtengo todos los label y los hago visibles
             $changeTarget.querySelectorAll('label').forEach(l => l.classList.remove('d-none'))
         }
+
     })
 }
 
+
 export {
-    editInput
+    editInput,
 }

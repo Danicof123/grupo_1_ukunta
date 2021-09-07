@@ -8,26 +8,20 @@
   <!-- Barra de navegación inferior -->
   <%- include('partials/navbar-bottom.ejs') %>
   <main class="container f-center">
-
-    <div class="mb-12 f-main-center my-5">
-        <form action="" method="POST" enctype="multipart/form-data">
-            <% if (locals.errors && errors.images) { %>
-                <div class="text-danger">
-                   <%= errors.images.msg %>
-                </div>
-                <% } %>
+    
+    <form class="mb-12 lp-8 pc-6 f-main-y mbt-5" method="POST" action="/users/profile?_method=PUT" enctype="multipart/form-data">
+        <!-- Avatar -->
+        <div class="mb-12 f-main-center my-5">
             <div class="image__profile">
-                <img src="/images/users/default.png" alt="user">
-                <input type="file" name="avatar" accept="image/*" class="input_avatar">
+                <img src="/images/users/<%= user.avatar %> " alt="user">
+                <input type="file" name="avatar" accept="image/*" class="input_avatar" id="avatar">
                 <div class="edit-avatar">
                     <span class="text-avatar">Actualizar imagen</span>
-                    <i class="fas fa-edit"></i></div>
-            </div>
-        </form>   
-    </div>
-    
-    <form class="mb-12 lp-8 pc-6 f-main-y mbt-5" method="POST" action="">
-
+                    <i class="fas fa-edit"></i>
+                </div>
+            </div>  
+        </div>
+        <label for="avatar" class="text-danger"><%= locals.errors && locals.errors.avatar ? errors.avatar.msg : null %>  </label>
         <!-- Nombre -->
 
         <div class="profile-data">
@@ -98,10 +92,9 @@
             <!-- Paises -->
             <div class="reg__ctrl-input my-4">
                 <select name="country" class="reg__input">
-                    <option value="value" selected>*Pais</option>
-                    <option value="Argentina">Argentina</option>
-                    <option value="Croacia">Croacia</option>
-                    <option value="Costa Rica">Costa Rica</option>
+                    <option value="argentina" <%= (user.country === 'argentina')? "selected" : null %>>Argentina</option>
+                    <option value="croacia" <%= (user.country === 'croacia')? "selected" : null %>>Croacia</option>
+                    <option value="costa rica" <%= (user.country === 'costa rica')? "selected" : null %>>Costa Rica</option>
                 </select>
             </div>
 
@@ -109,27 +102,34 @@
             <!-- Provincias -->
             <div class="reg__ctrl-input my-4">
                 <select name="state" class="reg__input">
-                    <option value="value" selected>*Provincia/Estado</option>
-                    <option value="Buenos Aires">Buenos Aires</option>
-                    <option value="Cordoba">Cordoba</option>
-                    <option value="Santa Fe">Santa Fe</option>
+                    <option value="buenos aires">Buenos Aires</option>
+                    <option value="cordoba">Cordoba</option>
+                    <option value="santa fe">Santa Fe</option>
                 </select>
             </div>
             
             <!-- Ciudades -->
             <div class="reg__ctrl-input my-4">
                 <select name="city" class="reg__input">
-                    <option value="value" selected>*Ciudad</option>
-                    <option value="CABA">CABA</option>
-                    <option value="La Matanza">La Matanza</option>
-                    <option value="Rosario">Rosario</option>
+                    <option value="caba"  <%= (user.city === "caba") ? "selected" : null %>>CABA</option>
+                    <option value="la matanza" <%= (user.city === 'la matanza')? "selected" : null %>>La Matanza</option>
+                    <option value="rosario" <%= (user.city === 'rosario')? "selected" : null %>>Rosario</option>
+                    <option value="campana" <%= (user.city === 'campana')? "selected" : null %>>Campana</option>
+                    <option value="ballester" <%= (user.city === 'ballester')? "selected" : null %>>Ballester</option>
+                    <option value="lanus" <%= (user.city === 'lanus')? "selected" : null %>>Lanús</option>
                 </select>
             </div>
 
+            <!-- Calle -->
+            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.adress ? errors.adress.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled type="tel" placeholder="*Calle" class="reg__input" name="adress" value="<%= (locals && locals.errors) ? old.adress :user.adress %>">
+            </div>
+
             <!-- Descripcion domicilio -->
-            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.adress.msg : null %>  </label>
+            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.description ? errors.description.msg : null %>  </label>
             <div class="reg__ctrl-textarea my-4">
-                <textarea name="adress" class="text__area" placeholder="*<%= user.adress%>" value="<%= (locals && locals.errors) ? old.adress : null %>"></textarea>
+                <textarea name="description" class="text__area" placeholder="*Descripcion" value="<%= (locals && locals.errors) ? old.description : null %>"></textarea>
             </div>
         </div>
 

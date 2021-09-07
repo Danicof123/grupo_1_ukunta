@@ -17,8 +17,8 @@ class Connect{
         this.__saveDB(this.__database)
     }
     // Agrega un elemento, el que llega por parámetro
-    add(elemento){
-        elemento.id = this.__database.lastElement().id + 1;
+    add(elemento, id){
+        elemento.id = id || this.__database.lastElement().id + 1;
         this.__database.push(elemento);
         this.__saveDB(this.__database);
     }
@@ -45,7 +45,7 @@ class Connect{
         // elimino el elemento viejo
         this.delete(element.id)
         // añado el nuevo
-        this.add(element);
+        this.add(element, obj.id);
     }
 }
 
