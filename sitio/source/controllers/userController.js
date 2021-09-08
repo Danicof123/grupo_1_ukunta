@@ -21,7 +21,7 @@ module.exports = {
 
    loginProcess: (req, res) => {
       let userToLogin = userDB.getDB.find((user) => user.email === req.body.email); // Busco al usuario a loguear
-      let checkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
+      let checkPassword = userDB.getDB.find((user) => bcryptjs.compareSync(req.body.password, user.password))
       if (userToLogin && checkPassword) {
          // Si tengo usuario a loguear...
          req.session.userLogged = {
@@ -50,6 +50,7 @@ module.exports = {
          });
       }
    },
+   
 
    logout: (req, res) => {
       res.clearCookie('keepSession');
