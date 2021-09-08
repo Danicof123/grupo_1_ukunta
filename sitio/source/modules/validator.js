@@ -72,9 +72,9 @@ const usersValidator = [
     check('password2')
     .custom((value, {req}) => {
         if(value !== req.body.password){
-            return true
+            return false
         }
-        return false;
+        return true;
     }).withMessage('Las contraseñas no coinciden'),
 
     check('country')
