@@ -66,7 +66,7 @@ const usersValidator = [
     check('password')
     .isLength({
         min : 6,
-        max : 20,
+        max : 8,
     }).withMessage('La contraseña debe tener un mínimo de 6 caracteres y un máximo e 8'),
 
     check('password2')

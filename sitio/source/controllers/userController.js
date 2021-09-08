@@ -32,7 +32,8 @@ module.exports = {
             email: userToLogin.email,
             adress: userToLogin.adress,
             rol: userToLogin.rol,
-         };
+         } ;
+         
          if (req.body.keep) {
             // Si doy check a mantener sesion, creo la cookie
             res.cookie('keepSession', req.session.userLogged, {maxAge: 1000 * 60 * 60});

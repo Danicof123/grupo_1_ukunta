@@ -37,7 +37,7 @@
     
             <!-- Apellido -->
           
-            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
+            <label for="lastname" class="text-danger d-none"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
                 <input type="text" placeholder="*<%= (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>" disabled>
             </div>
@@ -51,7 +51,7 @@
         </div>
         
         <div id="change-phone" class="change-data">
-            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
+            <label for="phone" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
                 <input disabled type="tel" placeholder="*<%= user.phone %>" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
             </div>
@@ -75,9 +75,9 @@
                 <input disabled id="password" type="password" placeholder="*Contraseña nueva" class="reg__input" name="password">
             </div>
             
-            <label for="password-repeat" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.password2.msg : null %>  </label>
+            <label for="password2" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.password2.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
-                <input disabled id="password-repeat" type="password" placeholder="*Repetir contraseña" class="reg__input" name="password-repeat">
+                <input disabled id="password-repeat" type="password" placeholder="*Repetir contraseña" class="reg__input" name="password2">
             </div>
         </div>
 
@@ -121,13 +121,13 @@
             </div>
 
             <!-- Calle -->
-            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.adress ? errors.adress.msg : null %>  </label>
+            <label for="adress" class="text-danger d-none"><%= locals.errors && locals.errors.adress ? errors.adress.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
                 <input disabled type="tel" placeholder="*Calle" class="reg__input" name="adress" value="<%= (locals && locals.errors) ? old.adress :user.adress %>">
             </div>
 
             <!-- Descripcion domicilio -->
-            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.description ? errors.description.msg : null %>  </label>
+            <label for="description" class="text-danger d-none"><%= locals.errors && locals.errors.description ? errors.description.msg : null %>  </label>
             <div class="reg__ctrl-textarea my-4">
                 <textarea name="description" class="text__area" placeholder="*Descripcion" value="<%= (locals && locals.errors) ? old.description : null %>"></textarea>
             </div>
