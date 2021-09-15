@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('partials/head')  %> 
+
+<body class="register f-display f-main-y minvh-100">
+    <%- include('partials/mini-header')  %> 
+   
+    <div class="container f-main-center f-grow-1">
+        <div class="mb-12 lp-6 f-main-y f-cross-center">
+
+            <h3 class="f-self-start my-4">Editando producto: <%= product.name %></h3>
+
+            <form class="w-100 mbt-4" action="/store/products/edit/<%= product.id %>?_method=PUT" method="POST">
+              <input type="hidden" name="id" value="<%= product.id %>" readonly required>
+                <!-- Nombre -->
+                <% if (locals.errors && errors.name) { %>
+                    <div class="text-danger"><%= errors.name.msg %></div>
+                <% } %>
+                <div class="reg__ctrl-input mbt-4">
+                    <input type="text" placeholder="*Nombre" name="name" value="<%= product.name %>" class="reg__input">
+                </div>  
+
+                <!-- stock -->
+                <!-- <div class="reg__ctrl-input my-4">
+                    <input type="number" placeholder="stock" class="reg__input" name="stock">
+                </div> -->
+
+                <!-- Categoria -->
+                <div class="reg__ctrl-input my-4">
+                    <select name="category" class="reg__input">
+                        <option value="hidromiel" <%= (product.category === "hidromiel") ? "selected" : null %>>Hidromiel</option>
+                        <option value="cerveza" <%= (product.category === "cerveza") ? "selected" : null %>>Cerveza</option>
+                        <option value="merchandising" <%= (product.category === "merchandising") ? "selected" : null %>>Merchandasing</option>
+                    </select>
+                </div>             
+
+                <!-- Descripciono -->
+                <div class="reg__ctrl-textarea my-4">
+                    <% if (locals.errors && errors.description) { %>
+                        <div class="text-danger"><%= errors.description.msg %></div>
+                        <% } %>
+                    <textarea name="description" class="text__area" placeholder="*Descripción del producto"><%= product.description %></textarea>
+                </div>
+
+                <!-- precio -->
+                <div class="reg__ctrl-input my-4">
+                    <% if (locals.errors && errors.price) { %>
+                        <div class="text-danger"><%= errors.price.msg %></div>
+                        <% } %>
+                    <input type="number" placeholder="*precio" class="reg__input" name="price" value="<%= product.price %>">
+                </div>
+                <div class="f-display f-main-between reg__navbottom f-cross-end mbt-5">
+                    <a href="/store/products/<%= product.id %>" class="no-decor">
+                        <div class="button button-rojo reg__navbutton">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </a> 
+                    <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    
+</body>
+
+</html>

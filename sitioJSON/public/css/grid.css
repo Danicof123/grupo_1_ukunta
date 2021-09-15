@@ -1,0 +1,906 @@
+@media screen {
+  .container .mb-1, .container-y .mb-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 1 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-2, .container-y .mb-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 2 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-3, .container-y .mb-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 3 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-4, .container-y .mb-4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 4 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-5, .container-y .mb-5 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 5 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-6, .container-y .mb-6 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 6 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-7, .container-y .mb-7 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 7 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-8, .container-y .mb-8 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 8 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-9, .container-y .mb-9 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 9 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-10, .container-y .mb-10 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 10 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-11, .container-y .mb-11 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 11 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .mb-12, .container-y .mb-12 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 12 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container .tb-1, .container-y .tb-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 1 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-2, .container-y .tb-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 2 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-3, .container-y .tb-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 3 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-4, .container-y .tb-4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 4 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-5, .container-y .tb-5 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 5 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-6, .container-y .tb-6 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 6 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-7, .container-y .tb-7 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 7 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-8, .container-y .tb-8 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 8 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-9, .container-y .tb-9 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 9 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-10, .container-y .tb-10 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 10 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-11, .container-y .tb-11 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 11 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .tb-12, .container-y .tb-12 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 12 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container .lp-1, .container-y .lp-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 1 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-2, .container-y .lp-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 2 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-3, .container-y .lp-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 3 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-4, .container-y .lp-4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 4 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-5, .container-y .lp-5 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 5 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-6, .container-y .lp-6 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 6 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-7, .container-y .lp-7 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 7 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-8, .container-y .lp-8 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 8 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-9, .container-y .lp-9 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 9 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-10, .container-y .lp-10 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 10 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-11, .container-y .lp-11 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 11 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .lp-12, .container-y .lp-12 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 12 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container .dk-1, .container-y .dk-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 1 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-2, .container-y .dk-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 2 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-3, .container-y .dk-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 3 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-4, .container-y .dk-4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 4 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-5, .container-y .dk-5 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 5 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-6, .container-y .dk-6 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 6 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-7, .container-y .dk-7 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 7 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-8, .container-y .dk-8 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 8 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-9, .container-y .dk-9 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 9 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-10, .container-y .dk-10 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 10 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-11, .container-y .dk-11 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 11 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .dk-12, .container-y .dk-12 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 12 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .container .ldk-1, .container-y .ldk-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 1 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-2, .container-y .ldk-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 2 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-3, .container-y .ldk-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 3 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-4, .container-y .ldk-4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 4 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-5, .container-y .ldk-5 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 5 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-6, .container-y .ldk-6 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 6 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-7, .container-y .ldk-7 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 7 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-8, .container-y .ldk-8 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 8 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-9, .container-y .ldk-9 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 9 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-10, .container-y .ldk-10 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 10 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-11, .container-y .ldk-11 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 11 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .container .ldk-12, .container-y .ldk-12 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    position: relative;
+    width: calc((100% / 12) * 12 - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .no-mb {
+    display: none;
+  }
+  .only-mb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .only-tb {
+    display: none;
+  }
+  .only-lp {
+    display: none;
+  }
+  .only-dk {
+    display: none;
+  }
+  .only-ldk {
+    display: none;
+  }
+}
+
+@media screen and (min-width: calc(768px + 1px)) and (max-width: 1024px) {
+  .no-tb {
+    display: none;
+  }
+  .only-mb {
+    display: none;
+  }
+  .only-tb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .only-lp {
+    display: none;
+  }
+  .only-dk {
+    display: none;
+  }
+  .only-ldk {
+    display: none;
+  }
+}
+
+@media screen and (min-width: calc(1024px + 1px)) and (max-width: 1200px) {
+  .no-lp {
+    display: none;
+  }
+  .only-mb {
+    display: none;
+  }
+  .only-tb {
+    display: none;
+  }
+  .only-lp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .only-dk {
+    display: none;
+  }
+  .only-ldk {
+    display: none;
+  }
+}
+
+@media screen and (min-width: calc(1200px + 1px)) and (max-width: 1920px) {
+  .no-dk {
+    display: none;
+  }
+  .only-mb {
+    display: none;
+  }
+  .only-tb {
+    display: none;
+  }
+  .only-lp {
+    display: none;
+  }
+  .only-dk {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .only-ldk {
+    display: none;
+  }
+}
+
+@media screen and (min-width: calc(1920px + 1px)) {
+  .no-ldk {
+    display: none;
+  }
+  .only-mb {
+    display: none;
+  }
+  .only-tb {
+    display: none;
+  }
+  .only-lp {
+    display: none;
+  }
+  .only-dk {
+    display: none;
+  }
+  .only-ldk {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.container, .container-y {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.compact.container, .compact.container-y {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container > *, .container-y > * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: calc((100% / 12) - 1rem);
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.container-y {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.concon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: -.5rem;
+  margin-right: -.5rem;
+}

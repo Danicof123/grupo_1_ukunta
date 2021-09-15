@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head.ejs') %>
+<body class="home">
+  <header class="header">
+    <%- include('partials/navbar-top.ejs') %>
+  </header>
+  <!-- Barra de navegación inferior -->
+  <%- include('partials/navbar-bottom.ejs') %>
+  
+    <main class="container mbt-5">
+      <div class="msg-alert">
+        Esta vista debe esperar a Javascript Front para su finalización
+      </div>
+      <h2 class="title__dashboard">Panel de administración</h2>
+      <div class="mb-12">
+        <div class="ctrl-input__dashboard w-100">
+
+          <!-- Categoria -->
+          <div class="reg__ctrl-input mbt-2">
+            <select name="category" class="dashb__input">
+                <option value="hidromiel" selected>Categoria</option>
+                <option value="hidromiel">Hidromiel</option>
+                <option value="cerveza">Cerveza</option>
+                <option value="merchandising">Merchandasing</option>
+            </select> 
+          </div>
+
+          <!-- Search -->
+          <div class="reg__ctrl-input">
+            <input type="search" placeholder="Buscar producto" name="search" class="dashb__input">
+          </div>
+
+        </div>
+        <!-- Toogle users/products -->
+        
+        <div class="toggle__dashboard">
+          <div class="btn-user__dashboard"><i class="fas fa-user"></i></div>
+          <div class="btn-products__dashboard active"><i class="fas fa-store"></i></div>
+        </div>
+        <div class="plus__dashboard">
+          <a class="no-decor" href="/store/products/add">
+          <div class="btn-plus__dashboard"><i class="fas fa-plus"></i></div>
+          </a>
+        </div>
+      </div>
+      <div class="mb-12 f-center mtp-4">
+
+        <table class="table__dashboard">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>imagen</th>
+              <th>nombre</th>
+              <th>categoria</th>
+              <th class="w-100">description</th>
+              <th>price</th>
+              <th>acciones</th>
+            </tr>
+          </thead>
+          <tbody class="tbody__dashboard">
+            <% products.forEach(pr => { %>
+              <tr>
+              <td><%= pr.id %></td>
+              <td><img src="/images/products/Bebidas/Cervezas/<%= pr.images[0] %> " alt="test"></td>
+              <td><%= pr.name %></td>
+              <td><%= pr.category %></td>
+              <td><%= pr.description %></td>
+              <td>$<%= pr.price %></td>
+              <td class="table-action__dashboard">
+                <a href="/store/products/edit/<%= pr.id %>" target="_blank" class="button button-verde btn-edit mr-4">EDITAR</a>
+                  
+                  <form action="/store/delete/<%= pr.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="button button-rojo btn-edit">ELIMINAR</button>
+                 </form>
+              </td>
+            </tr>
+            <%}); %> 
+            
+          </tbody>
+        </table>
+      </div> 
+    </main>
+    <%- include('partials/scripts.ejs') %>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

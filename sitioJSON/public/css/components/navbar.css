@@ -1,0 +1,168 @@
+/*-------------------------------- navbar-top --------------------------------*/
+.navbar{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    height: 40px;
+    background-color: var(--color-secundario);
+}
+
+.navbar__logo img{
+    width: 114px;
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+/*----------------------------- navbar-search -----------------------------*/
+.navbar__search{
+    position: relative;
+    width: 30vw;
+}
+
+.input-search{
+    width: 100%;
+    height: 32px;
+    padding-left: .5rem;
+    border: none;
+    outline: none;
+}
+
+.input-search:focus{
+    border: 1px solid var(--color-primario);
+}
+
+.navbar__search button{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 32px;
+    height: 30px;
+    border: none;
+    color: var(--color-primario);
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+/*----------------------------- navbar-menu -----------------------------*/
+
+.navbar__menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.navbar_ul{
+    display: flex;
+}
+
+.navbar__menu li{
+    font: 1rem 'Raleway', 'sans-serif';
+    margin-right: 1rem;
+}
+.navbar__item{
+    color: inherit;
+}
+.navbar__item.active, .navbar__item:hover{
+    color: var(--color-primario);
+}
+
+.navbar__back{
+    display: none;
+}
+
+/*----------------------------- navbar-bottom -----------------------------*/
+.navbar-bottom{
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100vw;
+    height: 50px;
+    background-color: var(--color-secundario);
+}
+
+.navbar-bottom__ul{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/*----------------------------- navbar-badge -----------------------------*/
+.navbar__shop{
+    position: relative;
+    margin-right: 1rem;
+}
+
+.navbar__badge{
+    position: absolute;
+    top: -.5rem;
+    left: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: .7rem;
+    border-radius: 50%;
+    background-color: var(--color-primario);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+/*----------------------------- drop-menu -----------------------------*/
+.btn-drop{
+    cursor: pointer;
+}
+.drop-menu{
+    position: absolute;
+    padding: .1em 1em;
+    font-size: .8rem;
+    color: #fff;
+    text-align: right;
+    background-color: var(--color-secundario);
+    border-bottom: 2px solid var(--color-primario);
+    box-shadow: var(--sombra);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease-in-out;
+}
+
+.drop-menu li {
+    margin-bottom: .5rem;
+}
+
+.drop-menu.active{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .2s ease-in-out;
+
+}
+.menu--user{
+    top: calc(100%);
+    right: 1rem;
+}
+
+.drop-menu__separator{
+    width: 100%;
+    height: 1px;
+    margin: .4rem auto;
+    background-color: var(--color-secundario-claro);
+}

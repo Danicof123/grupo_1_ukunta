@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head') %>
+
+   <body class="register f-display f-main-y minvh-100">
+      <%- include('partials/mini-header') %>
+
+         <div class="container f-main-center f-grow-1">
+            <div class="mb-12 lp-6 f-main-y f-cross-center">
+               <h3 class="f-self-start my-4">Añadir producto</h3>
+
+               <form class="w-100 mbt-4" action="/store" method="POST" enctype="multipart/form-data">
+                  <!-- Nombre -->
+                  <div class="reg__ctrl-input mbt-4">
+                     <% if (locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                           <%= errors.name.msg %>
+                        </div>
+                        <% } %>
+                           <input type="text" placeholder="*Nombre" name="name" class="reg__input"
+                              value="<%= locals.old ? old.name : null %>" />
+                  </div>
+
+                  <!-- stock -->
+                  <!-- <div class="reg__ctrl-input my-4">
+                    <input type="number" placeholder="stock" class="reg__input" name="stock">
+                </div> -->
+
+                  <!-- Categoria -->
+                  <div class="reg__ctrl-input my-4">
+                     <% if (locals.errors && errors.category) { %>
+                        <div class="text-danger">
+                           <%= errors.category.msg %>
+                        </div>
+                        <% } %>
+                        <select name="category" class="reg__input">
+                           <option value="" selected hidden>*Categoria</option>
+                           <option value="cerveza" <%=locals.old && ("cerveza"===old.category) ? "selected" : null %>
+                              >Cerveza</option>
+                           <option value="hidromiel" <%=locals.old && ("hidromiel"===old.category) ? "selected" : null
+                              %>
+                              >Hidromiel</option>
+                           <option value="merchandising" <%=locals.old && ("merchandising"===old.category) ? "selected"
+                              : null %>>Merchandasing</option>
+                        </select>
+                        
+                  </div>
+
+                  <!-- Descripcion producto -->
+                  <div class="reg__ctrl-textarea my-4">
+                     <% if (locals.errors && errors.description) { %>
+                        <div class="text-danger">
+                           <%= errors.description.msg %>
+                        </div>
+                        <% } %>
+                           <textarea name="description" class="text__area"
+                              placeholder="*Descripción del producto"><%= locals.old ? old.description : null %></textarea>
+                  </div>
+
+                  <!-- precio -->
+                  <div class="reg__ctrl-input my-4">
+                     <% if (locals.errors && errors.price) { %>
+                        <div class="text-danger">
+                           <%= errors.price.msg %>
+                        </div>
+                        <% } %>
+                           <input type="number" placeholder="*precio" class="reg__input" name="price"
+                              value="<%= locals.old ? old.price : null %>" />
+                  </div>
+                  <!-- Imagenes -->
+                  <% if (locals.errors && errors.images) { %>
+                     <div class="text-danger">
+                        <%= errors.images.msg %>
+                     </div>
+                     <% } %>
+                  <div class="reg__ctrl-input mbt-4">
+                           <input type="file" accept=".jpg, .jpeg, .png" name="images" max="5" maxfile="5"
+                              class="reg__input file__input" multiple />
+                  </div>
+
+                  <div class="f-display f-main-between reg__navbottom f-cross-end mbt-5">
+                     <a href="/store" class="no-decor">
+                        <div class="button button-rojo reg__navbutton">
+                           <i class="fas fa-times"></i>
+                        </div>
+                     </a>
+                     <button type="submit" class="button button-verde reg__navbutton"><i
+                           class="fas fa-check"></i></button>
+                  </div>
+               </form>
+            </div>
+         </div>
+   </body>
+
+</html>

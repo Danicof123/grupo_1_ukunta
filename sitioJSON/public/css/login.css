@@ -1,0 +1,88 @@
+.max-1440{
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row{
+    display: flex;
+    width: 100%;
+}
+
+.ctrl-logo img{
+    width: 50%;
+}
+.ctrl-logo1 img{
+    width: 100%;
+}
+
+.eye__button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: transparent;
+    border:none;
+    color: var(--color-gris-claro);
+}
+
+.options__forgot{
+    font-size: 12px;
+    color: var(--color-azul);
+    text-decoration: none;
+}
+
+.forgot{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.navbottom{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+}
+
+@media screen and (min-width: 1024px){
+    .container-y.view-login{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    .ctrl-logo::after{
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: 0;
+        width: 1px;
+        height: 200%;
+        background-color: var(--color-secundario);
+    }
+    .view-login .ctrl-logo img{
+        width: 75%;
+        
+    }
+
+
+    .view-login .navbottom{
+        margin-top: 4rem;
+    }
+
+    .view-login .navbottom-left {
+        justify-content: center;
+    }
+    
+    .view-login .reg__navbutton{
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+    .view-login .reg__navbutton.right{
+        justify-content: flex-end;
+    }
+
+
+}

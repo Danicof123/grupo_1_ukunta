@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+   <%- include('./partials/head') %>
+   <body class="vproduct">
+      <%- include('partials/mini-header') %>
+
+      <main>
+         <div class="f-display f-main-between f-cross-center w-100 px-4">
+            <h3>BEBIDAS</h3>
+            <span class="ventas--numero only-mb">357 ventas</span>
+         </div>
+
+         <div class="container">
+            <!-- imagen carrousel (1) -->
+            <div class="mb-12 tb-7 lp-6 dk-5 f-main-y mbt-4 vproduct__carrousel">
+               <div class="ctrl__carrousel">
+                  <img src="/images/products/Bebidas/Cervezas/<%= producto.images[0] %>" />
+               </div>
+
+               <!-- vistas previas -->
+               <div class="no-mb f-display f-main-between mtp-4 image-preview">
+
+                  <% producto.images.forEach((imagen, index) => { %>
+                     <div class="item__preview-img">
+                        <img src="/images/products/Bebidas/Cervezas/<%= imagen %>" alt="preview-1" />
+                     </div>
+                  <% }) %>
+
+               </div>
+            </div>
+
+            <!-- columna detalle (2) -->
+            <div class="mb-12 tb-5 lp-6 dk-7 f-main-y">
+               <div class="f-display f-main-between">
+                  <h3 class="mtp-0 mbt-1"><%= producto.name %></h3>
+                  <div class="text-right only-mb">
+                     <span class="vproduct__val">4.8</span>
+                     <span class="vproduct__val--iconStar">
+                        <i class="fas fa-star"></i>
+                     </span>
+                  </div>
+               </div>
+
+               <!-- Info producto -->
+               <div class="no-mb f-display f-main-between mbt-4">
+                  <div class="text-right">
+                     <span class="vproduct__val">4.8</span>
+                     <span class="vproduct__val--iconStar">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                     </span>
+                  </div>
+                  <span class="ventas--numero">357 ventas</span>
+               </div>
+               <div class="separador my-2"></div>
+               <!-- Volumen y precio -->
+               <div class="f-display f-main-between f-cross-center mbt-4">
+                  <div class="info__titulo">Volumen: <span class="info__valor-titulo">330ml</span></div>
+
+                  <div class="info__precio-titulo">
+                     <span>$ <%= producto.price %></span>
+                  </div>
+               </div>
+
+               <!-- Stock disponible -->
+               <div class="f-display f-main-between f-cross-center mbt-4">
+                  <div class="info__titulo">Stock disponible: <span class="info__valor-titulo">56u</span></div>
+               </div>
+
+               <!-- Cantidades adquiridas -->
+               <div class="f-display f-main-between f-cross-center mbt-4">
+                  <div class="info__titulo">Cantidad: <span class="info__valor-titulo">2u</span></div>
+
+                  <div class="f-display">
+                     <div class="button button-rojo info__button mr-2">
+                        <i class="fas fa-minus"></i>
+                     </div>
+                     <div class="button button-verde info__button">
+                        <i class="fas fa-plus"></i>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Ctrl ver medios de pago-->
+               <div class="f-display f-main-between f-cross-center mbt-4">
+                  <div class="info__titulo">Medios de pago</div>
+
+                  <div class="media_flecha_abajo">
+                     <i class="fas fa-chevron-down"></i>
+                  </div>
+               </div>
+
+               <div class="mb-12 f-main-center f-cross-center mbt-4" id="mediosPagos">
+                  <div class="info__item-medio mx-4">
+                     <img src="/images/medio-1.jpg" alt="Rapipago" />
+                  </div>
+                  <div class="info__item-medio mx-4">
+                     <img src="/images/medio-2.jpg" alt="Pago Facil" />
+                  </div>
+                  <div class="info__item-medio mx-4">
+                     <img src="/images/medio-3.jpg" alt="Masterd Card" />
+                  </div>
+                  <div class="info__item-medio mx-4">
+                     <img src="/images/medio-4.jpg" alt="Visa dto" />
+                  </div>
+               </div>
+
+               <!-- Info Envio-->
+
+               <div class="f-display f-main-y mbt-2">
+                  <div class="info__titulo">Envío a domicilio:</div>
+                  <p class="detalle_envio mtp-1">Llega a tu casa entre los próximos 2 días hábiles por correo Argentino</p>
+
+                  <a href="#" class="info__change-dom f-self-end">Elegir un nuevo domicilio</a>
+               </div>
+               <div class="separador my-2"></div>
+               <div class="mbt-4">
+                  <p class="vproduct__descripcion m-0"><%= producto.description %></p>
+               </div>
+
+               <!-- Editar / Eliminar -->
+
+               <% if (locals.userLogged && locals.userLogged.rol === "admin") { %>
+                  <div class="ctrl-product-admin">
+                     <form action="/store/products/edit/<%= producto.id %>">
+                        <button type="submit" class="button button-verde btn-edit mr-4">EDITAR</button>
+                     </form>
+   
+                     <form action="/store/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="button button-rojo btn-edit">ELIMINAR</button>
+                     </form>
+                  </div>
+               <% } %>
+            </div>
+         </div>
+
+         <!-- PRODUCTOS RELACIONADOS -->
+         <div class="container vproduct__relacionados">
+            <h3 class="mb-12">PRODUCTOS RELACIONADOS</h3>
+
+            <!-- Caja -->
+            <% for( let i = 0; i < 3; i++ ) { %>
+            <article class="mb-12 tb-6 lp-4 container producto shadow-drop-2-center">
+               <div class="button--stock">
+                  <i class="fas fa-check boton_check"></i>
+               </div>
+               <!-- Boton verde de stock -->
+               <div class="concon">
+                  <div class="mb-5">
+                     <img src="/images/products/Bebidas/Cervezas/<%= prRelations[i].images[0] %> " alt="ipa brown" />
+                  </div>
+
+                  <div class="mb-7 f-main-y">
+                     <div>
+                        <h4 class="producto__title"><%= prRelations[i].name %></h4>
+                        <p class="producto__description"><%= prRelations[i].description %></p>
+                     </div>
+
+                     <div class="producto__buttons">
+                        <div class="f-display">
+                           <a href="/store/products/<%= prRelations[i].id %> ">
+                              <div class="button producto__vermas mr-1">
+                                 <i class="fas fa-external-link-alt"></i>
+                              </div>
+                           </a>
+                        </div>
+
+                        <div class="controlador-buton-precio">
+                           <div class="precio_store">$ <%= prRelations[i].price %></div>
+                           <div class="button buton_redondo_suma">
+                              <i class="fas fa-plus"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </article>
+            <% } %>
+         </div>
+      </main>
+
+      <nav class="vproduct__navbottom w-100 p-4">
+         <div class="f-display f-main-between w-100">
+            <a href="/cart">
+            <div class="button icono_flecha">
+               <i class="fas fa-shopping-cart"></i>
+            </div>
+            </a>
+            <a href="/store">
+            <div class="button icono_card">
+               <i class="fas fa-undo-alt"></i>
+            </div>
+            </a>
+         </div>
+      </nav>
+   </body>
+</html>

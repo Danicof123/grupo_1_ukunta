@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+
+  <body class="f-display f-main-y minvh-100">
+    <header class="header">
+      <%- include('./partials/navbar-top') %>
+    </header>
+    <%- include('./partials/navbar-bottom') %>
+
+      <main class="container productos_tienda ptp-5 f-grow-1 f-cross-start">
+        
+
+        <% if(producto.length> 0) { %>
+          <h3 class="w-100">Resultado de la búsqueda: <%= producto.length %>
+          </h3>
+          <!-- Vista producto -->
+          <% producto.forEach(producto=> { %>
+            <article class="mb-12 tb-6 lp-4 container producto">
+              <div class="button--stock">
+                <i class="fas fa-check boton_check"></i>
+              </div>
+              <!-- Boton verde de stock -->
+              <div class="concon">
+                <div class="mb-5">
+                  <img src="/images/products/Bebidas/Cervezas/<%= producto.images %> " alt="ipa brown" />
+                </div>
+
+                <div class="mb-7 f-main-y">
+                  <div>
+                    <h4 class="producto__title">
+                      <%= producto.name %>
+                    </h4>
+                    <p class="producto__description">
+                      <%= producto.description %>
+                    </p>
+                  </div>
+
+                  <div class="producto__buttons">
+                    <div class="f-display">
+                      <a href="/store/products/<%= producto.id %> ">
+                        <div class="button producto__vermas mr-1">
+                          <i class="fas fa-external-link-alt"></i>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="controlador-buton-precio">
+                      <div class="precio_store">
+                        <%= producto.price %>
+                      </div>
+                      <div class="button buton_redondo_suma">
+                        <i class="fas fa-plus"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </article>
+            <% }) %>
+        <% }else{ %>
+          <h3 class="w-100">No se encontraron resultados en la búsqueda.
+          </h3>
+          <% } %>
+
+
+      </main>
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>

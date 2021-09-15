@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head.ejs') %>
+<body class="home">
+  <header class="header">
+    <%- include('partials/navbar-top.ejs') %>
+  </header>
+  <!-- Barra de navegación inferior -->
+  <%- include('partials/navbar-bottom.ejs') %>
+  <main class="container f-center">
+    
+    <form class="mb-12 lp-8 pc-6 f-main-y mbt-5" method="POST" action="/users/profile?_method=PUT" enctype="multipart/form-data">
+        <!-- Avatar -->
+        <div class="mb-12 f-main-center my-5">
+            <div class="image__profile">
+                <img src="/images/users/<%= user.avatar %> " alt="user">
+                <input type="file" name="avatar" accept="image/*" class="input_avatar" id="avatar">
+                <div class="edit-avatar">
+                    <span class="text-avatar">Actualizar imagen</span>
+                    <i class="fas fa-edit"></i>
+                </div>
+            </div>  
+        </div>
+        <label for="avatar" class="text-danger"><%= locals.errors && locals.errors.avatar ? errors.avatar.msg : null %>  </label>
+        <!-- Nombre -->
+
+        <div class="profile-data">
+            <h4 class="data">Nombre: <%= (user.name).replace(/\b\w/g, l => l.toUpperCase()) %> <%= (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>  </h4>
+            <div class="edit-profile" data-target="change-nombre"><i class="fas fa-edit"></i></div>
+        </div>
+       
+        <div id="change-nombre" class="change-data">
+            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.name.msg : null %></label>
+            <div class="reg__ctrl-input mbt-4">
+                <input type="text" placeholder="*<%= (user.name).replace(/\b\w/g, l => l.toUpperCase()) %>" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : null %>" disabled>
+            </div>
+    
+            <!-- Apellido -->
+          
+            <label for="lastname" class="text-danger d-none"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input type="text" placeholder="*<%= (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>" disabled>
+            </div>
+        </div>
+
+        <!-- Teléfono -->
+
+        <div class="profile-data">
+            <h4 class="data">Teléfono: <%= user.phone %></h4>
+            <div class="edit-profile" data-target="change-phone"><i class="fas fa-edit"></i></div>
+        </div>
+        
+        <div id="change-phone" class="change-data">
+            <label for="phone" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled type="tel" placeholder="*<%= user.phone %>" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
+            </div>
+        </div>
+
+        <!-- Contraseña -->
+
+        <div class="profile-data">
+            <h4 class="data">Editar Contraseña</h4>
+            <div class="edit-profile" data-target="change-psw"><i class="fas fa-edit"></i></div>
+        </div>
+
+        <div id="change-psw" class="change-data">
+            <label for="old_password" class="text-danger d-none"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled id="old_password" type="password" placeholder="*Contraseña actual" class="reg__input" name="old_password">
+            </div>
+
+            <label for="password" class="text-danger d-none"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled id="password" type="password" placeholder="*Contraseña nueva" class="reg__input" name="password">
+            </div>
+            
+            <label for="password2" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.password2.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled id="password-repeat" type="password" placeholder="*Repetir contraseña" class="reg__input" name="password2">
+            </div>
+        </div>
+
+        <!-- Domicilio -->
+
+        <div class="profile-data">
+            <h4 class="data">Editar Domicilio</h4>
+            <div class="edit-profile" data-target="change-address"><i class="fas fa-edit"></i></div>
+        </div>
+        <div id="change-address" class="change-data">
+            
+            <!-- Paises -->
+            <div class="reg__ctrl-input my-4">
+                <select name="country" class="reg__input">
+                    <option value="argentina" <%= (user.country === 'argentina')? "selected" : null %>>Argentina</option>
+                    <option value="croacia" <%= (user.country === 'croacia')? "selected" : null %>>Croacia</option>
+                    <option value="costa rica" <%= (user.country === 'costa rica')? "selected" : null %>>Costa Rica</option>
+                </select>
+            </div>
+
+
+            <!-- Provincias -->
+            <div class="reg__ctrl-input my-4">
+                <select name="state" class="reg__input">
+                    <option value="buenos aires">Buenos Aires</option>
+                    <option value="cordoba">Cordoba</option>
+                    <option value="santa fe">Santa Fe</option>
+                </select>
+            </div>
+            
+            <!-- Ciudades -->
+            <div class="reg__ctrl-input my-4">
+                <select name="city" class="reg__input">
+                    <option value="caba"  <%= (user.city === "caba") ? "selected" : null %>>CABA</option>
+                    <option value="la matanza" <%= (user.city === 'la matanza')? "selected" : null %>>La Matanza</option>
+                    <option value="rosario" <%= (user.city === 'rosario')? "selected" : null %>>Rosario</option>
+                    <option value="campana" <%= (user.city === 'campana')? "selected" : null %>>Campana</option>
+                    <option value="ballester" <%= (user.city === 'ballester')? "selected" : null %>>Ballester</option>
+                    <option value="lanus" <%= (user.city === 'lanus')? "selected" : null %>>Lanús</option>
+                </select>
+            </div>
+
+            <!-- Calle -->
+            <label for="adress" class="text-danger d-none"><%= locals.errors && locals.errors.adress ? errors.adress.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input disabled type="tel" placeholder="*Calle" class="reg__input" name="adress" value="<%= (locals && locals.errors) ? old.adress :user.adress %>">
+            </div>
+
+            <!-- Descripcion domicilio -->
+            <label for="description" class="text-danger d-none"><%= locals.errors && locals.errors.description ? errors.description.msg : null %>  </label>
+            <div class="reg__ctrl-textarea my-4">
+                <textarea name="description" class="text__area" placeholder="*Descripcion" value="<%= (locals && locals.errors) ? old.description : null %>"></textarea>
+            </div>
+        </div>
+
+        <!-- Terminos y condiciones de uso -->
+        
+        <nav class="f-display f-main-between reg__navbottom f-grow-1 f-cross-end my-5">
+            <a class="no-decor" href="/home">
+            <div class="button button-rojo reg__navbutton">
+                <i class="fas fa-times"></i>
+            </div>
+            </a>
+            <div class="button button-verde reg__navbutton">
+                <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
+            </div>
+        </nav>
+    </form>
+  </main>
+  <script src="/js/profile.js" type="module"></script>
+  <%- include('partials/scripts.ejs') %>
+</body>
+</html>

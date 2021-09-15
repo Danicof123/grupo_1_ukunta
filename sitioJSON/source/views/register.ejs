@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('partials/head')  %> 
+
+<body class="register f-display f-main-y minvh-100">
+    <%- include('partials/mini-header')  %> 
+   
+    <div class="container f-main-center f-grow-1">
+        <div class="mb-12 lp-6 f-main-y f-cross-center">
+
+            <h3 class="f-self-start my-4">REGISTRO</h3>
+
+            <form class="w-100 mbt-4" method="POST" action="/users/register">
+
+                <!-- Nombre -->
+               
+                <label for="name" class="text-danger"><%= locals.errors && locals.errors.name ? errors.name.msg : null %>  </label>
+                <div class="reg__ctrl-input mbt-4">
+                    <input type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : null %>">
+                </div>
+
+                <!-- Apellido -->
+              
+                <label for="lastname" class="text-danger"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
+                <div class="reg__ctrl-input my-4">
+                    <input type="text" placeholder="*Apellido" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>">
+                </div>
+
+                <!-- Fecha nacimiento -->
+
+                <label for="datebirth" class="text-danger"><%= locals.errors && locals.errors.datebirth ? errors.datebirth.msg : null %></label>
+                <div class="row my-0 f-cross-center my-4">
+                    
+                    <div class="mb-6">
+                        <label for="datebirth" class="reg__date__age" >Fecha de nacimiento +18*</label>
+                    </div>
+                    <div class="mb-6">
+                        <div class="reg__ctrl-input">
+                            <input type="date" class="reg__input" name="datebirth" id="inp-date" value="<%= (locals && locals.errors) ? old.datebirth : null %>">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DNI -->
+                <label for="DNI" class="text-danger"><%= locals.errors && locals.errors.DNI ? errors.DNI.msg : null %></label>
+                <div class="reg__ctrl-input my-4">
+                    <input type="number" placeholder="*DNI" class="reg__input" name="DNI" value="<%= (locals && locals.errors) ? old.DNI : null %>">
+                </div>
+
+                <!-- Teléfono -->
+                
+                <label for="phone" class="text-danger"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
+                <div class="reg__ctrl-input my-4">
+                    <input type="tel" placeholder="*Numero de telefono" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
+                </div>
+
+                <!-- Correo electronico -->
+                
+                <label for="email" class="text-danger"><%= locals.errors && locals.errors.email ? errors.email.msg : null %>  </label>
+                <div class="reg__ctrl-input my-4">
+                    <input type="email" placeholder="*Correo electronico" class="reg__input" name="email" value="<%= (locals && locals.errors) ? old.email : null %>">
+                </div>
+
+                <div class="reg__ctrl-input my-4">
+                    <input type="email" placeholder="*Repetir correo electronico" class="reg__input"
+                        name="email-repeat">
+                </div>
+
+                <!-- Contraseña -->
+                
+                <label for="password" class="text-danger"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
+                <div class="reg__ctrl-input my-4">
+                    <input type="password" placeholder="*Contraseña" class="reg__input" name="password">
+                </div>
+                
+                <label for="password2" class="text-danger"><%= locals.errors && locals.errors.password2 ? errors.password2.msg : null %>  </label>
+                <div class="reg__ctrl-input my-4">
+                    <input type="password" placeholder="*Repetir contraseña" class="reg__input" name="password2">
+                </div>
+
+                <!-- Paises -->
+                <label for="country" class="text-danger"><%= locals.errors && locals.errors.country ? errors.country.msg : null %>  </label>
+                <div class="reg__ctrl-input my-4">
+                    <select name="country" class="reg__input">
+                        <option value="" selected>*Pais</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Croacia">Croacia</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                    </select>
+                </div>
+
+
+                <!-- Provincias -->
+                <label for="state" class="text-danger"><%= locals.errors && locals.errors.state ? errors.state.msg : null %>  </label>
+                <div class="reg__ctrl-input my-4">
+                    <select name="state" class="reg__input">
+                        <option value="" selected>*Provincia/Estado</option>
+                        <option value="Buenos Aires">Buenos Aires</option>
+                        <option value="Cordoba">Cordoba</option>
+                        <option value="Santa Fe">Santa Fe</option>
+                    </select>
+                </div>
+                
+                <!-- Ciudades -->
+                <label for="city" class="text-danger"><%= locals.errors && locals.errors.city ? errors.city.msg : null %>  </label>
+                <div class="reg__ctrl-input my-4">
+                    <select name="city" class="reg__input">
+                        <option value="" selected>*Ciudad</option>
+                        <option value="CABA">CABA</option>
+                        <option value="La Matanza">La Matanza</option>
+                        <option value="Rosario">Rosario</option>
+                    </select>
+                </div>
+
+                <!-- Descripcion domicilio -->
+                
+                <label for="adress" class="error-input"><%= locals.errors && locals.errors.name ? errors.adress.msg : null %>  </label>
+                <div class="reg__ctrl-textarea my-4">
+                    <textarea name="adress" class="text__area" placeholder="*Escriba una descripcion de su domicilio" value="<%= (locals && locals.errors) ? old.adress : null %>"></textarea>
+                </div>
+
+                <!-- Terminos y condiciones de uso -->
+
+                <div class="f-display f-main-between">
+                    
+                    <div class="ctrl-checkbox">
+                        <input type="checkbox" id="chk-keep" class="chk-keep d-none" name="terms">
+                        <label for="chk-keep" class="checkbox">
+                            Acepto los <a href="#">términos y condiciones </a> y autorizo el uso de mis datos deacuerdo
+                        a la <a href="#">Declaracion de privacidad</a>
+                        </label>
+                        <p class="error-input"><%= locals.errors && locals.errors.terms ? errors.terms.msg : null %>  </p>
+                    </div>
+                </div>  
+                
+                <nav class="f-display f-main-between reg__navbottom f-grow-1 f-cross-end my-5">
+                    <a class="no-decor" href="/home">
+                    <div class="button button-rojo reg__navbutton">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    </a>
+                    <div class="button button-verde reg__navbutton">
+                        <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
+                    </div>
+                </nav>
+            </form>
+
+        </div>
+
+    </div>
+    
+</body>
+
+</html>

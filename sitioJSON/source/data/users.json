@@ -1,0 +1,19 @@
+[
+  {
+    "name": "111111",
+    "lastname": "",
+    "datebirth": "1985-05-14",
+    "DNI": "33333333",
+    "phone": "1136122163",
+    "email": "j@j.com",
+    "password": "$2a$10$cpj7qS2WuRbgTukguyZ4BuL5AiZVo2R59BOQurXjQ/zwd.08DLZ.6",
+    "country": "argentina",
+    "state": "buenos aires",
+    "city": "caba",
+    "adress": "eeee1",
+    "avatar": "1631032690382-1136122163.jpeg",
+    "rol": "admin",
+    "id": 2,
+    "description": ""
+  }
+]

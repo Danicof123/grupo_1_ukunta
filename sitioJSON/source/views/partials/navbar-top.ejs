@@ -1,0 +1,62 @@
+<nav class="navbar">
+
+  <!-- Logo -->
+  <div class="navbar__logo">
+      <a href="/home"><img src="/images/logo/ukunta.svg" alt="logotipo"></a>
+  </div>
+
+  <!-- Search -->
+  <div class="navbar__search only-desktop">
+    <form action="/search">
+      <input type="search" name="s" class="input-search" placeholder="Buscar productos">
+      <button type="submit"><i class="fas fa-arrow-right"></i></button>
+    </form>
+
+      
+  </div>
+
+  <!-- Navegacion -->
+  <div class="navbar__menu">
+      <ul class="navbar_ul only-desktop">
+          <li class="navbar__item active"><a href="/home">INICIO</a></li>
+          <li class="navbar__item"><a href="/nosotros">NOSOTROS</a></li>
+          <li class="navbar__item"><a href="/store">TIENDA</a></li>
+          <li class="navbar__item"><a href="/home#contacto">CONTACTO</a></li>
+          <!-- boton del menu desplegable para cerrar -->
+          <button class="navbar__back no-desktop">
+              <i class="fas fa-arrow-down"></i>
+          </button>
+      </ul>
+
+      <div class="navbar__shop only-desktop">
+          <a href="/cart" class="navbar__item">
+              <i class="fas fa-shopping-cart only-desktop"></i>
+          </a>
+          <div class="navbar__badge">3</div>
+      </div>
+
+      <!-- <a href="/users/login" class="navbar__item"><i class="fas fa-user"></i></a> -->
+      <div class="navbar__item btn-drop" data-target="drop-menu"><i class="fas fa-user"></i></div>
+
+
+      
+  </div>
+
+  <div class="drop-menu menu--user" id="drop-menu">
+    <ul>
+      <% if (locals.isLogged) { %>
+        <li><a href="/users/profile" class="navbar__item">MI PERFÍL</a></li>
+        <li class="navbar__item drop-menu__separator"></li>
+        <li><a href="/users/logout" class="navbar__item">CERRAR SESIÓN</a></li>
+      <% if (locals.userLogged && locals.userLogged.rol === "admin") { %>
+        <li class="navbar__item drop-menu__separator"></li>
+        <li><a href="/admin/dashboard" class="navbar__item">ADMINISTRACIÓN</a></li>
+        <li><a href="/store/products/add" class="navbar__item">AGREGAR PRODUCTO</a></li>
+      <% } %>
+      <% } else { %>
+        <li><a href="/users/login" class="navbar__item">ACCEDER</a></li>
+        <li><a href="/users/register" class="navbar__item">REGISTRARME</a></li>
+      <% } %>
+    </ul>
+  </div>
+</nav>

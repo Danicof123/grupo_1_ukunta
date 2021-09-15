@@ -1,0 +1,56 @@
+.image__profile{
+    position: relative;
+    margin-top: 2rem;
+    max-width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.input_avatar{
+    position: absolute;
+    top: 0%;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.input_avatar:hover+.edit-avatar{
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+}
+
+.edit-avatar{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 1.7rem;
+    color: var(--color-primario);
+    background-color: rgba(255, 255, 255, .5);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+.text-avatar{
+    font-size: .5em;
+}
+.profile-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-profile{
+    cursor: pointer;
+}
+
+.change-data{
+    display: none;
+}
+
+.change-data.active{
+    display: initial;
+}

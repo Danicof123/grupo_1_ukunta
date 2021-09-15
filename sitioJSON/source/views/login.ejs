@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %> 
+
+<body>
+    <div class="container-y py-5 minvh-100 view-login max-1440">
+        
+        <!-- Logo -->
+        
+        <div class="f-main-y mb-12 lp-4 f-center ctrl-logo1">
+            <a href="/home" class=""><img src="/images/logo/logo.svg" alt="logo"></a>
+        </div>
+        
+
+        <div class="mb-12 lp-8 f-center">
+            <div class="row f-main-center">
+                <div class="mb-12 lp-10 dk-9 f-main-y">
+                    <h3 class="no-mb no-tb f-self-start">INICIAR SESIÓN</h3>
+                    <form action="/users/login" class="w-100" method="POST">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="text-danger"><%= errors.email.msg %></div>
+                        <% } %>
+                        <!-- Usuario -->
+                        <div class="reg__ctrl-input mbt-4">
+                            <input type="text" placeholder="Ingrese su email" name="email" class="reg__input">
+                        </div>
+                        <!-- Contraseña -->
+                        <div class="reg__ctrl-input mbt-4">
+                            <input type="password" placeholder="Ingrese su contraseña" name="password" class="reg__input">
+                            <button class="eye__button"><i class="fas fa-eye"></i></button>
+                        </div>
+                        <!-- Enviar -->
+                        
+                        <div class="reg__ctrl-input mbt-4">
+                            <input type="submit" class="contacto__button" value="ENVIAR">
+                        </div>
+                        
+                        <div class="f-display f-main-between">
+                            <div class="ctrl-checkbox">
+                                <input type="checkbox" id="chk-keep" class="chk-keep d-none" name="keep">
+                                <label for="chk-keep" class="checkbox">Mantener sesión</label>
+                            </div>
+                            <div class="options__forgot">
+                                <a href="" class="forgot">Olvide mi contraseña</a>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones navbottom -->
+
+        <nav class="navbottom">
+
+            <div class="mb-6 lp-4 navbottom-left">
+                <a class="no-decor" href="/users/register">
+                <div class="button reg__navbutton">
+                    <i class="fas fa-plus"></i>
+                </div>
+                </a>
+            </div>
+
+            <div class="mb-6 lp-8">
+                <div class="row f-main-center">
+                    <div class="mb-12 lp-10 dk-9 f-main-end">
+                        <a class="no-decor" href="/home">
+                        <div class="button reg__navbutton">
+                            <i class="fas fa-undo-alt"></i>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>
