@@ -59,7 +59,21 @@ Implementar los comentarios en el código.
 #### Dejar de hacer
 No encontramos un punto en el cual deberíamos dejar de hacer.
 ___
-## Quin retrospectiva
+## Quinta retrospectiva
+
+Continuar **manteniendo el enfoque en la importancia del proyecto**, continuar con **reuniones semanales** según sea necesario, la **buena predisposición**, seguir implementando **nuevos conocimientos** y resolviendo conflictos en equipo.
+#### Seguir haciendo
+Continuar comentando el codigo y unificando ideas.
+#### Hacer más
+Verificar que todo funcione correctamente previo a la entrega.
+#### Hacer menos
+Posponer tareas para el final.
+#### Comenzar a hacer
+Derogar tareas cuando surge algun imprevisto o impedimento.
+#### Dejar de hacer
+No encontramos un punto en el cual deberíamos dejar de hacer.
+___
+## Sexta retrospectiva
 
 #### Seguir haciendo
 
