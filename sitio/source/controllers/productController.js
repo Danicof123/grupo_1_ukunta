@@ -1,8 +1,15 @@
 const {validationResult} = require('express-validator');
+//JSON
 const productsDB = require('../models/ProductsDB');
+//DB
+const db = require('../database/models')
 
 // Controlador de la Tienda
 const store = (req, res) => {
+   /* db.Cart.findAll({
+      include: [{association: 'user'}, {association: 'products'}]
+   })
+      .then(resultados => res.send(resultados)) */
    let productos_db = productsDB.getDB;
    // Obtiene la categoria por params y muestra el resultado
    switch (req.params.cat) {
