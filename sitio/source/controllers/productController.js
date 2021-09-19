@@ -2,30 +2,17 @@ const {validationResult} = require('express-validator');
 //JSON
 const productsDB = require('../models/ProductsDB');
 //DB
-const db = require('../database/models')
+const db = require('../database/models'),
+      Op = db.Sequelize.Op;
 
 // Controlador de la Tienda
-const store = (req, res) => {
-   /* db.Cart.findAll({
-      include: [{association: 'user'}, {association: 'products'}]
-   })
-      .then(resultados => res.send(resultados)) */
-   let productos_db = productsDB.getDB;
-   // Obtiene la categoria por params y muestra el resultado
-   switch (req.params.cat) {
-      case 'cerveza':
-         productos_db = productsDB.getForCategory('cerveza')
-         break;
-      case 'hidromiel':
-         productos_db = productsDB.getForCategory('hidromiel')
-         break;
-      case 'merchandising':
-         productos_db = productsDB.getForCategory('merchandising')
-         break;
-      default:
-         productos_db = productsDB.getDB;
-         break;
-   }
+const store = async (req, res) => { 
+
+   // Guarda todos los productos, si se envia req.params.cat filtará por categoría
+   const productos_db = (req.params.cat) 
+      ? await db.Product.findAll({include: [{association: 'category', where: {name: req.params.cat}},{association: 'image'}]})
+      : await db.Product.findAll({include: [{association: 'category'},{association: 'image'}]})
+
    const locals = {
       title: 'Tienda Ukunta',
       productos_db,
@@ -33,23 +20,37 @@ const store = (req, res) => {
    res.render('store', locals);
 }
 
-const detail = (req, res) => {
-   const id = parseInt(req.params.id, 10);
-   // Si el id del detalle no existe, redirecciona a la tienda
-   if (!productsDB.comprobarId(id)) res.redirect('/store');
+const detail = async (req, res) => {
+   try{
+      // Obtengo el producto según el id
+      let producto = await db.Product.findByPk(req.params.id, {include: [{association: 'category'},{association: 'image'}]});
 
-   // Guardo el producto
-   let producto = productsDB.getFind('id', id)
+      // Si producto es un objeto vacio, que redirija a la tienda
+      if(!producto) throw new Error('No existe el producto en nuestra base de datos')
 
-   // Variables a enviar a la vista (products)
-   const locals = {
-      title: `Detalle ${producto.name}`,
-      producto,
-      productos_db: productsDB.getDB,
-      prRelations: productsDB.getRelations(id, producto.category),
+      // Declaración de variables locales
+      const locals = {
+         title: `Detalle ${producto.name}`,
+         producto,
+         productos_db: await db.Product.findAll({include: [{association: 'category'},{association: 'image'}]}),
+         // Cuando se carguen mas productos modificar aquí
+         prRelations: await db.Product.findAll({
+            where: {
+               id: {
+                  [Op.ne] : req.params.id //Que el id sea diferente del mismo producto
+               }
+            },
+            include: [{association: 'category'},{association: 'image'}]
+         })
+      }
+      // Renderizado de la vista
+      res.render('products', locals);
    }
-   // Renderizado de la vista
-   res.render('products', locals);
+   catch(err){
+      // Si hay algún que otro error que redirija a la tienda
+      res.redirect('/store');
+   }
+
 }
 
 const addProduct = (req, res) => {
