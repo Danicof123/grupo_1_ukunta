@@ -119,7 +119,7 @@ CREATE TABLE `categories` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,6 +128,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'cerveza'),(2,'hidromiel'),(3,'merchandising');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,7 +146,7 @@ CREATE TABLE `images` (
   PRIMARY KEY (`id`),
   KEY `FK_003eafc3-efcd-4ba8-a3e2-1b7552dd5e3d` (`productId`),
   CONSTRAINT `FK_003eafc3-efcd-4ba8-a3e2-1b7552dd5e3d` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +155,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (1,'Ale-stout-Negra-305x368.jpg',1),(2,'extra-picante-305x368.jpg',2),(3,'destapador01-305x368.jpg',3);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,14 +202,14 @@ CREATE TABLE `products` (
   `name` varchar(45) NOT NULL,
   `description` varchar(255) NOT NULL,
   `size` varchar(15) DEFAULT NULL,
-  `price` decimal(3,2) NOT NULL,
+  `price` decimal(6,2) NOT NULL,
   `stock` int NOT NULL,
-  `expire` date NOT NULL,
+  `expire` date DEFAULT NULL,
   `categoryId` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_cd71704d-87d0-4ea8-a69d-f5d9fe43a6f5` (`categoryId`),
   CONSTRAINT `FK_cd71704d-87d0-4ea8-a69d-f5d9fe43a6f5` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -216,6 +218,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Ale Stout Negra','Cerveza negra','300cc',150.00,25,NULL,1),(2,'Extra Picante','Hidromiel Extra Picante','300cc',185.00,20,NULL,2),(3,'Destapador','Destapador estilo Vikingo','13cmx10cm',300.00,3,NULL,3);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,4 +262,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-17  0:48:40
+-- Dump completed on 2021-09-20 20:16:52

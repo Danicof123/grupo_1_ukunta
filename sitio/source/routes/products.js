@@ -7,8 +7,8 @@ const express = require('express'),
 
 /* /store */
 router.get('/:cat?', store);
-router.get('/products/add', adminUserCheck, addProduct);
-router.post('/', uploadFile.array('images'), validationsCreate, createProduct);
+router.get('/products/add', /*adminUserCheck,*/ addProduct);
+router.post('/', uploadFile.array('images'), /* validationsCreate, */ createProduct);
 router.get('/products/:id', detail);
 router.get('/products/edit/:id', adminUserCheck, editProducto);
 router.put('/products/edit/:id', validationsEdit, updateProducto);
