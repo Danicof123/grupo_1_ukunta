@@ -39,7 +39,7 @@ const detail = async (req, res) => {
                         [Op.ne]: req.params.id, //Que el id sea diferente del mismo producto
                     },
                 },
-                include: [{association: 'category'}, {association: 'image'}],
+                include: [{association: 'category', where: {id: producto.categoryId}}, {association: 'image'}],
             }),
         };
         // Renderizado de la vista
@@ -168,7 +168,7 @@ const remove = (req, res) => {
     })
         .then((result) => {
             // Redirecciona por donde viene
-            return res.send(result)
+            return res.send(result);
             res.redirect(req.headers.referer);
         })
         .catch((error) => {
