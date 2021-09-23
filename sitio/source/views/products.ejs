@@ -58,7 +58,7 @@
                <div class="separador my-2"></div>
                <!-- Volumen y precio -->
                <div class="f-display f-main-between f-cross-center mbt-4">
-                  <div class="info__titulo">Volumen: <span class="info__valor-titulo">330ml</span></div>
+                  <div class="info__titulo">Volumen: <span class="info__valor-titulo"><%= producto.size %></span></div>
 
                   <div class="info__precio-titulo">
                      <span>$ <%= producto.price %></span>
@@ -67,7 +67,7 @@
 
                <!-- Stock disponible -->
                <div class="f-display f-main-between f-cross-center mbt-4">
-                  <div class="info__titulo">Stock disponible: <span class="info__valor-titulo">56u</span></div>
+                  <div class="info__titulo">Stock disponible: <span class="info__valor-titulo"><%= producto.stock %></span></div>
                </div>
 
                <!-- Cantidades adquiridas -->

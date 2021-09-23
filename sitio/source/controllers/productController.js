@@ -1,11 +1,11 @@
 const {validationResult} = require('express-validator');
-//JSON
-const productsDB = require('../models/ProductsDB');
 //DB
 const db = require('../database/models'),
     Op = db.Sequelize.Op;
 
 // Controlador de la Tienda
+
+/* VISTA TIENDA */
 const store = async (req, res) => {
     // Guarda todos los productos, si se envia req.params.cat filtará por categoría
     const productos_db = req.params.cat
@@ -18,7 +18,7 @@ const store = async (req, res) => {
     };
     res.render('store', locals);
 };
-
+/* VISTA DETALLE PRODUCTO */
 const detail = async (req, res) => {
     try {
         // Obtengo el producto según el id
@@ -49,7 +49,7 @@ const detail = async (req, res) => {
         res.redirect('/store');
     }
 };
-
+/* VISTA DE CARGA DE PRODUCTO */
 const addProduct = async (req, res) => {
     try {
         const locals = {
@@ -62,126 +62,119 @@ const addProduct = async (req, res) => {
         res.redirect('/store');
     }
 };
-
-const createProduct = async (req, res) => {
-    //const id = parseInt(req.body.id, 10);
-    /*try {
-        const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            // Variables a la vista
-            const locals = {
-                errors: resultValidation.mapped(),
-                old: req.body,
-                title: 'Agregar producto',
-                categories: await db.Category.findAll(),
-                //productos_db: productsDB.getDB,
-            };
-            return res.render('addProduct', locals);
-        } else {
-            // Creo un nuevo producto con lo que viene en el body
-            const newProduct = {
-                ...req.body,
-                //name: name.trim(),
-                //description: description.trim(),
-            };
-            // Agrego las imagenes
-            newProduct.images = req.files.map((image) => image.filename);
-            // Añado en la BD el nuevo PRoducto
-            await db.Product.Create(newProduct);
-            // Redirecciono al detalle
-            res.redirect(`/store/products/${id}`);
-        }
-    } catch (error) {
-        // Si hay algún que otro error que redirija a la tienda
-        res.redirect('/store');
-    }*/
+/* CREACIÓN DE PRODUCTO */
+const createProduct = (req, res) => {
     let errors = validationResult(req);
-
+    //Si no hay errores
     if (errors.isEmpty()) {
         const {name, description, category} = req.body;
-
+        //Creo el producto con lo que viene del body
         db.Product.create({
             ...req.body,
             name: name.trim(),
             description: description.trim(),
             categoryId: category,
-        })
-            .then((product) => {
-                if (req.files) {
-                    let images = [];
-                    let imagenes = req.files.map((imagen) => imagen.filename);
-                    imagenes.forEach((img) => {
-                        var image = {
-                            file: img,
-                            productId: product.id,
-                        };
-                        images.push(image);
-                    });
-                    db.Image.bulkCreate(images, {validate: true}).then(() => console.log('imagenes agregadas'));
-                }
-                return res.send(product);
-                res.redirect(`/store/products/${id}`);
-            })
-            .catch((error) => console.log(error));
+        }).then((newProduct) => {
+            //Creo una variable vacia para pushearle las imagenes
+            let imagesProduct = [];
+            let imagesToAdd = req.files.map((image) => image.filename);
+            imagesToAdd.forEach((img) => {
+                let image = {
+                    productId: newProduct.id,
+                    name: img,
+                };
+                imagesProduct.push(image);
+            });
+            //Guardo en base de datos las imagenes asociadas al producto y redirigo a la vista del producto creado
+            db.Image.bulkCreate(imagesProduct, {validate: true});
+            res.redirect(`/store/products/${newProduct.id}`);
+        });
     } else {
         db.Category.findAll()
             .then((categories) => {
-                return res.render('productAdd', {
+                return res.render('addProduct', {
+                    title: 'Agregar producto',
                     categories,
-                    errores: errors.mapped(),
+                    errors: errors.mapped(),
                     old: req.body,
                 });
             })
             .catch((error) => console.log(error));
     }
 };
+/* VISTA EDICIÓN DE PRODUCTO */
 const editProducto = (req, res) => {
-    const id = parseInt(req.params.id, 10); //Convierte el string a Integer
-    // Si el id del producto a editar no existe en la BD, redirige a la tienda
-    if (!productsDB.comprobarId(id)) res.redirect('/store');
-    // Variables a la vista
-    const locals = {
-        title: `Editando ${productsDB.getFind('id', id).name}`,
-        product: productsDB.getFind('id', id),
-    };
-
-    res.render('editProduct', locals);
+    let categories = db.Category.findAll();
+    let product = db.Product.findByPk(req.params.id, {
+        include: [{association: 'category'}],
+    });
+    Promise.all([categories, product]).then(([categories, product]) => {
+        return res.render('editProduct', {
+            title: `Editando ${product.name}`,
+            categories,
+            product,
+        });
+    });
 };
-// Actualizar un producto
+/* ACTUALIZAR PRODUCTO */
 const updateProducto = (req, res) => {
-    const id = parseInt(req.body.id, 10);
-
     const resultValidation = validationResult(req);
+    let categories = db.Category.findAll();
+    let product = db.Product.findByPk(req.params.id, {
+        include: [{association: 'category'}],
+    });
 
-    // Si hay errores en el formulario de la edicion
+    // Si hay errores en el formulario de la edicion paso los errores
     if (resultValidation.errors.length > 0) {
-        // Si existe el id
-        if (productsDB.comprobarId(id)) {
-            // Variables a la vista
-            const locals = {
-                errors: resultValidation.mapped(),
-                old: req.body,
-                title: 'Editando ',
-                product: productsDB.getFind('id', id),
-            };
-            return res.render('editProduct', locals);
-        }
+        Promise.all([categories, product])
+            .then(([categories, product]) => {
+                return res.render('editProduct', {
+                    title: 'Editando',
+                    product,
+                    categories,
+                    errors: resultValidation.mapped(),
+                    old: req.body,
+                });
+            })
+            .catch((error) => console.log(error));
         // Si no hay errores en el formulario de la edicion
     } else {
-        // Comprueba el id si existe en la BD
-        if (productsDB.comprobarId(id)) {
-            const pr = req.body; //Guarda el producto editado en pr
-            pr.id = id;
-            productsDB.setElement = pr;
-            res.redirect(`/store/products/${id}`);
-        }
+        const {name, description, category} = req.body;
+        //Actualizo el producto con lo que viene del body al ID que venga por parametro
+        db.Product.update(
+            {
+                ...req.body,
+                name: name.trim(),
+                description: description.trim(),
+                categoryId: category,
+            },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        )
+            //Redirigo a la vista del producto
+            .then(() => res.redirect(`/store/products/${req.params.id}`))
+            .catch((error) => console.log(error));
     }
 };
+/* ELIMINAR PRODUCTO */
 const remove = (req, res) => {
-    const id = parseInt(req.params.id, 10);
-    if (productsDB.comprobarId(id)) productsDB.delete(id);
-    // Redirecciona por donde viene
-    res.redirect(req.headers.referer);
+    db.Product.destroy({
+        where: {
+            id: req.params.id,
+        },
+    })
+        .then((result) => {
+            // Redirecciona por donde viene
+            res.redirect(req.headers.referer);
+        })
+        .catch((error) => {
+            // Si hay algún que otro error que redirija a la tienda
+            console.log(error);
+            res.redirect('/store');
+        });
 };
 
 module.exports = {

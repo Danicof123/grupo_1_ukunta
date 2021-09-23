@@ -43,9 +43,7 @@
                            <%= errors.description.msg %>
                         </div>
                         <% } %>
-                        <textarea name="description" class="text__area"
-                           placeholder="*Descripción del producto"><%= locals.old ? old.description : null %>
-                        </textarea>
+                        <textarea name="description" class="text__area" placeholder="*Descripción del producto"><%= locals.old ? old.description : null %></textarea>
                   </div>
 
                   <!-- Tamaño -->
@@ -70,13 +68,13 @@
                   </div>
 
                   <!-- stock -->
+                  <div class="reg__ctrl-input my-4">
                   <% if (locals.errors && errors.stock) { %>
                      <div class="text-danger">
                         <%= errors.stock.msg %>
                      </div>
                   <% } %>
-                  <div class="reg__ctrl-input my-4">
-                     <input name="stock" type="number" placeholder="Ingresar stock" class="reg__input" name="stock">
+                     <input name="stock" type="number" placeholder="*Ingresar stock" class="reg__input" name="stock" value="<%= locals.old ? old.stock : null %>"/>
                   </div>
 
                   <!-- Fecha de vencimiento -->
@@ -88,7 +86,7 @@
                     </div>
                     <div class="mb-6">
                         <div class="reg__ctrl-input">
-                            <input type="date" class="reg__input" name="expire" id="inp-date" value="<%= (locals && locals.errors) ? old.datebirth : null %>">
+                            <input type="date" class="reg__input" name="expire" id="inp-date" value="<%= (locals && locals.errors) ? old.expire : null %>">
                         </div>
                     </div>
                   </div>
