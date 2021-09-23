@@ -150,18 +150,18 @@
                <!-- Boton verde de stock -->
                <div class="concon">
                   <div class="mb-5">
-                     <img src="/images/products/Bebidas/Cervezas/<%= prRelations[0].image[0].name %> " alt="ipa brown" />
+                     <img src="/images/products/Bebidas/Cervezas/<%= prRelations[i].image[0].name %> " alt="ipa brown" />
                   </div>
 
                   <div class="mb-7 f-main-y">
                      <div>
-                        <h4 class="producto__title"><%= prRelations[0].name %></h4>
-                        <p class="producto__description"><%= prRelations[0].description %></p>
+                        <h4 class="producto__title"><%= prRelations[i].name %></h4>
+                        <p class="producto__description"><%= prRelations[i].description %></p>
                      </div>
 
                      <div class="producto__buttons">
                         <div class="f-display">
-                           <a href="/store/products/<%= prRelations[0].id %> ">
+                           <a href="/store/products/<%= prRelations[i].id %> ">
                               <div class="button producto__vermas mr-1">
                                  <i class="fas fa-external-link-alt"></i>
                               </div>
@@ -169,7 +169,7 @@
                         </div>
 
                         <div class="controlador-buton-precio">
-                           <div class="precio_store">$ <%= prRelations[0].price %></div>
+                           <div class="precio_store">$ <%= prRelations[i].price %></div>
                            <div class="button buton_redondo_suma">
                               <i class="fas fa-plus"></i>
                            </div>
