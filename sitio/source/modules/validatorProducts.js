@@ -4,9 +4,15 @@ const {body} = require('express-validator');
 const validationsCreate = [
    body('name').notEmpty().withMessage('Debes ingresar el nombre del producto.'),
    body('category').notEmpty().withMessage('Debes elegir la categoría.'),
-   body('description').notEmpty().withMessage('Debes ingresar la descripción del producto.'),
-   body('price').notEmpty().withMessage('Debes ingresar el precio del producto.'),
-   body('stock').notEmpty().withMessage('Debes ingresar el stock del producto.'),
+   body('description')
+      .notEmpty().withMessage('Debes ingresar la descripción del producto.')
+      .isLength({max : 255}).withMessage("La descripcion debe tener un máximo de 255 carácteres"),
+   body('price')
+      .notEmpty().withMessage('Debes ingresar el precio del producto.'),
+      
+   body('stock')
+      .notEmpty().withMessage('Debes ingresar el stock del producto.')
+      .isInt().withMessage("El stock debe ser ingresado en formato entero."),
    body('expire').isISO8601('expire').withMessage('Formato de fecha inválido'),
    body('images').custom((value, {req}) => {
       let files = req.files;
@@ -28,9 +34,13 @@ const validationsCreate = [
 
 const validationsEdit = [
    body('name').notEmpty().withMessage('Debes ingresar el nombre o modificar el actual.'),
-   body('description').notEmpty().withMessage('Debes ingresar una descripción o dejar la actual.'),
+   body('description')
+      .notEmpty().withMessage('Debes ingresar una descripción o dejar la actual.')
+      .isLength({max : 255}).withMessage("la descripcion debe tener un maximo de 255 caracteres"),
    body('price').notEmpty().withMessage('Debes ingresar el nuevo precio o dejar el actual.'),
-   body('stock').notEmpty().withMessage('Debes ingresar el stock del producto o dejar el actual'),
+   body('stock')
+      .notEmpty().withMessage('Debes ingresar el stock del producto o dejar el actual')
+      .isInt().withMessage("El stock debe ser ingresado en formato entero."),
    body('expire').isISO8601('expire').withMessage('Formato de fecha inválido'),
 ];
 

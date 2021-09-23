@@ -168,6 +168,7 @@ const remove = (req, res) => {
     })
         .then((result) => {
             // Redirecciona por donde viene
+            return res.send(result)
             res.redirect(req.headers.referer);
         })
         .catch((error) => {

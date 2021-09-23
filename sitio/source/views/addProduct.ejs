@@ -31,7 +31,7 @@
                         <select name="category" class="reg__input">
                            <option value="" selected hidden>*Categoria</option>
                            <% categories.forEach(category => { %>
-                           <option value="<%= category.id %>" <%= locals.old && old.categoryId === category.id ? 'selected' : null%> ><%= category.name %></option>
+                           <option value="<%= category.id %>" <%= locals.old && old.categoryId === category.id ? "selected" : null%> ><%= category.name %></option>
                            <% }) %>
                         </select>
                   </div>
@@ -53,7 +53,7 @@
                            <%= errors.size.msg %>
                         </div>
                      <% } %>
-                        <input type="text" placeholder="*Tamaño o volumen del producto" size="size" class="reg__input" value="<%= locals.old ? old.size : null %>" />
+                        <input type="text" placeholder="*Tamaño o volumen del producto" name="size" class="reg__input" value="<%= locals.old ? old.size : null %>" />
                   </div>
 
                   <!-- precio -->
