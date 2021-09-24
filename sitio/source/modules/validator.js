@@ -46,12 +46,12 @@ const usersValidator = [
     check('datebirth')
     .isISO8601('datebirth').withMessage('Formato de fecha inválido'),
 
-    check('DNI')
-    .notEmpty().withMessage('Debe ingresar un DNI')
+    check('dni')
+    .notEmpty().withMessage('Debe ingresar un dni')
     .isLength({
         
         max : 8
-    }).withMessage('Debe ingresar un DNI válido'),
+    }).withMessage('Debe ingresar un dni válido'),
 
     check('phone')
     .notEmpty().withMessage('Debe ingresar un numero de telefono')
@@ -86,7 +86,6 @@ const usersValidator = [
 
     check('city')
     .notEmpty().withMessage('Debe ingresar una ciudad')
-    .isAlpha().withMessage('La ciudad no debe contener números')
     .isLength({
         min : 2,
         max : 58,

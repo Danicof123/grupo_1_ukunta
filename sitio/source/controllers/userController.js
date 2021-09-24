@@ -1,16 +1,18 @@
 const bcryptjs = require('bcryptjs');
 
-const {users_db, guardarUser} = require('../data/users_db');
-const userDB = require('../models/UserDB');
+// const {users_db, guardarUser} = require('../data/users_db');
+//const userDB = require('../models/UserDB');
+const db = require('../database/models')
 const {validationResult} = require('express-validator');
 
-const userCreation = (user) => {
-   users_db.push(user);
-};
 
-const saveUser = () => {
-   guardarUser(users_db);
-};
+// const userCreation = (user) => {
+//    users_db.push(user);
+// };
+
+// const saveUser = () => {
+//    guardarUser(users_db);
+// };
 
 module.exports = {
    login: (req, res) => {
@@ -19,11 +21,17 @@ module.exports = {
       });
    },
 
-   loginProcess: (req, res) => {
-      let userToLogin = userDB.getDB.find((user) => user.email === req.body.email); // Busco al usuario a loguear
-      let checkPassword = userDB.getDB.find((user) => bcryptjs.compareSync(req.body.password, user.password))
-      if (userToLogin && checkPassword) {
+   loginProcess: async (req, res) => {
+
+      let userToLogin = await db.User.findOne({where:{email: req.body.email}}); // Busco al usuario a loguear
+      //let checkPassword = await db.User.findOne({where:{password: bcryptjs.compareSync(req.body.password, userToLogin.password)}})
+      
+      // if (userToLogin && checkPassword) {
          // Si tengo usuario a loguear...
+
+   const resultValidation = validationResult(req);
+
+   if  (userToLogin && bcryptjs.compareSync(req.body.password, userToLogin.password)){
          req.session.userLogged = {
             id: userToLogin.id,
             name: userToLogin.name,
@@ -61,31 +69,33 @@ module.exports = {
    register: (req, res) => {
       res.render('register', {
          title: 'Registrese',
-         userDB
+         db
+        // userDB
          //users_db,
       });
    },
 
    createUser: (req, res) => {
-      let {name, lastname, datebirth, DNI, phone, email, password, country, state, city, adress} = req.body;
+      let {name, lastname, datebirth, dni, phone, email, password, country, state, city, adress} = req.body;
       let errors = validationResult(req);
 
       let locals = {
          title: 'Registrese',
          errors: errors.mapped(),
          old: req.body,
-         userDB
+         db
+         //userDB
          //users_db,
-      };hg
+      };
       console.log(errors);
       //console.log(user)
 
       if (errors.isEmpty()) {
-         let user = {
-            name,
-            lastname,
+         db.User.create({
+            name: name.trim(),
+            lastname : lastname.trim(),
             datebirth,
-            DNI,
+            dni,
             phone,
             email,
             password: bcryptjs.hashSync(password,10),
@@ -95,26 +105,35 @@ module.exports = {
             adress,
             avatar: "default.png",
             rol : "guest"
+         })
+         .then(user => {
+            req.session.userLogin = {
+               id: user.id,
+               name: user.name,
+               rol: user.rol
+            }
+            res.redirect('/home')
 
-         };
+         }).catch(error => res.send(error))
 
         
-         userDB.add(user)
+        // userDB.add(user)
          
          //userCreation(user);
          //userDB.__saveDB()
          //saveUser();
-         res.redirect('/');
+         //res.redirect('/');
       } else {
          res.render('register', locals);
       }
    },
-   profile: (req, res) => {
+   profile: async (req, res) => {
       const locals = {
          title: 'Profile',
-         user: userDB.getFind('id', req.session.userLogged.id),
+         user: await db.User.findByPk(req.session.userLogged.id),
       };
       res.render('profile', locals);
+      //res.send(user)
    },
    updateProfile: (req, res) => {
       console.log(req.session.userLogged);
@@ -123,7 +142,7 @@ module.exports = {
       //Agrego el nombre de la imagen si existe
       setUser.avatar = (req.file && req.file.filename)
                        ? req.file.filename 
-                       : userDB.getFind('id', req.session.userLogged.id).avatar;
+                       : db.User.findByPk(req.session.userLogged.id).avatar;
       // Si se cambia la contraseña, la encripto antes de enviar al modelo
       if(setUser.password)
          setUser.password = bcryptjs.hashSync(setUser.password, 10)
@@ -132,7 +151,7 @@ module.exports = {
       //delete setUser.old_password
       //delete setUser["password-repeat"]
 
-      userDB.setElement = setUser; //Actualizo el usuario
+      //userDB.setElement = setUser; //Actualizo el usuario
       res.redirect('/users/profile')
    }
 };
