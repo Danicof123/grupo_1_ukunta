@@ -111,25 +111,31 @@
             <!-- Ciudades -->
             <div class="reg__ctrl-input my-4">
                 <select name="city" class="reg__input">
-                    <option value="caba"  <%= (user.city === "caba") ? "selected" : null %>>CABA</option>
-                    <option value="la matanza" <%= (user.city === 'la matanza')? "selected" : null %>>La Matanza</option>
-                    <option value="rosario" <%= (user.city === 'rosario')? "selected" : null %>>Rosario</option>
-                    <option value="campana" <%= (user.city === 'campana')? "selected" : null %>>Campana</option>
-                    <option value="ballester" <%= (user.city === 'ballester')? "selected" : null %>>Ballester</option>
-                    <option value="lanus" <%= (user.city === 'lanus')? "selected" : null %>>Lanús</option>
+                    <option value="caba"  <%= (user.address[0].city === "caba") ? "selected" : null %>>CABA</option>
+                    <option value="la matanza" <%= (user.address[0].city === 'la matanza')? "selected" : null %>>La Matanza</option>
+                    <option value="rosario" <%= (user.address[0].city === 'rosario')? "selected" : null %>>Rosario</option>
+                    <option value="campana" <%= (user.address[0].city === 'Campana')? "selected" : null %>>Campana</option>
+                    <option value="ballester" <%= (user.address[0].city === 'ballester')? "selected" : null %>>Ballester</option>
+                    <option value="lanus" <%= (user.address[0].city === 'lanus')? "selected" : null %>>Lanús</option>
                 </select>
             </div>
 
             <!-- Calle -->
-            <label for="adress" class="text-danger d-none"><%= locals.errors && locals.errors.adress ? errors.adress.msg : null %>  </label>
+            <label for="" class="text-danger d-none"><%= locals.errors && locals.errors.street ? errors.street.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
-                <input disabled type="tel" placeholder="*Calle" class="reg__input" name="adress" value="<%= (locals && locals.errors) ? old.adress :user.adress %>">
+                <input disabled type="text" placeholder="*Calle" class="reg__input" name="street" value="<%= (locals && locals.errors) ? old.street : user.address[0].street %>">
+            </div>
+
+            <!-- Altura -->
+            <label for="streetNumber" class="text-danger d-none"><%= locals.errors && locals.errors.streetNumber ? errors.streetNumber.msg : null %>  </label>
+            <div class="reg__ctrl-input my-4">
+                <input type="number" placeholder="*Altura" class="reg__input" name="streetNumber" value="<%= (locals && locals.errors) ? old.streetNumber : user.address[0].streetNumber %>">
             </div>
 
             <!-- Descripcion domicilio -->
             <label for="description" class="text-danger d-none"><%= locals.errors && locals.errors.description ? errors.description.msg : null %>  </label>
             <div class="reg__ctrl-textarea my-4">
-                <textarea name="description" class="text__area" placeholder="*Descripcion" value="<%= (locals && locals.errors) ? old.description : null %>"></textarea>
+                <textarea name="description" class="text__area" placeholder="*Descripcion"><%= user.address[0].description %></textarea>
             </div>
         </div>
 

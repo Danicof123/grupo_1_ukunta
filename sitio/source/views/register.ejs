@@ -113,11 +113,23 @@
                     </select>
                 </div>
 
+                <!-- Calle -->
+                <label for="street" class="text-danger d-none"><%= locals.errors && locals.errors.street ? errors.street.msg : null %>  </label>
+                <div class="reg__ctrl-input my-4">
+                    <input type="text" placeholder="*Calle" class="reg__input" name="street" value="<%= (locals && locals.errors) ? old.street :null %>">
+                </div>
+
+                <!-- Altura -->
+                <label for="streetNumber" class="text-danger d-none"><%= locals.errors && locals.errors.streetNumber ? errors.streetNumber.msg : null %>  </label>
+                <div class="reg__ctrl-input my-4">
+                    <input type="number" placeholder="*Altura" class="reg__input" name="streetNumber" value="<%= (locals && locals.errors) ? old.streetNumber : null %>">
+                </div>
+
                 <!-- Descripcion domicilio -->
                 
-                <label for="adress" class="error-input"><%= locals.errors && locals.errors.name ? errors.adress.msg : null %>  </label>
+                <label for="description" class="error-input"><%= locals.errors && locals.errors.name ? errors.description.msg : null %>  </label>
                 <div class="reg__ctrl-textarea my-4">
-                    <textarea name="adress" class="text__area" placeholder="*Escriba una descripcion de su domicilio" value="<%= (locals && locals.errors) ? old.adress : null %>"></textarea>
+                    <textarea name="description" class="text__area" placeholder="*Escriba una descripcion de su domicilio" value="<%= (locals && locals.errors) ? old.description : null %>"></textarea>
                 </div>
 
                 <!-- Terminos y condiciones de uso -->
