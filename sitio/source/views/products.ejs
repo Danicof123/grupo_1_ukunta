@@ -14,13 +14,13 @@
             <!-- imagen carrousel (1) -->
             <div class="mb-12 tb-7 lp-6 dk-5 f-main-y mbt-4 vproduct__carrousel">
                <div class="ctrl__carrousel">
-                  <img src="/images/products/Bebidas/Cervezas/<%= producto.images[0] %>" />
+                  <img src="/images/products/Bebidas/Cervezas/<%= producto.image[0].name %>" />
                </div>
 
                <!-- vistas previas -->
                <div class="no-mb f-display f-main-between mtp-4 image-preview">
 
-                  <% producto.images.forEach((imagen, index) => { %>
+                  <% producto.image.forEach((imagen, index) => { %>
                      <div class="item__preview-img">
                         <img src="/images/products/Bebidas/Cervezas/<%= imagen %>" alt="preview-1" />
                      </div>
@@ -58,7 +58,7 @@
                <div class="separador my-2"></div>
                <!-- Volumen y precio -->
                <div class="f-display f-main-between f-cross-center mbt-4">
-                  <div class="info__titulo">Volumen: <span class="info__valor-titulo">330ml</span></div>
+                  <div class="info__titulo">Volumen: <span class="info__valor-titulo"><%= producto.size %></span></div>
 
                   <div class="info__precio-titulo">
                      <span>$ <%= producto.price %></span>
@@ -67,7 +67,7 @@
 
                <!-- Stock disponible -->
                <div class="f-display f-main-between f-cross-center mbt-4">
-                  <div class="info__titulo">Stock disponible: <span class="info__valor-titulo">56u</span></div>
+                  <div class="info__titulo">Stock disponible: <span class="info__valor-titulo"><%= producto.stock %></span></div>
                </div>
 
                <!-- Cantidades adquiridas -->
@@ -150,7 +150,7 @@
                <!-- Boton verde de stock -->
                <div class="concon">
                   <div class="mb-5">
-                     <img src="/images/products/Bebidas/Cervezas/<%= prRelations[i].images[0] %> " alt="ipa brown" />
+                     <img src="/images/products/Bebidas/Cervezas/<%= prRelations[i].image[0].name %> " alt="ipa brown" />
                   </div>
 
                   <div class="mb-7 f-main-y">

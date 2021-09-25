@@ -145,8 +145,13 @@ CREATE TABLE `images` (
   `productId` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_003eafc3-efcd-4ba8-a3e2-1b7552dd5e3d` (`productId`),
+<<<<<<< HEAD
   CONSTRAINT `FK_003eafc3-efcd-4ba8-a3e2-1b7552dd5e3d` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+=======
+  CONSTRAINT `FK_003eafc3-efcd-4ba8-a3e2-1b7552dd5e3d` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> CRUD-products
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,7 +160,11 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+<<<<<<< HEAD
 INSERT INTO `images` VALUES (1,'Ale-stout-Negra-305x368.jpg',1),(2,'extra-picante-305x368.jpg',2),(3,'destapador01-305x368.jpg',3),(11,'1632429918032_img.jpg',11),(12,'1632430570177_img.jpg',12),(13,'1632430751482_img.jpg',13),(16,'1632431244936_img.jpg',16);
+=======
+INSERT INTO `images` VALUES (1,'Ale-stout-Negra-305x368.jpg',1),(2,'extra-picante-305x368.jpg',2),(3,'destapador01-305x368.jpg',3);
+>>>>>>> CRUD-products
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -208,8 +217,13 @@ CREATE TABLE `products` (
   `categoryId` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_cd71704d-87d0-4ea8-a69d-f5d9fe43a6f5` (`categoryId`),
+<<<<<<< HEAD
   CONSTRAINT `FK_cd71704d-87d0-4ea8-a69d-f5d9fe43a6f5` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+=======
+  CONSTRAINT `FK_cd71704d-87d0-4ea8-a69d-f5d9fe43a6f5` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> CRUD-products
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +232,11 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+<<<<<<< HEAD
 INSERT INTO `products` VALUES (1,'Ale Stout Negra','Cerveza negra','300cc',150.00,25,NULL,1),(2,'Extra Picante','Hidromiel Extra Picante','300cc',185.00,20,'2022-09-25',2),(3,'Destapador','Destapador estilo Vikingo','13cmx10cm',300.00,3,NULL,3),(11,'Soporte para Cuerno','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type',NULL,399.00,60,'2022-09-23',3),(12,'Jarra Editada','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book','1000 ml.',999.00,90,'2021-09-24',3),(13,'Petalo Rosa','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book','300 ml.',189.00,50,'2022-09-23',2),(16,'Tapaboca','Te protege del covid-19 y covid-9/12/18','S, M, L y XL',199.00,400,'2022-09-23',3);
+=======
+INSERT INTO `products` VALUES (1,'Ale Stout Negra','Cerveza negra','300cc',150.00,25,NULL,1),(2,'Extra Picante','Hidromiel Extra Picante','300cc',185.00,20,NULL,2),(3,'Destapador','Destapador estilo Vikingo','13cmx10cm',300.00,3,NULL,3);
+>>>>>>> CRUD-products
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,4 +280,8 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+<<<<<<< HEAD
 -- Dump completed on 2021-09-24 23:14:55
+=======
+-- Dump completed on 2021-09-20 20:16:52
+>>>>>>> CRUD-products

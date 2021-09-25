@@ -21,21 +21,22 @@
                     <input type="text" placeholder="*Nombre" name="name" value="<%= product.name %>" class="reg__input">
                 </div>  
 
-                <!-- stock -->
-                <!-- <div class="reg__ctrl-input my-4">
-                    <input type="number" placeholder="stock" class="reg__input" name="stock">
-                </div> -->
-
                 <!-- Categoria -->
                 <div class="reg__ctrl-input my-4">
+                    <% if (locals.errors && errors.category) { %>
+                    <div class="text-danger">
+                       <%= errors.category.msg %>
+                    </div>
+                    <% } %>
                     <select name="category" class="reg__input">
-                        <option value="hidromiel" <%= (product.category === "hidromiel") ? "selected" : null %>>Hidromiel</option>
-                        <option value="cerveza" <%= (product.category === "cerveza") ? "selected" : null %>>Cerveza</option>
-                        <option value="merchandising" <%= (product.category === "merchandising") ? "selected" : null %>>Merchandasing</option>
+                       <option value="<%= product.category.id %>" selected hidden><%= product.category.name %></option>
+                       <% categories.forEach(category => { %>
+                       <option value="<%= category.id %>" <%= locals.old && old.categoryId === category.id ? 'selected' : null%> ><%= category.name %></option>
+                       <% }) %>
                     </select>
-                </div>             
+              </div>
 
-                <!-- Descripciono -->
+                <!-- Descripcion producto -->
                 <div class="reg__ctrl-textarea my-4">
                     <% if (locals.errors && errors.description) { %>
                         <div class="text-danger"><%= errors.description.msg %></div>
@@ -43,13 +44,48 @@
                     <textarea name="description" class="text__area" placeholder="*Descripción del producto"><%= product.description %></textarea>
                 </div>
 
-                <!-- precio -->
+                <!-- Tamaño -->
+                <div class="reg__ctrl-input mbt-4">
+                    <% if (locals.errors && errors.size) { %>
+                       <div class="text-danger">
+                          <%= errors.size.msg %>
+                       </div>
+                    <% } %>
+                       <input type="text" placeholder="*Tamaño o volumen del producto" name="size" class="reg__input" value="<%= product.size %>" />
+                 </div>
+
+                <!-- Precio -->
                 <div class="reg__ctrl-input my-4">
                     <% if (locals.errors && errors.price) { %>
                         <div class="text-danger"><%= errors.price.msg %></div>
                         <% } %>
-                    <input type="number" placeholder="*precio" class="reg__input" name="price" value="<%= product.price %>">
+                    <input type="number" placeholder="*Precio" class="reg__input" name="price" value="<%= product.price %>">
                 </div>
+
+                <!-- stock -->
+                <div class="reg__ctrl-input my-4">
+                    <% if (locals.errors && errors.stock) { %>
+                       <div class="text-danger">
+                          <%= errors.stock.msg %>
+                       </div>
+                    <% } %>
+                       <input name="stock" type="number" placeholder="*Ingresar stock" class="reg__input" name="stock" value="<%= product.stock %>"/>
+                </div>
+
+                <!-- Fecha de vencimiento -->
+                <label for="expire" class="text-danger"><%= locals.errors && locals.errors.expire ? errors.expire.msg : null %></label>
+                <div class="row my-0 f-cross-center my-4">
+                  
+                  <div class="mb-6">
+                      <label for="expire" class="reg__date__age" >Fecha de vencimiento</label>
+                  </div>
+                  <div class="mb-6">
+                      <div class="reg__ctrl-input">
+                          <input type="date" class="reg__input" name="expire" id="inp-date" value="<%= (locals && locals.errors) ? old.expire : product.expire %>">
+                      </div>
+                  </div>
+                </div>
+
                 <div class="f-display f-main-between reg__navbottom f-cross-end mbt-5">
                     <a href="/store/products/<%= product.id %>" class="no-decor">
                         <div class="button button-rojo reg__navbutton">

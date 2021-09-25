@@ -6,12 +6,13 @@ const express = require('express'),
    adminUserCheck = require('../middlewares/adminUserCheck');
 
 /* /store */
-router.get('/:cat?', store);
-router.get('/products/add', adminUserCheck, addProduct);
-router.post('/', uploadFile.array('images'), validationsCreate, createProduct);
-router.get('/products/:id', detail);
-router.get('/products/edit/:id', adminUserCheck, editProducto);
-router.put('/products/edit/:id', validationsEdit, updateProducto);
-router.delete('/delete/:id', remove);
+router
+   .get('/:cat?', store)
+   .get('/products/add', adminUserCheck, addProduct)
+   .post('/', uploadFile.array('images'), validationsCreate, createProduct)
+   .get('/products/:id', detail)
+   .get('/products/edit/:id', adminUserCheck, editProducto)
+   .put('/products/edit/:id', validationsEdit, updateProducto)
+   .delete('/delete/:id', remove);
 
 module.exports = router;

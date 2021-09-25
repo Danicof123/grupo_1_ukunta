@@ -10,40 +10,30 @@
                <h3 class="f-self-start my-4">Añadir producto</h3>
 
                <form class="w-100 mbt-4" action="/store" method="POST" enctype="multipart/form-data">
+                  
                   <!-- Nombre -->
                   <div class="reg__ctrl-input mbt-4">
                      <% if (locals.errors && errors.name) { %>
                         <div class="text-danger">
                            <%= errors.name.msg %>
                         </div>
-                        <% } %>
-                           <input type="text" placeholder="*Nombre" name="name" class="reg__input"
-                              value="<%= locals.old ? old.name : null %>" />
+                     <% } %>
+                        <input type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= locals.old ? old.name : null %>" />
                   </div>
-
-                  <!-- stock -->
-                  <!-- <div class="reg__ctrl-input my-4">
-                    <input type="number" placeholder="stock" class="reg__input" name="stock">
-                </div> -->
 
                   <!-- Categoria -->
                   <div class="reg__ctrl-input my-4">
-                     <% if (locals.errors && errors.category) { %>
+                        <% if (locals.errors && errors.category) { %>
                         <div class="text-danger">
                            <%= errors.category.msg %>
                         </div>
                         <% } %>
                         <select name="category" class="reg__input">
                            <option value="" selected hidden>*Categoria</option>
-                           <option value="cerveza" <%=locals.old && ("cerveza"===old.category) ? "selected" : null %>
-                              >Cerveza</option>
-                           <option value="hidromiel" <%=locals.old && ("hidromiel"===old.category) ? "selected" : null
-                              %>
-                              >Hidromiel</option>
-                           <option value="merchandising" <%=locals.old && ("merchandising"===old.category) ? "selected"
-                              : null %>>Merchandasing</option>
+                           <% categories.forEach(category => { %>
+                           <option value="<%= category.id %>" <%= locals.old && old.categoryId === category.id ? "selected" : null%> ><%= category.name %></option>
+                           <% }) %>
                         </select>
-                        
                   </div>
 
                   <!-- Descripcion producto -->
@@ -53,8 +43,17 @@
                            <%= errors.description.msg %>
                         </div>
                         <% } %>
-                           <textarea name="description" class="text__area"
-                              placeholder="*Descripción del producto"><%= locals.old ? old.description : null %></textarea>
+                        <textarea name="description" class="text__area" placeholder="*Descripción del producto"><%= locals.old ? old.description : null %></textarea>
+                  </div>
+
+                  <!-- Tamaño -->
+                  <div class="reg__ctrl-input mbt-4">
+                     <% if (locals.errors && errors.size) { %>
+                        <div class="text-danger">
+                           <%= errors.size.msg %>
+                        </div>
+                     <% } %>
+                        <input type="text" placeholder="*Tamaño o volumen del producto" name="size" class="reg__input" value="<%= locals.old ? old.size : null %>" />
                   </div>
 
                   <!-- precio -->
@@ -64,9 +63,34 @@
                            <%= errors.price.msg %>
                         </div>
                         <% } %>
-                           <input type="number" placeholder="*precio" class="reg__input" name="price"
-                              value="<%= locals.old ? old.price : null %>" />
+                        <input type="number" placeholder="*Precio" class="reg__input" name="price"
+                         value="<%= locals.old ? old.price : null %>" />
                   </div>
+
+                  <!-- stock -->
+                  <div class="reg__ctrl-input my-4">
+                  <% if (locals.errors && errors.stock) { %>
+                     <div class="text-danger">
+                        <%= errors.stock.msg %>
+                     </div>
+                  <% } %>
+                     <input name="stock" type="number" placeholder="*Ingresar stock" class="reg__input" name="stock" value="<%= locals.old ? old.stock : null %>"/>
+                  </div>
+
+                  <!-- Fecha de vencimiento -->
+                  <label for="expire" class="text-danger"><%= locals.errors && locals.errors.expire ? errors.expire.msg : null %></label>
+                  <div class="row my-0 f-cross-center my-4">
+                    
+                    <div class="mb-6">
+                        <label for="expire" class="reg__date__age" >Fecha de vencimiento</label>
+                    </div>
+                    <div class="mb-6">
+                        <div class="reg__ctrl-input">
+                            <input type="date" class="reg__input" name="expire" id="inp-date" value="<%= (locals && locals.errors) ? old.expire : null %>">
+                        </div>
+                    </div>
+                  </div>
+
                   <!-- Imagenes -->
                   <% if (locals.errors && errors.images) { %>
                      <div class="text-danger">
