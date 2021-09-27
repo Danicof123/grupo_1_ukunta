@@ -147,7 +147,7 @@ CREATE TABLE `images` (
   PRIMARY KEY (`id`),
   KEY `FK_003eafc3-efcd-4ba8-a3e2-1b7552dd5e3d` (`productId`),
   CONSTRAINT `FK_003eafc3-efcd-4ba8-a3e2-1b7552dd5e3d` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +156,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,'Ale-stout-Negra-305x368.jpg',1),(2,'extra-picante-305x368.jpg',2),(3,'destapador01-305x368.jpg',3),(11,'1632429918032_img.jpg',11),(12,'1632430570177_img.jpg',12),(13,'1632430751482_img.jpg',13),(16,'1632431244936_img.jpg',16);
+INSERT INTO `images` VALUES (1,'Ale-stout-Negra-305x368.jpg',1),(2,'extra-picante-305x368.jpg',2),(3,'destapador01-305x368.jpg',3),(11,'1632429918032_img.jpg',11),(12,'1632430570177_img.jpg',12),(13,'1632430751482_img.jpg',13),(16,'1632431244936_img.jpg',16),(17,'1632780314696_img.jpg',17),(18,'1632780386158_img.jpg',18),(19,'1632780440065_img.jpg',19),(20,'1632780551340_img.jpg',20),(21,'1632780657171_img.jpg',21);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -210,7 +210,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `FK_cd71704d-87d0-4ea8-a69d-f5d9fe43a6f5` (`categoryId`),
   CONSTRAINT `FK_cd71704d-87d0-4ea8-a69d-f5d9fe43a6f5` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -219,7 +219,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Ale Stout Negra','Cerveza negra','300cc',150.00,25,NULL,1),(2,'Extra Picante','Hidromiel Extra Picante','300cc',185.00,20,'2022-09-25',2),(3,'Destapador','Destapador estilo Vikingo','13cmx10cm',300.00,3,NULL,3),(11,'Soporte para Cuerno','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type',NULL,399.00,60,'2022-09-23',3),(12,'Jarra Editada','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book','1000 ml.',999.00,90,'2021-09-24',3),(13,'Petalo Rosa','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book','300 ml.',189.00,50,'2022-09-23',2),(16,'Tapaboca','Te protege del covid-19 y covid-9/12/18','S, M, L y XL',199.00,400,'2022-09-23',3);
+INSERT INTO `products` VALUES (1,'Ale Stout Negra','Cerveza negra','300cc',150.00,25,NULL,1),(2,'Extra Picante','Hidromiel Extra Picante','300cc',185.00,20,'2022-09-25',2),(3,'Destapador','Destapador estilo Vikingo','13cmx10cm',300.00,3,NULL,3),(11,'Soporte para Cuerno','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type',NULL,399.00,60,'2022-09-23',3),(12,'Jarra Editada','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book','1000 ml.',999.00,90,'2021-09-24',3),(13,'Petalo Rosa','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book','300 ml.',189.00,50,'2022-09-23',2),(16,'Tapaboca','Te protege del covid-19 y covid-9/12/18','S, M, L y XL',199.00,400,'2022-09-23',3),(17,'Ale Porter Negra','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,','300 ml.',399.00,20,'2022-09-27',1),(18,'IPA Negra','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,','300 ml.',299.00,50,'2022-09-27',1),(19,'IPA Rubia','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,','300 ml.',399.00,60,'2023-09-27',1),(20,'Fresa','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,','300 ml.',499.00,100,'2025-09-27',2),(21,'Cannabica','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,','300 ml.',266.00,90,'2022-01-01',2);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,7 +251,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Emanuel','Romero','emanuel@ukunta.com','$2a$10$mFAXUM3jA8kokPZAQdTofObM3xC7sWdX4ptKk1Z9/BjJfzurPqAAa','1989-01-24',34372366,'default.png','admin','1151042755'),(2,'Usuario','Prueba','prueba@ukunta.com','$2a$10$QW1SNgNwlhOwaBju3Nnloed3pMvpJ6A7ziDSRG7haSf534ok7Wx/q','2010-10-10',12312312,'default.png','guest','1122223333'),(5,'Danicof','Address','danicof@ukunta.com','$2a$10$88JenEVgVy0KoyzmlwIdsezq1RSm9oReq7TOuGuEZwObM.3G20lZu','2002-02-02',22555999,'1632544936228-undefined.jpg','guest','1112345678');
+INSERT INTO `users` VALUES (5,'Danicof','Address','danicof@ukunta.com','$2a$10$88JenEVgVy0KoyzmlwIdsezq1RSm9oReq7TOuGuEZwObM.3G20lZu','2002-02-02',22555999,'1632544936228-undefined.jpg','admin','1112345678');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -264,4 +264,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-25  2:55:58
+-- Dump completed on 2021-09-27 19:12:33
