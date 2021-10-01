@@ -20,6 +20,7 @@
         //Enrutador
         router = require('./routes/index'),
         apiProducts = require('./routes/api/products'),
+        apiUsers = require('./routes/api/users')
         adminRouter = require('./routes/admin'),
         usersRouter = require('./routes/users'),
         productsRouter = require('./routes/products'),
@@ -50,6 +51,7 @@
 
     //   .use('/api/users', apiUser)
       .use('/api/products', apiProducts)
+      .use('/api/users', apiUsers)
 
       .use('/admin',adminRouter)
       .use('/users', usersRouter)
