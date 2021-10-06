@@ -41,7 +41,23 @@ const findByTag = async (req, res) => {
     } 
   }))
 }
-
+// Creando producto
+const createProduct = async (req, res) => {
+  try {
+    await db.Product.create({
+      name: req.body.name,
+      description: req.body.description,
+      size: req.body.size,
+      price: req.body.price,
+      stock: req.body.stock,
+      expire: req.body.expire,
+      categoryId: req.body.categoryId,
+    })
+    res.status(200).json({"msg": "El producto fue creado con éxito"})
+  } catch (error) {
+    
+  }
+}
 // Actualizando el producto
 const updateProduct = async (req, res) => {
   try{
@@ -60,19 +76,33 @@ const updateProduct = async (req, res) => {
         categoryId: req.body.categoryId || producto.categoryId,
       },
       {where: {id : id}})
-
       res.json({"msg": "El producto fue actualizado con éxito"})
-
     }
     else
-      res.status(404).json({"error": 404, "msg": "El producto que se intentó actualizar no existe"})
+      throw {"error": 404, "msg": "El producto que se intentó actualizar no existe"}
   }
   catch(err){
-    res.status(500).json({"error": 500, "msg": "Sucedió un error al intentar actualizar el producto"})
+    res.status(500).json({"error": 500, "msg": "Sucedió un error al intentar crear el producto"})
   }
 }
 
-
+// Actualizando imagenes
+const updateImage = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const imagen = await db.Product.findByPk(id)
+    // Si la imagen no existe arrojo un error
+    if(!imagen) throw {error: 404, "msg": "La imagen no existe"}
+    await db.Image.update({
+      name: req.body.name,
+    }, {where: {
+      id: id,
+      productId: req.body.productId
+    }})
+  } catch (error) {
+    res.status(error.error).json(error)
+  }
+}
 
 // Eliminando el producto
 const deleteProduct = async (req, res) => {
@@ -87,10 +117,10 @@ const deleteProduct = async (req, res) => {
       res.json({"msg": "El producto fue eliminado con éxisto"})
     }
     else
-      res.status(404).json({"error": 404, "msg": "El producto que se intentó eliminar no existe"})
+      throw {"error": 404, "msg": "El producto que se intentó eliminar no existe"}
   }
   catch(err){
-    res.status(500).json({"error": 500, "msg": "Sucedió un error al intentar eliminar el producto"})
+    res.status(err.error).json({"error": 500, "msg": "Sucedió un error al intentar eliminar el producto"})
   }
 }
 
@@ -99,6 +129,8 @@ module.exports = {
   findById,
   findByCategory,
   findByTag,
+  createProduct,
   updateProduct,
+  updateImage,
   deleteProduct
 }
