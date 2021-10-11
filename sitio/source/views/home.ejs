@@ -53,7 +53,7 @@
                         <label for="name" class="text-danger"><%= errors.comment.msg %> </label>
                       <% } %> 
                   <textarea name="comment" cols="30" rows="10" placeholder="Escriba un comentario"
-                      class="contacto__textarea" minlength="10" maxlength="255" required></textarea>
+                      class="contacto__textarea" minlength="10" maxlength="255" title="Escribe un comentario de 10 a 255 caracteres" data-pattern="^.{10,255}$" required></textarea>
                   <input type="submit" value="ENVIAR" class="contacto__button">
 
               </form>
@@ -74,6 +74,6 @@
   </section>
 </main>
 <%- include('partials/footer.ejs') %>
-<%- include('partials/scripts.ejs') %>
+<script src="/js/main.js" type="module"></script>
 </body>
 </html>

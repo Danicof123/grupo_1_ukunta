@@ -28,6 +28,11 @@
     font-size: 14;
     resize: none;
 }
+.contacto__input.invalid,
+.contacto__textarea.invalid{
+    background-color: var(--color-rojo);
+}
+
 .contacto__button{
     display: block;
     height: 2rem;
