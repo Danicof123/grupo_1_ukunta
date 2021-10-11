@@ -19,6 +19,8 @@
         localsUserCheck = require('./middlewares/localsUserCheck'),
         //Enrutador
         router = require('./routes/index'),
+        apiProducts = require('./routes/api/products'),
+        apiUsers = require('./routes/api/users')
         adminRouter = require('./routes/admin'),
         usersRouter = require('./routes/users'),
         productsRouter = require('./routes/products'),
@@ -46,6 +48,11 @@
       .use(staticDir)
       //Conectando rutas
       .use(router)
+
+    //   .use('/api/users', apiUser)
+      .use('/api/products', apiProducts)
+      .use('/api/users', apiUsers)
+
       .use('/admin',adminRouter)
       .use('/users', usersRouter)
       .use('/store', productsRouter)
