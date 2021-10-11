@@ -9,26 +9,42 @@
             <div class="mb-12 lp-6 f-main-y f-cross-center">
                <h3 class="f-self-start my-4">Añadir producto</h3>
 
-               <form class="w-100 mbt-4" action="/store" method="POST" enctype="multipart/form-data">
+               <!-- Error en formulario -->
+               <label id="error-form" class="text-danger"></label>
+
+               <!-- Formulario de carga de producto -->
+               <form id="form-addProduct" class="w-100 mbt-4" action="/store" method="POST" enctype="multipart/form-data" novalidate>
                   
                   <!-- Nombre -->
                   <div class="reg__ctrl-input mbt-4">
+                     <!-- Error back -->
                      <% if (locals.errors && errors.name) { %>
                         <div class="text-danger">
                            <%= errors.name.msg %>
                         </div>
                      <% } %>
-                        <input type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= locals.old ? old.name : null %>" />
+                     <!-- Error front -->
+                     <div id="error-name" class="text-danger">
+
+                     </div>
+                     <!-- Input -->
+                        <input id="form-name" type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= locals.old ? old.name : null %>" />
                   </div>
 
                   <!-- Categoria -->
                   <div class="reg__ctrl-input my-4">
+                        <!-- Error back -->
                         <% if (locals.errors && errors.category) { %>
                         <div class="text-danger">
                            <%= errors.category.msg %>
                         </div>
                         <% } %>
-                        <select name="category" class="reg__input">
+                        <!-- Error front -->
+                        <div id="error-category" class="text-danger">
+
+                        </div>
+                        <!-- Options -->
+                        <select id="form-category" name="category" class="reg__input">
                            <option value="" selected hidden>*Categoria</option>
                            <% categories.forEach(category => { %>
                            <option value="<%= category.id %>" <%= locals.old && old.categoryId === category.id ? "selected" : null%> ><%= category.name %></option>
@@ -38,47 +54,76 @@
 
                   <!-- Descripcion producto -->
                   <div class="reg__ctrl-textarea my-4">
+                     <!-- Error back -->
                      <% if (locals.errors && errors.description) { %>
                         <div class="text-danger">
                            <%= errors.description.msg %>
                         </div>
-                        <% } %>
-                        <textarea name="description" class="text__area" placeholder="*Descripción del producto"><%= locals.old ? old.description : null %></textarea>
+                     <% } %>
+                     <!-- Error front -->
+                     <div id="error-description" class="text-danger">
+
+                     </div>
+                     <!-- Text area -->
+                        <textarea id="form-description" name="description" class="text__area" placeholder="*Descripción del producto"><%= locals.old ? old.description : null %></textarea>
                   </div>
 
                   <!-- Tamaño -->
                   <div class="reg__ctrl-input mbt-4">
+                     <!-- Error back -->
                      <% if (locals.errors && errors.size) { %>
                         <div class="text-danger">
                            <%= errors.size.msg %>
                         </div>
                      <% } %>
-                        <input type="text" placeholder="*Tamaño o volumen del producto" name="size" class="reg__input" value="<%= locals.old ? old.size : null %>" />
+                     <!-- Error front -->
+                     <div id="error-size" class="text-danger">
+
+                     </div>
+                     <!-- Input -->
+                        <input id="form-size" type="text" placeholder="*Tamaño o volumen del producto" name="size" class="reg__input" value="<%= locals.old ? old.size : null %>" />
                   </div>
 
                   <!-- precio -->
                   <div class="reg__ctrl-input my-4">
+                     <!-- Error back -->
                      <% if (locals.errors && errors.price) { %>
                         <div class="text-danger">
                            <%= errors.price.msg %>
                         </div>
-                        <% } %>
-                        <input type="number" placeholder="*Precio" class="reg__input" name="price"
+                     <% } %>
+                     <!-- Error front -->
+                     <div id="error-price" class="text-danger">
+
+                     </div>
+                     <!-- Input -->
+                        <input id="form-price" type="number" placeholder="*Precio" class="reg__input" name="price"
                          value="<%= locals.old ? old.price : null %>" />
                   </div>
 
                   <!-- stock -->
                   <div class="reg__ctrl-input my-4">
-                  <% if (locals.errors && errors.stock) { %>
-                     <div class="text-danger">
-                        <%= errors.stock.msg %>
+                     <!-- Error back -->
+                     <% if (locals.errors && errors.stock) { %>
+                        <div class="text-danger">
+                           <%= errors.stock.msg %>
+                        </div>
+                     <% } %>
+                     <!-- Error front -->
+                     <div id="error-stock" class="text-danger">
+
                      </div>
-                  <% } %>
-                     <input name="stock" type="number" placeholder="*Ingresar stock" class="reg__input" name="stock" value="<%= locals.old ? old.stock : null %>"/>
+                     <!-- Input -->
+                     <input id="form-stock" name="stock" type="number" placeholder="*Ingresar stock" class="reg__input" name="stock" value="<%= locals.old ? old.stock : null %>"/>
                   </div>
 
                   <!-- Fecha de vencimiento -->
+                  <!-- Error back -->
                   <label for="expire" class="text-danger"><%= locals.errors && locals.errors.expire ? errors.expire.msg : null %></label>
+                  <!-- Error front -->
+                  <label id="error-expire" class="text-danger">
+
+                  </label>
                   <div class="row my-0 f-cross-center my-4">
                     
                     <div class="mb-6">
@@ -92,15 +137,23 @@
                   </div>
 
                   <!-- Imagenes -->
+                  <!-- Error back -->
                   <% if (locals.errors && errors.images) { %>
                      <div class="text-danger">
                         <%= errors.images.msg %>
                      </div>
-                     <% } %>
+                  <% } %>
+                  <!-- Error front -->
+                  <div id="error-image" class="text-danger">
+
+                  </div>
+                  <!-- Input -->
                   <div class="reg__ctrl-input mbt-4">
-                           <input type="file" accept=".jpg, .jpeg, .png" name="images" max="5" maxfile="5"
+                           <input id="form-image" type="file" accept=".jpg, .jpeg, .png" name="images" max="5" maxfile="5"
                               class="reg__input file__input" multiple />
                   </div>
+
+                  <!-- Botones cruz y check -->
 
                   <div class="f-display f-main-between reg__navbottom f-cross-end mbt-5">
                      <a href="/store" class="no-decor">
@@ -115,5 +168,6 @@
             </div>
          </div>
    </body>
+   <script src="/js/addProduct.js"></script>
 
 </html>

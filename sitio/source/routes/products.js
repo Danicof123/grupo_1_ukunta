@@ -8,7 +8,7 @@ const express = require('express'),
 /* /store */
 router
    .get('/:cat?', store)
-   .get('/products/add', adminUserCheck, addProduct)
+   .get('/products/add', /* adminUserCheck, */ addProduct)
    .post('/', uploadFile.array('images'), validationsCreate, createProduct)
    .get('/products/:id', detail)
    .get('/products/edit/:id', adminUserCheck, editProducto)
