@@ -169,6 +169,25 @@ h4{
     padding-top: 2rem;
 }
 
+.pbt-0{
+    padding-bottom: 0;
+}
+.pbt-1{
+    padding-bottom: .25rem;
+}
+.pbt-2{
+    padding-bottom: .5rem;
+}
+.pbt-3{
+    padding-bottom: .75rem;
+}
+.pbt-4{
+    padding-bottom: 1rem;
+}
+.pbt-5{
+    padding-bottom: 2rem;
+}
+
 .px-0{
     padding-left: 0;
     padding-right: 0;

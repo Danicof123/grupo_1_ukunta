@@ -121,6 +121,7 @@ a.button{
   color: #fff;
   background-color: var(--color-primario);
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .ctrl-label-button .button {
