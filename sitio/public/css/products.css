@@ -23,6 +23,10 @@
 
 }
 
+/* Validacion */
+.reg__input.invalid, .text__area.invalid {
+   background-color: var(--color-rojo);
+}
 
 /* Información productos */
 .vproduct .info__titulo {
