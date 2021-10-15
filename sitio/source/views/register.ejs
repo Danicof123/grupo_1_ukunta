@@ -17,14 +17,14 @@
                
                 <label for="name" class="text-danger"><%= locals.errors && locals.errors.name ? errors.name.msg : null %>  </label>
                 <div class="reg__ctrl-input mbt-4">
-                    <input type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : null %>">
+                    <input type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : null %>" pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}){0,2}$" title="Debe ingresar su nombre." required >
                 </div>
 
                 <!-- Apellido -->
               
                 <label for="lastname" class="text-danger"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
-                    <input type="text" placeholder="*Apellido" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>">
+                    <input type="text" placeholder="*Apellido" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>" pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}){0,2}$" title="Debe ingresar su apellido." required>
                 </div>
 
                 <!-- Fecha nacimiento -->
@@ -37,7 +37,7 @@
                     </div>
                     <div class="mb-6">
                         <div class="reg__ctrl-input">
-                            <input type="date" class="reg__input" name="datebirth" id="inp-date" value="<%= (locals && locals.errors) ? old.datebirth : null %>">
+                            <input type="date" class="reg__input" name="datebirth" id="inp-date" value="<%= (locals && locals.errors) ? old.datebirth : null %>" pattern="^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$" title="Formato de fecha invalido." required>
                         </div>
                     </div>
                 </div>
@@ -45,21 +45,21 @@
                 <!-- dni -->
                 <label for="dni" class="text-danger"><%= locals.errors && locals.errors.dni ? errors.dni.msg : null %></label>
                 <div class="reg__ctrl-input my-4">
-                    <input type="number" placeholder="*dni" class="reg__input" name="dni" value="<%= (locals && locals.errors) ? old.dni : null %>">
+                    <input type="number" placeholder="*dni" class="reg__input" name="dni" value="<%= (locals && locals.errors) ? old.dni : null %>" pattern="(^([0-9]{5,5})|^)$" title="Ingrese un DNI válido." required>
                 </div>
 
                 <!-- Teléfono -->
                 
                 <label for="phone" class="text-danger"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
-                    <input type="tel" placeholder="*Numero de telefono" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
+                    <input type="tel" placeholder="*Numero de telefono" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>" pattern="^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$" title="Ingrese un teléfono válido." required>
                 </div>
 
                 <!-- Correo electronico -->
                 
                 <label for="email" class="text-danger"><%= locals.errors && locals.errors.email ? errors.email.msg : null %>  </label>
                 <div class="reg__ctrl-input my-4">
-                    <input type="email" placeholder="*Correo electronico" class="reg__input" name="email" value="<%= (locals && locals.errors) ? old.email : null %>">
+                    <input type="email" placeholder="*Correo electronico" class="reg__input" name="email" value="<%= (locals && locals.errors) ? old.email : null %>" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" title="Formato de email." required>
                 </div>
 
                 <div class="reg__ctrl-input my-4">
@@ -129,7 +129,7 @@
                 
                 <label for="description" class="error-input"><%= locals.errors && locals.errors.name ? errors.description.msg : null %>  </label>
                 <div class="reg__ctrl-textarea my-4">
-                    <textarea name="description" class="text__area" placeholder="*Escriba una descripcion de su domicilio" value="<%= (locals && locals.errors) ? old.description : null %>"></textarea>
+                    <textarea name="description" class="text__area" placeholder="*Escriba una descripcion de su domicilio" value="<%= (locals && locals.errors) ? old.description : null %>" data-pattern="^.{10,255}$" title="La descripción debe tener un minimo de 10 carácteres y un máximo de 255." required ></textarea>
                 </div>
 
                 <!-- Terminos y condiciones de uso -->
@@ -161,7 +161,7 @@
         </div>
 
     </div>
-    
+    <script src="/js/register.js" type="module"></script>
 </body>
 
 </html>
