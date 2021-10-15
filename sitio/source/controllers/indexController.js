@@ -35,35 +35,43 @@ const welcome = (req, res) => {
 };
 
 const search = (req, res) => {
-    db.Product.findAll({
-        include: [
-            {
-                association: 'image',
-            },
-        ],
-        where: {
-            [Op.or]: [
+    if (req.query.s) {
+        db.Product.findAll({
+            include: [
                 {
-                    name: {
-                        [Op.substring]: req.query.s,
-                    },
-                },
-                {
-                    description: {
-                        [Op.substring]: req.query.s,
-                    },
+                    association: 'image',
                 },
             ],
-        },
-    })
-        .then((producto) =>
-            res.render('results', {
-                title: 'Resultado de búsqueda',
-                producto,
-                busqueda: req.query.s,
-            })
-        )
-        .catch((error) => console.log(error));
+            where: {
+                [Op.or]: [
+                    {
+                        name: {
+                            [Op.substring]: req.query.s,
+                        },
+                    },
+                    {
+                        description: {
+                            [Op.substring]: req.query.s,
+                        },
+                    },
+                ],
+            },
+        })
+            .then((producto) =>
+                res.render('results', {
+                    title: 'Resultado de búsqueda',
+                    producto,
+                    busqueda: req.query.s,
+                })
+            )
+            .catch((error) => console.log(error));
+    } else {
+        res.render('results', {
+            title: 'Resultado de búsqueda',
+            producto: 0,
+            busqueda: req.query.s,
+        })
+    }
 };
 
 module.exports = {

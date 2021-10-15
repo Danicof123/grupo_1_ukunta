@@ -2,7 +2,7 @@
 <html lang="es">
    <%- include('./partials/head') %>
    <body class="vproduct">
-      <%- include('partials/mini-header') %>
+      <%- include('partials/navbar-top') %>
 
       <main>
          <div class="f-display f-main-between f-cross-center w-100 px-4">
@@ -132,6 +132,14 @@
                      <form action="/store/delete/<%= producto.id %>?_method=DELETE" method="POST">
                         <button type="submit" class="button button-rojo btn-edit">ELIMINAR</button>
                      </form>
+                  </div>
+               <% } %>
+
+               <!-- Comprar / Agregar carrito -->
+
+               <% if (locals.userLogged && locals.userLogged.rol === "guest") { %>
+                  <div class="ctrl-product-admin">
+                        <button type="submit" class="button button-verde btn-edit">AGREGAR A CARRITO</button>
                   </div>
                <% } %>
             </div>

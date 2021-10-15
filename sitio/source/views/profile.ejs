@@ -32,14 +32,14 @@
         <div id="change-nombre" class="change-data">
             <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.name.msg : null %></label>
             <div class="reg__ctrl-input mbt-4">
-                <input type="text" placeholder="*<%= (user.name).replace(/\b\w/g, l => l.toUpperCase()) %>" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : null %>" disabled>
+                <input type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : (user.name).replace(/\b\w/g, l => l.toUpperCase()) %>" disabled>
             </div>
     
             <!-- Apellido -->
           
             <label for="lastname" class="text-danger d-none"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
-                <input type="text" placeholder="*<%= (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : null %>" disabled>
+                <input type="text" placeholder="*Apellido" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>" disabled>
             </div>
         </div>
 
@@ -53,7 +53,7 @@
         <div id="change-phone" class="change-data">
             <label for="phone" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
             <div class="reg__ctrl-input my-4">
-                <input disabled type="tel" placeholder="*<%= user.phone %>" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : null %>">
+                <input disabled type="tel" placeholder="*Telefono" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : user.phone %>">
             </div>
         </div>
 
