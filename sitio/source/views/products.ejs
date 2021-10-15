@@ -3,7 +3,6 @@
    <%- include('./partials/head') %>
    <body class="vproduct">
       <%- include('partials/navbar-top') %>
-
       <main>
          <div class="f-display f-main-between f-cross-center w-100 px-4">
             <h3>BEBIDAS</h3>
@@ -142,6 +141,15 @@
                         <button type="submit" class="button button-verde btn-edit">AGREGAR A CARRITO</button>
                   </div>
                <% } %>
+               
+               <!-- Si no esta logueado, lo redirije al carrito -->
+               <% if (!locals.userLogged) { %>
+                  <div class="ctrl-product-admin">
+                     <form action="/users/login">
+                        <button type="submit" class="button button-verde btn-edit">AGREGAR A CARRITO</button>
+                     </form>
+                  </div>
+               <% } %>
             </div>
          </div>
 
@@ -204,5 +212,6 @@
             </a>
          </div>
       </nav>
+      <%- include('partials/scripts.ejs') %>
    </body>
 </html>
