@@ -69,6 +69,7 @@
 }
 .navbar__item{
     color: inherit;
+    cursor: pointer;
 }
 .navbar__item.active, .navbar__item:hover{
     color: var(--color-primario);
