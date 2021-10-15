@@ -1,8 +1,7 @@
-import './modules/isOld.js';
 import validationForm from './modules/validationForm.js';
 
 const d = document;
 
 d.addEventListener('DOMContentLoaded', (e) => {
-    validationForm('.form-register'); //Envio la clase del formulario para ser evaluada
+    validationForm('.form-login'); //Envio la clase del formulario para ser evaluada
 });
