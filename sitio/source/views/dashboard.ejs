@@ -2,6 +2,8 @@
 <html lang="es">
 <%- include('partials/head.ejs') %>
 <body class="home">
+  <%- include('partials/carrito') %>
+
   <header class="header">
     <%- include('partials/navbar-top.ejs') %>
   </header>
@@ -82,6 +84,6 @@
       </div> 
     </main>
     <%- include('partials/scripts.ejs') %>
-    <script src="/js/dashboard.js"></script>
+    <script src="/js/dashboard.js" type="module"></script>
 </body>
 </html>

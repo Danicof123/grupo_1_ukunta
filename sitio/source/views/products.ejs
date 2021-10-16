@@ -2,6 +2,7 @@
 <html lang="es">
    <%- include('./partials/head') %>
    <body class="vproduct">
+      <%- include('partials/carrito.ejs') %>
       <%- include('partials/navbar-top') %>
       <main>
          <div class="f-display f-main-between f-cross-center w-100 px-4">
@@ -66,18 +67,19 @@
 
                <!-- Stock disponible -->
                <div class="f-display f-main-between f-cross-center mbt-4">
-                  <div class="info__titulo">Stock disponible: <span class="info__valor-titulo"><%= producto.stock %></span></div>
+                  <div class="info__titulo">Stock disponible: <span class="info__valor-titulo stock-producto"><%= producto.stock %></span></div>
                </div>
 
                <!-- Cantidades adquiridas -->
                <div class="f-display f-main-between f-cross-center mbt-4">
-                  <div class="info__titulo">Cantidad: <span class="info__valor-titulo">2u</span></div>
+                  <!-- Data-id obtiene el id del producto al cual se le hace referencia -->
+                  <div class="info__titulo">Cantidad: <span class="info__valor-titulo unidad-producto" data-id=<%= producto.id%>>2u</span></div>
 
                   <div class="f-display">
-                     <div class="button button-rojo info__button mr-2">
+                     <div class="button button-rojo info__button mr-2 btnRestarCantidad">
                         <i class="fas fa-minus"></i>
                      </div>
-                     <div class="button button-verde info__button">
+                     <div class="button button-verde info__button btnSumarCantidad">
                         <i class="fas fa-plus"></i>
                      </div>
                   </div>
@@ -136,18 +138,11 @@
 
                <!-- Comprar / Agregar carrito -->
 
-               <% if (locals.userLogged && locals.userLogged.rol === "guest") { %>
+               <% if (!locals.userLogged || locals.userLogged.rol !== "admin") { %>
                   <div class="ctrl-product-admin">
-                        <button type="submit" class="button button-verde btn-edit">AGREGAR A CARRITO</button>
-                  </div>
-               <% } %>
-               
-               <!-- Si no esta logueado, lo redirije al carrito -->
-               <% if (!locals.userLogged) { %>
-                  <div class="ctrl-product-admin">
-                     <form action="/users/login">
-                        <button type="submit" class="button button-verde btn-edit">AGREGAR A CARRITO</button>
-                     </form>
+                     <!-- El data id debe contener el id del producto que se desea agregar al carrito -->
+                     <button class="button button-rojo btn-edit btn-remove-carrito mr-4 d-none" data-id=<%= producto.id%>>ELIMINAR DEL CARRITO</button>
+                     <button class="button button-verde btn-edit btn-add-carrito" data-id=<%= producto.id%>>AGREGAR A CARRITO</button>
                   </div>
                <% } %>
             </div>
@@ -212,6 +207,6 @@
             </a>
          </div>
       </nav>
-      <%- include('partials/scripts.ejs') %>
+      <script src="/js/products.js" type="module"></script>
    </body>
 </html>

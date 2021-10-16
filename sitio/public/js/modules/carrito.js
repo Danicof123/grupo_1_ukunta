@@ -31,3 +31,7 @@ const carrito = () => {
 
 cantidadProductos();
 export default carrito;
+
+export const Carrito = {
+  getItems: cantidadProductos
+}

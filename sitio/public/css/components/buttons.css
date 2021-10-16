@@ -2,7 +2,9 @@
   color: inherit;
   text-transform: inherit;
 }
-
+.button.d-none{
+  display: none;
+}
 .button {
   display: flex;
   justify-content: center;

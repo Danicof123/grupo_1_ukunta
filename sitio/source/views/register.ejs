@@ -20,7 +20,7 @@
                             name="name"
                             class="reg__input"
                             value="<%= (locals && locals.errors) ? old.name : null %>"
-                            pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}){0,2}$"
+                            pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$"
                             title="Debe ingresar su nombre."
                             required
                         />
@@ -36,7 +36,7 @@
                             class="reg__input"
                             name="lastname"
                             value="<%= (locals && locals.errors) ? old.lastname : null %>"
-                            pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}){0,2}$"
+                            pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$"
                             title="Debe ingresar su apellido."
                             required
                         />
@@ -74,7 +74,7 @@
                             class="reg__input"
                             name="dni"
                             value="<%= (locals && locals.errors) ? old.dni : null %>"
-                            pattern="(^([0-9]{5,5})|^)$"
+                            pattern="^[1-9][0-9]{7}$"
                             title="Ingrese un DNI válido."
                             required
                         />
@@ -90,8 +90,8 @@
                             class="reg__input"
                             name="phone"
                             value="<%= (locals && locals.errors) ? old.phone : null %>"
-                            pattern="^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$"
-                            title="Ingrese un teléfono válido."
+                            pattern="^(\+\d{1,3})?\d{10}$"
+                            title="Ingrese un teléfono válido. Ejemplo (1112345678)"
                             required
                         />
                     </div>
@@ -106,14 +106,17 @@
                             class="reg__input"
                             name="email"
                             value="<%= (locals && locals.errors) ? old.email : null %>"
-                            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                            pattern="^[a-z]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
                             title="Formato de email invalido."
                             required
                         />
                     </div>
 
                     <div class="reg__ctrl-input my-4">
-                        <input type="email" placeholder="*Repetir correo electronico" class="reg__input" name="email-repeat" />
+                        <input type="email" placeholder="*Repetir correo electronico" class="reg__input" name="email-repeat" 
+                            pattern="^[a-z]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+                            title="Formato de email invalido."
+                            required/>
                     </div>
 
                     <!-- Contraseña -->
@@ -125,7 +128,7 @@
                             placeholder="*Contraseña"
                             class="reg__input"
                             name="password"
-                            pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
+                            pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,16}$"
                             title="La contraseña debe tener entre 8 y 16 caracteres, al menos un número, una minúscula y una mayúscula."
                             required
                         />
@@ -138,7 +141,7 @@
                             placeholder="*Repetir contraseña"
                             class="reg__input"
                             name="password2"
-                            pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
+                            pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,16}$"
                             title="La contraseña debe tener entre 8 y 16 caracteres, al menos un número, una minúscula y una mayúscula."
                             required
                         />
@@ -147,7 +150,10 @@
                     <!-- Paises -->
                     <label for="country" class="text-danger"><%= locals.errors && locals.errors.country ? errors.country.msg : null %> </label>
                     <div class="reg__ctrl-input my-4">
-                        <select name="country" class="reg__input">
+                        <select name="country" class="reg__input" 
+                        pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$"
+                        title="Elige un país de la lista"
+                        required>
                             <option value="" selected>*Pais</option>
                             <option value="Argentina">Argentina</option>
                             <option value="Croacia">Croacia</option>
@@ -158,7 +164,10 @@
                     <!-- Provincias -->
                     <label for="state" class="text-danger"><%= locals.errors && locals.errors.state ? errors.state.msg : null %> </label>
                     <div class="reg__ctrl-input my-4">
-                        <select name="state" class="reg__input">
+                        <select name="state" class="reg__input"
+                        pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$"
+                        title="Elige un Provincia/Estado de la lista"
+                        required>
                             <option value="" selected>*Provincia/Estado</option>
                             <option value="Buenos Aires">Buenos Aires</option>
                             <option value="Cordoba">Cordoba</option>
@@ -169,7 +178,10 @@
                     <!-- Ciudades -->
                     <label for="city" class="text-danger"><%= locals.errors && locals.errors.city ? errors.city.msg : null %> </label>
                     <div class="reg__ctrl-input my-4">
-                        <select name="city" class="reg__input">
+                        <select name="city" class="reg__input"
+                        pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$"
+                        title="Elige una ciudad de la lista"
+                        required>
                             <option value="" selected>*Ciudad</option>
                             <option value="CABA">CABA</option>
                             <option value="La Matanza">La Matanza</option>
@@ -204,7 +216,7 @@
                             name="streetNumber"
                             value="<%= (locals && locals.errors) ? old.streetNumber : null %>"
                             pattern="^[0-9]{1,5}$"
-                            title="Debe ingresar una altura valida"
+                            title="Debe ingresar una altura valida (Solo número)"
                             required
                         />
                     </div>

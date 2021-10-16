@@ -3,6 +3,7 @@
 <%- include('./partials/head') %>
 
     <body>
+      <%- include('partials/carrito.ejs') %>
         <header class="header">
             <%- include('./partials/navbar-top') %>
             <section class="combos sep-inf">
@@ -76,7 +77,7 @@
 
         </main>
             <%- include('./partials/footer') %>
-            <%- include('partials/scripts.ejs') %>
+            
     </body>
-
+    <script src="/js/store.js" type="module"></script>
 </html>
