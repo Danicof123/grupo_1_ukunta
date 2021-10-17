@@ -1,4 +1,4 @@
-const rango = (num, min, max) => (num < min) ? min : (num > max) ? max : num
+const rango = (num, min = -Infinity, max = Infinity) => (num < min) ? min : (num > max) ? max : num
 
 // Devuelve los numeros que empiezen en un string
 const getNumero = string => Number(string.match(/^\d+/)[0]) || 0;

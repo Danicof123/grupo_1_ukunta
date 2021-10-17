@@ -181,9 +181,12 @@
 
                         <div class="controlador-buton-precio">
                            <div class="precio_store">$ <%= prRelations[i].price %></div>
-                           <div class="button buton_redondo_suma">
-                              <i class="fas fa-plus"></i>
-                           </div>
+
+                           <button class="button buton_redondo_suma fas fa-plus btnRel-add-carrito" 
+                           data-stock=<%= prRelations[i].stock%>
+                           data-id=<%= prRelations[i].id%>>
+                           </button>
+                           
                         </div>
                      </div>
                   </div>
@@ -195,11 +198,11 @@
 
       <nav class="vproduct__navbottom w-100 p-4">
          <div class="f-display f-main-between w-100">
-            <a href="/cart">
-            <div class="button icono_flecha">
+
+            <div class="button icono_flecha btnOpenCarrito">
                <i class="fas fa-shopping-cart"></i>
             </div>
-            </a>
+
             <a href="/store">
             <div class="button icono_card">
                <i class="fas fa-undo-alt"></i>

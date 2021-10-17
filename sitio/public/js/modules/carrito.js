@@ -18,8 +18,8 @@ const carrito = () => {
   d.addEventListener('click', e => {
     // Mostrar carrito
     if(e.target.matches(".btnOpenCarrito, .btnOpenCarrito *")){
-      $carrito.classList.add('active')
-      $navbarBottom.classList.add('active')
+      $carrito.classList.toggle('active')
+      $navbarBottom.classList.toggle('active')
     }
     // Ocultar carrito
     if(e.target.matches(".carritoClose, .carritoClose *") || !e.target.matches(".carrito.active, .carrito.active *,.btnOpenCarrito, .btnOpenCarrito *")){

@@ -4,47 +4,64 @@ import Matematica from "./Matematica.js";
 const d = document;
 
 // Agrega un producto al localstorage (id, cantidad)
-export const carritoProduct = (btnAdd, btnRemove, $unidad, stock) => {
-  d.addEventListener('click', e => {
-    const $btnAdd = d.querySelector(btnAdd),
-          $btnRemove = d.querySelector(btnRemove),
-          id = $btnAdd.dataset.id,
-          cantidad = Matematica.rango(Matematica.getNumero($unidad.textContent), 1, stock);
-    
-    if(e.target === $btnAdd){
-      localStorage.setItem(id, cantidad);
-      $btnRemove.classList.remove('d-none')
-      Carrito.getItems();
-    }
-    if(e.target === $btnRemove){
-      localStorage.removeItem(id);
-      $btnRemove.classList.add('d-none')
-      Carrito.getItems();
-    }
-      
+export const carritoProduct = (btnAdd, btnRemove, btnRel, $unidad, stock) => {
+  // Defino los botones a utilizar;
+  const $btnAdd = d.querySelector(btnAdd),
+        $btnRemove = d.querySelector(btnRemove);
 
-  })
+  d.addEventListener("click", (e) => {
+
+    // El boton de agregar al carrito
+    if ($btnAdd && e.target === $btnAdd) {
+      const id = $btnAdd.dataset.id, //Consigo el id del producto con el cual operar
+            cantidad = ($unidad) ? Matematica.getNumero($unidad.textContent) : localStorage.getItem(id);
+
+      addProductoToLocalStorage(id, cantidad, stock);
+      $btnRemove && $btnRemove.classList.remove("d-none");
+      Carrito.getItems(); //Actualiza los badges
+    }
+
+    // El boton para eliminar del carrito
+    if ($btnRemove && e.target === $btnRemove) {
+      const id = $btnAdd.dataset.id; //Consigo el id del producto con el cual operar
+      RemoveProductoToLocalStorage(id);
+      $btnRemove.classList.add("d-none");
+      Carrito.getItems(); //Actualiza los badges
+    }
+
+    // Botones de productos relacionados para agregar/sumar +1 al carrito
+    if(btnRel && e.target.matches(`${btnRel}, ${btnRel} *`)){
+      const $btnRel = e.target,
+            id = Number($btnRel.dataset.id),
+            stock = Number($btnRel.dataset.stock);
+      let cantidad = Number(cantidadProducto(id));
+
+      addProductoToLocalStorage(id, cantidad + 1, stock)
+      Carrito.getItems(); //Actualiza los badges
+    }
+
+  });
 };
 
+const addProductoToLocalStorage = (id, cantidad, stock) => localStorage.setItem(id, Matematica.rango(cantidad, 1, stock));
+const RemoveProductoToLocalStorage = id => localStorage.removeItem(id);
 
 // Devuelve la cantidad del producto que se encuentra en el localstorage, si no hay devuelve 1
-export const cantidadProducto = id => localStorage.getItem(id) || 1;
-
+export const cantidadProducto = (id) => localStorage.getItem(id) || 0;
 
 export const cambiarCantidad = ($stock, $unidad) => {
-
   let cantidad = Matematica.getNumero($unidad.textContent),
-        stock = Matematica.getNumero($stock.textContent);
+    stock = Matematica.getNumero($stock.textContent);
 
-  d.addEventListener('click', e => {
-    if(e.target.matches('.btnSumarCantidad, .btnSumarCantidad *')){
-      cantidad = Matematica.rango(cantidad + 1, 0, stock)
+  d.addEventListener("click", (e) => {
+    if (e.target.matches(".btnSumarCantidad, .btnSumarCantidad *")) {
+      cantidad = Matematica.rango(cantidad + 1, 1, stock);
     }
-    if(e.target.matches('.btnRestarCantidad, .btnRestarCantidad *')){
-      cantidad = Matematica.rango(cantidad - 1, 0, stock)
+    if (e.target.matches(".btnRestarCantidad, .btnRestarCantidad *")) {
+      cantidad = Matematica.rango(cantidad - 1, 1, stock);
     }
-    if(!$unidad) return cantidad;
-    
+    if (!$unidad) return cantidad;
+
     $unidad.textContent = `${cantidad}u`;
-  })
-}
+  });
+};
