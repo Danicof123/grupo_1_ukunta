@@ -29,6 +29,10 @@ const carrito = () => {
   })
 }
 
+const productCarrito = () => {
+  
+}
+
 cantidadProductos();
 export default carrito;
 
