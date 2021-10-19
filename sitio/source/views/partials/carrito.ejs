@@ -1,25 +1,59 @@
 <div class="carrito">
-  <%- include('./mini-header') %>
-  <div class="w-100 f-display f-main-between f-cross-center px-4">
-    <h3 class="title__carrito">TOTAL DE ELEMENTOS</h3>
-    <span class="length__carrito">3</span>
-  </div>
+   <%- include('./mini-header') %>
+      <div class="w-100 f-display f-main-between f-cross-center px-4">
+         <h3 class="title__carrito">TOTAL DE ELEMENTOS</h3>
+         <span class="length__carrito">3</span>
+      </div>
 
-  <nav class="carrito__navbottom px-4">
-    <div class="w-100 f-display f-main-between f-cross-center">
+      <!-- Producto -->
+
+</div>
+
+<nav class="carrito__navbottom px-4">
+   <div class="w-100 f-display f-main-between f-cross-center">
       <h3 class="title__carrito">TOTAL A PAGAR</h3>
       <span class="price__carrito">$99999</span>
-    </div>
-    <div class="f-display f-main-between w-100 pbt-4">
-       <div class="button icono_flecha carritoClose">
-          <i class="fas fa-arrow-right"></i>
-       </div>
-       <a href="#">
-       <div class="button icono_card">
-          <i class="fas fa-credit-card"></i>
-       </div>
-       </a>
-    </div>
- </nav>
+   </div>
+   <div class="f-display f-main-between w-100 pbt-4">
+      <div class="button icono_flecha carritoClose">
+         <i class="fas fa-arrow-right"></i>
+      </div>
+      <a href="#">
+         <div class="button icono_card">
+            <i class="fas fa-credit-card"></i>
+         </div>
+      </a>
+   </div>
+</nav>
 
+
+<template id="carrito__template">
+   <article class="container h-auto producto-contenedor">
+      <div class="mb-12 f-main-y carrito_producto">
+         <div class="concon">
+            <!-- Imagen -->
+            <div class="mb-5">
+               <img src="" alt="" class="carrito__imagenProducto">
+            </div>
+            <div class="mb-7 f-main-y py-2">
+               <h3 class="carrito_titleProducto"></h3>
+               <span class="carrito_categoriaProducto"></span>
+
+               <div class="carrito_detalleProducto">
+                  <span class="carrito_cantidadProducto"></span>
+                  <div class="f-display f-center">
+                     <button class="button button-rojo info__button mr-2 btnRestarCantidad fas fa-minus">
+                     </button>
+                     <button class="button button-verde info__button fas fa-plus mr-2 btnSumarCantidad">
+                     </button>
+                     <div class="carrito_precioProducto">
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </article>
+</template>
 </div>

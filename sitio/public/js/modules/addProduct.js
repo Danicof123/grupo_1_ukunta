@@ -65,3 +65,17 @@ export const cambiarCantidad = ($stock, $unidad) => {
     $unidad.textContent = `${cantidad}u`;
   });
 };
+
+// Esta función me devuelve un arreglo de objetos con los productos que estan en el LS, en forma de {id: cantidad}
+export const obtenerProductos = () => {
+  const productos = [];
+  for (const key in localStorage) {
+    if (Number(key) && Object.hasOwnProperty.call(localStorage, key))
+      productos.push({
+        id : key,
+        cantidad : localStorage[key]
+      })
+  }
+  return productos;
+}
+
