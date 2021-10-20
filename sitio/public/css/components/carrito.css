@@ -1,6 +1,5 @@
 .carrito,
 .carrito__navbottom{
-  visibility: hidden;
   transform: translateX(100%);
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
@@ -11,6 +10,7 @@
   -moz-transition: transform .3s ease-in-out;
   -ms-transition: transform .3s ease-in-out;
   -o-transition: transform .3s ease-in-out;
+  visibility: hidden;
 }
 .carrito.active,
 .carrito__navbottom.active{
@@ -102,6 +102,13 @@
 }
 .container.h-auto{
   height: auto;
+}
+
+.btnEliminarProductoCarrito{
+  position: absolute;
+  z-index: 100;
+  right: 2px;
+  top: .55rem;
 }
 @media screen and (min-width: 1024px) {
   .carrito{
