@@ -7,14 +7,8 @@ const db = require('../database/models'),
 
 /* VISTA TIENDA */
 const store = async (req, res) => {
-    // Guarda todos los productos, si se envia req.params.cat filtará por categoría
-    const productos_db = req.params.cat
-        ? await db.Product.findAll({include: [{association: 'category', where: {name: req.params.cat}}, {association: 'image'}]})
-        : await db.Product.findAll({include: [{association: 'category'}, {association: 'image'}]});
-
     const locals = {
-        title: 'Tienda Ukunta',
-        productos_db,
+        title: 'Tienda Ukunta'
     };
     res.render('store', locals);
 };

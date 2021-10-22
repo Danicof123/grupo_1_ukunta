@@ -4,6 +4,13 @@ const {Op} = require('sequelize');
 
 // API
 const findAllProduct = async (req, res) => {
+  if(req.query.price){
+    res.json(await db.Product.findAll({
+      include: ["category", "image"],
+      order: [['price', req.query.price.toUpperCase()]]
+    }))
+  }
+
   res.json(await db.Product.findAll({
     include: ["category", "image"]
   }))
@@ -18,6 +25,14 @@ const findById = async (req, res) => {
 }
 
 const findByCategory = async (req, res) => {
+  if(req.query.price){
+    res.json(await db.Product.findAll({
+      include: [{"association" : "category", 
+                where: {"name" : req.params.cat}},
+              "image"],
+      order: [["price", req.query.price.toUpperCase()]]
+    }))
+  }
   res.json(await db.Product.findAll({
     include: [{"association" : "category", 
               where: {"name" : req.params.cat}},

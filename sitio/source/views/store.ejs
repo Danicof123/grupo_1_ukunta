@@ -16,73 +16,71 @@
          </header>
          <%- include('./partials/navbar-bottom') %>
             <!-- Botones de categorias -->
+
             <%- include('partials/categories.ejs') %>
                <!-- Filtro y Busqueda de Productos -->
                <div class="container filtro_busqueda ptp-5 f-main-end" id="store">
                   <div class="lp-6 filter__orden">
                      <form action="">
                         <label for=""><strong>Ordenar por:</strong></label>
-                        <select name="filtro" id="">
+                        <select name="filtro" id="filterProducts">
                            <option value="" selected>Más relevante</option>
-                           <option value="">Menos precio</option>
-                           <option value="">Mayor precio</option>
+                           <option value="asc">Menos precio</option>
+                           <option value="desc">Mayor precio</option>
                         </select>
                      </form>
                   </div>
                </div>
                <main class="container productos_tienda ptp-5">
-                  <!-- Vista producto -->
-                  <% productos_db.forEach(producto=> { %>
-                     <article class="mb-12 tb-6 lp-4 container producto shadow-drop-2-center">
-                        <div class="button--stock">
-                           <i class="fas fa-check boton_check"></i>
-                        </div>
-                        <!-- Boton verde de stock -->
-                        <div class="concon">
-                           <div class="mb-5">
-                              <img src="/images/products/Bebidas/Cervezas/<%= producto.image[0].name %> "
-                                 alt="ipa brown" />
-                           </div>
-
-                           <div class="mb-7 f-main-y">
-                              <div>
-                                 <h4 class="producto__title">
-                                    <%= producto.name %>
-                                 </h4>
-                                 <p class="producto__description">
-                                    <%= producto.description %>
-                                 </p>
-                              </div>
-
-                              <div class="producto__buttons">
-                                 <div class="f-display">
-                                    <a href="/store/products/<%= producto.id %> ">
-                                       <div class="button producto__vermas mr-1">
-                                          <i class="fas fa-external-link-alt"></i>
-                                       </div>
-                                    </a>
-                                 </div>
-
-                                 <div class="controlador-buton-precio">
-                                    <div class="precio_store">$ <%= producto.price %>
-                                    </div>
-                                    <button class="button buton_redondo_suma fas fa-plus btnRel-add-carrito"
-                                       data-stock=<%=producto.stock%>
-                                       data-id=<%= producto.id%>>
-                                    </button>
-                                 </div>
-                              </div>
-                           </div>
-
-
-                        </div>
-
-
-                     </article>
-                     <% }) %>
-
+                  <!-- Todos los producto -->
                </main>
+
                <%- include('./partials/footer') %>
+
+      <template id="producto-store">
+         <article class="mb-12 tb-6 lp-4 container producto shadow-drop-2-center">
+
+            <div class="button--stock">
+               <i class="fas fa-check boton_check"></i>
+            </div>
+            
+            <div class="concon">
+               <div class="mb-5 imagen-producto__store">
+                  <!-- Imagen del producto -->
+                  <img src=""alt="" />
+               </div>
+
+               <div class="mb-7 f-main-y">
+                  <div>
+                     <!-- Nombre del producto -->
+                     <h4 class="producto__title"></h4>
+                     <!-- Descripción del producto -->
+                     <p class="producto__description"></p>
+                  </div>
+
+                  <div class="producto__buttons">
+                     <div class="f-display">
+                        <!-- Link para el detalle del producto -->
+                        <a href="/store/products/idProducto" class="producto__detail"></a>
+                           <div class="button producto__vermas mr-1">
+                              <i class="fas fa-external-link-alt"></i>
+                           </div>
+                        </a>
+                     </div>
+
+                     <div class="controlador-buton-precio">
+                        <!-- Precio producto -->
+                        <div class="precio_store"></div>
+
+                        <!-- data-stock y data-id del producto -->
+                        <button class="button buton_redondo_suma fas fa-plus btnRel-add-carrito"></button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </article>
+
+      </template>
 
    </body>
    <script src="/js/store.js" type="module"></script>
