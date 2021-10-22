@@ -14,19 +14,16 @@
             <!-- imagen carrousel (1) -->
             <div class="mb-12 tb-7 lp-6 dk-5 f-main-y mbt-4 vproduct__carrousel">
                <div class="ctrl__carrousel">
-                  <img src="/images/products/Bebidas/Cervezas/<%= producto.image[0].name %>" />
+                  <img src="/images/products/Bebidas/Cervezas/<%= producto.image[0].name %>" class="main-product__carrousel"/>
                </div>
 
                <!-- vistas previas -->
-               <div class="no-mb f-display f-main-between mtp-4 image-preview">
-
-                  <% producto.image.forEach((imagen, index) => { %>
-                     <div class="item__preview-img">
-                        <img src="/images/products/Bebidas/Cervezas/<%= imagen %>" alt="preview-1" />
-                     </div>
-                  <% }) %>
-
+               <div class="f-display f-main-between mtp-4 image-preview">
+                  <!-- Las imágenes previas se insertan aquí --> 
+                          
                </div>
+
+               
             </div>
 
             <!-- columna detalle (2) -->
@@ -210,6 +207,16 @@
             </a>
          </div>
       </nav>
+
+
+      <!-- Template vista previa -->
+      <!-- Nota: El ultimo .item__preview-img  recibe  mr-0 -->
+      <template id="prev-product">
+         <div class="item__preview-img">
+            <img src="" alt="">
+         </div>
+      </template>
+
       <script src="/js/products.js" type="module"></script>
    </body>
 </html>
