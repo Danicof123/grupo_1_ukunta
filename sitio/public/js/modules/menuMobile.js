@@ -1,10 +1,12 @@
 const d = document;
 export const menuMobile = (btnAct, ContMenu) => {
-  const $ContMenu = d.querySelector(ContMenu).children,
+  const $ContMenu = d.querySelector(ContMenu),
         $mobileMenu = d.createElement('nav');
 
+  // Creación de nodo clone 
+  const $clone = document.importNode($ContMenu, true);
   // Le agrego los items al menu
-  Array.from($ContMenu).forEach(el => $mobileMenu.appendChild(el))
+  Array.from($clone.children).forEach(el => $mobileMenu.appendChild(el))
   $mobileMenu.classList.add('navbar__menu-mobile');
   d.body.appendChild($mobileMenu);
 
