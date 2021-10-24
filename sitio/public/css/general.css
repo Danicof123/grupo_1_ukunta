@@ -14,9 +14,12 @@
     --color-primario: #F9B437;
     --color-secundario: #130F09;
     --color-rojo: #EB6969;
+    --color-rojo-oscuro: #943333;
     --color-gris: #404040;
     --color-verde: #6BAD36;
+    --color-verde-oscuro: #436b22;
     --color-azul: #83ADDD;
+    --color-azul-oscuro: #3a608b;
     --color-secundario-claro: #5E4F39;
     --color-gris-claro: #BFBFBF;
     --sombra: 0px 0px 5px rgba(0, 0, 0, 0.25);

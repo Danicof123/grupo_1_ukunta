@@ -1,4 +1,3 @@
-import './modules/isOld.js';
 import validationForm from './modules/validationForm.js';
 
 const d = document;
