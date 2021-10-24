@@ -462,3 +462,7 @@ body.no-scroll{
 .minvh-100{
     min-height: 100vh;
 }
+
+.pos-rel{
+    position: relative;
+}

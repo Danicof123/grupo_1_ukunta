@@ -1,8 +1,8 @@
 <nav class="navbar-bottom no-desktop">
     <ul class="navbar-bottom__ul">
-        <li class="navbar__item"><a href="/home"><i class="fas fa-home"></i></a></li>
-        <li class="navbar__item"><i class="fas fa-search"></i></li>
-        <li class="navbar__item"><a href="/store"><i class="fas fa-store"></i></a></li>
+        <li class="navbar__item"><a href="/home#"><i class="fas fa-home"></i></a></li>
+        <li class="navbar__item fas fa-search btn-item-search-mb-tb"></li>
+        <li class="navbar__item"><a href="/store#"><i class="fas fa-store"></i></a></li>
 
         <li class="navbar__shop btnOpenCarrito">
             <span class="navbar__item">
@@ -13,4 +13,14 @@
 
         <li class="navbar__item navbar__bars"><i class="fas fa-bars"></i></li>
     </ul>
+
+    <div class="container-search-mobile-tablet">
+        <div class="search-mobile-tablet">
+            <form action="/search" class="form-search-mobile-tablet">
+                <input type="search" name="s" class="input-search" placeholder="Buscar productos">
+                <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
+    
 </nav>
