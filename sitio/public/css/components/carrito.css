@@ -10,7 +10,6 @@
   -moz-transition: transform .3s ease-in-out;
   -ms-transition: transform .3s ease-in-out;
   -o-transition: transform .3s ease-in-out;
-  visibility: hidden;
 }
 .carrito.active,
 .carrito__navbottom.active{
