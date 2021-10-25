@@ -91,7 +91,7 @@ module.exports = {
     profile: async (req, res) => {
         const locals = {
             title: 'Profile',
-            user: await db.User.findByPk(req.session.userLogged.id, {include: [{association: 'address'}]}),
+            userId: req.session.userLogged.id,
         };
         res.render('profile', locals);
     },

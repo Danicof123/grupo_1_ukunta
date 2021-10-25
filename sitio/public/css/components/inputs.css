@@ -28,3 +28,19 @@
     background-color: var(--color-primario);
     border: 1px solid #fff;
 }
+
+/* Controladores del profile */
+.controlador-input{
+    display: flex;
+    flex-direction: column;
+}
+.controlador-input label{
+    font-size: 10px;
+    color: var(--color-gris);
+    margin-bottom: 2px;
+}
+
+.controlador-input label[data-required]::before{
+    content: '* ';
+    color: var(--color-rojo);
+}

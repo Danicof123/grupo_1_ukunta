@@ -1,9 +1,12 @@
-import { editInput } from "./modules/showHiden.js";
+import optProfile from "./modules/optProfile.js";
+import user from "./modules/user.js";
 
-const d = document;
+document.addEventListener("DOMContentLoaded", (e) => {
+  const userId = document.querySelector('main').dataset.userid;
 
-d.addEventListener("DOMContentLoaded", (e) => {
-  editInput(".edit-profile");
+  // Una vez carga el profile, se pueden activar las opts
+  user.getUserProfile(userId)
+    .then(user => { optProfile(user)});
 });
 
 

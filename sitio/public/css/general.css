@@ -50,7 +50,7 @@ nav li a{
     text-decoration: inherit;
 }
 
-img{
+img, object[type="image/svg+xml"]{
     display: block;
     width: 100%;
     height: auto;
@@ -96,6 +96,10 @@ h4{
     color: var(--color-secundario);
     background-color: var(--color-rojo);
     cursor: pointer;
+}
+.card{
+    padding: 1rem;
+    box-shadow: var(--sombra);
 }
 /* ---------------- */
 body.no-scroll{
@@ -465,7 +469,9 @@ body.no-scroll{
 .minvh-100{
     min-height: 100vh;
 }
-
+.maxw-1280{
+    max-width: 1280px;
+}
 .pos-rel{
     position: relative;
 }

@@ -1,160 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('partials/head.ejs') %>
-<body class="home">
+<body class="profile">
     <%- include('partials/carrito.ejs') %>
-  <header class="header">
-    <%- include('partials/navbar-top.ejs') %>
-  </header>
-  <!-- Barra de navegación inferior -->
-  <%- include('partials/navbar-bottom.ejs') %>
-  <main class="container f-center">
-    
-    <form class="mb-12 lp-8 pc-6 f-main-y mbt-5" method="POST" action="/users/profile?_method=PUT" enctype="multipart/form-data">
-        <!-- Avatar -->
-        <div class="mb-12 f-main-center my-5">
-            <div class="image__profile">
-                <img src="/images/users/<%= user.avatar %> " alt="user">
-                <input type="file" name="avatar" accept="image/*" class="input_avatar" id="avatar">
-                <div class="edit-avatar">
-                    <span class="text-avatar">Actualizar imagen</span>
-                    <i class="fas fa-edit"></i>
+    <header class="header">
+        <%- include('partials/navbar-top.ejs') %>
+    </header>
+    <!-- Barra de navegación inferior -->
+    <%- include('partials/navbar-bottom.ejs') %>
+
+    <main class="container maxw-1280 mbt-5" data-userid=<%= userId %>>
+        <div class="mb-12 profile__opt f-main-y">
+            <div class="profile__image">
+                <div class="profile__avatar">
+                    <img src="/images/users/default.png" alt="avatar-user">
                 </div>
-            </div>  
-        </div>
-        <label for="avatar" class="text-danger"><%= locals.errors && locals.errors.avatar ? errors.avatar.msg : null %>  </label>
-        <!-- Nombre -->
+                <h2 class="profile__name">CLIENTE GENIAL</h2>
+                <h4 class="profile__level">Nivel 3</h4>
+            </div>
 
-        <div class="profile-data">
-            <h4 class="data">Nombre: <%= (user.name).replace(/\b\w/g, l => l.toUpperCase()) %> <%= (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>  </h4>
-            <div class="edit-profile" data-target="change-nombre"><i class="fas fa-edit"></i></div>
-        </div>
-       
-        <div id="change-nombre" class="change-data">
-            <label for="name" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.name.msg : null %></label>
-            <div class="reg__ctrl-input mbt-4">
-                <input type="text" placeholder="*Nombre" name="name" class="reg__input" value="<%= (locals && locals.errors) ? old.name : (user.name).replace(/\b\w/g, l => l.toUpperCase()) %>" disabled>
-            </div>
-    
-            <!-- Apellido -->
-          
-            <label for="lastname" class="text-danger d-none"><%= locals.errors && locals.errors.lastname ? errors.lastname.msg : null %>  </label>
-            <div class="reg__ctrl-input my-4">
-                <input type="text" placeholder="*Apellido" class="reg__input" name="lastname" value="<%= (locals && locals.errors) ? old.lastname : (user.lastname).replace(/\b\w/g, l => l.toUpperCase()) %>" disabled>
-            </div>
+            <nav class="card mbt-5">
+                <ul class="profile__nav">
+                    <div class="profile__nav-row">
+                        <li class='bx bx-user active' data-opt="profile"></li>
+                        <li class='bx bxs-key' data-opt="password"></li>
+                        <li class='bx bx-envelope' data-opt="contact"></li>
+                    </div>
+                    <div class="profile__nav-row">
+                        <li class='bx bx-map' data-opt="address" disabled></li>
+                        <li class='bx bx-credit-card' data-opt="card" disabled></li>
+                        <li class='bx bx-shopping-bag' data-opt="history" disabled></li>
+                    </div>
+                </ul>
+            </nav>
         </div>
 
-        <!-- Teléfono -->
-
-        <div class="profile-data">
-            <h4 class="data">Teléfono: <%= user.phone %></h4>
-            <div class="edit-profile" data-target="change-phone"><i class="fas fa-edit"></i></div>
+        <div class="mb-12 f-main-y profile__set-opt">
+            <!-- Insertar aquí las opciones del profile -->
         </div>
-        
-        <div id="change-phone" class="change-data">
-            <label for="phone" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.phone.msg : null %>  </label>
-            <div class="reg__ctrl-input my-4">
-                <input disabled type="tel" placeholder="*Telefono" class="reg__input" name="phone" value="<%= (locals && locals.errors) ? old.phone : user.phone %>">
-            </div>
+    </main>
+
+    <!------------------------- Inicio de Templates ------------------------->
+    <!-- set Profile -->
+    <template id="setProfile">
+        <h3 class="profile__set-title-opt">Cambiar datos de perfil</h3>
+        <div class="card">
+            <form>
+                <div class="controlador-input">
+                    <label for="name" data-required>Nombre</label>
+                    <input type="text" name="name" id="name" class="reg__input" placeholder="Ingrese su nombre">
+                </div>
+
+                <div class="controlador-input">
+                    <label for="lastname" data-required>Apellido</label>
+                    <input type="text" name="lastname" id="lastname" class="reg__input" placeholder="Ingrese su apellido">
+                </div>
+
+                <div class="controlador-input">
+                    <label for="date" data-required>Fecha de nacimiento</label>
+                    <input type="date" name="date" id="date" class="reg__input" placeholder="Ingrese su fecha de nacimiento">
+                </div>
+                <button class="contacto__button"> GUARDAR CAMBIOS </button>
+            </form>
         </div>
-
-        <!-- Contraseña -->
-
-        <div class="profile-data">
-            <h4 class="data">Editar Contraseña</h4>
-            <div class="edit-profile" data-target="change-psw"><i class="fas fa-edit"></i></div>
+        <div class="profile__delete-profile">
+            <span>Quisiera eliminar mi cuenta</span>
         </div>
+    </template>
 
-        <div id="change-psw" class="change-data">
-            <label for="old_password" class="text-danger d-none"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
-            <div class="reg__ctrl-input my-4">
-                <input disabled id="old_password" type="password" placeholder="*Contraseña actual" class="reg__input" name="old_password">
-            </div>
+    <!-- set Password -->
+    <template id="setPassword">
+        <h3 class="profile__set-title-opt">Cambiar la contraseña</h3>
+        <div class="card">
+            <form>
+                <div class="controlador-input">
+                    <label for="old-password" data-required>Contraseña anterior</label>
+                    <input type="password" name="oldPassword" id="old-password" class="reg__input" placeholder="********">
+                </div>
 
-            <label for="password" class="text-danger d-none"><%= locals.errors && locals.errors.password ? errors.password.msg : null %>  </label>
-            <div class="reg__ctrl-input my-4">
-                <input disabled id="password" type="password" placeholder="*Contraseña nueva" class="reg__input" name="password">
-            </div>
-            
-            <label for="password2" class="text-danger d-none"><%= locals.errors && locals.errors.name ? errors.password2.msg : null %>  </label>
-            <div class="reg__ctrl-input my-4">
-                <input disabled id="password-repeat" type="password" placeholder="*Repetir contraseña" class="reg__input" name="password2">
-            </div>
+                <div class="controlador-input">
+                    <label for="password" data-required>Nueva contraseña</label>
+                    <input type="password" name="password" id="password" class="reg__input" placeholder="********">
+                </div>
+
+                <div class="controlador-input">
+                    <label for="rpassword" data-required>Repetir contraseña</label>
+                    <input type="password" name="rpassword" id="rpassword" class="reg__input" placeholder="********">
+                </div>
+
+                <button class="contacto__button"> GUARDAR CAMBIOS </button>
+            </form>
         </div>
+    </template>
 
-        <!-- Domicilio -->
+    <!-- set Contact -->
+    <template id="setContact">
+        <h3 class="profile__set-title-opt">Cambiar datos de contacto</h3>
+        <div class="card">
+            <form>
+                <div class="controlador-input">
+                    <label for="phone" data-required>Número de teléfono Ej: 11 123 45678</label>
+                    <input type="tel" name="phone" id="phone" class="reg__input" placeholder="11 123 45678">
+                </div>
 
-        <div class="profile-data">
-            <h4 class="data">Editar Domicilio</h4>
-            <div class="edit-profile" data-target="change-address"><i class="fas fa-edit"></i></div>
+                <div class="controlador-input">
+                    <label for="email" data-required>Correo electrónico</label>
+                    <input type="email" name="email" id="email" class="reg__input" placeholder="nombre@correo.com">
+                </div>
+                <button class="contacto__button"> GUARDAR CAMBIOS </button>
+            </form>
         </div>
-        <div id="change-address" class="change-data">
-            
-            <!-- Paises -->
-            <div class="reg__ctrl-input my-4">
-                <select name="country" class="reg__input">
-                    <option value="argentina" <%= (user.country === 'argentina')? "selected" : null %>>Argentina</option>
-                    <option value="croacia" <%= (user.country === 'croacia')? "selected" : null %>>Croacia</option>
-                    <option value="costa rica" <%= (user.country === 'costa rica')? "selected" : null %>>Costa Rica</option>
-                </select>
-            </div>
+    </template>
 
-
-            <!-- Provincias -->
-            <div class="reg__ctrl-input my-4">
-                <select name="state" class="reg__input">
-                    <option value="buenos aires">Buenos Aires</option>
-                    <option value="cordoba">Cordoba</option>
-                    <option value="santa fe">Santa Fe</option>
-                </select>
-            </div>
-            
-            <!-- Ciudades -->
-            <div class="reg__ctrl-input my-4">
-                <select name="city" class="reg__input">
-                    <option value="caba"  <%= (user.address[0].city === "caba") ? "selected" : null %>>CABA</option>
-                    <option value="la matanza" <%= (user.address[0].city === 'la matanza')? "selected" : null %>>La Matanza</option>
-                    <option value="rosario" <%= (user.address[0].city === 'rosario')? "selected" : null %>>Rosario</option>
-                    <option value="campana" <%= (user.address[0].city === 'Campana')? "selected" : null %>>Campana</option>
-                    <option value="ballester" <%= (user.address[0].city === 'ballester')? "selected" : null %>>Ballester</option>
-                    <option value="lanus" <%= (user.address[0].city === 'lanus')? "selected" : null %>>Lanús</option>
-                </select>
-            </div>
-
-            <!-- Calle -->
-            <label for="" class="text-danger d-none"><%= locals.errors && locals.errors.street ? errors.street.msg : null %>  </label>
-            <div class="reg__ctrl-input my-4">
-                <input disabled type="text" placeholder="*Calle" class="reg__input" name="street" value="<%= (locals && locals.errors) ? old.street : user.address[0].street %>">
-            </div>
-
-            <!-- Altura -->
-            <label for="streetNumber" class="text-danger d-none"><%= locals.errors && locals.errors.streetNumber ? errors.streetNumber.msg : null %>  </label>
-            <div class="reg__ctrl-input my-4">
-                <input type="number" placeholder="*Altura" class="reg__input" name="streetNumber" value="<%= (locals && locals.errors) ? old.streetNumber : user.address[0].streetNumber %>">
-            </div>
-
-            <!-- Descripcion domicilio -->
-            <label for="description" class="text-danger d-none"><%= locals.errors && locals.errors.description ? errors.description.msg : null %>  </label>
-            <div class="reg__ctrl-textarea my-4">
-                <textarea name="description" class="text__area" placeholder="*Descripcion"><%= user.address[0].description %></textarea>
-            </div>
-        </div>
-
-        <!-- Terminos y condiciones de uso -->
-        
-        <nav class="f-display f-main-between reg__navbottom f-grow-1 f-cross-end my-5">
-            <a class="no-decor" href="/home">
-            <div class="button button-rojo reg__navbutton">
-                <i class="fas fa-times"></i>
-            </div>
-            </a>
-            <div class="button button-verde reg__navbutton">
-                <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
-            </div>
-        </nav>
-    </form>
-  </main>
-  <script src="/js/generals.js" type="module"></script>
-  <script src="/js/profile.js" type="module"></script>
+    <%- include('partials/footer.ejs') %>
+    <script src="/js/generals.js" type="module"></script>
+    <script src="/js/profile.js" type="module"></script>
 </body>
+
 </html>
