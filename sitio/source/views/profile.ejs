@@ -112,6 +112,36 @@
         </div>
     </template>
 
+    <!-- set Address -->
+    <template id="setAddress">
+        <h3 class="profile__set-title-opt">Cambiar datos de domicilio</h3>
+        <div class="card">
+            <form>
+                <div class="controlador-input">
+                    <label for="country" data-required>Elige un país</label>
+                    <select name="country" class="reg__input" id="country" data-geo="country">
+                        <option value="Argentina">Argentina</option>
+                    </select>
+                </div>
+
+                <div class="controlador-input">
+                    <label for="province" data-required>Elige una provincia</label>
+                    <select name="province" class="reg__input" id="province" data-geo="province" data-wait="country">
+                        <option value="">---</option>
+                    </select>
+                </div>
+
+                <div class="controlador-input">
+                    <label for="city" data-required>Elige una ciudad</label>
+                    <select name="city" class="reg__input" id="city" data-geo="city" data-wait="province">
+                        <option value="">---</option>
+                    </select>
+                </div>
+                <button class="contacto__button"> GUARDAR CAMBIOS </button>
+            </form>
+        </div>
+    </template>
+
     <%- include('partials/footer.ejs') %>
     <script src="/js/generals.js" type="module"></script>
     <script src="/js/profile.js" type="module"></script>
