@@ -1,4 +1,6 @@
+import geoSelect from "./geoSelect.js";
 import user from "./user.js";
+
 
 const d = document;
 let userProfile;
@@ -76,17 +78,21 @@ const contact = () => {
   return $fragment;
 };
 
+// ------------------------------------ OPT de address--------------------------------------------------------
 const address = () => {
   const $template = d.getElementById("setAddress").content,
     $fragment = d.createDocumentFragment(),
     userAddress = userProfile.address,
     sizeCountry = $template.querySelector('#country').length;
 
+    geoSelect($template.querySelector('form'));
+
   // Recorro todas las direcciones que tiene guardada
   userAddress.forEach((ad) => {
     const $clone = d.importNode($template, true);
     const $country = $clone.querySelectorAll('#country option');
     
+
     for(let i = 0; i < sizeCountry; i++){
       if($country[i].value === ad.country) $country[i].selected = true;
     }
