@@ -1,10 +1,14 @@
-const userDB = require('../models/UserDB');
+const db = require('../database/models');
 
-const userLoggedMiddleware = (req, res, next) => {
+const userLoggedMiddleware = async (req, res, next) => {
+   let userFromCookie
    res.locals.isLogged = false; // Seteo en false el isLogged
 
    let keepSessionInCookie = req.cookies.keepSession; // Si tengo alguien en cookie, le mantengo al session
-   let userFromCookie = userDB.getDB.find((user) => user.email === keepSessionInCookie); // Traigo los datos del usuario en sesión
+
+   if(keepSessionInCookie)
+      userFromCookie = await db.User.findOne({where: {id: keepSessionInCookie.id}});// Traigo los datos del usuario en sesión
+
 
    if (userFromCookie) {
       // Si tengo usuario en cookie, paso los datos a session
