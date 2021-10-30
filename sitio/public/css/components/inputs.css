@@ -34,13 +34,38 @@
     display: flex;
     flex-direction: column;
 }
+
 .controlador-input label{
     font-size: 10px;
     color: var(--color-gris);
     margin-bottom: 2px;
 }
+/* En estado múltiple */
+.controlador-input.multiple{
+    flex-direction: row;
+}
+.multiple .controlador-input{
+    width: 100%;
+}
+
+.multiple .controlador-input:not(:last-child){
+    margin-right: 1rem;
+}
 
 .controlador-input label[data-required]::before{
     content: '* ';
     color: var(--color-rojo);
+}
+
+/* textarea---------------------- */
+
+.form-textarea{
+    height: 200px;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    font-family: 'Raleway';
+    border: 1px solid var(--color-gris-claro);
+    outline: none;
+    resize: none;
 }

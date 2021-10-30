@@ -9,12 +9,17 @@
     <!-- Barra de navegación inferior -->
     <%- include('partials/navbar-bottom.ejs') %>
 
-    <main class="container maxw-1280 mbt-5" data-userid=<%= userId %>>
-        <div class="mb-12 profile__opt f-main-y">
+    <main class="container maxw-1280 mbt-5 mx-auto" data-userid=<%= userId %>>
+
+        <div class="mb-12 tb-4 profile__opt f-main-y">
             <div class="profile__image">
-                <div class="profile__avatar">
-                    <img src="/images/users/default.png" alt="avatar-user">
+                <div class="profile__set-image">
+                    <div class="profile__avatar">
+                        <img src="/images/users/default.png" alt="avatar-user">
+                    </div>
+                    <input type="file" title="Cambiar imagen" class="profile__avatar-input bx bxs-camera-plus">
                 </div>
+
                 <h2 class="profile__name">CLIENTE GENIAL</h2>
                 <h4 class="profile__level">Nivel 3</h4>
             </div>
@@ -35,7 +40,7 @@
             </nav>
         </div>
 
-        <div class="mb-12 f-main-y profile__set-opt">
+        <div class="mb-12 tb-8 f-main-y profile__set-opt">
             <!-- Insertar aquí las opciones del profile -->
         </div>
     </main>
@@ -43,7 +48,11 @@
     <!------------------------- Inicio de Templates ------------------------->
     <!-- set Profile -->
     <template id="setProfile">
-        <h3 class="profile__set-title-opt">Cambiar datos de perfil</h3>
+        <div class="profile__set-title">
+            <div class="profile__set-title-icon d-none"><i class="bx bx-user"></i></div>
+            <h3 class="profile__set-title-opt">Cambiar datos de perfil</h3>
+        </div>
+        
         <div class="card">
             <form>
                 <div class="controlador-input">
@@ -70,22 +79,25 @@
 
     <!-- set Password -->
     <template id="setPassword">
-        <h3 class="profile__set-title-opt">Cambiar la contraseña</h3>
+        <div class="profile__set-title">
+            <div class="profile__set-title-icon d-none"><i class="bx bxs-key"></i></div>
+            <h3 class="profile__set-title-opt">Cambiar la contraseña</h3>
+        </div>
         <div class="card">
             <form>
                 <div class="controlador-input">
                     <label for="old-password" data-required>Contraseña anterior</label>
-                    <input type="password" name="oldPassword" id="old-password" class="reg__input" placeholder="********">
+                    <input type="password" name="oldPassword" id="old-password" class="reg__input" placeholder="Contraseña anterior">
                 </div>
 
                 <div class="controlador-input">
                     <label for="password" data-required>Nueva contraseña</label>
-                    <input type="password" name="password" id="password" class="reg__input" placeholder="********">
+                    <input type="password" name="password" id="password" class="reg__input" placeholder="Nueva contraseña">
                 </div>
 
                 <div class="controlador-input">
                     <label for="rpassword" data-required>Repetir contraseña</label>
-                    <input type="password" name="rpassword" id="rpassword" class="reg__input" placeholder="********">
+                    <input type="password" name="rpassword" id="rpassword" class="reg__input" placeholder="Repetir contraseña">
                 </div>
 
                 <button class="contacto__button"> GUARDAR CAMBIOS </button>
@@ -95,7 +107,10 @@
 
     <!-- set Contact -->
     <template id="setContact">
-        <h3 class="profile__set-title-opt">Cambiar datos de contacto</h3>
+        <div class="profile__set-title">
+            <div class="profile__set-title-icon d-none"><i class="bx bx-envelope"></i></div>
+            <h3 class="profile__set-title-opt">Cambiar datos de contacto</h3>
+        </div>
         <div class="card">
             <form>
                 <div class="controlador-input">
@@ -114,28 +129,47 @@
 
     <!-- set Address -->
     <template id="setAddress">
-        <h3 class="profile__set-title-opt">Cambiar datos de domicilio</h3>
+        <div class="profile__set-title">
+            <div class="profile__set-title-icon d-none"><i class="bx bx-map"></i></div>
+            <h3 class="profile__set-title-opt">Cambiar datos de domicilio</h3>
+        </div>
         <div class="card">
             <form class="form-address">
                 <div class="controlador-input">
-                    <label for="country" data-required>Elige un país</label>
+                    <label for="country" data-required>Elige un país (Solo Argentina)</label>
                     <select name="country" class="reg__input" id="country" data-geo="country">
+                        <option value="" selected disabled>Elige un país</option> 
                         <option value="Argentina">Argentina</option>
                     </select>
                 </div>
 
                 <div class="controlador-input">
-                    <label for="province" data-required>Elige una provincia</label>
-                    <select name="province" class="reg__input" id="province" data-geo="province" data-geo-wait="country">
-                        <option value="">Elige una provincia</option>
+                    <label for="provincias" data-required>Elige una provincia</label>
+                    <select name="provincias" class="reg__input" id="provincias" data-geo="provincias" data-geo-wait="country">
+                        <option value="" selected disabled>Elige una provincia</option>
                     </select>
                 </div>
 
                 <div class="controlador-input">
-                    <label for="city" data-required>Elige una ciudad</label>
-                    <select name="city" class="reg__input" id="city" data-geo="city" data-geo-wait="province">
+                    <label for="departamentos" data-required>Elige una ciudad</label>
+                    <select name="departamentos" class="reg__input" id="departamentos" data-geo="departamentos" data-geo-wait="provincias">
                         <option value="" selected disabled>Elige una ciudad</option>
                     </select>
+                </div>
+
+                <div class="controlador-input multiple">
+                    <div class="controlador-input">
+                        <label for="street" data-required>Escribe el nombre de tu calle</label>
+                        <input type="text" name="text" id="street" class="reg__input" placeholder="Nombre de la calle">
+                    </div>
+                    <div class="controlador-input">
+                        <label for="streetNumber" data-required>Escribe el número de tu casa</label>
+                        <input type="number" name="streetNumber" id="streetNumber" class="reg__input" placeholder="Número de casa">
+                    </div>
+                </div>
+                <div class="controlador-input">
+                    <label for="description" data-required>Escribe una Descripción de tu domicilio (max: 255 caracteres)</label>
+                    <textarea type="text" name="description" id="description" class="form-textarea" placeholder="Descripción.."></textarea>
                 </div>
                 <button class="contacto__button"> GUARDAR CAMBIOS </button>
             </form>

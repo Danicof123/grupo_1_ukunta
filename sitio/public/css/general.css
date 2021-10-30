@@ -475,3 +475,12 @@ body.no-scroll{
 .pos-rel{
     position: relative;
 }
+
+
+@media screen and (min-width: 768px) {
+    .card{
+        padding-top: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}

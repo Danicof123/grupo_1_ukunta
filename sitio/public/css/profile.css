@@ -1,66 +1,122 @@
-.profile__image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.profile {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.profile__avatar{
-    width: 50%;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    border: 2px solid var(--color-primario);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    overflow: hidden;
+.profile main {
+  flex-grow: 1;
+}
+.profile__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.profile__name{
-    font-size: 1.5rem;
-    margin-bottom: 0;
-}
-.profile__level{
-    margin-top: 0;
-}
-
-.profile__nav{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-.profile__nav-row{
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
+.profile__avatar {
+  width: 150px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  border: 2px solid var(--color-primario);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
 }
 
-.profile__nav-row li{
-    font-size: 48px;
+/* --------------------------------------------- SUBIR IMAGENES INPUT --------------------------------------------- */
+.profile__set-image{
+    position: relative;
+}
+.profile__avatar-input{
+    position: absolute;
+    right: -12px;
+    bottom: -20px;
+    background-color: transparent;
+    width: 1.75rem;
+    font-size: 1.75rem;
     color: var(--color-gris);
     cursor: pointer;
 }
 
-.profile__nav-row li.active,
-.profile__nav-row li:hover:not([disabled]){
+.profile__avatar-input:hover{
     color: var(--color-primario);
 }
-.profile__nav-row li[disabled]{
-    color: #ccc;
-}
-.profile__delete-profile{
-    border-top: 1px solid var(--color-gris-claro);
-    margin-top: 1.5rem;
-    padding-top: .5rem;
-    text-align: right;
+
+.profile__avatar-input::-webkit-file-upload-button {
+  visibility: hidden;
 }
 
-.profile__delete-profile span{
-    font-size: 12px;
-    color: var(--color-rojo);
-    cursor: pointer;    
+
+/* --------------------------------------------- PROFILE NAME --------------------------------------------- */
+.profile__name {
+  font-size: 1.5rem;
+  margin-bottom: 0;
 }
+.profile__level {
+  margin-top: 0;
+}
+
+.profile__nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.profile__nav-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.profile__nav-row li {
+  font-size: 48px;
+  color: var(--color-gris);
+  cursor: pointer;
+}
+
+.profile__nav-row li.active,
+.profile__nav-row li:hover:not([disabled]) {
+  color: var(--color-primario);
+}
+.profile__nav-row li[disabled] {
+  color: #ccc;
+}
+.profile__delete-profile {
+  border-top: 1px solid var(--color-gris-claro);
+  margin-top: 1.5rem;
+  padding-top: 0.5rem;
+  text-align: right;
+}
+
+.profile__delete-profile span {
+  font-size: 12px;
+  color: var(--color-rojo);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .profile__set-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    width: 100%;
+    height: 342px;
+  }
+  .profile__set-title-icon {
+    display: block;
+    font-size: 6rem;
+    color: var(--color-primario);
+  }
+  .profile__set-title-opt {
+    margin-top: 0rem;
+    font-size: 1.5rem;
+  }
+}
+
