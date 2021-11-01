@@ -35,11 +35,8 @@ export const setAvatar = (userId) => {
             $contImagen.appendChild(message);
           }
           else{
-            d.querySelector(".profile__avatar").innerHTML = "";
-            const $img = d.createElement('img');
-            $img.src = `/images/users/${res.name}?=${Date.now()}`;
-            $img.alt = res.name;
-            d.querySelector(".profile__avatar").appendChild($img)
+            // Actualizar imagen
+            d.querySelector('.profile__avatar img').src = `/images/users/${res.name}?=${Date.now()}`;
             // ocultar la ventana modal de la imagen
             $previewImage.classList.add("d-none");
             // habilitar el scroll

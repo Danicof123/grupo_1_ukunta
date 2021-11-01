@@ -1,4 +1,5 @@
 import geoSelect, { changeGeoSelect, loadGeoSelect } from "./geoForm.js";
+import user from "./user.js";
 
 const d = document;
 let userProfile;
@@ -6,7 +7,6 @@ let userProfile;
 // Función principal del módulo optProfile---------------------------------------------------------
 export default function optProfile(pUserProfile) {
   userProfile = pUserProfile; //Almaceno el usuario que llega por parámetro en una variable global
-  console.log(userProfile); 
   // Obtengo todas las opciones
   let $opt = d.querySelectorAll(".profile__nav-row li");
 
@@ -54,6 +54,9 @@ const renderOpt = ($opt) => {
   $profileOpt.appendChild(allOpt[$opt]());
 };
 
+export const updateUser = async (userId) => {
+  userProfile = await user.getUserById(userId)
+}
 // ------------------------------------ OPT de Profile --------------------------------------------------------
 
 const profile = () => {

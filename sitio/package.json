@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "web ukunta",
   "scripts": {
-    "start": "npx nodemon ./source/bin/server"
+    "start": "node ./source/bin/server",
+    "test": "nodemon ./source/bin/server"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

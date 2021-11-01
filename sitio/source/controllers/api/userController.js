@@ -43,10 +43,28 @@ const setAvatarByuserId = (req, res) => {
         res.status(200).json({status: "error", message: err})
     }
 }
+// Actualizar datos de perfil
+
+const setUserbyId = (req, res) => {
+    const data = req.body,
+          userId = data.userId;
+    try{
+        if(!data && !userId) throw {status: "error", message: "No se encontró al usuario"}
+        delete data.userId;
+        console.log(data);
+        db.User.update(data, {where: {id: userId}})
+
+        res.json({status: "success", message: "Se actualizó con éxito"})
+    }
+    catch(err){
+        res.json(err)
+    }
+}
 
 module.exports = {
     findAllUsers,
     findById,
     findByRol,
     setAvatarByuserId,
+    setUserbyId,
 };
