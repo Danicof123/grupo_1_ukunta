@@ -1,6 +1,5 @@
 const {check} = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const userDB = require('../models/UserDB');
 const db = require('../database/models');
 
 const regName = /^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$/;
@@ -149,7 +148,9 @@ const validationLogin = [
 const validationProfile = [
     check('old_password').custom((val, req) => {
         const psw = val.trim();
-        const user = userDB.getFind('id', req.session.userLogged.id);
+
+        const user = db.User.findByPk(req.session.userLogged.id)
+        
         console.log(psw, user.password);
         if (!bcryptjs.compareSync(psw, user.id)) throw new Error('La contraseña no es válida.');
         return true;
