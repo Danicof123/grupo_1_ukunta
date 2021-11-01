@@ -3,7 +3,7 @@ import asuk from "./asuk.js";
 const d = document;
 
 // Obtengo el usuario segun el id, este se encuentra en la etiqueta main[data-userid]
-const getUserById = id => asuk.get(`http://127.0.0.1:3000/api/users/detail/${id}`);
+const getUserById = id => asuk.get(`http://127.0.0.1:3000/api/users/${id}`);
 
 const getUserAvatar = user => user.avatar;
 const getUserFullName = user => user.name + " " + user.lastname;

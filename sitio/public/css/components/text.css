@@ -1,0 +1,8 @@
+.text-warning{
+  color: var(--color-rojo);
+  font-size: .8rem;
+}
+
+.text-right{
+  text-align: right;
+}

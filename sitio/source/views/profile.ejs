@@ -9,6 +9,20 @@
     <!-- Barra de navegación inferior -->
     <%- include('partials/navbar-bottom.ejs') %>
 
+    <div class="previewImage d-none">
+        <div class="previewImage__title">
+            <div class="previewImage__title-icon"><i class='bx bx-upload'></i></div>
+            <h3 class="previewImage__title-title">Subir Imagen</h3>
+        </div>
+        <div class="previewImage__newImage text-right">
+            <img src="" alt="previewImage">            
+        </div>
+        <div class="previewImage__buttons">
+            <button class="btn btn-danger ghost previewImage__btn btn-cancelar">CANCELAR</button>
+            <button class="btn btn-primary previewImage__btn btn-upload">GUARDAR IMAGEN</button>
+        </div>
+    </div>
+
     <main class="container maxw-1280 mbt-5 mx-auto" data-userid=<%= userId %>>
 
         <div class="mb-12 tb-4 profile__opt f-main-y">
@@ -17,7 +31,8 @@
                     <div class="profile__avatar">
                         <img src="/images/users/default.png" alt="avatar-user">
                     </div>
-                    <input type="file" title="Cambiar imagen" class="profile__avatar-input bx bxs-camera-plus">
+                    <i class="bx bxs-camera-plus profile__avatar-add" data-target="profile__avatar-input"></i>
+                    <input type="file" title="Cambiar imagen" name="avatar" class="d-none" id="profile__avatar-input" accept="*">
                 </div>
 
                 <h2 class="profile__name">CLIENTE GENIAL</h2>

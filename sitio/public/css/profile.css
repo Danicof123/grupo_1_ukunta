@@ -16,6 +16,7 @@
 
 .profile__avatar {
   width: 150px;
+  height: 150px;
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
@@ -28,27 +29,39 @@
   overflow: hidden;
 }
 
+.profile__avatar img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
 /* --------------------------------------------- SUBIR IMAGENES INPUT --------------------------------------------- */
 .profile__set-image{
     position: relative;
 }
-.profile__avatar-input{
-    position: absolute;
-    right: -12px;
-    bottom: -20px;
-    background-color: transparent;
-    width: 1.75rem;
-    font-size: 1.75rem;
-    color: var(--color-gris);
-    cursor: pointer;
+.profile__avatar-add{
+  position: absolute;
+  right: -13px;
+  bottom: -13px;
+  font-size: 1.75rem;
+  color: var(--color-gris);
+  cursor: pointer;
 }
-
-.profile__avatar-input:hover{
-    color: var(--color-primario);
+.profile__avatar-add:hover{
+  color: var(--color-primario);
 }
-
-.profile__avatar-input::-webkit-file-upload-button {
-  visibility: hidden;
+.profile__avatar-add:hover::after{
+  content: 'Elige una imagen para subir: jpg o png';
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  padding: .5rem;
+  width: max-content;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  color: var(--color-gris);
+  background-color: #fff;
+  box-shadow: var(--sombra);
 }
 
 
@@ -98,6 +111,56 @@
   color: var(--color-rojo);
   cursor: pointer;
 }
+/* --------------------------------------------- PREVIEW IMAGE --------------------------------------------- */
+.previewImage{
+  position: fixed;
+  z-index: 1100;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  background-color: #fff;
+}
+.previewImage__title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 30px;
+}
+.previewImage__title-icon{
+  font-size: 3rem;
+  color: var(--color-primario);
+}
+
+.previewImage__title-title{
+  margin-top: 0;
+}
+/* Imagen */
+.previewImage__newImage{
+  width: calc(100vw - 2rem);
+  height: calc(100vw - 2rem);
+}
+.previewImage__newImage img{
+  height: 100%;
+  object-fit: cover;
+}
+/* Botones */
+.previewImage__buttons{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 2rem;
+}
+.previewImage__btn:last-child{
+  width: 100%;
+}
+.previewImage__btn:not(:last-child){
+  margin-right: 1rem;
+}
+
+
+/* --------------------------------------------- MEDIAS QUERIES --------------------------------------------- */
 
 @media screen and (min-width: 768px) {
   .profile__set-title {
@@ -117,6 +180,19 @@
   .profile__set-title-opt {
     margin-top: 0rem;
     font-size: 1.5rem;
+  }
+
+  .previewImage{
+    width: 432px;
+    height: 700px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    left: calc(50vw - 216px);
+    top: calc(50vh - 400px);
+  }
+  .previewImage__newImage{
+    height: 400px;
+    width: 400px;
   }
 }
 

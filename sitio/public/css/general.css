@@ -102,7 +102,7 @@ h4{
     box-shadow: var(--sombra);
 }
 /* ---------------- */
-body.no-scroll{
+.no-scroll{
     overflow: hidden;
     max-height: 100vh;
 }

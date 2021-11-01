@@ -1,0 +1,9 @@
+###
+PUT http://127.0.0.1:3000/api/users/update/avatar
+Content-Type: application/json
+
+
+{
+  "file": "asdas",
+  "userId": 10
+}

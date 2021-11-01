@@ -1,4 +1,5 @@
 @import url('general.css');
+@import url('./components/text.css');
 @import url('home.css');
 @import url('404.css');
 @import url('about.css');

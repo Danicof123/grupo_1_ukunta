@@ -132,7 +132,43 @@ a.button{
   height: 2rem;
   width: 2rem;
 }
+/* ----------------------------------------- NUEVOS ESTILOS DE BOTONES ----------------------------------------- */
+.btn{
+  padding: .25em .5em;
+  height: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover:not(.ghost) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
 
+.btn-primary{
+  background-color: var(--color-primario);
+  color: #fff;
+}
+
+.btn-danger{
+  background-color: var(--color-rojo);
+  color: #fff;
+}
+
+.btn-danger.ghost{
+  background-color: transparent;
+  color: var(--color-rojo);
+  border: 1px solid currentColor;
+}
+.btn-danger.ghost:hover{
+  background-color: var(--color-rojo);
+  color: #fff;
+}
+
+
+
+/* ----------------------------------------- MEDIAS QUERIES ----------------------------------------- */
 @media screen and (min-width: 768px) {
   .button.button-redes {
     height: 3rem;
