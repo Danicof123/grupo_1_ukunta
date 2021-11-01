@@ -1,4 +1,5 @@
 const fs = require('fs')
+const bcrypt = require('bcryptjs')
 //DB
 const db = require('../../database/models');
 
@@ -45,16 +46,41 @@ const setAvatarByuserId = (req, res) => {
 }
 // Actualizar datos de perfil
 
-const setUserbyId = (req, res) => {
+const setProfile = async (req, res) => {
+    const data = req.body,
+          userId = data.userId;
+    try{
+        if(!data && !userId) throw {status: "error", message: "No se encontró al usuario"}
+        // Si viene un correo, hago una comprobación de que el correo no exista ya..
+        if(data.email){
+            if (await db.User.findOne({where: {email: data.email}}))
+                throw {status: "error", message: "El correo ya existe, no se pudo actualizar.."}
+        }
+
+        delete data.userId;
+        db.User.update(data, {where: {id: userId}})
+
+        res.json({status: "success", message: "Se actualizó con éxito"})
+    }
+    catch(err){
+        res.json(err)
+    }
+}
+
+const setPassword = async (req, res) => {
     const data = req.body,
           userId = data.userId;
     try{
         if(!data && !userId) throw {status: "error", message: "No se encontró al usuario"}
         delete data.userId;
-        console.log(data);
-        db.User.update(data, {where: {id: userId}})
-
-        res.json({status: "success", message: "Se actualizó con éxito"})
+        // Consigo la contraseña actual del usuario para comparar
+        const password = (await db.User.findByPk(userId)).password;
+        if(!bcrypt.compareSync(data.oldPassword, password)) throw {status: "error", message: "La contraseña es incorrecta"}
+        // Una vez se comprueban que la contraseña anterior coincide con la introducida por el usuario, la elimino
+        delete data.oldPassword;
+        // Actualizo la contraseña (Encriptandola)
+        db.User.update({password: bcrypt.hashSync(data.password, 10)}, {where: {id: userId}})
+        res.json({status: "success", message: "La contraseña se actualizó con éxito"})
     }
     catch(err){
         res.json(err)
@@ -66,5 +92,6 @@ module.exports = {
     findById,
     findByRol,
     setAvatarByuserId,
-    setUserbyId,
+    setProfile,
+    setPassword,
 };

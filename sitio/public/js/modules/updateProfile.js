@@ -14,22 +14,35 @@ const updateProfile = (userId) => {
     // Agregar el id del usuario
     data.userId = userId;
 
+    // Configuración de url
+    let url = "/api/users/update/profile";
+    if(e.target.matches('.form-password')){
+      url = "/api/users/update/password";
+      delete data.rpassword;
+    }
+    if(e.target.matches('.form-address')) url = "/api/users/update/address";
+  
     // Crear las opciones
     const opt = { 
-      method: "POST", 
+      method: "PUT", 
       body: JSON.stringify(data),
       headers: {
         'Content-Type': "application/json"
       }
     }
-    fetch("/api/users/update/profile", opt )
+
+    fetch(url, opt )
       .then(data => data.json())
       .then(res => {
         if(res.status === "success"){
-          console.log(res.message);
           updateUser(userId)
         }
+        console.log(res);
       })
+      .catch(err => {
+        console.log(err);
+      })
+      .finally(() => e.target.matches('.form-password') && e.target.reset())
     
   })
 }
