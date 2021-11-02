@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const {findAllUsers, findById, findByRol, setAvatarByuserId, setProfile, setPassword} = require('../../controllers/api/userController.js');
+const {findAllUsers, findById, findByRol, setAvatarByuserId, setProfile, setPassword, setAddress} = require('../../controllers/api/userController.js');
 const uploadFile = require('../../middlewares/uploadAvatar.js');
 
 // /api/users/
@@ -13,6 +13,7 @@ router.get('/category/:rol', findByRol)
 router.post('/update/avatar', uploadFile.single('avatar') , setAvatarByuserId)
 router.put('/update/profile', setProfile)
 router.put('/update/password', setPassword)
+router.put('/update/address', setAddress)
 
 
 module.exports = router;

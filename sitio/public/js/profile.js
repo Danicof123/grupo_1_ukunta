@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   user.getUserProfile(userId)
     .then(user => { optProfile(user)});
 
-  // Actualizar datos
+  // Actualizar datos perfil, contacto, contraseña, domicilio, etc
   updateProfile(userId);
 });
 

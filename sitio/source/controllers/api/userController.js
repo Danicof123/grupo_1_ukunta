@@ -44,8 +44,7 @@ const setAvatarByuserId = (req, res) => {
         res.status(200).json({status: "error", message: err})
     }
 }
-// Actualizar datos de perfil
-
+// Actualizar datos de perfil/Contacto
 const setProfile = async (req, res) => {
     const data = req.body,
           userId = data.userId;
@@ -71,6 +70,24 @@ const setProfile = async (req, res) => {
     }
 }
 
+// Actualizar Direccion
+const setAddress = async (req, res) => {
+    const data = req.body,
+          userId = data.userId;
+    try{
+        if(!data && !userId) throw {status: "error", message: "No se encontró al usuario"}
+        // Si viene un correo, Comienzo una comprobación
+        delete data.userId;
+        db.Address.update(data, {where: {userId: userId}})
+
+        res.json({status: "success", message: "Se actualizó con éxito"})
+    }
+    catch(err){
+        res.json(err)
+    }
+}
+
+// Actualizar Contraseña
 const setPassword = async (req, res) => {
     const data = req.body,
           userId = data.userId;
@@ -91,6 +108,7 @@ const setPassword = async (req, res) => {
     }
 }
 
+
 module.exports = {
     findAllUsers,
     findById,
@@ -98,4 +116,5 @@ module.exports = {
     setAvatarByuserId,
     setProfile,
     setPassword,
+    setAddress
 };

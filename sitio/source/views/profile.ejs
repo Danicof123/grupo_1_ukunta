@@ -160,14 +160,14 @@
 
                 <div class="controlador-input">
                     <label for="provincias" data-required>Elige una provincia</label>
-                    <select name="provincias" class="reg__input" id="provincias" data-geo="provincias" data-geo-wait="country">
+                    <select name="state" class="reg__input" id="provincias" data-geo="provincias" data-geo-wait="country">
                         <option value="" selected disabled>Elige una provincia</option>
                     </select>
                 </div>
 
                 <div class="controlador-input">
                     <label for="departamentos" data-required>Elige una ciudad</label>
-                    <select name="departamentos" class="reg__input" id="departamentos" data-geo="departamentos" data-geo-wait="provincias">
+                    <select name="city" class="reg__input" id="departamentos" data-geo="departamentos" data-geo-wait="provincias">
                         <option value="" selected disabled>Elige una ciudad</option>
                     </select>
                 </div>
@@ -175,7 +175,7 @@
                 <div class="controlador-input multiple">
                     <div class="controlador-input">
                         <label for="street" data-required>Escribe el nombre de tu calle</label>
-                        <input type="text" name="text" id="street" class="reg__input" placeholder="Nombre de la calle">
+                        <input type="text" name="street" id="street" class="reg__input" placeholder="Nombre de la calle">
                     </div>
                     <div class="controlador-input">
                         <label for="streetNumber" data-required>Escribe el número de tu casa</label>
@@ -183,7 +183,7 @@
                     </div>
                 </div>
                 <div class="controlador-input">
-                    <label for="description" data-required>Escribe una Descripción de tu domicilio (max: 255 caracteres)</label>
+                    <label for="description" data-required>Escribe una Descripción de tu domicilio (10 - 255 caracteres)</label>
                     <textarea type="text" name="description" id="description" class="form-textarea" placeholder="Descripción.."></textarea>
                 </div>
                 <button class="contacto__button"> GUARDAR CAMBIOS </button>
