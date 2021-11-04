@@ -126,12 +126,13 @@
                         <input
                             type="password"
                             placeholder="*Contraseña"
-                            class="reg__input"
+                            class="reg__input inputPass password1"
                             name="password"
                             pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
                             title="La contraseña debe tener entre 8 y 16 caracteres, al menos un número, una minúscula y una mayúscula."
                             required
                         />
+                        <button class="eye__button password-icon1 show-password "><i class="fas fa-eye"></i></button>
                     </div>
 
                     <!-- Contraseña2 -->
@@ -141,107 +142,15 @@
                         <input
                             type="password"
                             placeholder="*Repetir contraseña"
-                            class="reg__input"
+                            class="reg__input inputPass password2"
                             name="password2"
                             pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
                             title="La contraseña debe tener entre 8 y 16 caracteres, al menos un número, una minúscula y una mayúscula."
                             required
                         />
-                    </div>
-
-                    <!-- Paises -->
-                    <label for="country" class="reg__date__age">Seleccione su país:</label>
-                    <label for="country" class="text-danger"><%= locals.errors && locals.errors.country ? errors.country.msg : null %> </label>
-                    <div class="reg__ctrl-input mbt-4">
-                        <select name="country" class="reg__input" 
-                        pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$"
-                        title="Elige un país de la lista"
-                        required>
-                            <option value="" selected>*Pais</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Croacia">Croacia</option>
-                            <option value="Costa Rica">Costa Rica</option>
-                        </select>
-                    </div>
-
-                    <!-- Provincias -->
-                    <label for="state" class="reg__date__age">Seleccione su provincia:</label>
-                    <label for="state" class="text-danger"><%= locals.errors && locals.errors.state ? errors.state.msg : null %> </label>
-                    <div class="reg__ctrl-input mbt-4">
-                        <select name="state" class="reg__input"
-                        pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$"
-                        title="Elige un Provincia/Estado de la lista"
-                        required>
-                            <option value="" selected>*Provincia/Estado</option>
-                            <option value="Buenos Aires">Buenos Aires</option>
-                            <option value="Cordoba">Cordoba</option>
-                            <option value="Santa Fe">Santa Fe</option>
-                        </select>
-                    </div>
-
-                    <!-- Ciudades -->
-                    <label for="city" class="reg__date__age">Seleccione su ciudad:</label>
-                    <label for="city" class="text-danger"><%= locals.errors && locals.errors.city ? errors.city.msg : null %> </label>
-                    <div class="reg__ctrl-input mbt-4">
-                        <select name="city" class="reg__input"
-                        pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}){0,2}$"
-                        title="Elige una ciudad de la lista"
-                        required>
-                            <option value="" selected>*Ciudad</option>
-                            <option value="CABA">CABA</option>
-                            <option value="La Matanza">La Matanza</option>
-                            <option value="Rosario">Rosario</option>
-                        </select>
-                    </div>
-
-                    <!-- Calle -->
-                    <label for="street" class="reg__date__age">Ingrese su calle:</label>
-                    <label for="street" class="text-danger d-none"><%= locals.errors && locals.errors.street ? errors.street.msg : null %> </label>
-                    <div class="reg__ctrl-input mbt-4">
-                        <input
-                            type="text"
-                            placeholder="*Calle"
-                            class="reg__input"
-                            name="street"
-                            value="<%= (locals && locals.errors) ? old.street :null %>"
-                            pattern="^.{3,100}$"
-                            title="Debe ingresar una calle valida"
-                            required
-                        />
-                    </div>
-
-                    <!-- Altura -->
-                    <label for="streetNumber" class="reg__date__age">Ingrese la altura:</label>
-                    <label for="streetNumber" class="text-danger d-none"
-                        ><%= locals.errors && locals.errors.streetNumber ? errors.streetNumber.msg : null %>
-                    </label>
-                    <div class="reg__ctrl-input mbt-4">
-                        <input
-                            type="number"
-                            placeholder="*Altura"
-                            class="reg__input"
-                            name="streetNumber"
-                            value="<%= (locals && locals.errors) ? old.streetNumber : null %>"
-                            pattern="^[0-9]{1,5}$"
-                            title="Debe ingresar una altura valida (Solo número)"
-                            required
-                        />
-                    </div>
-
-                    <!-- Descripcion domicilio -->
-                    <label for="description" class="reg__date__age">Ingrese la descripción de su domicilio:</label>
-                    <label for="description" class="error-input"><%= locals.errors && locals.errors.name ? errors.description.msg : null %> </label>
-                    <div class="reg__ctrl-textarea mbt-4">
-                        <textarea
-                            name="description"
-                            class="text__area"
-                            placeholder="*Escriba una descripcion de su domicilio"
-                            value="<%= (locals && locals.errors) ? old.description : null %>"
-                            data-pattern="^.{10,255}$"
-                            title="La descripción debe tener un minimo de 10 carácteres y un máximo de 255."
-                            required
-                        ></textarea>
-                    </div>
+                        <button class="eye__button password-icon1 show-password "><i class="fas fa-eye"></i></button>
+                    </div>                 
+                   
 
                     <!-- Terminos y condiciones de uso -->
 
