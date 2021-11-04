@@ -90,10 +90,10 @@ const usersValidator = [
 
     check('password2').custom((value, {req}) => {
             if (value !== req.body.password) {
-                console.log(value);
+                
                 return false;
             }
-            console.log(req);
+            
             return true;
         })
         .withMessage('Las contraseñas no coinciden'),
