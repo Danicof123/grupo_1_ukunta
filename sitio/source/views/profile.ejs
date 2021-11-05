@@ -69,7 +69,7 @@
         </div>
         
         <div class="card">
-            <form>
+            <form class="form-profile">
                 <div class="controlador-input">
                     <label for="name" data-required>Nombre</label>
                     <input type="text" name="name" id="name" class="reg__input" placeholder="Ingrese su nombre"
@@ -113,7 +113,7 @@
                     <label for="old-password" data-required>Contraseña anterior</label>
                     <input type="password" name="oldPassword" id="old-password" class="reg__input" placeholder="Contraseña anterior"
                     title="La contraseña es incorrecta"
-                    pattern="^(?=\w\d)(?=\w[A-Z])(?=\w*[a-z])\S{6,16}$"
+                    pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
                     required>
                 </div>
 
@@ -121,7 +121,7 @@
                     <label for="password" data-required>Nueva contraseña</label>
                     <input type="password" name="password" id="password" class="reg__input" placeholder="Nueva contraseña"
                     title="La contraseña debe tener entre 8 y 16 caracteres, al menos un número, una minúscula y una mayúscula."
-                    pattern="^(?=\w\d)(?=\w[A-Z])(?=\w*[a-z])\S{6,16}$"
+                    pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
                     required>
                 </div>
 
@@ -129,7 +129,7 @@
                     <label for="rpassword" data-required>Repetir contraseña</label>
                     <input type="password" name="rpassword" id="rpassword" class="reg__input" placeholder="Repetir contraseña"
                     title="Las contraseñas son diferentes"
-                    pattern="^(?=\w\d)(?=\w[A-Z])(?=\w*[a-z])\S{6,16}$"
+                    pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
                     data-copy="password"
                     required>
                 </div>

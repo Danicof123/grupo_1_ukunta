@@ -54,9 +54,8 @@ const renderOpt = ($opt) => {
   $profileOpt.appendChild(allOpt[$opt]());
 };
 
-export const updateUser = async (userId) => {
-  userProfile = await user.getUserById(userId)
-}
+export const updateUser = async (userId) => userProfile = await user.getUserById(userId)
+
 // ------------------------------------ OPT de Profile --------------------------------------------------------
 
 const profile = () => {
