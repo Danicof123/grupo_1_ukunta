@@ -53,11 +53,8 @@ const setProfile = async (req, res) => {
         // Si viene un correo, Comienzo una comprobación
         if(data.email){
             const correo = (await db.User.findByPk(userId)).email;
-            if (correo !== data.email && await db.User.findOne({where: {email: data.email}})){
-                delete data.email;
-                db.User.update(data, {where: {id: userId}})
-                throw {status: "error", message: "El correo ya existe, no se pudo actualizar.."}
-            }
+            if (correo !== data.email && await db.User.findOne({where: {email: data.email}}))
+                throw {status: "error", message: "El correo ya existe, no se pudo actualizar.."}   
         }
 
         delete data.userId;

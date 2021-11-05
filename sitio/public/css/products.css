@@ -26,6 +26,11 @@
 /* Validacion */
 .reg__input.invalid, .text__area.invalid {
    background-color: var(--color-rojo);
+   color: #fff;
+}
+
+.reg__input.invalid::placeholder, .text__area.invalid::placeholder {
+   color: #fff;
 }
 
 /* Información productos */
