@@ -129,8 +129,8 @@
                         <button type="submit" class="button button-verde btn-edit mr-4">EDITAR</button>
                      </form>
    
-                     <form action="/store/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="button button-rojo btn-edit">ELIMINAR</button>
+                     <form class="formDelete" action="/store/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="button button-rojo btn-edit btnDelete">ELIMINAR</button>
                      </form>
                   </div>
                <% } %>
