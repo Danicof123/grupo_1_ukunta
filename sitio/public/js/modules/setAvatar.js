@@ -1,3 +1,5 @@
+import { validationImage } from "./validationImage.js";
+
 const d = document;
 
 export const setAvatar = (userId) => {
@@ -23,7 +25,6 @@ export const setAvatar = (userId) => {
     if (e.target.matches(".previewImage__btn.btn-upload")) {
       uploadAvatar(userId, $inputFile.files[0])
         .then(res => {
-          console.log(res);
           // Si existe un mensaje anterior lo elimino
           const beforeMessage = $contImagen.querySelector('.text-warning');
           if(beforeMessage) $contImagen.removeChild(beforeMessage);
@@ -57,9 +58,14 @@ export const setAvatar = (userId) => {
 
       // Darle la url al img
       $img.src = urlFile;
-      // Si existe un mensaje anterior lo elimino
-      const beforeMessage = $contImagen.querySelector('.text-warning');
-      if(beforeMessage) $contImagen.removeChild(beforeMessage);
+
+      validationImage({
+        inputFile: 'profile__avatar-input', //id del input
+        limit: 5, //Tamaño en MB
+        targetMessage: '.previewImage__newImage', //Donde se crea el mensaje (Selector)
+        btnSubmit: '.previewImage__btn.btn-upload' //El boton que envia la imagen (Selector)
+      })
+      
       // Mostrar la ventana modal de la imagen
       $previewImage.classList.remove("d-none");
       // Deshabilitar el scroll
