@@ -129,8 +129,8 @@
                         <button type="submit" class="button button-verde btn-edit mr-4">EDITAR</button>
                      </form>
    
-                     <form action="/store/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="button button-rojo btn-edit">ELIMINAR</button>
+                     <form class="formDelete" action="/store/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="button button-rojo btn-edit btnDelete">ELIMINAR</button>
                      </form>
                   </div>
                <% } %>
@@ -152,7 +152,8 @@
             <h3 class="mb-12">PRODUCTOS RELACIONADOS</h3>
 
             <!-- Caja -->
-            <% for( let i = 0; i < 3; i++ ) { %>
+            
+            <% for( let i = 0; i < prRelations.length && i < 3; i++ ) { %>
             <article class="mb-12 tb-6 lp-4 container producto shadow-drop-2-center">
                <div class="button--stock">
                   <i class="fas fa-check boton_check"></i>

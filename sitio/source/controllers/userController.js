@@ -73,12 +73,12 @@ module.exports = {
             db.User.create(newUser)
                 .then((user) => {
                     db.Address.create({
-                        street,
-                        streetNumber,
-                        description,
-                        country,
-                        state,
-                        city,
+                        street: null,
+                        streetNumber: null,
+                        description: null,
+                        country: null,
+                        state: null,
+                        city: null,
                         userId: user.id,
                     });
                     res.redirect('/users/login');

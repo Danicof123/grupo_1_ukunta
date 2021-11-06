@@ -90,58 +90,15 @@ const usersValidator = [
 
     check('password2').custom((value, {req}) => {
             if (value !== req.body.password) {
+                
                 return false;
             }
+            
             return true;
         })
         .withMessage('Las contraseñas no coinciden'),
 
-    check('country')
-        .notEmpty()
-        .withMessage('Debe ingresar un país')
-        .isLength({
-            min: 2,
-            max: 56,
-        })
-        .withMessage('Debe ingresar un nombre válido'),
-
-    check('state')
-        .notEmpty()
-        .withMessage('Debe ingresar un Estado')
-        .isLength({
-            min: 2,
-            max: 58,
-        })
-        .withMessage('Debe ingresar un nombre válido para el Estado'),
-
-    check('city')
-        .notEmpty()
-        .withMessage('Debe ingresar una ciudad')
-        .isLength({
-            min: 2,
-            max: 58,
-        })
-        .withMessage('Debe ingresar un nombre válido'),
-
-    check('street').custom((value, req) => {
-        const street = value.trim();
-        if (!regStreet.test(street)) throw new Error('Debe ingresar una calle valida.');
-        return true;
-    }),
-
-    check('streetNumber').custom((value, req) => {
-        const streetNumber = value.trim();
-        if (!regStreetNumber.test(streetNumber)) throw new Error('Debe ingresar una altura valida (Solo números).');
-        return true;
-    }),
-
-    check('description').custom((value, req) => {
-        const description = value.trim();
-        if (!regAddress.test(description)) throw new Error('La descripción debe tener un minimo de 10 carácteres y un máximo de 255.');
-        return true;
-    }),
-
-    check('terms').notEmpty().withMessage('Debes aceptar los terminos y condiciones'),
+       check('terms').notEmpty().withMessage('Debes aceptar los terminos y condiciones'),
 ];
 
 const validationLogin = [
