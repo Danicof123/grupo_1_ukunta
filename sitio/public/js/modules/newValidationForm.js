@@ -2,7 +2,9 @@ const d = document;
 
 const validationForm = (form) => {
   // Selecciono todos los inputs/textarea que son requeridos
-  const $form = d.querySelector(form);
+  const $form = d.querySelector(form),
+        $rPassword = $form.querySelector(`${form} [data-copy="password"]`),
+        error = false;
 
   $form.addEventListener("blur", e => {
     if(e.target.matches(`${form} [required]`)){
@@ -12,15 +14,23 @@ const validationForm = (form) => {
             pattern = new RegExp($input.pattern || $input.dataset.pattern);
       
       // Si el pattern no coincide con el valor se crean los errores, caso contrario se borran si estuviesen creados.
-      if(!pattern.test($input.value)) createError($form, $input)
+      if(!pattern.test($input.value)) return createError($form, $input)
+      else deleteError($form, $input)
+
       // Si un input tiene doble contraseña...
-      else if($input.dataset.copy){
-        const valueToCopy = $form.querySelector(`#${$input.dataset.copy}`).value;
-        $input.value !== valueToCopy && createError($form, $input, " (Las contraseñas son diferentes)")
+      if($rPassword && $rPassword.value.length > 0){
+        const $password = $form.querySelector(`#${$rPassword.dataset.copy}`);
+
+        if($password.value !== $rPassword.value) {
+          createError($form, $password, " (Las contraseñas son diferentes)")
+          createError($form, $rPassword, " (Las contraseñas son diferentes)")
+        }
+        else {
+          deleteError($form, $password)
+          deleteError($form, $rPassword)
+        }
       }
-      else{
-        deleteError($form, $input)
-      }
+
     } 
   }, true)
 
