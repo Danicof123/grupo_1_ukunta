@@ -1,4 +1,5 @@
 import geoSelect, { changeGeoSelect, loadGeoSelect } from "./geoForm.js";
+import validationForm from "./newValidationForm.js";
 import user from "./user.js";
 
 const d = document;
@@ -12,7 +13,6 @@ export default function optProfile(pUserProfile) {
 
   // Renderizo las opciones habilitadas
   renderOpt(optActive($opt));
-
   // Evento Click ------------------------------------------------------------------------------------------------
   d.addEventListener("click", (e) => {
     // Cuando le hago click a un opt
@@ -52,11 +52,15 @@ const renderOpt = ($opt) => {
   $profileOpt.innerHTML = "";
 
   $profileOpt.appendChild(allOpt[$opt]());
+
+  // Obtengo el formulario activo
+  const $form = $profileOpt.querySelector('form')
+  // Validaciones (Recibe un selector de clase)
+  validationForm(`.${$form.className}`);
 };
 
-export const updateUser = async (userId) => {
-  userProfile = await user.getUserById(userId)
-}
+export const updateUser = async (userId) => userProfile = await user.getUserById(userId)
+
 // ------------------------------------ OPT de Profile --------------------------------------------------------
 
 const profile = () => {

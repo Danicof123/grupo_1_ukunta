@@ -32,7 +32,7 @@
                         <img src="/images/users/default.png" alt="avatar-user">
                     </div>
                     <i class="bx bxs-camera-plus profile__avatar-add" data-target="profile__avatar-input"></i>
-                    <input type="file" title="Cambiar imagen" name="avatar" class="d-none" id="profile__avatar-input" accept="*">
+                    <input type="file" title="Cambiar imagen" name="avatar" class="d-none" id="profile__avatar-input" accept="image/png, image/jpeg">
                 </div>
 
                 <h2 class="profile__name">CLIENTE GENIAL</h2>
@@ -69,22 +69,31 @@
         </div>
         
         <div class="card">
-            <form>
+            <form class="form-profile">
                 <div class="controlador-input">
                     <label for="name" data-required>Nombre</label>
-                    <input type="text" name="name" id="name" class="reg__input" placeholder="Ingrese su nombre">
+                    <input type="text" name="name" id="name" class="reg__input" placeholder="Ingrese su nombre"
+                    title="Debe ingresar su nombre"
+                    pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}$"
+                    required>
                 </div>
 
                 <div class="controlador-input">
                     <label for="lastname" data-required>Apellido</label>
-                    <input type="text" name="lastname" id="lastname" class="reg__input" placeholder="Ingrese su apellido">
+                    <input type="text" name="lastname" id="lastname" class="reg__input" placeholder="Ingrese su apellido"
+                    title="Debe ingresar su apellido"
+                    pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}$"
+                    required>
                 </div>
 
                 <div class="controlador-input">
                     <label for="date" data-required>Fecha de nacimiento</label>
-                    <input type="date" name="date" id="date" class="reg__input" placeholder="Ingrese su fecha de nacimiento">
+                    <input type="date" name="date" id="date" class="reg__input" placeholder="Ingrese su fecha de nacimiento"
+                    title="Formato de fecha invalido."
+                    pattern="^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$"
+                    required>
                 </div>
-                <button class="contacto__button"> GUARDAR CAMBIOS </button>
+                <button class="btn-form contacto__button"> GUARDAR CAMBIOS </button>
             </form>
         </div>
         <div class="profile__delete-profile">
@@ -102,20 +111,30 @@
             <form class="form-password">
                 <div class="controlador-input">
                     <label for="old-password" data-required>Contraseña anterior</label>
-                    <input type="password" name="oldPassword" id="old-password" class="reg__input" placeholder="Contraseña anterior">
+                    <input type="password" name="oldPassword" id="old-password" class="reg__input" placeholder="Contraseña anterior"
+                    title="La contraseña debe tener entre 8 y 16 caracteres, al menos un número, una minúscula y una mayúscula"
+                    pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
+                    required>
                 </div>
 
                 <div class="controlador-input">
                     <label for="password" data-required>Nueva contraseña</label>
-                    <input type="password" name="password" id="password" class="reg__input" placeholder="Nueva contraseña">
+                    <input type="password" name="password" id="password" class="reg__input" placeholder="Nueva contraseña"
+                    title="La contraseña debe tener entre 8 y 16 caracteres, al menos un número, una minúscula y una mayúscula."
+                    pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
+                    required>
                 </div>
 
                 <div class="controlador-input">
                     <label for="rpassword" data-required>Repetir contraseña</label>
-                    <input type="password" name="rpassword" id="rpassword" class="reg__input" placeholder="Repetir contraseña">
+                    <input type="password" name="rpassword" id="rpassword" class="reg__input" placeholder="Repetir contraseña"
+                    title="Las contraseñas son diferentes"
+                    pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
+                    data-copy="password"
+                    required>
                 </div>
 
-                <button class="contacto__button"> GUARDAR CAMBIOS </button>
+                <button class="btn-form contacto__button"> GUARDAR CAMBIOS </button>
             </form>
         </div>
     </template>
@@ -127,17 +146,22 @@
             <h3 class="profile__set-title-opt">Cambiar datos de contacto</h3>
         </div>
         <div class="card">
-            <form>
+            <form class="form-contact">
                 <div class="controlador-input">
                     <label for="phone" data-required>Número de teléfono Ej: 11 123 45678</label>
-                    <input type="tel" name="phone" id="phone" class="reg__input" placeholder="11 123 45678">
+                    <input type="tel" name="phone" id="phone" class="reg__input" placeholder="11 123 45678"
+                    title="Ingrese un teléfono válido. Ejemplo: 1122223333"
+                    pattern="^(\+\d{1,3})?\d{10}$" required>
                 </div>
 
                 <div class="controlador-input">
                     <label for="email" data-required>Correo electrónico</label>
-                    <input type="email" name="email" id="email" class="reg__input" placeholder="nombre@correo.com">
+                    <input type="email" name="email" id="email" class="reg__input" placeholder="nombre@correo.com"
+                    title="Formato de email invalido. (nombre@correo.com)"
+                    pattern="^[a-z]+(.[a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+                    required>
                 </div>
-                <button class="contacto__button"> GUARDAR CAMBIOS </button>
+                <button class="btn-form contacto__button"> GUARDAR CAMBIOS </button>
             </form>
         </div>
     </template>
@@ -152,7 +176,10 @@
             <form class="form-address">
                 <div class="controlador-input">
                     <label for="country" data-required>Elige un país (Solo Argentina)</label>
-                    <select name="country" class="reg__input" id="country" data-geo="country">
+                    <select name="country" class="reg__input" id="country" data-geo="country"
+                    title="Ingrese un nombre de un páis"
+                    pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ,]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ,]{1,20}){0,10}$"
+                    required>
                         <option value="" selected disabled>Elige un país</option> 
                         <option value="Argentina">Argentina</option>
                     </select>
@@ -160,7 +187,10 @@
 
                 <div class="controlador-input">
                     <label for="provincias" data-required>Elige una provincia</label>
-                    <select name="state" class="reg__input" id="provincias" data-geo="provincias" data-geo-wait="country">
+                    <select name="state" class="reg__input" id="provincias" data-geo="provincias" data-geo-wait="country"
+                    title="Ingrese un nombre de una provincia"
+                    pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ,]{2,20}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ,]{1,20}){0,10}$"
+                    required>
                         <option value="" selected disabled>Elige una provincia</option>
                     </select>
                 </div>
@@ -175,18 +205,29 @@
                 <div class="controlador-input multiple">
                     <div class="controlador-input">
                         <label for="street" data-required>Escribe el nombre de tu calle</label>
-                        <input type="text" name="street" id="street" class="reg__input" placeholder="Nombre de la calle">
+                        <input type="text" name="street" id="street" class="reg__input" placeholder="Nombre de la calle"
+                        title="Debe ingresar una calle valida"
+                        pattern="^.{3,100}$"
+                        required>
                     </div>
+
                     <div class="controlador-input">
                         <label for="streetNumber" data-required>Escribe el número de tu casa</label>
-                        <input type="number" name="streetNumber" id="streetNumber" class="reg__input" placeholder="Número de casa">
+                        <input type="number" name="streetNumber" id="streetNumber" class="reg__input" placeholder="Número de casa"
+                        title="Debe ingresar una altura valida (Solo números)"
+                        pattern="^[0-9]{1,5}$"
+                        required>
                     </div>
                 </div>
                 <div class="controlador-input">
                     <label for="description" data-required>Escribe una Descripción de tu domicilio (10 - 255 caracteres)</label>
-                    <textarea type="text" name="description" id="description" class="form-textarea" placeholder="Descripción.."></textarea>
+                    <textarea type="text" name="description" id="description" class="form-textarea" placeholder="Descripción.."
+                    title="La descripción debe tener un mínimo de 10 caracteres y un máximo de 255"
+                    pattern="^.{10,255}$"
+                    required>
+                    </textarea>
                 </div>
-                <button class="contacto__button"> GUARDAR CAMBIOS </button>
+                <button class="btn-form contacto__button"> GUARDAR CAMBIOS </button>
             </form>
         </div>
     </template>
@@ -194,6 +235,7 @@
     <%- include('partials/footer.ejs') %>
     <script src="/js/generals.js" type="module"></script>
     <script src="/js/profile.js" type="module"></script>
+    <script src="/js/search.js"></script>
 </body>
 
 </html>

@@ -129,13 +129,13 @@ const deleteProduct = async (req, res) => {
       db.Product.destroy({where: {id: id}})
       // Elimino las imagenes asociadas al producto (de la BD)
       db.Image.destroy({where: {productId: id}})
-      res.json({"msg": "El producto fue eliminado con éxisto"})
+      res.json({status: "success", message: "El producto fue eliminado con éxito"})
     }
     else
-      throw {"error": 404, "msg": "El producto que se intentó eliminar no existe"}
+      throw {status: "warning", message: "El producto que se intentó eliminar no existe"}
   }
   catch(err){
-    res.status(err.error).json({"error": 500, "msg": "Sucedió un error al intentar eliminar el producto"})
+    res.json({status: "warning", message: "No se pudo eliminar el producto"})
   }
 }
 

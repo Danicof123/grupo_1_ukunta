@@ -1,6 +1,6 @@
 const d = document;
 
-const modal = (opt, cb) => {
+export const modal = (opt, cb) => {
   const $container = d.createElement('div'),
         $modal = d.createElement('div'),
         $title = d.createElement('h3'),
@@ -46,5 +46,19 @@ const modal = (opt, cb) => {
   })
 }
 
+export const createAlert = (opt) => {
+  const $alert = d.createElement('div');
+  d.body.insertAdjacentElement("afterbegin", $alert);
 
-export default modal;
+  $alert.classList.add('alert',`alert-${opt.status}`,'active')
+  $alert.textContent = opt.message;
+
+  // Se oculta y se elimina al segundo
+  setTimeout(() => {
+    $alert.classList.contains('active') && $alert.classList.remove('active');
+    setTimeout(() => {
+      d.body.hasChildNodes($alert) && d.body.removeChild($alert);
+    }, 1000)
+  }, opt.time || 3 * 1000);
+
+}
