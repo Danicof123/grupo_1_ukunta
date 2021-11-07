@@ -1,5 +1,6 @@
 /* Body */
-.register main{
+.register main,
+.addProduct main{
     margin-top: 48px;
     margin-bottom: 96px;
 }
@@ -195,7 +196,8 @@ label a {
     .reg__ctrl-textarea {
         height: 14rem;
     }
-    .register main{
+    .register main,
+    .addProduct main{
         margin-top: 96px;
     }
 }

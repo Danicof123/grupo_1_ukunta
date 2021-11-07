@@ -29,7 +29,10 @@
     background-color: var(--color-primario);
     border: 1px solid #fff;
 }
-
+/* Generales */
+input::placeholder{
+    color: var(--color-gris-claro);
+}
 /* Controladores del profile */
 .controlador-input{
     display: flex;
@@ -65,6 +68,7 @@
     width: 100%;
     padding-left: 0.5rem;
     padding-top: 0.5rem;
+    margin-bottom: 1rem;
     font-family: 'Raleway';
     border: 1px solid var(--color-gris-claro);
     outline: none;

@@ -1,3 +1,4 @@
+const {validationResult} = require('express-validator');
 //DB
 const db = require('../../database/models');
 const {Op} = require('sequelize');
@@ -56,21 +57,35 @@ const findByTag = async (req, res) => {
     } 
   }))
 }
+
+const getAllCategories = async (req, res) => {
+  res.json(await db.Category.findAll())
+}
+
 // Creando producto
 const createProduct = async (req, res) => {
+  let errors = validationResult(req);
   try {
-    await db.Product.create({
-      name: req.body.name,
-      description: req.body.description,
-      size: req.body.size,
-      price: req.body.price,
-      stock: req.body.stock,
-      expire: req.body.expire,
-      categoryId: req.body.categoryId,
-    })
-    res.status(200).json({"msg": "El producto fue creado con éxito"})
+    //Si no hay errores
+    if (!errors.isEmpty()) throw {status: "success", message: errors}
+    const newProduct = await db.Product.create(req.body)
+
+    //Creo una variable vacia para pushearle las imagenes
+    let imagesProduct = [];
+    let imagesToAdd = req.files.map((image) => image.filename);
+    imagesToAdd.forEach((img) => {
+        let image = {
+            productId: newProduct.id,
+            name: img,
+        };
+        imagesProduct.push(image);
+    });
+    //Guardo en base de datos las imagenes asociadas al producto y redirigo a la vista del producto creado
+    db.Image.bulkCreate(imagesProduct, {validate: true});
+
+    res.status(200).json({status: "success", message: "El producto fue creado con éxito", producto: newProduct.id})
   } catch (error) {
-    
+    res.status(200).json({status: "error", message: error.message, error})
   }
 }
 // Actualizando el producto
@@ -147,5 +162,6 @@ module.exports = {
   createProduct,
   updateProduct,
   updateImage,
-  deleteProduct
+  deleteProduct,
+  getAllCategories
 }

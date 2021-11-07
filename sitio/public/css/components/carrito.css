@@ -109,6 +109,22 @@
   right: 2px;
   top: .55rem;
 }
+
+.imagen-carrito{
+  min-height: 166px;
+}
+
+.imagen-carrito img{
+  object-fit: cover;
+  height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .imagen-carrito{
+    height: 300px;
+  }
+}
+
+
 @media screen and (min-width: 1024px) {
   .carrito{
     box-shadow: var(--sombra);

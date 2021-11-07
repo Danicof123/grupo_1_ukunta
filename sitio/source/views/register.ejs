@@ -17,12 +17,11 @@
                     <h3 class="register__title">REGISTRO DE USUARIO</h3>
                 </div>
 
-                <form class="form-register" method="POST" action="/users/register">
+                <form class="form-register">
                     <!-- Nombre de usuario -->
                     <div class="controlador-input">
                         <label for="name" data-required>Nombre</label>
                         <input type="text" name="name" id="name" class="reg__input" placeholder="Ingrese su nombre"
-                        value="<%= (locals && locals.errors) ? old.name : null %>"
                         title="Debe ingresar su nombre"
                         pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}$"
                         required>
@@ -32,7 +31,6 @@
                     <div class="controlador-input">
                         <label for="lastname" data-required>Apellido</label>
                         <input type="text" name="lastname" id="lastname" class="reg__input" placeholder="Ingrese su apellido"
-                        value="<%= (locals && locals.errors) ? old.lastname : null %>"
                         title="Debe ingresar su apellido"
                         pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}$"
                         required>
@@ -42,7 +40,6 @@
                     <div class="controlador-input">
                         <label for="date" data-required>Fecha de nacimiento</label>
                         <input type="date" name="date" id="date" class="reg__input" placeholder="Ingrese su fecha de nacimiento"
-                        value="<%= (locals && locals.errors) ? old.date : null %>"
                         title="Formato de fecha invalido."
                         pattern="^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$"
                         required>
@@ -52,7 +49,6 @@
                     <div class="controlador-input">
                         <label for="dni" data-required>Número de documento</label>
                         <input type="text" name="dni" id="dni" class="reg__input" placeholder="Ingrese su documento"
-                        value="<%= (locals && locals.errors) ? old.dni : null %>"
                         title="Ingrese un DNI válido. Ej; 40123456"
                         pattern="^[1-9][0-9]{7}$"
                         required>
@@ -62,7 +58,6 @@
                     <div class="controlador-input">
                         <label for="phone" data-required>Número de teléfono</label>
                         <input type="tel" name="phone" id="phone" class="reg__input" placeholder="1112345678"
-                        value="<%= (locals && locals.errors) ? old.phone : null %>"
                         title="Ingrese un teléfono válido. Ejemplo: 1112345678"
                         pattern="^(\+\d{1,3})?\d{10}$" 
                         required>
@@ -72,7 +67,6 @@
                     <div class="controlador-input">
                         <label for="email" data-required>Correo electrónico</label>
                         <input type="email" name="email" id="email" class="reg__input" placeholder="nombre@correo.com"
-                        value="<%= (locals && locals.errors) ? old.email : null %>"
                         title="Formato de email invalido. (nombre@correo.com)"
                         pattern="^[a-z]+(.[a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
                         required>
@@ -118,6 +112,7 @@
                 </form>
             </div>
         </main>
+        <script src="/js/generals.js" type="module"></script>
         <script src="/js/register.js" type="module"></script>
     </body>
 </html>

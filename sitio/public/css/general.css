@@ -83,7 +83,6 @@ h4{
 }
 
 .text-danger {
-    font-size: .7rem;
     color: var(--color-rojo);
 }   
 .msg-alert{

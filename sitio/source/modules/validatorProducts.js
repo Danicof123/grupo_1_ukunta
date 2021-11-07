@@ -7,7 +7,7 @@ const regName = /^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}(\s+[A-Za-zñÑáÁé
     regSize = /^.{0,15}$/,
     regPrice = /^\d*(\.\d{1})?\d{0,1}$/,
     regStock = /^[0-9]{1,4}$/,
-    regDate = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/;
+    regDate = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))?$/;
 
 const validationsCreate = [
     body('name').custom((value, req) => {
@@ -16,7 +16,7 @@ const validationsCreate = [
         return true;
     }),
 
-    body('category').custom((value, req) => {
+    body('categoryId').custom((value, req) => {
         const category = value;
         if (!regCategory.test(category)) throw new Error('Debes seleccionar una categoría.');
         return true;

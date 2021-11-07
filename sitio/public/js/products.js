@@ -24,7 +24,7 @@ import {modal, createAlert} from './components/modals.js';
 
         const formDelete = document.querySelector('.formDelete');
 
-        formDelete.addEventListener('submit', (e) => {
+        formDelete && formDelete.addEventListener('submit', (e) => {
             e.preventDefault();
             modal(
                 {

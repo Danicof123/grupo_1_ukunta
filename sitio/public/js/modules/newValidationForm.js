@@ -3,18 +3,17 @@ const d = document;
 const validationForm = (form) => {
   // Selecciono todos los inputs/textarea que son requeridos
   const $form = d.querySelector(form),
-        $rPassword = $form.querySelector(`${form} [data-copy="password"]`),
-        error = false;
+        $rPassword = $form.querySelector(`${form} [data-copy="password"]`)
 
   $form.addEventListener("blur", e => {
-    if(e.target.matches(`${form} [required]`)){
+    if(e.target.matches(`${form} [required], ${form} [data-required]`)){
       // Guardo el input y el pattern, para el caso del textarea, el data-pattern
       // Se crean variables para el control de errores
       const $input = e.target,
             pattern = new RegExp($input.pattern || $input.dataset.pattern);
-      
       // Si el pattern no coincide con el valor se crean los errores, caso contrario se borran si estuviesen creados.
-      if(!pattern.test($input.value)) return createError($form, $input)
+      if(!$input.dataset.required && !pattern.test($input.value)) return createError($form, $input)
+      else if($input.dataset.required && $input.value.length > 0 && !pattern.test($input.value)) return createError($form, $input)
       else deleteError($form, $input)
 
       // Si un input tiene doble contraseña...
