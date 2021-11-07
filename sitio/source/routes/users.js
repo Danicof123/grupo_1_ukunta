@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 // Modules
-const {usersValidator, validationLogin, validationProfile} = require('../modules/validator');
+const {usersValidator, validationLogin} = require('../modules/validator');
 // Middlewares
 const authMiddleware = require('../middlewares/authMiddleware'); // Si no esta logueado, no puede ingresar al perfil
 const guestMiddleware = require('../middlewares/guestMiddleware'); // Si ya esta logueado, no puede ingresar a registro ni login

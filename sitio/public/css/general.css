@@ -469,6 +469,12 @@ h4{
 .minvh-100{
     min-height: 100vh;
 }
+.maxw-768{
+    max-width: 768px;
+}
+.maxw-1024{
+    max-width: 1024px;
+}
 .maxw-1280{
     max-width: 1280px;
 }

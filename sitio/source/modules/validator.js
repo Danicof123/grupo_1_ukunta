@@ -6,8 +6,7 @@ const regName = /^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,20}(\s+[A-Za-zñÑáÁé
     regDate = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/,
     regDNI = /^[1-9][0-9]{7}$/,
     regPhone = /^(\+\d{1,3})?\d{10}$/,
-    regEmail =
-        /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/,
+    regEmail = /^[a-z]+(.+[a-z0-9]+)@[a-z0-9-]+(.[a-z0-9-]+)(.[a-z]{2,15})$/,
     regPassword = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
     regStreet = /^.{3,100}$/,
     regStreetNumber = /^[0-9]{1,5}$/,
@@ -46,9 +45,9 @@ const usersValidator = [
     }),
 
     /* isISO8601('datebirth').withMessage('Formato de fecha inválido'), */
-    check('datebirth').custom((value, req) => {
-        const datebirth = value;
-        if (!regDate.test(datebirth)) throw new Error('Formato de fecha invalido.');
+    check('date').custom((value, req) => {
+        const date = value;
+        if (!regDate.test(date)) throw new Error('Formato de fecha invalido.');
         return true;
     }),
 
@@ -87,18 +86,7 @@ const usersValidator = [
             throw new Error('La contraseña debe tener entre 8 y 16 caracteres, al menos un número, una minúscula y una mayúscula.');
         return true;
     }),
-
-    check('password2').custom((value, {req}) => {
-            if (value !== req.body.password) {
-                
-                return false;
-            }
-            
-            return true;
-        })
-        .withMessage('Las contraseñas no coinciden'),
-
-       check('terms').notEmpty().withMessage('Debes aceptar los terminos y condiciones'),
+    check('terms').notEmpty().withMessage('Debes aceptar los terminos y condiciones'),
 ];
 
 const validationLogin = [

@@ -1,9 +1,15 @@
+import { createAlert } from './components/modals.js';
 import validationForm from './modules/validationForm.js';
 
 const d = document;
 
 d.addEventListener('DOMContentLoaded', (e) => {
     validationForm('.form-login'); //Envio la clase del formulario para ser evaluada
+    // Bienvenida nuevo usuario
+    if(localStorage.getItem('newUser')){
+      createAlert({status: 'info', message: `Bienvenido ${localStorage.getItem('newUser')} a Ukunta`, time: 6000})
+      localStorage.removeItem('newUser');
+    }
 });
 
 d.addEventListener("DOMContentLoaded", function() {

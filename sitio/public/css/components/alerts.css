@@ -24,7 +24,9 @@
   -ms-transition: transform .3s ease-in-out;
   -o-transition: transform .3s ease-in-out;
 }
-
+.login .alert{
+  top: -65px;
+}
 .alert.alert-warning{
   background-color: var(--color-rojo);
 }

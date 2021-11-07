@@ -1,8 +1,10 @@
 const fs = require('fs')
 const bcrypt = require('bcryptjs')
+const {validationResult} = require('express-validator');
 //DB
 const db = require('../../database/models');
 
+// Devuelve a todos los usuarios
 const findAllUsers = async (req, res) => {
     res.json(
         await db.User.findAll({
@@ -11,6 +13,7 @@ const findAllUsers = async (req, res) => {
     );
 };
 
+// Devuelve a un usuario según su id
 const findById = async (req, res) => {
     res.json(
         await db.User.findByPk(req.params.id, {
@@ -19,6 +22,7 @@ const findById = async (req, res) => {
     );
 };
 
+// Devuelve a todos los usuarios según su rol
 const findByRol = async (req, res) => {
     res.json(
         await db.User.findAll({
@@ -105,6 +109,34 @@ const setPassword = async (req, res) => {
     }
 }
 
+// Creación de un usuario
+const createUser = async (req, res) => {
+    const data = req.body;
+    let errors = validationResult(req);
+    try {
+        // Compruebo que no hayan errores 
+        if (!errors.isEmpty()) throw {status: "error", message: "Se produjo un error al intentar crear el usuario..", errors: errors}
+        // Agrego algunos datos extras para la creación del usuario
+        data.password = bcrypt.hashSync(data.password, 10);
+
+        data.datebirth = data.date;
+        data.avatar = 'default.png';
+        data.rol = 'guest';
+
+        // Elimino datos innecesarios
+        delete data.terms;
+        delete data.date;
+
+        // Creación del usuario
+        db.User.create(data)
+            .catch(err =>{
+                res.json({status: "error", message: "Se produjo un error al intentar crear el usuario.."})
+            })
+        res.json({status: "success", message: "La cuenta se creo con éxito"})
+    } catch (err) {
+        res.json({status: "error", message: err.message, errors: err.errors})
+    }
+}
 
 module.exports = {
     findAllUsers,
@@ -113,5 +145,6 @@ module.exports = {
     setAvatarByuserId,
     setProfile,
     setPassword,
-    setAddress
+    setAddress,
+    createUser
 };
