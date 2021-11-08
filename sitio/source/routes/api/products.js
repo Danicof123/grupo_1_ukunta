@@ -16,7 +16,7 @@ router.get('/:cat', findByCategory)
 router.post('/create', uploadFile.array('images'), validationsCreate, createProduct)
 
 // Actualizando
-router.put('/update/:id', updateProduct)
+router.put('/update/:id', uploadFile.array('images'), updateProduct)
 router.put('/update/images/:id', updateImage)
 
 // Eliminando

@@ -1,14 +1,13 @@
 import { modal } from "../components/modals.js";
 const d = document;
 
-export const setImageProducts = (form) => {
+export const setImageProducts = (form, images) => {
   const $inputFile = d.getElementById("producto-images-input"),
         $addImage = d.querySelector(`${form} .addImage`),
         $controladorImage = d.querySelector('.controlador-add-image');
   
   // Arreglo donde voy a guardar mis imágenes
-  let files = [];
-
+  let files = images || [];
   d.addEventListener('click', e => {
     if(e.target.matches('.btn-form-cancel')) d.location.href = d.location.origin;
     if(e.target === $addImage) $inputFile.click();
@@ -16,12 +15,26 @@ export const setImageProducts = (form) => {
     //Eliminación de imagen 
     if(e.target.matches('.product__previewImage, .product__previewImage *')){
       const $imgToDelete = e.target.parentElement.children[1];
-      files = files.filter(e => e.lastModified != $imgToDelete.dataset.id);
+
+      let filesTemp = []
+      // Elimino la imagen que clickeo
+      files.forEach(img => {
+        if(img.lastModified){
+          if(img.lastModified != $imgToDelete.dataset.id) filesTemp.push(img) 
+        }
+        else{
+          if(img.dataset.id != $imgToDelete.dataset.id){
+            filesTemp.push(img) 
+          }
+        }
+      });
+
+      files = filesTemp;
       $controladorImage.removeChild(e.target.parentElement);
 
       // Oculto el agregar imagenes si hay mas de 4
       (files.length >= 4) ? $addImage.classList.add('d-none') : $addImage.classList.remove('d-none')
-      
+
       // Si no hay imágenes con errores elimino la advertencia y habilito el botón
       if(!$controladorImage.querySelector('img.invalid')){
         const $span = $inputFile.parentElement.children[0].querySelector('span');
@@ -30,6 +43,7 @@ export const setImageProducts = (form) => {
         d.querySelector(`.btn-form`).disabled = false;
       }
     }
+    
   })
 
   d.addEventListener('change', e => {
@@ -37,7 +51,6 @@ export const setImageProducts = (form) => {
 
       // No dejo q pase las 4 imágenes
       files = [...files, ...Array.from($inputFile.files)];
-  
       // Oculto el agregar imagenes si hay mas de 4
       (files.length >= 4) ? $addImage.classList.add('d-none') : $addImage.classList.remove('d-none')
       
@@ -58,19 +71,31 @@ export const setImageProducts = (form) => {
       // Creando el formData
       const formData = new FormData($form);
 
-      // Imagenes a enviar
+      // Imagenes a enviar (Elimino las que ya existen)
       delete formData.delete('images');
-      files.forEach(img => formData.append('images', img));
+      const imgBefore = files;
+      files = files.filter(f => f.lastModified)
+      files && files.forEach(img => formData.append('images', img));
 
+      let url = "/api/products/create"
       const opt = {
         body: formData,
         method: 'POST'
       };
 
+      // En caso de actualizar
+      if(form === ".form-editProduct"){
+        const idProduct = document.location.pathname.replace('/store/products/edit/','')
+        formData.append('idProduct', idProduct)
+        url = `/api/products/update/${idProduct}`;
+        opt.method = "PUT";
+
+      }
+
       try {
-        if(files.length < 1) throw {message: "No se ha seleccionado ninguna imagen"}
+        if(imgBefore.length < 1) throw {message: "No se ha seleccionado ninguna imagen"}
         
-        fetch("/api/products/create", opt)
+        fetch(url, opt)
           .then(resJson => resJson.json())
           .then(res => {
             console.log(res);
@@ -83,7 +108,7 @@ export const setImageProducts = (form) => {
           message: err.message,
           btnPrimary: "ACEPTAR"
         })
-      }   
+      } 
     }
   })
 }
@@ -100,11 +125,11 @@ const addPreviewImage = (files, $inputFile) => {
     // Contenido
     $containerImage.classList.add('mb-6','tb-3','product__previewImage');
     $iconDelete.classList.add('product__deletePreviewImage','bx','bx-x-circle');
-    $img.src = URL.createObjectURL(e);
+    $img.src = e.src || URL.createObjectURL(e);
     $img.alt = e.name;
-    $img.dataset.size = e.size;
-    $img.dataset.type = e.type;
-    $img.dataset.id = e.lastModified;
+    $img.dataset.size = e.size || 0;
+    $img.dataset.type = e.type || null;
+    $img.dataset.id = e.id || e.lastModified || e.dataset.id;
 
     if(!validationImages($img, $inputFile)){
       const error = $inputFile.parentElement.children[0].querySelector('span');
@@ -132,8 +157,7 @@ const addPreviewImage = (files, $inputFile) => {
 const validationImages = (file, $inputFile) => {
   const accept = $inputFile.accept.split(", ");
   const maxSize = 5 * 1024 * 1024;
-
-  if(!accept.includes(file.dataset.type)) return false;
+  if(file.dataset.type !== "null" && !accept.includes(file.dataset.type)) return false;
   if(Number(file.dataset.size) > maxSize) return false;
   return true;
 }

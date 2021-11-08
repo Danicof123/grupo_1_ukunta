@@ -1,7 +1,7 @@
 const {validationResult} = require('express-validator');
 //DB
 const db = require('../../database/models');
-const {Op} = require('sequelize');
+const {Op, where} = require('sequelize');
 
 // API
 const findAllProduct = async (req, res) => {
@@ -90,29 +90,23 @@ const createProduct = async (req, res) => {
 }
 // Actualizando el producto
 const updateProduct = async (req, res) => {
-  try{
-    const id = req.params.id;
-    const producto = await db.Product.findByPk(id)
-    // El producto que intento actualizar existe en la BD?
-    if(producto){
-      // Si no actualiza un dato dejo el que estaba
-      await db.Product.update({
-        name: req.body.name || producto.name,
-        description: req.body.description || producto.description,
-        size: req.body.size || producto.size,
-        price: req.body.price || producto.price,
-        stock: req.body.stock || producto.stock,
-        expire: req.body.expire || producto.expire,
-        categoryId: req.body.categoryId || producto.categoryId,
-      },
-      {where: {id : id}})
-      res.json({"msg": "El producto fue actualizado con éxito"})
-    }
-    else
-      throw {"error": 404, "msg": "El producto que se intentó actualizar no existe"}
+  let errors = validationResult(req);
+  try {
+    //Si no hay errores
+    if (!errors.isEmpty()) throw {status: "success", message: errors}
+    // Obtengo el id del producto y lo elimino del body
+    const idProduct = req.body.idProduct;
+    delete req.body.idProduct;
+
+    // Actualizando el producto
+    await db.Product.update(req.body, {
+      where: {id: idProduct}
+    })
+
+    // Si vienen las imágenes las actualizo tmb
   }
-  catch(err){
-    res.status(500).json({"error": 500, "msg": "Sucedió un error al intentar crear el producto"})
+  catch{
+    res.status(200).json({status: "error", message: error.message, error})
   }
 }
 

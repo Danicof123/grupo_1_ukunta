@@ -14,7 +14,9 @@
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
-
+.register__header img{
+    width: 4rem;
+}
 .register__header i{
     font-size: 4rem;
     color: var(--color-primario);

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('partials/head')  %> 
+
+<body class="register f-display f-main-y minvh-100">
+    <%- include('partials/carrito.ejs') %>
+    <%- include('partials/navbar-top')  %>
+    <!-- Barra de navegación inferior -->
+    <%- include('partials/navbar-bottom.ejs') %> 
+    <h3 class="f-center my-6">Editando producto: <%= product.name %></h3>
+    
+    <div class="container f-main-center f-grow-1 mbt-5">
+        <div class="mb-12 lp-6 f-main-y f-cross-center">
+
+            
+            <form class="w-100 mbt-4 form-editProduct" action="/store/products/edit/<%= product.id %>?_method=PUT" method="POST">
+                <input type="hidden" name="id" value="<%= product.id %>" readonly required>
+                
+                <!-- Nombre -->
+                <% if (locals.errors && errors.name) { %>
+                    <div class="text-danger"><%= errors.name.msg %></div>
+                <% } %>
+                <label for="name" class="reg__date__age">Nombre del producto:</label>
+                <div class="reg__ctrl-input mbt-4">
+                    <input type="text" placeholder="*Nombre" name="name" value="<%= product.name %>" class="reg__input" pattern="^[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}(\s+[A-Za-zñÑáÁéÉiÍóÓúüÚÜ]{2,45}){0,2}$" title="Debe ingresar el nombre del producto." required>
+                </div>  
+                
+                <!-- Categoria -->
+                <label for="category" class="reg__date__age">Categoria:</label>
+                <div class="reg__ctrl-input mbt-4">
+                    <% if (locals.errors && errors.category) { %>
+                    <div class="text-danger">
+                       <%= errors.category.msg %>
+                    </div>
+                    <% } %>
+                    <select name="category" class="reg__input" pattern="^[1-3]$" title="Debes seleccionar una categoría." required>
+                       <option value="<%= product.category.id %>" selected hidden><%= product.category.name %></option>
+                       <% categories.forEach(category => { %>
+                       <option value="<%= category.id %>" <%= locals.old && old.categoryId === category.id ? 'selected' : null%> ><%= category.name %></option>
+                       <% }) %>
+                    </select>
+              </div>
+
+                <!-- Descripcion producto -->
+                <label for="description" class="reg__date__age">Descripción:</label>
+                <div class="reg__ctrl-textarea mbt-4">
+                    <% if (locals.errors && errors.description) { %>
+                        <div class="text-danger"><%= errors.description.msg %></div>
+                        <% } %>
+                    <textarea name="description" class="text__area" placeholder="*Descripción del producto" data-pattern="^.{10,255}$" title="La descripción debe tener un minimo de 10 carácteres y un máximo de 255." required><%= product.description %></textarea>
+                </div>
+
+                <!-- Tamaño -->
+                <label for="size" class="reg__date__age">Tamaño o volumen:</label>
+                <div class="reg__ctrl-input mbt-4">
+                    <% if (locals.errors && errors.size) { %>
+                       <div class="text-danger">
+                          <%= errors.size.msg %>
+                       </div>
+                    <% } %>
+                       <input type="text" placeholder="*Tamaño o volumen del producto" name="size" class="reg__input" value="<%= product.size %>" pattern="^.{0,15}$" title="El tamaño o volumen del producto debe tener un máximo de 15 caracteres." required />
+                 </div>
+
+                <!-- Precio -->
+                <label for="price" class="reg__date__age">Importe:</label>
+                <div class="reg__ctrl-input mbt-4">
+                    <% if (locals.errors && errors.price) { %>
+                        <div class="text-danger"><%= errors.price.msg %></div>
+                        <% } %>
+                    <input type="number" placeholder="*Precio" class="reg__input" name="price" value="<%= product.price %>" pattern="^\d*(\.\d{1})?\d{0,1}$" title="Debes ingresar el precio en formato número con un máximo de 2 decimales." required>
+                </div>
+
+                <!-- stock -->
+                <label for="stock" class="reg__date__age">Stock:</label>
+                <div class="reg__ctrl-input mbt-4">
+                    <% if (locals.errors && errors.stock) { %>
+                       <div class="text-danger">
+                          <%= errors.stock.msg %>
+                       </div>
+                    <% } %>
+                       <input name="stock" type="number" placeholder="*Ingresar stock" class="reg__input" name="stock" value="<%= product.stock %>" pattern="^[0-9]{1,4}$" title="Debes ingresar el stock con un máximo de 9999 unidades." required/>
+                </div>
+
+                <!-- Fecha de vencimiento -->
+                <label for="expire" class="text-danger"><%= locals.errors && locals.errors.expire ? errors.expire.msg : null %></label>
+                <div class="row my-0 f-cross-center my-4">
+                  
+                  <div class="mb-6">
+                      <label for="expire" class="reg__date__age" >Fecha de vencimiento</label>
+                  </div>
+                  <div class="mb-6">
+                      <div class="reg__ctrl-input">
+                          <input type="date" class="reg__input" name="expire" id="inp-date" value="<%= (locals && locals.errors) ? old.expire : product.expire %>" pattern="^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$" title="Formato de fecha invalido." required>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="f-display f-main-between reg__navbottom f-cross-end mbt-5">
+                    <a href="/store/products/<%= product.id %>" class="no-decor">
+                        <div class="button button-rojo reg__navbutton">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </a> 
+                    <button type="submit" class="button button-verde reg__navbutton"><i class="fas fa-check"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/generals.js" type="module"></script>
+    <script src="/js/editProduct.js" type="module"></script>
+    <script src="/js/search.js"></script>
+</body>
+
+</html>
